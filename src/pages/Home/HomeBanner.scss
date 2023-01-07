@@ -1,10 +1,66 @@
-@use "@Styles/variables" as variables;
+@use "@Styles/variables" as *;
+@import "@Styles/mixins";
 
 .home-banner {
+  display: flex;
+  background-color: $primary-color;
+
+  &__container {
+    padding-top: 25px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 35px;
+  }
+
   &__button {
     padding: 12px 104px;
-    svg {
-      margin-left: 20px;
+
+    @include for-size(phone) {  
+      padding: 12px;
+      width: 100%;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__col {
+    &--left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 60%;
+
+      @include for-size(tablet-landscape) {    
+        width: 100%;
+        align-items: center;
+        padding: 80px 0;
+      }
+
+      @include for-size(tablet-landscape) {
+        padding: 64px 0;
+      }
+    }
+
+    &--right {
+      width: 40%;
+      
+      @include for-size(tablet-landscape) {    
+        display: none;
+      }
     }
   }
 }

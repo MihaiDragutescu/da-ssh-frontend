@@ -3,9 +3,7 @@ import './App.scss'
 
 const App = () => {
   return (
-    <div className="ssh-container">
       <HomeBanner />
-    </div>
   );
 }
 

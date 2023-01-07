@@ -11,11 +11,23 @@ const HomeBanner = () => {
 
   return (
     <div className='home-banner'>
-    <Button className='home-banner__button' onClick = {handleClick}>
-      BEGIN YOUR JOURNEY
-      <ButtonIcon/>
-    </Button>
-    <img src = {image} alt = ""/>
+      <div className='home-banner__container ssh-container'>
+        <div className='home-banner__row ssh-row'>
+          <div className='home-banner__col home-banner__col--left'>
+            <h1 className='home-banner__title'>It’s time to express yourself</h1>
+            <h3 className='home-banner__subtitle'>Find your new favourite piece here</h3>
+            <Button className='home-banner__button' onClick = {handleClick}>
+              <div className='home-banner__button-content'>
+                <span>BEGIN YOUR JOURNEY</span>
+                <ButtonIcon/>
+              </div>
+            </Button>
+          </div>
+          <div className='home-banner__col home-banner__col--right'>
+            <img src = {image} alt = ""/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

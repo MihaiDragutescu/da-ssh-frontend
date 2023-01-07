@@ -1,9 +1,52 @@
-@use "@Styles/variables" as variables;
+@use "@Styles/variables" as *;
+@import "@Styles/mixins";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: variables.$font-primary;
+  font-family: $font-primary;
   box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary;
+  line-height: 1.33;
+  color: $color-brown;
+  text-align: center;
+}
+
+h1 {
+  font-size: 56px;
+
+  @include for-size(phone) {    
+    font-size: 45px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+
+  @include for-size(phone) {    
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 30px;
+
+  @include for-size(phone) {    
+    font-size: 24px;
+  }
+}
+
+.ssh-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.ssh-row {
+  display: flex;
+  flex-wrap: wrap;
 }
