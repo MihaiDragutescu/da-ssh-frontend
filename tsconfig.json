@@ -2,17 +2,23 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@Styles/*": [
-        "./styles/*"
-    ],
       "@App/*": [
         "./*"
-    ],
-      "@Home/*": [
-          "./pages/Home/*"
       ],
       "@Components-ui/*": [
         "./components/ui/*"
+      ],
+      "@Fonts/*": [
+        "./assets/fonts/*"
+      ],
+      "@Home/*": [
+        "./pages/Home/*"
+      ],
+      "@Images/*": [
+        "./assets/images/*"
+      ],
+      "@Styles/*": [
+        "./styles/*"
     ],
   },
     "target": "es5",

@@ -1,6 +1,7 @@
-import './HomeBanner.scss';
 import Button from '@Components-ui/Button';
-const image = require ('../../assets/test.png');
+import image from '@Images/home-banner-img.png';
+import { ReactComponent as ButtonIcon } from '@Images/button-icon.svg';
+import './HomeBanner.scss';
 
 const HomeBanner = () => {
 
@@ -9,11 +10,13 @@ const HomeBanner = () => {
   }
 
   return (
-    <>
-    <Button className='buttonClass1 buttonClass2' onClick = {handleClick}>Hello!</Button>
-    <h1 className = 'htest'>Home Banner</h1>
+    <div className='home-banner'>
+    <Button className='home-banner__button' onClick = {handleClick}>
+      BEGIN YOUR JOURNEY
+      <ButtonIcon/>
+    </Button>
     <img src = {image} alt = ""/>
-    </>
+    </div>
   );
 }
 

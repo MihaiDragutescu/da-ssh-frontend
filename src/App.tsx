@@ -1,8 +1,11 @@
 import HomeBanner from "@Home/HomeBanner";
+import './App.scss'
 
 const App = () => {
   return (
-    <HomeBanner />
+    <div className="ssh-container">
+      <HomeBanner />
+    </div>
   );
 }
 

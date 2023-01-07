@@ -1,18 +1,10 @@
 @use "@Styles/variables" as variables;
 
-.htest {
-  color: variables.$textColor;
-}
-
-.buttonClass1 {
-  background-color: yellow;
-}
-
-.buttonClass2 {
-  border-radius: 50%;
-}
-
-img {
-  width: 500px;
-  height: 500px;
+.home-banner {
+  &__button {
+    padding: 12px 104px;
+    svg {
+      margin-left: 20px;
+    }
+  }
 }

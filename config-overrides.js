@@ -7,10 +7,12 @@ module.exports = {
       resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         alias: {
-          "@Styles": path.resolve(__dirname, "src/styles/"),
           "@App": path.resolve(__dirname, "src/"),
-          "@Home": path.resolve(__dirname, "src/pages/Home/"),
           "@Components-ui": path.resolve(__dirname, "src/components/ui/"),
+          "@Fonts": path.resolve(__dirname, "src/assets/fonts/"),
+          "@Home": path.resolve(__dirname, "src/pages/Home/"),
+          "@Images": path.resolve(__dirname, "src/assets/images/"),
+          "@Styles": path.resolve(__dirname, "src/styles/"),
         },
       },
     };

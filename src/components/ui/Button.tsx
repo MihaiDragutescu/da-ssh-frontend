@@ -1,3 +1,5 @@
+import './Button.scss';
+
 interface ButtonProps {
   className: string;
   children?: React.ReactNode;
@@ -10,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={`ssh-button ${className}`} onClick={onClick}>
       {children}
     </button>
   );

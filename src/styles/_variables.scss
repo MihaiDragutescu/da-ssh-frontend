@@ -1,5 +1,16 @@
-$background-color: #f06292;
-$textColor: #f1d3b3;
-$btn-width: 120px;
-$btn-height: 40px;
-$block-padding: 60px;
+@font-face {
+  font-family: YanoneKaffeesatzLight;
+  src: url('~@Fonts/YanoneKaffeesatz/YanoneKaffeesatz-Light.ttf');
+}
+
+@font-face {
+  font-family: NothingYouCouldDoRegular;
+  src: url('~@Fonts/NothingYouCouldDo/NothingYouCouldDo-Regular.ttf');
+}
+
+$primary-color: #FEF7F3;
+$secondary-color: #FFE2D1;
+$color-brown: #895F5F;
+$color-brown-dark: #553E3E;
+$font-primary: YanoneKaffeesatzLight;
+$font-secondary: NothingYouCouldDoRegular;
