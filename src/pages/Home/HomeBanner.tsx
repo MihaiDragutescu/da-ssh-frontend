@@ -3,7 +3,7 @@ import image from '@Images/home-banner-img.png';
 import { ReactComponent as ButtonIcon } from '@Images/button-icon.svg';
 import './HomeBanner.scss';
 
-const HomeBanner = () => {
+const HomeBanner: React.FC = () => {
 
   const handleClick = () => {
     console.log('Button clicked!');
