@@ -1,5 +1,5 @@
-@use "@Styles/variables" as *;
-@use "@Styles/mixins" as *;
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +10,12 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-secondary;
   font-weight: $font-weight-titles;
   line-height: 1.33;
@@ -21,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 56px;
 
-  @include for-size(phone) {    
+  @include for-size(phone) {
     font-size: 45px;
   }
 }
@@ -29,7 +34,7 @@ h1 {
 h2 {
   font-size: 40px;
 
-  @include for-size(phone) {    
+  @include for-size(phone) {
     font-size: 32px;
   }
 }
@@ -37,7 +42,7 @@ h2 {
 h3 {
   font-size: 30px;
 
-  @include for-size(phone) {    
+  @include for-size(phone) {
     font-size: 24px;
   }
 }

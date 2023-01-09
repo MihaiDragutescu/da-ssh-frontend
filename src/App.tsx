@@ -1,10 +1,8 @@
-import HomeBanner from "@Home/HomeBanner";
-import './App.scss'
+import HomeBanner from '@Home/HomeBanner';
+import './App.scss';
 
 const App = () => {
-  return (
-      <HomeBanner />
-  );
-}
+  return <HomeBanner />;
+};
 
-export default App; 
+export default App;

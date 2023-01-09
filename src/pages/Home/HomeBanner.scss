@@ -1,5 +1,5 @@
-@use "@Styles/variables" as *;
-@use "@Styles/mixins" as *;
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
 
 .home-banner {
   display: flex;
@@ -20,7 +20,7 @@
   &__button {
     padding: 12px 104px;
 
-    @include for-size(phone) {  
+    @include for-size(phone) {
       padding: 12px;
       width: 100%;
     }
@@ -44,7 +44,7 @@
       align-items: flex-start;
       width: 60%;
 
-      @include for-size(tablet-landscape) {    
+      @include for-size(tablet-landscape) {
         width: 100%;
         align-items: center;
         padding: 80px 0;
@@ -57,8 +57,8 @@
 
     &--right {
       width: 40%;
-      
-      @include for-size(tablet-landscape) {    
+
+      @include for-size(tablet-landscape) {
         display: none;
       }
     }
