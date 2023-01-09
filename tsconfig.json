@@ -5,7 +5,7 @@
       "@App/*": ["./*"],
       "@Assets/*": ["./assets/*"],
       "@Components/*": ["./components/*"],
-      "@Home/*": ["./pages/Home/*"],
+      "@Pages/*": ["./pages/*"],
       "@Styles/*": ["./styles/*"]
     },
     "target": "es5",

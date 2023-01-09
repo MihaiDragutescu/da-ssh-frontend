@@ -1,0 +1,21 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-input {
+  input {
+    font-size: 32px;
+    line-height: 1;
+    color: $color-brown;
+    padding: 12px;
+    border-bottom: $border-solid-1;
+    width: 725px;
+
+    &::placeholder {
+      color: $color-brown;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
