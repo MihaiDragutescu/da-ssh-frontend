@@ -1,5 +1,5 @@
 @mixin for-size($size) {
-  @if $size == phone {
+  @if $size == mobile {
     @media (max-width: 600px) {
       @content;
     }
@@ -9,6 +9,10 @@
     }
   } @else if $size == tablet-landscape {
     @media (max-width: 1250px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1250px) {
       @content;
     }
   }

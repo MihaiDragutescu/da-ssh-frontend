@@ -1,4 +1,5 @@
 import Input from '@Components/form/Input';
+import Button from '@Components/ui/Button';
 import './HomeNewsletters.scss';
 import { useState } from 'react';
 
@@ -9,16 +10,28 @@ const HomeNewsletters: React.FC = () => {
     setInputValue(event.target.value);
   };
 
+  const handleCLick = () => {
+    console.log(`Form submitted with value ${inputValue}`);
+  };
+
   return (
     <div className='home-newsletters'>
       <div className='home-newsletters__container ssh-container'>
         <div className='home-newsletters__row ssh-row'>
+          <h2 className='home-newsletters__title'>Hear more from us</h2>
+          <h3 className='home-newsletters__subtitle'>
+            Subscribe to our newsletter
+          </h3>
           <Input
+            className='home-newsletters__input'
             placeholder='Email...'
             type='email'
             value={inputValue}
             onChange={handleChange}
           />
+          <Button className='home-newsletters__button' onClick={handleCLick}>
+            SUBSCRIBE
+          </Button>
         </div>
       </div>
     </div>

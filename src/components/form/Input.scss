@@ -2,13 +2,19 @@
 @use '@Styles/mixins' as *;
 
 .ssh-input {
+  width: 725px;
+  border-bottom: $border-solid-1;
+
   input {
     font-size: 32px;
     line-height: 1;
     color: $color-brown;
     padding: 12px;
-    border-bottom: $border-solid-1;
-    width: 725px;
+    width: 100%;
+
+    @include for-size(mobile) {
+      font-size: 28px;
+    }
 
     &::placeholder {
       color: $color-brown;

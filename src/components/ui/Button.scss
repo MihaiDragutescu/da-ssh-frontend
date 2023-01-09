@@ -10,7 +10,9 @@
   text-transform: uppercase;
   font-family: $font-primary;
 
-  @include for-size(phone) {
+  @include for-size(mobile) {
     font-size: 28px;
+    padding: 12px;
+    width: 100%;
   }
 }

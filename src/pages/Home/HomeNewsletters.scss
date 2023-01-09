@@ -1,2 +1,36 @@
 @use '@Styles/variables' as *;
 @use '@Styles/mixins' as *;
+
+.home-newsletters {
+  &__row {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 56px;
+    margin-bottom: 20px;
+
+    @include for-size(mobile) {
+      font-size: 45px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 35px;
+  }
+
+  &__input {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 725px;
+  }
+
+  &__button {
+    font-size: 28px;
+
+    @include for-size(desktop) {
+      width: 315px;
+    }
+  }
+}
