@@ -1,0 +1,16 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-button {
+  border: 1px solid $color-brown;
+  padding: 12px 28px;
+  color: $color-brown;
+  font-size: 36px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: $font-primary;
+
+  @include for-size(phone) {
+    font-size: 28px;
+  }
+}
