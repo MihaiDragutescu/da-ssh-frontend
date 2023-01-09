@@ -1,6 +1,6 @@
-import Button from '@Components-ui/Button';
-import image from '@Images/home-banner-img.png';
-import { ReactComponent as ButtonIcon } from '@Images/button-icon.svg';
+import Button from '@Components/ui/Button';
+import image from '@Assets/images/home-banner-img.png';
+import { ReactComponent as Icon } from '@Assets/images/button-icon.svg';
 import './HomeBanner.scss';
 
 const HomeBanner: React.FC = () => {
@@ -19,12 +19,12 @@ const HomeBanner: React.FC = () => {
             <Button className='home-banner__button' onClick = {handleClick}>
               <div className='home-banner__button-content'>
                 <span>BEGIN YOUR JOURNEY</span>
-                <ButtonIcon/>
+                <Icon/>
               </div>
             </Button>
           </div>
           <div className='home-banner__col home-banner__col--right'>
-            <img src = {image} alt = ""/>
+            <img src={image} alt="home-banner-img"/>
           </div>
         </div>
       </div>

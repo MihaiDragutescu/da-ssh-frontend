@@ -5,22 +5,19 @@
       "@App/*": [
         "./*"
       ],
-      "@Components-ui/*": [
-        "./components/ui/*"
+      "@Assets/*": [
+        "./assets/*"
       ],
-      "@Fonts/*": [
-        "./assets/fonts/*"
+      "@Components/*": [
+        "./components/*"
       ],
       "@Home/*": [
         "./pages/Home/*"
       ],
-      "@Images/*": [
-        "./assets/images/*"
-      ],
       "@Styles/*": [
         "./styles/*"
-    ],
-  },
+      ],
+    },
     "target": "es5",
     "lib": [
       "dom",

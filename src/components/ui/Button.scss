@@ -1,5 +1,5 @@
 @use "@Styles/variables" as *;
-@import "@Styles/mixins";
+@use "@Styles/mixins" as *;
 
 .ssh-button {
   border: 1px solid $color-brown;

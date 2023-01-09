@@ -1,7 +1,7 @@
 import './Button.scss';
 
 interface ButtonProps {
-  className: string;
+  className?: string;
   children?: React.ReactNode;
   onClick: () => void;
 }

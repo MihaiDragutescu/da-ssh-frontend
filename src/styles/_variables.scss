@@ -1,16 +1,20 @@
 @font-face {
-  font-family: YanoneKaffeesatzLight;
-  src: url('~@Fonts/YanoneKaffeesatz/YanoneKaffeesatz-Light.ttf');
+  font-family: YanoneKaffeesatz;
+  src: url('~@Assets/fonts/YanoneKaffeesatz/YanoneKaffeesatz-Light.ttf');
+  font-weight: 300;
 }
 
 @font-face {
-  font-family: NothingYouCouldDoRegular;
-  src: url('~@Fonts/NothingYouCouldDo/NothingYouCouldDo-Regular.ttf');
+  font-family: NothingYouCouldDo;
+  src: url('~@Assets/fonts/NothingYouCouldDo/NothingYouCouldDo-Regular.ttf');
+  font-weight: 400;
 }
 
 $primary-color: #FEF7F3;
 $secondary-color: #FFE2D1;
 $color-brown: #895F5F;
 $color-brown-dark: #553E3E;
-$font-primary: YanoneKaffeesatzLight;
-$font-secondary: NothingYouCouldDoRegular;
+$font-primary: YanoneKaffeesatz;
+$font-secondary: NothingYouCouldDo;
+$font-weight-texts: 300;
+$font-weight-titles: 400;
