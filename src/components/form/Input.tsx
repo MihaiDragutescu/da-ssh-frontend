@@ -9,6 +9,7 @@ interface InputProps {
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
+  children?: React.ReactNode;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -20,6 +21,7 @@ const Input: React.FC<InputProps> = ({
   onBlur,
   onChange,
   value,
+  children,
   ...rest
 }) => {
   return (
@@ -36,6 +38,7 @@ const Input: React.FC<InputProps> = ({
           {...rest}
         />
       </label>
+      {children}
     </div>
   );
 };
