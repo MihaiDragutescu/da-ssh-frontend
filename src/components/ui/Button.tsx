@@ -6,10 +6,10 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ className, children, onClick }) => {
+const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   return (
-    <button className={`ssh-button ${className}`} onClick={onClick}>
-      {children}
+    <button className={`ssh-button ${props.className}`} onClick={props.onClick}>
+      {props.children}
     </button>
   );
 };

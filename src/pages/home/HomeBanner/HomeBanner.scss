@@ -6,7 +6,9 @@
   background-color: $primary-color;
 
   &__container {
-    padding-top: 25px;
+    @include for-size(desktop) {
+      padding: 0 30px;
+    }
   }
 
   &__title {
@@ -18,11 +20,8 @@
   }
 
   &__button {
-    padding: 12px 104px;
-
-    @include for-size(phone) {
-      padding: 12px;
-      width: 100%;
+    @include for-size(desktop) {
+      width: 500px;
     }
 
     &-content {
@@ -47,16 +46,12 @@
       @include for-size(tablet-landscape) {
         width: 100%;
         align-items: center;
-        padding: 80px 0;
-      }
-
-      @include for-size(tablet-landscape) {
-        padding: 64px 0;
       }
     }
 
     &--right {
       width: 40%;
+      padding-top: 25px;
 
       @include for-size(tablet-landscape) {
         display: none;
