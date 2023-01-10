@@ -50,15 +50,15 @@ h3 {
 .ssh-container {
   max-width: 1500px;
   margin: 0 auto;
-  padding: $padding-desktop 30px;
+  padding: $vertical-padding-desktop 30px;
   width: 100%;
 
   @include for-size(tablet-landscape) {
-    padding: $padding-tablet 30px;
+    padding: $vertical-padding-tablet 30px;
   }
 
   @include for-size(mobile) {
-    padding: $padding-mobile 30px;
+    padding: $vertical-padding-mobile 30px;
   }
 }
 

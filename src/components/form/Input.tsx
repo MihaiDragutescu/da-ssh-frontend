@@ -4,41 +4,29 @@ interface InputProps {
   className?: string;
   label?: string;
   placeholder?: string;
-  type?: React.HTMLInputTypeAttribute;
+  type: React.HTMLInputTypeAttribute;
   name?: string;
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
-  children?: React.ReactNode;
+  icon?: string;
 }
 
-const Input: React.FC<InputProps> = ({
-  className,
-  label,
-  placeholder,
-  type,
-  name,
-  onBlur,
-  onChange,
-  value,
-  children,
-  ...rest
-}) => {
+const Input: React.FC<InputProps> = (props: InputProps) => {
   return (
-    <div className={`ssh-input ${className}`}>
+    <div className={`ssh-input ${props.className}`}>
       <label>
-        {label}
+        {props.label}
         <input
-          placeholder={placeholder}
-          type={type}
-          name={name}
-          onBlur={onBlur}
-          onChange={onChange}
-          value={value}
-          {...rest}
+          placeholder={props.placeholder}
+          type={props.type}
+          name={props.name}
+          onBlur={props.onBlur}
+          onChange={props.onChange}
+          value={props.value}
         />
       </label>
-      {children}
+      <img src={props.icon} alt='' />
     </div>
   );
 };

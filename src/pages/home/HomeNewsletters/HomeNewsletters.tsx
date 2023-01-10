@@ -1,6 +1,5 @@
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
-
 import './HomeNewsletters.scss';
 import { useState } from 'react';
 
@@ -11,7 +10,7 @@ const HomeNewsletters: React.FC = () => {
     setInputValue(event.target.value);
   };
 
-  const handleCLick = () => {
+  const handleClick = () => {
     console.log(`Form submitted with value ${inputValue}`);
   };
 
@@ -30,7 +29,7 @@ const HomeNewsletters: React.FC = () => {
             value={inputValue}
             onChange={handleChange}
           />
-          <Button className='home-newsletters__button' onClick={handleCLick}>
+          <Button className='home-newsletters__button' onClick={handleClick}>
             SUBSCRIBE
           </Button>
         </div>
