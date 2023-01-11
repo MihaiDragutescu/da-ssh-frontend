@@ -1,0 +1,96 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.product-card {
+  padding: 0 20px;
+
+  @include for-size(tablet-landscape) {
+    padding: 0 15px;
+  }
+
+  @include for-size(tablet-portrait) {
+    padding: 0 10px;
+  }
+
+  @include for-size(mobile) {
+    padding: 0 5px;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  &__name,
+  &__price {
+    line-height: 1;
+    color: $color-brown-dark;
+  }
+
+  &__name {
+    font-size: 36px;
+    text-transform: uppercase;
+
+    @include for-size(tablet-portrait) {
+      font-size: 32px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__price {
+    font-size: 50px;
+
+    @include for-size(tablet-portrait) {
+      font-size: 45px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__collection {
+    font-size: 36px;
+    line-height: 1.2;
+    font-family: $font-tertiary;
+    color: $color-brown;
+
+    @include for-size(tablet-portrait) {
+      font-size: 32px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__category {
+    font-size: 44px;
+    line-height: 1.33;
+    font-family: $font-secondary;
+    color: $color-brown-dark;
+
+    @include for-size(tablet-portrait) {
+      font-size: 40px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 31px;
+    }
+  }
+
+  &__button {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 12px;
+  }
+}

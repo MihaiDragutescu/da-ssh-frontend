@@ -1,0 +1,78 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.home-slider {
+  &__container {
+    padding: $vertical-padding-desktop / 2 0;
+    max-width: initial;
+
+    @include for-size(mobile) {
+      padding: $vertical-padding-tablet / 2 0;
+    }
+  }
+
+  &__row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    @include for-size(mobile) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    margin-left: 16px;
+
+    @include for-size(mobile) {
+      margin: 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &--prev,
+    &--next {
+      cursor: pointer;
+      width: 40px;
+    }
+
+    &--prev {
+      margin-right: 16px;
+    }
+  }
+
+  .slick-slider {
+    overflow: hidden;
+
+    .slick-list {
+      margin: 0 -20px;
+
+      @include for-size(tablet-landscape) {
+        margin: 0 -15px;
+      }
+
+      @include for-size(tablet-portrait) {
+        margin: 0 -10px;
+      }
+
+      @include for-size(mobile) {
+        margin: 0 -5px;
+      }
+    }
+  }
+
+  &__button-container {
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 30px;
+  }
+}
