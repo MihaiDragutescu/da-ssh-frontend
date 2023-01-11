@@ -1,0 +1,51 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.product-card {
+  padding: 0 20px;
+
+  &__image {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name,
+  &__price {
+    line-height: 1;
+    color: $color-brown-dark;
+  }
+
+  &__name {
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 50px;
+  }
+
+  &__collection {
+    font-size: 36px;
+    line-height: 43px;
+    font-family: $font-tertiary;
+    color: $color-brown;
+  }
+
+  &__category {
+    font-size: 44px;
+    line-height: 1.33;
+    font-family: $font-secondary;
+    color: $color-brown-dark;
+  }
+
+  &__button {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 12px;
+  }
+}
