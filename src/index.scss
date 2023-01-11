@@ -66,3 +66,12 @@ h3 {
   display: flex;
   flex-wrap: wrap;
 }
+
+.section-title {
+  text-transform: uppercase;
+  align-self: flex-start;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.75px;
+  text-align: start;
+}
