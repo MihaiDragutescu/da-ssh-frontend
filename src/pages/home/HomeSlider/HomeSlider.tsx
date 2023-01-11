@@ -3,12 +3,16 @@ import ProductCard from '@Components/ui/ProductCard';
 import Slider from 'react-slick';
 import image1 from '@Assets/images/card-image-1.png';
 import image2 from '@Assets/images/card-image-2.png';
+import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
+import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './HomeSlider.scss';
 import { useRef } from 'react';
 
 const HomeSlider: React.FC = () => {
+  let sliderRef = useRef<Slider>(null);
+
   const products = [
     {
       id: '1',
@@ -45,15 +49,54 @@ const HomeSlider: React.FC = () => {
       price: 525,
       link: '#',
     },
+    {
+      id: '6',
+      image: image2,
+      name: 'Brown overcoat',
+      price: 625,
+      link: '#',
+    },
   ];
 
   const settings = {
     infinite: true,
     autoplaySpeed: 2000,
     autoplay: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  };
+
+  const goToNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const goToPrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
   };
 
   const handleClick = () => {
@@ -67,9 +110,18 @@ const HomeSlider: React.FC = () => {
           <h2 className='home-slider__title section-title'>
             Discover your style
           </h2>
+          <div className='home-slider__navigation'>
+            <Prev
+              onClick={goToPrev}
+              className='home-slider__navigation--prev'
+            />
+            <Next
+              onClick={goToNext}
+              className='home-slider__navigation--next'
+            />
+          </div>
         </div>
-
-        <Slider {...settings}>
+        <Slider {...settings} ref={sliderRef}>
           {products.map((product, index) => {
             return (
               <ProductCard
@@ -82,7 +134,7 @@ const HomeSlider: React.FC = () => {
             );
           })}
         </Slider>
-        <div className='home-slider__button-container'>
+        <div className='home-slider__button-container ssh-container'>
           <Button onClick={handleClick}>See More</Button>
         </div>
       </div>
