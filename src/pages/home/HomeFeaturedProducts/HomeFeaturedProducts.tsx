@@ -7,10 +7,11 @@ import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
 import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './HomeSlider.scss';
+import { settings } from '@Utils/slider-config';
+import './HomeFeaturedProducts.scss';
 import { useRef } from 'react';
 
-const HomeSlider: React.FC = () => {
+const HomeFeaturedProducts: React.FC = () => {
   let sliderRef = useRef<Slider>(null);
 
   const products = [
@@ -57,35 +58,6 @@ const HomeSlider: React.FC = () => {
       link: '#',
     },
   ];
-
-  const settings = {
-    infinite: true,
-    autoplaySpeed: 2000,
-    autoplay: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1500,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-    ],
-  };
 
   const goToNext = () => {
     if (sliderRef.current) {
@@ -142,4 +114,4 @@ const HomeSlider: React.FC = () => {
   );
 };
 
-export default HomeSlider;
+export default HomeFeaturedProducts;

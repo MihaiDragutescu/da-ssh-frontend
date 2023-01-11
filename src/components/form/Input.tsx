@@ -14,7 +14,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = (props: InputProps) => {
   return (
-    <div className={'ssh-input ' + (props.className ? props.className : '')}>
+    <div className={`ssh-input ${props.className ?? ''}`}>
       <label>
         {props.label}
         <input

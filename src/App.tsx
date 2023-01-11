@@ -1,13 +1,13 @@
-import HomeBanner from '@App/pages/home/HomeBanner/HomeBanner';
-import HomeNewsletters from '@App/pages/home/HomeNewsletters/HomeNewsletters';
-import HomeSlider from '@App/pages/home/HomeSlider/HomeSlider';
+import HomeBanner from '@Pages/home/HomeBanner/HomeBanner';
+import HomeNewsletters from '@Pages/home/HomeNewsletters/HomeNewsletters';
+import HomeFeaturedProducts from '@Pages/home/HomeFeaturedProducts/HomeFeaturedProducts';
 import './App.scss';
 
 const App = () => {
   return (
     <div>
       <HomeBanner />
-      <HomeSlider />
+      <HomeFeaturedProducts />
       <HomeNewsletters />
     </div>
   );
