@@ -1,13 +1,17 @@
 import Button from '@Components/ui/Button';
+import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
 import './ProductCard.scss';
 
 interface ProductCardProps {
+  classname?: string;
   image: string;
   name?: string;
   price?: number;
   collection?: string;
   category?: string;
   link: string;
+  layout?: CardLayouts;
+  direction?: CardLayoutDirections;
   add_to_basket?: boolean;
 }
 
@@ -15,10 +19,17 @@ const handleClick = () => {
   console.log('Product added to basket');
 };
 
-const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
+const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
-    <div className='product-card'>
-      <a href={props.link}>
+    <div className={`product-card ${props.classname ?? ''}`}>
+      <a
+        href={props.link}
+        className={`product-card__layout-${
+          props.layout ?? CardLayouts.VERTICAL
+        } product-card__direction-${
+          props.direction ?? CardLayoutDirections.LEFT_TO_RIGHT
+        }`}
+      >
         <img className='product-card__image' src={props.image} alt='product' />
         <div className='product-card__content'>
           {props.name && (

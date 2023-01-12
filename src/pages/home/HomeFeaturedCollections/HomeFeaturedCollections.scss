@@ -1,0 +1,102 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.home-collections {
+  background-color: $primary-color;
+
+  &__container {
+    padding: $vertical-padding-desktop / 2 30px;
+
+    @include for-size(mobile) {
+      padding: $vertical-padding-tablet / 2 30px;
+    }
+  }
+
+  &__row {
+    flex-direction: column;
+  }
+
+  &__title-container {
+    margin-bottom: 50px;
+
+    @include for-size(mobile) {
+      justify-content: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1150px;
+    margin: 0 auto;
+
+    .collection-card {
+      width: 50%;
+      padding: 0;
+
+      @include for-size(mobile-small) {
+        width: 100%;
+      }
+
+      img {
+        max-height: 475px;
+        object-fit: cover;
+
+        @include for-size(mobile-small) {
+          max-height: 300px;
+        }
+      }
+    }
+
+    & > div:nth-child(3n + 1) {
+      padding: 0 5% 0 0;
+
+      @include for-size(mobile) {
+        padding-right: 15px;
+      }
+
+      @include for-size(mobile-small) {
+        padding: 0 0 30px 0;
+      }
+    }
+
+    & > div:nth-child(3n + 2) {
+      padding: 0 0 0 5%;
+
+      @include for-size(mobile) {
+        padding-left: 15px;
+      }
+
+      @include for-size(mobile-small) {
+        padding: 0 0 30px 0;
+      }
+    }
+
+    & > div:nth-child(3n) {
+      padding: 5% 0 0 0;
+
+      @include for-size(mobile) {
+        padding: 30px 0 30px 0;
+      }
+
+      @include for-size(mobile-small) {
+        padding: 0 0 30px 0;
+      }
+    }
+
+    & > div:last-child {
+      @include for-size(mobile-small) {
+        padding: 0;
+      }
+    }
+
+    .collection-card-large {
+      width: 100%;
+    }
+  }
+
+  &__button-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+}
