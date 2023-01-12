@@ -19,9 +19,23 @@ const Footer = () => {
             </span>
           </div>
           <div className='ssh-footer__col ssh-footer__socials'>
-            <Facebook />
-            <Twitter />
-            <Instagram />
+            <a
+              href='https://www.facebook.com/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <Facebook />
+            </a>
+            <a href='https://twitter.com/' target='_blank' rel='noreferrer'>
+              <Twitter />
+            </a>
+            <a
+              href='https://www.instagram.com/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <Instagram />
+            </a>
           </div>
           <div className='ssh-footer__col ssh-footer__links ssh-footer__links--left'>
             <Link to='/privacy-policy'>Privacy Policy</Link>
