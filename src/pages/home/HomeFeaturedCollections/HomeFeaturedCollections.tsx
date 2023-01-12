@@ -6,6 +6,7 @@ import { CardLayouts } from '@Types/layouts';
 import './HomeFeaturedCollections.scss';
 
 const HomeFeaturedCollections: React.FC = () => {
+  const checkIndex = (index: number) => index % 3 === 2;
   const collections = [
     {
       id: '1',
@@ -28,20 +29,13 @@ const HomeFeaturedCollections: React.FC = () => {
       category: 'Boots',
       link: '#',
     },
-  ].map((collection, index) => {
-    if (index % 3 === 2) {
-      return {
-        ...collection,
-        className: 'collection-card collection-card-large',
-        layout: CardLayouts.HORIZONTAL,
-      };
-    }
-    return {
-      ...collection,
-      className: 'collection-card',
-      layout: CardLayouts.VERTICAL,
-    };
-  });
+  ].map((collection, index) => ({
+    ...collection,
+    className: `collection-card ${
+      checkIndex(index) ? 'collection-card-large' : ''
+    }`,
+    layout: checkIndex(index) ? CardLayouts.HORIZONTAL : CardLayouts.VERTICAL,
+  }));
 
   const handleClick = () => {
     console.log('Button clicked');
