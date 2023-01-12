@@ -1,6 +1,6 @@
 import Button from '@Components/ui/Button';
 import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ProductCard.scss';
 
 interface ProductCardProps {
@@ -23,8 +23,8 @@ const handleClick = () => {
 const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
     <div className={`product-card ${props.classname ?? ''}`}>
-      <a
-        href={props.link}
+      <Link
+        to={props.link}
         className={`product-card__layout-${
           props.layout ?? CardLayouts.VERTICAL
         } product-card__direction-${
@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
             </Button>
           )}
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

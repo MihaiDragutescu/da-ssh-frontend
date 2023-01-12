@@ -5,10 +5,10 @@
   background-color: $primary-color;
 
   &__container {
-    padding: $vertical-padding-desktop / 2 30px;
+    padding: calc($vertical-padding-desktop / 2) 30px;
 
     @include for-size(mobile) {
-      padding: $vertical-padding-tablet / 2 30px;
+      padding: calc($vertical-padding-tablet / 2) 30px;
     }
   }
 

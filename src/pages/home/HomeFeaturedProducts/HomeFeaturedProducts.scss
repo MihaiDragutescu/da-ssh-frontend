@@ -3,11 +3,11 @@
 
 .home-slider {
   &__container {
-    padding: $vertical-padding-desktop / 2 0;
+    padding: calc($vertical-padding-desktop / 2) 0;
     max-width: initial;
 
     @include for-size(mobile) {
-      padding: $vertical-padding-tablet / 2 0;
+      padding: calc($vertical-padding-tablet / 2) 0;
     }
   }
 

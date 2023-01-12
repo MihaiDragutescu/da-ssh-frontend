@@ -5,6 +5,12 @@
 }
 
 @font-face {
+  font-family: YanoneKaffeesatz;
+  src: url('~@Assets/fonts/YanoneKaffeesatz/YanoneKaffeesatz-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
   font-family: NothingYouCouldDo;
   src: url('~@Assets/fonts/NothingYouCouldDo/NothingYouCouldDo-Regular.ttf');
   font-weight: 400;
@@ -25,6 +31,7 @@ $font-secondary: NothingYouCouldDo;
 $font-tertiary: DancingScript;
 $font-weight-texts: 300;
 $font-weight-titles: 400;
+$font-weight-footer: 600;
 $border-solid-1: 1px solid $color-brown;
 $vertical-padding-desktop: 120px;
 $vertical-padding-tablet: 80px;

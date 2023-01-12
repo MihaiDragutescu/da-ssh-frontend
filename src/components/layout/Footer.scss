@@ -1,2 +1,86 @@
 @use '@Styles/variables' as *;
 @use '@Styles/mixins' as *;
+
+.ssh-footer {
+  background-color: $secondary-color;
+  opacity: 0.5;
+
+  &__container {
+    padding: calc($vertical-padding-desktop / 2) 30px;
+  }
+
+  &__row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    @include for-size(tablet-portrait) {
+      width: 50%;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    @include for-size(tablet-portrait) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__copyright {
+    font-size: 28px;
+    line-height: 1;
+    color: $color-brown-dark;
+    font-weight: $font-weight-footer;
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin: 0 15px;
+    }
+
+    @include for-size(tablet-portrait) {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    @include for-size(mobile) {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      font-size: 32px;
+      font-weight: $font-weight-footer;
+      color: $color-brown-dark;
+    }
+
+    &--right {
+      align-items: flex-end;
+    }
+
+    &--left,
+    &--right {
+      @include for-size(tablet-portrait) {
+        align-items: center;
+      }
+    }
+  }
+}
