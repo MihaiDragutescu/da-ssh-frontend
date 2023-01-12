@@ -3,6 +3,7 @@ import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
 import './ProductCard.scss';
 
 interface ProductCardProps {
+  classname?: string;
   image: string;
   name?: string;
   price?: number;
@@ -20,7 +21,7 @@ const handleClick = () => {
 
 const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
-    <div className='product-card'>
+    <div className={`product-card ${props.classname ?? ''}`}>
       <a
         href={props.link}
         className={`product-card__layout-${
