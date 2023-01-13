@@ -8,6 +8,11 @@ body {
   font-family: $font-primary;
   font-weight: $font-weight-texts;
   box-sizing: border-box;
+  padding-top: 114px;
+
+  @include for-size(tablet-portrait) {
+    padding-top: 0;
+  }
 }
 
 h1,

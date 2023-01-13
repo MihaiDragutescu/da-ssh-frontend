@@ -34,6 +34,12 @@
       width: 50%;
       padding: 0;
 
+      & > a {
+        box-shadow: $box-shadow-primary;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
       @include for-size(mobile-small) {
         width: 100%;
       }
@@ -44,6 +50,17 @@
 
         @include for-size(mobile-small) {
           max-height: 300px;
+        }
+      }
+    }
+
+    & > div:nth-child(3n + 1),
+    & > div:nth-child(3n + 2) {
+      a {
+        display: block;
+
+        & > div {
+          padding: 0 20px;
         }
       }
     }

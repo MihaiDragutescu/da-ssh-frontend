@@ -6,7 +6,7 @@
   opacity: 0.5;
 
   &__container {
-    padding: calc($vertical-padding-desktop / 2) 30px;
+    padding: calc($vertical-padding-desktop / 2.5) 30px;
   }
 
   &__row {
@@ -70,6 +70,10 @@
       font-size: 32px;
       font-weight: $font-weight-footer;
       color: $color-brown-dark;
+    }
+
+    a.active-menu-link {
+      text-decoration: underline;
     }
 
     &--right {

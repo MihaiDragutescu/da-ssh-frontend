@@ -9,6 +9,14 @@
     @include for-size(desktop) {
       padding: 0 30px;
     }
+
+    @include for-size(tablet-landscape) {
+      padding-top: calc($vertical-padding-desktop / 3);
+    }
+
+    @include for-size(mobile) {
+      padding-top: calc($vertical-padding-desktop / 4);
+    }
   }
 
   &__title {

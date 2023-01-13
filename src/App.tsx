@@ -9,11 +9,12 @@ import ProfilePage from '@Pages/profile/ProfilePage';
 import Footer from '@Components/layout/Footer';
 import Header from '@Components/layout/Header';
 import { Route, Routes } from 'react-router-dom';
+import { Provider } from '@Context/activeMenuLink';
 import './App.scss';
 
 const App = () => {
   return (
-    <div>
+    <Provider>
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
@@ -29,7 +30,7 @@ const App = () => {
         <Route path='/profile' element={<ProfilePage />} />
       </Routes>
       <Footer />
-    </div>
+    </Provider>
   );
 };
 

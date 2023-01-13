@@ -4,12 +4,17 @@ import Input from '@Components/form/Input';
 import Search from '@Assets/images/search-icon.svg';
 import { ReactComponent as Cart } from '@Assets/images/basket-icon.svg';
 import { ReactComponent as Profile } from '@Assets/images/user-icon.svg';
+import { ActiveMenuLinkContextType } from '@Types/menu';
+import ActiveMenuLinkContext from '@Context/activeMenuLink';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
 const Header = () => {
   const [inputValue, setInputValue] = useState('');
   const [inputExpanded, setInputExpanded] = useState(false);
+  const { activeMenuLink, updateActiveMenuLink } = useContext(
+    ActiveMenuLinkContext
+  ) as ActiveMenuLinkContextType;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -36,14 +41,40 @@ const Header = () => {
       <div className='ssh-header__container ssh-container'>
         <div className='ssh-header__row ssh-row'>
           <div className='ssh-header__col ssh-header__logo'>
-            <Link to='/'>
+            <Link onClick={() => updateActiveMenuLink('/')} to='/'>
               <img src={logo} alt='logo' />
             </Link>
           </div>
           <div className='ssh-header__col ssh-header__links'>
-            <Link to='/'>Home</Link>
-            <Link to='/shop'>Shop</Link>
-            <Link to='/contact'>Contact</Link>
+            <div className='ssh-header__links-list'>
+              <Link
+                className={`${
+                  activeMenuLink === '/' ? 'active-menu-link' : ''
+                }`}
+                onClick={() => updateActiveMenuLink('/')}
+                to='/'
+              >
+                Home
+              </Link>
+              <Link
+                className={`${
+                  activeMenuLink === '/shop' ? 'active-menu-link' : ''
+                }`}
+                onClick={() => updateActiveMenuLink('/shop')}
+                to='/shop'
+              >
+                Shop
+              </Link>
+              <Link
+                className={`${
+                  activeMenuLink === '/contact' ? 'active-menu-link' : ''
+                }`}
+                onClick={() => updateActiveMenuLink('/contact')}
+                to='/contact'
+              >
+                Contact
+              </Link>
+            </div>
           </div>
           <div className='ssh-header__col ssh-header__icons'>
             <form onSubmit={handleSubmit}>
@@ -59,10 +90,23 @@ const Header = () => {
                 iconClick={handleSubmit}
               />
             </form>
-            <Link className='ssh-header__icons--cart' to='/cart'>
+            <Link
+              className={`ssh-header__icons--cart ${
+                activeMenuLink === '/cart' ? 'active-menu-link' : ''
+              }`}
+              onClick={() => updateActiveMenuLink('/cart')}
+              to='/cart'
+            >
               <Cart />
+              <span>9+</span>
             </Link>
-            <Link className='ssh-header__icons--profile' to='/profile'>
+            <Link
+              className={`ssh-header__icons--profile ${
+                activeMenuLink === '/profile' ? 'active-menu-link' : ''
+              }`}
+              onClick={() => updateActiveMenuLink('/profile')}
+              to='/profile'
+            >
               <Profile />
             </Link>
           </div>
