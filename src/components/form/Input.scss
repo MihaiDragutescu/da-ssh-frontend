@@ -3,31 +3,49 @@
 
 .ssh-input {
   width: 725px;
-  border-bottom: $border-solid-1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  position: relative;
 
   label {
     flex: 1;
+    border-bottom: $border-solid-1;
+
+    input {
+      font-size: 32px;
+      line-height: 1;
+      color: $color-brown;
+      padding: 12px;
+      width: 100%;
+      background-color: $color-transparent;
+
+      @include for-size(mobile) {
+        font-size: 28px;
+      }
+
+      &::placeholder {
+        color: $color-brown;
+        font-size: 32px;
+
+        @include for-size(mobile) {
+          font-size: 28px;
+        }
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    input.input-with-icon {
+      padding-right: 55px;
+    }
   }
 
-  input {
-    font-size: 32px;
-    line-height: 1;
-    color: $color-brown;
-    padding: 12px;
-    width: 100%;
-
-    @include for-size(mobile) {
-      font-size: 28px;
-    }
-
-    &::placeholder {
-      color: $color-brown;
-    }
-
-    &:focus-visible {
-      outline: none;
-    }
+  &__icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
   }
 }

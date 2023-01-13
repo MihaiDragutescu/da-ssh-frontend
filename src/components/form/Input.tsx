@@ -10,6 +10,7 @@ interface InputProps {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   icon?: string;
+  iconClick?: (event: React.MouseEvent<HTMLImageElement>) => void;
 }
 
 const Input: React.FC<InputProps> = (props: InputProps) => {
@@ -18,6 +19,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
       <label>
         {props.label}
         <input
+          className={`${props.icon ? 'input-with-icon' : ''}`}
           placeholder={props.placeholder}
           type={props.type}
           name={props.name}
@@ -26,7 +28,14 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
           value={props.value}
         />
       </label>
-      <img src={props.icon} alt='' />
+      {props.icon && (
+        <img
+          className='ssh-input__icon'
+          onClick={props.iconClick}
+          src={props.icon}
+          alt='input-icon'
+        />
+      )}
     </div>
   );
 };
