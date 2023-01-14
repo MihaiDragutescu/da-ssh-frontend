@@ -10,13 +10,20 @@
   box-shadow: $box-shadow-primary;
 
   @include for-size(tablet-portrait) {
-    position: relative;
-    margin: 0;
+    margin-top: -131px;
     box-shadow: initial;
+  }
+
+  @include for-size(mobile) {
+    margin-top: -121px;
   }
 
   &__container {
     padding: calc($vertical-padding-desktop / 4) 30px;
+
+    @include for-size(tablet-portrait) {
+      padding-bottom: 0;
+    }
   }
 
   &__row {
@@ -38,12 +45,64 @@
     a {
       display: inline-block;
       width: 150px;
+
+      @include for-size(tablet-portrait) {
+        width: 130px;
+      }
+
+      @include for-size(mobile) {
+        width: 110px;
+      }
+    }
+  }
+
+  &__mobile-icons {
+    display: none;
+    height: 100%;
+
+    @include for-size(tablet-portrait) {
+      display: block;
+      position: relative;
+    }
+
+    svg {
+      position: absolute;
+      left: 0;
+
+      transform: rotate(0);
+      cursor: pointer;
+      transition: all calc(500 * 1ms) cubic-bezier(0.42, 0.01, 0.58, 1);
+      opacity: 1;
+    }
+
+    &--expand {
+      width: 30px;
+      top: 0;
+
+      @include for-size(mobile) {
+        width: 24px;
+      }
+    }
+
+    &--collapse {
+      width: 28px;
+      top: -10%;
+
+      @include for-size(mobile) {
+        width: 22px;
+      }
+    }
+
+    .invisible-icon {
+      opacity: 0;
+      transform: rotate(360deg);
     }
   }
 
   &__links {
     @include for-size(tablet-portrait) {
       order: 1;
+      align-self: stretch;
     }
 
     &-list {
@@ -58,6 +117,11 @@
         left: 0;
         display: flex;
         flex-direction: column;
+        z-index: 10;
+        top: 84px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.75s ease-in-out;
       }
 
       a {
@@ -65,10 +129,28 @@
         font-size: 28px;
         line-height: 1;
         color: $color-brown;
+
+        @include for-size(tablet-portrait) {
+          width: 100%;
+          padding: 15px 30px;
+          background: $color-white;
+          border-bottom: $border-solid-menu;
+
+          &:last-of-type {
+            border-bottom: none;
+          }
+        }
       }
 
       a.active-menu-link {
         font-weight: 400;
+      }
+    }
+
+    &-list.mobile-visible {
+      @include for-size(tablet-portrait) {
+        max-height: 300px;
+        transition: all 0.5s ease-in-out;
       }
     }
   }
@@ -83,6 +165,15 @@
     &--profile {
       margin-left: 24px;
       z-index: 1;
+      @include for-size(mobile) {
+        margin-left: 12px;
+      }
+
+      svg {
+        @include for-size(mobile) {
+          width: 28px;
+        }
+      }
     }
 
     &--cart.active-menu-link,
@@ -109,6 +200,15 @@
         line-height: 1;
         color: $color-white;
         padding: 5px 4px 5px 6px;
+
+        @include for-size(mobile) {
+          height: 16px;
+          width: 16px;
+          font-size: 11px;
+          top: 4px;
+          right: -5px;
+          padding: 3px 4px 5px 5px;
+        }
       }
     }
 
@@ -132,9 +232,23 @@
       input {
         font-size: 28px;
 
+        @include for-size(mobile) {
+          font-size: 24px;
+        }
+
         &::placeholder {
           font-size: 28px;
+
+          @include for-size(mobile) {
+            font-size: 24px;
+          }
         }
+      }
+    }
+
+    img {
+      @include for-size(mobile) {
+        width: 28px;
       }
     }
   }
@@ -143,6 +257,33 @@
     label {
       max-width: 100%;
       opacity: 1;
+    }
+  }
+
+  &__search-mobile {
+    display: none;
+    width: 100%;
+    order: 4;
+
+    @include for-size(tablet-portrait) {
+      display: block;
+    }
+
+    label {
+      max-width: initial;
+      opacity: 1;
+
+      input {
+        padding: 20px 55px 12px 4px;
+
+        @include for-size(mobile) {
+          padding-bottom: 6px;
+        }
+      }
+    }
+
+    .ssh-input__icon {
+      right: 4px;
     }
   }
 }

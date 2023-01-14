@@ -17,23 +17,25 @@ const App = () => {
   return (
     <Provider>
       <Header />
-      <Routes>
-        <Route path={RouterPaths.HOME} element={<HomePage />} />
-        <Route path={RouterPaths.SHOP} element={<ProductsListPage />} />
-        <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
-        <Route path={RouterPaths.CART} element={<CartPage />} />
-        <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
-        <Route
-          path={RouterPaths.PRIVACY_POLICY}
-          element={<PrivacyPolicyPage />}
-        />
-        <Route
-          path={RouterPaths.TERMS_AND_CONDITIONS}
-          element={<TermsAndConditionsPage />}
-        />
-        <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
-      </Routes>
-      <Footer />
+      <div id='search-overlay-container'>
+        <Routes>
+          <Route path={RouterPaths.HOME} element={<HomePage />} />
+          <Route path={RouterPaths.SHOP} element={<ProductsListPage />} />
+          <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
+          <Route path={RouterPaths.CART} element={<CartPage />} />
+          <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
+          <Route
+            path={RouterPaths.PRIVACY_POLICY}
+            element={<PrivacyPolicyPage />}
+          />
+          <Route
+            path={RouterPaths.TERMS_AND_CONDITIONS}
+            element={<TermsAndConditionsPage />}
+          />
+          <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
+        </Routes>
+        <Footer />
+      </div>
     </Provider>
   );
 };

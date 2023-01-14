@@ -6,6 +6,8 @@ interface InputProps {
   placeholder?: string;
   type: React.HTMLInputTypeAttribute;
   name?: string;
+  validationText?: string;
+  showValidation?: boolean;
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
@@ -28,6 +30,11 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
           value={props.value}
         />
       </label>
+      {props.showValidation && props.validationText && (
+        <span className='ssh-input__validation-text'>
+          {props.validationText}
+        </span>
+      )}
       {props.icon && (
         <img
           className='ssh-input__icon'

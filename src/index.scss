@@ -11,7 +11,11 @@ body {
   padding-top: 114px;
 
   @include for-size(tablet-portrait) {
-    padding-top: 0;
+    padding-top: 131px;
+  }
+
+  @include for-size(mobile) {
+    padding-top: 121px;
   }
 }
 
