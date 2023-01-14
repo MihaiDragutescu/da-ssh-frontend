@@ -10,6 +10,7 @@ import Footer from '@Components/layout/Footer';
 import Header from '@Components/layout/Header';
 import { Route, Routes } from 'react-router-dom';
 import { Provider } from '@Context/activeMenuLink';
+import { RouterPaths } from '@Types/routerPaths';
 import './App.scss';
 
 const App = () => {
@@ -17,17 +18,20 @@ const App = () => {
     <Provider>
       <Header />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
+        <Route path={RouterPaths.HOME} element={<HomePage />} />
+        <Route path={RouterPaths.SHOP} element={<ProductsListPage />} />
+        <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
+        <Route path={RouterPaths.CART} element={<CartPage />} />
+        <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
         <Route
-          path='/terms-and-conditions'
+          path={RouterPaths.PRIVACY_POLICY}
+          element={<PrivacyPolicyPage />}
+        />
+        <Route
+          path={RouterPaths.TERMS_AND_CONDITIONS}
           element={<TermsAndConditionsPage />}
         />
-        <Route path='/shop' element={<ProductsListPage />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/cart' element={<CartPage />} />
-        <Route path='/profile' element={<ProfilePage />} />
+        <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
       </Routes>
       <Footer />
     </Provider>

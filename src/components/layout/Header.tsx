@@ -8,6 +8,7 @@ import { ActiveMenuLinkContextType } from '@Types/menu';
 import ActiveMenuLinkContext from '@Context/activeMenuLink';
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
+import { RouterPaths } from '@Types/routerPaths';
 
 const Header = () => {
   const [inputValue, setInputValue] = useState('');
@@ -41,7 +42,10 @@ const Header = () => {
       <div className='ssh-header__container ssh-container'>
         <div className='ssh-header__row ssh-row'>
           <div className='ssh-header__col ssh-header__logo'>
-            <Link onClick={() => updateActiveMenuLink('/')} to='/'>
+            <Link
+              onClick={() => updateActiveMenuLink(RouterPaths.HOME)}
+              to={RouterPaths.HOME}
+            >
               <img src={logo} alt='logo' />
             </Link>
           </div>
@@ -49,28 +53,30 @@ const Header = () => {
             <div className='ssh-header__links-list'>
               <Link
                 className={`${
-                  activeMenuLink === '/' ? 'active-menu-link' : ''
+                  activeMenuLink === RouterPaths.HOME ? 'active-menu-link' : ''
                 }`}
-                onClick={() => updateActiveMenuLink('/')}
-                to='/'
+                onClick={() => updateActiveMenuLink(RouterPaths.HOME)}
+                to={RouterPaths.HOME}
               >
                 Home
               </Link>
               <Link
                 className={`${
-                  activeMenuLink === '/shop' ? 'active-menu-link' : ''
+                  activeMenuLink === RouterPaths.SHOP ? 'active-menu-link' : ''
                 }`}
-                onClick={() => updateActiveMenuLink('/shop')}
-                to='/shop'
+                onClick={() => updateActiveMenuLink(RouterPaths.SHOP)}
+                to={RouterPaths.SHOP}
               >
                 Shop
               </Link>
               <Link
                 className={`${
-                  activeMenuLink === '/contact' ? 'active-menu-link' : ''
+                  activeMenuLink === RouterPaths.CONTACT
+                    ? 'active-menu-link'
+                    : ''
                 }`}
-                onClick={() => updateActiveMenuLink('/contact')}
-                to='/contact'
+                onClick={() => updateActiveMenuLink(RouterPaths.CONTACT)}
+                to={RouterPaths.CONTACT}
               >
                 Contact
               </Link>
@@ -92,20 +98,20 @@ const Header = () => {
             </form>
             <Link
               className={`ssh-header__icons--cart ${
-                activeMenuLink === '/cart' ? 'active-menu-link' : ''
+                activeMenuLink === RouterPaths.CART ? 'active-menu-link' : ''
               }`}
-              onClick={() => updateActiveMenuLink('/cart')}
-              to='/cart'
+              onClick={() => updateActiveMenuLink(RouterPaths.CART)}
+              to={RouterPaths.CART}
             >
               <Cart />
               <span>9+</span>
             </Link>
             <Link
               className={`ssh-header__icons--profile ${
-                activeMenuLink === '/profile' ? 'active-menu-link' : ''
+                activeMenuLink === RouterPaths.PROFILE ? 'active-menu-link' : ''
               }`}
-              onClick={() => updateActiveMenuLink('/profile')}
-              to='/profile'
+              onClick={() => updateActiveMenuLink(RouterPaths.PROFILE)}
+              to={RouterPaths.PROFILE}
             >
               <Profile />
             </Link>
