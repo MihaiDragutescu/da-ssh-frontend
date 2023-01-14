@@ -9,6 +9,7 @@ interface InputProps {
   validationText?: string;
   showValidation?: boolean;
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   icon?: string;
@@ -26,6 +27,7 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
           type={props.type}
           name={props.name}
           onBlur={props.onBlur}
+          onFocus={props.onFocus}
           onChange={props.onChange}
           value={props.value}
         />

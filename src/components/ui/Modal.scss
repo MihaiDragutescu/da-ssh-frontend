@@ -1,0 +1,11 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-modal {
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0.8;
+    background-color: $color-overlay;
+  }
+}

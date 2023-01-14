@@ -2,6 +2,7 @@ import './Header.scss';
 import logo from '@Assets/images/logo.png';
 import Input from '@Components/form/Input';
 import Search from '@Assets/images/search-icon.svg';
+import Modal from '@Components/ui/Modal';
 import { ReactComponent as Cart } from '@Assets/images/basket-icon.svg';
 import { ReactComponent as Profile } from '@Assets/images/user-icon.svg';
 import { ReactComponent as MenuExpand } from '@Assets/images/menu-bars.svg';
@@ -20,6 +21,7 @@ const Header = () => {
   ) as ActiveMenuLinkContextType;
   const [mobileMenuExpanded, setMobileMenuExpanded] = useState(false);
   const [showValidationText, setshowValidationText] = useState(false);
+  const [showSearchOverlay, setShowSearchOverlay] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -62,6 +64,16 @@ const Header = () => {
     setMobileMenuExpanded(false);
     updateActiveMenuLink(path);
   };
+
+  const showOverlay = () => {
+    setShowSearchOverlay(true);
+  };
+
+  const hideOverlay = () => {
+    setShowSearchOverlay(false);
+  };
+
+  const modal = <Modal onClose={hideOverlay} />;
 
   return (
     <footer className='ssh-header'>
@@ -170,6 +182,8 @@ const Header = () => {
                 type='text'
                 value={inputValue}
                 onChange={handleChange}
+                onBlur={hideOverlay}
+                onFocus={showOverlay}
                 icon={Search}
                 iconClick={handleSubmitMobile}
               />
@@ -177,6 +191,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {showSearchOverlay && modal}
     </footer>
   );
 };

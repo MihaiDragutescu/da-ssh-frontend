@@ -45,10 +45,13 @@
 
   &__validation-text {
     position: absolute;
-    bottom: -23px;
+    bottom: -27px;
     left: 6px;
     font-size: 14px;
     color: $color-error;
+    background-color: $primary-color;
+    padding: 3px 6px;
+    border-radius: 0 0 3px 3px;
   }
 
   &__icon {
