@@ -8,15 +8,6 @@ body {
   font-family: $font-primary;
   font-weight: $font-weight-texts;
   box-sizing: border-box;
-  padding-top: 114px;
-
-  @include for-size(tablet-portrait) {
-    padding-top: 131px;
-  }
-
-  @include for-size(mobile) {
-    padding-top: 121px;
-  }
 }
 
 h1,
@@ -89,5 +80,13 @@ h3 {
 
   @include for-size(mobile) {
     text-align: center;
+  }
+}
+
+#search-overlay-container {
+  padding-top: 114px;
+
+  @include for-size(tablet-portrait) {
+    padding-top: 151px;
   }
 }

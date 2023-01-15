@@ -29,6 +29,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 40px;
+    }
+
+    @include for-size(mobile) {
       margin-bottom: 15px;
     }
   }
@@ -52,12 +56,12 @@
 
     @include for-size(tablet-portrait) {
       justify-content: center;
-      margin-bottom: 15px;
+      margin-bottom: 40px;
     }
 
     @include for-size(mobile) {
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
 
@@ -66,7 +70,7 @@
     flex-direction: column;
     justify-content: center;
 
-    a {
+    a.ssh-footer__link {
       font-size: 32px;
       font-weight: $font-weight-footer;
       color: $color-brown-dark;

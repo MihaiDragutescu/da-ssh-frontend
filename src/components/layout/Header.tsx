@@ -10,7 +10,7 @@ import { ReactComponent as MenuCollapse } from '@Assets/images/menu-xmark.svg';
 import { ActiveMenuLinkContextType } from '@Types/menu';
 import ActiveMenuLinkContext from '@Context/activeMenuLink';
 import { Link } from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 
 const Header: React.FC = () => {
@@ -55,9 +55,31 @@ const Header: React.FC = () => {
     updateActiveMenuLink(path);
   };
 
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    const headerElement = document.querySelector('.ssh-header');
+    const headerSearch = document.querySelector('.ssh-header__search-mobile');
+
+    if (position > 50) {
+      headerElement!.classList.add('ssh-header--scrolled');
+      headerSearch!.classList.add('hidden');
+    } else {
+      headerElement!.classList.remove('ssh-header--scrolled');
+      headerSearch!.classList.remove('hidden');
+    }
+  };
+
   const hideOverlay = () => {
     setShowSearchOverlay(false);
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const menuLink = (
     route: RouterPaths,
@@ -66,7 +88,7 @@ const Header: React.FC = () => {
   ): React.ReactElement => {
     return (
       <Link
-        className={`${classes} ${
+        className={`${classes ?? 'ssh-header__link'} ${
           activeMenuLink === route ? activeMenuLinkClass : ''
         }`}
         onClick={() => handleLinkClick(route)}
@@ -85,7 +107,7 @@ const Header: React.FC = () => {
   );
 
   return (
-    <footer className='ssh-header'>
+    <header className='ssh-header'>
       <div className='ssh-header__container ssh-container'>
         <div className='ssh-header__row ssh-row'>
           <div className='ssh-header__col ssh-header__logo'>
@@ -165,7 +187,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       {showSearchOverlay && modal}
-    </footer>
+    </header>
   );
 };
 

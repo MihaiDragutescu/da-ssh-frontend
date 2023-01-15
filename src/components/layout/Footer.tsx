@@ -22,7 +22,9 @@ const Footer: React.FC = () => {
   ): React.ReactElement => {
     return (
       <Link
-        className={`${activeMenuLink === route ? activeMenuLinkClass : ''}`}
+        className={`ssh-footer__link ${
+          activeMenuLink === route ? activeMenuLinkClass : ''
+        }`}
         onClick={() => updateActiveMenuLink(route)}
         to={route}
       >

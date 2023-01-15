@@ -22,7 +22,9 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
       <label>
         {props.label}
         <input
-          className={`${props.icon ? 'input-with-icon' : ''}`}
+          className={`ssh-input--simple ${
+            props.icon ? 'ssh-input--with-icon' : ''
+          }`}
           placeholder={props.placeholder}
           type={props.type}
           name={props.name}

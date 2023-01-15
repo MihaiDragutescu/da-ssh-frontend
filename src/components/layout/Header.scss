@@ -5,24 +5,13 @@
   background-color: $primary-color;
   position: fixed;
   width: 100%;
-  margin-top: -114px;
   z-index: 10;
-  box-shadow: $box-shadow-primary;
-
-  @include for-size(tablet-portrait) {
-    margin-top: -131px;
-    box-shadow: initial;
-  }
-
-  @include for-size(mobile) {
-    margin-top: -121px;
-  }
 
   &__container {
     padding: calc($vertical-padding-desktop / 4) 30px;
 
     @include for-size(tablet-portrait) {
-      padding-bottom: 0;
+      padding-bottom: 30px;
     }
   }
 
@@ -124,7 +113,7 @@
         transition: all 0.75s ease-in-out;
       }
 
-      a {
+      a.ssh-header__link {
         text-transform: uppercase;
         font-size: 28px;
         line-height: 1;
@@ -286,4 +275,8 @@
       right: 4px;
     }
   }
+}
+
+.ssh-header--scrolled {
+  box-shadow: $box-shadow-primary;
 }
