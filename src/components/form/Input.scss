@@ -14,7 +14,7 @@
   }
 
   &--simple {
-    font-size: 32px;
+    font-size: $input-size;
     line-height: 1;
     color: $color-brown;
     padding: 12px;
@@ -22,15 +22,15 @@
     background-color: $color-transparent;
 
     @include for-size(mobile) {
-      font-size: 28px;
+      font-size: $input-size-small;
     }
 
     &::placeholder {
       color: $color-brown;
-      font-size: 32px;
+      font-size: $input-size;
 
       @include for-size(mobile) {
-        font-size: 28px;
+        font-size: $input-size-small;
       }
     }
 
@@ -47,7 +47,7 @@
     position: absolute;
     bottom: -27px;
     left: 6px;
-    font-size: 14px;
+    font-size: $validation-message-size;
     color: $color-error;
     padding: 3px 6px;
     border-radius: 0 0 3px 3px;

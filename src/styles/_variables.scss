@@ -43,15 +43,28 @@ $color-white: #ffff;
 $color-black: #00000010;
 $color-error: #ff0000;
 $color-overlay: #553e3e66;
+
 $font-primary: YanoneKaffeesatz;
 $font-secondary: NothingYouCouldDo;
 $font-tertiary: DancingScript;
+
 $font-weight-texts: 300;
 $font-weight-titles: 400;
 $font-weight-footer: 600;
+
 $border-solid-brown: 1px solid $color-brown;
 $border-solid-menu: 1px solid rgba($color-black, 0.1);
 $box-shadow-primary: 0px 2px 6px rgba($color-brown, 0.2);
+
 $vertical-padding-desktop: 120px;
 $vertical-padding-tablet: 80px;
 $vertical-padding-mobile: 64px;
+
+$input-size: 32px;
+$input-size-small: 28px;
+$validation-message-size: 14px;
+$input-search-size: 28px;
+$input-search-size-small: 24px;
+$title-size: 56px;
+$title-size-small: 45px;
+$card-text-size: 36px;

@@ -24,10 +24,10 @@ h6 {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: $title-size;
 
   @include for-size(mobile) {
-    font-size: 45px;
+    font-size: $title-size-small;
   }
 }
 

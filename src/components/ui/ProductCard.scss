@@ -73,57 +73,57 @@
   }
 
   &__name {
-    font-size: 36px;
+    font-size: $card-text-size;
     text-transform: uppercase;
 
     @include for-size(tablet-portrait) {
-      font-size: 32px;
+      font-size: calc($card-text-size - 4px);
     }
 
     @include for-size(mobile) {
-      font-size: 24px;
+      font-size: calc($card-text-size - 12px);
     }
   }
 
   &__price {
-    font-size: 50px;
+    font-size: calc($card-text-size + 4px);
 
     @include for-size(tablet-portrait) {
-      font-size: 45px;
+      font-size: $card-text-size;
     }
 
     @include for-size(mobile) {
-      font-size: 32px;
+      font-size: calc($card-text-size - 8px);
     }
   }
 
   &__collection {
-    font-size: 36px;
+    font-size: $card-text-size;
     line-height: 1.2;
     font-family: $font-tertiary;
     color: $color-brown;
 
     @include for-size(tablet-portrait) {
-      font-size: 32px;
+      font-size: calc($card-text-size - 4px);
     }
 
     @include for-size(mobile) {
-      font-size: 24px;
+      font-size: calc($card-text-size - 8px);
     }
   }
 
   &__category {
-    font-size: 44px;
+    font-size: calc($card-text-size + 8px);
     line-height: 1.33;
     font-family: $font-secondary;
     color: $color-brown-dark;
 
     @include for-size(tablet-portrait) {
-      font-size: 40px;
+      font-size: calc($card-text-size + 4px);
     }
 
     @include for-size(mobile) {
-      font-size: 30px;
+      font-size: calc($card-text-size - 6px);
     }
   }
 
