@@ -13,46 +13,36 @@ import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 
-const Header = () => {
+const Header: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [inputExpanded, setInputExpanded] = useState(false);
+  const [mobileMenuExpanded, setMobileMenuExpanded] = useState(false);
+  const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const { activeMenuLink, updateActiveMenuLink } = useContext(
     ActiveMenuLinkContext
   ) as ActiveMenuLinkContextType;
-  const [mobileMenuExpanded, setMobileMenuExpanded] = useState(false);
-  const [showValidationText, setshowValidationText] = useState(false);
-  const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+
+  const activeMenuLinkClass = 'active-menu-link';
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = (
-    event: React.MouseEvent<HTMLImageElement> | React.FormEvent<HTMLFormElement>
+    event:
+      | React.MouseEvent<HTMLImageElement>
+      | React.FormEvent<HTMLFormElement>,
+    isMobile: boolean = false
   ) => {
     event.preventDefault();
 
-    if (
-      inputValue &&
-      (event.type === 'submit' || (event.type === 'click' && inputExpanded))
-    ) {
-      console.log(`Searching ${inputValue} ...`);
-      setInputValue('');
-    } else {
-      setInputExpanded(!inputExpanded);
-    }
-  };
-
-  const handleSubmitMobile = (
-    event: React.MouseEvent<HTMLImageElement> | React.FormEvent<HTMLFormElement>
-  ) => {
-    event.preventDefault();
     if (inputValue) {
       console.log(`Searching ${inputValue} ...`);
       setInputValue('');
-      setshowValidationText(false);
     } else {
-      setshowValidationText(true);
+      if (!isMobile) {
+        setInputExpanded(!inputExpanded);
+      }
     }
   };
 
@@ -65,27 +55,41 @@ const Header = () => {
     updateActiveMenuLink(path);
   };
 
-  const showOverlay = () => {
-    setShowSearchOverlay(true);
-  };
-
   const hideOverlay = () => {
     setShowSearchOverlay(false);
   };
 
-  const modal = <Modal onClose={hideOverlay} />;
+  const menuLink = (
+    route: RouterPaths,
+    content: React.ReactElement,
+    classes?: string
+  ): React.ReactElement => {
+    return (
+      <Link
+        className={`${classes} ${
+          activeMenuLink === route ? activeMenuLinkClass : ''
+        }`}
+        onClick={() => handleLinkClick(route)}
+        to={route}
+      >
+        {content}
+      </Link>
+    );
+  };
+
+  const modal = (
+    <Modal
+      onClose={hideOverlay}
+      container={document.querySelector('#search-overlay-container')!}
+    />
+  );
 
   return (
     <footer className='ssh-header'>
       <div className='ssh-header__container ssh-container'>
         <div className='ssh-header__row ssh-row'>
           <div className='ssh-header__col ssh-header__logo'>
-            <Link
-              onClick={() => handleLinkClick(RouterPaths.HOME)}
-              to={RouterPaths.HOME}
-            >
-              <img src={logo} alt='logo' />
-            </Link>
+            {menuLink(RouterPaths.HOME, <img src={logo} alt='logo' />)}
           </div>
           <div className='ssh-header__col ssh-header__links'>
             <div className='ssh-header__mobile-icons'>
@@ -107,35 +111,9 @@ const Header = () => {
                 mobileMenuExpanded ? 'mobile-visible' : ''
               }`}
             >
-              <Link
-                className={`${
-                  activeMenuLink === RouterPaths.HOME ? 'active-menu-link' : ''
-                }`}
-                onClick={() => handleLinkClick(RouterPaths.HOME)}
-                to={RouterPaths.HOME}
-              >
-                Home
-              </Link>
-              <Link
-                className={`${
-                  activeMenuLink === RouterPaths.SHOP ? 'active-menu-link' : ''
-                }`}
-                onClick={() => handleLinkClick(RouterPaths.SHOP)}
-                to={RouterPaths.SHOP}
-              >
-                Shop
-              </Link>
-              <Link
-                className={`${
-                  activeMenuLink === RouterPaths.CONTACT
-                    ? 'active-menu-link'
-                    : ''
-                }`}
-                onClick={() => handleLinkClick(RouterPaths.CONTACT)}
-                to={RouterPaths.CONTACT}
-              >
-                Contact
-              </Link>
+              {menuLink(RouterPaths.HOME, <>Home</>)}
+              {menuLink(RouterPaths.SHOP, <>Shop</>)}
+              {menuLink(RouterPaths.CONTACT, <>Contact</>)}
             </div>
           </div>
           <div className='ssh-header__col ssh-header__icons'>
@@ -152,40 +130,35 @@ const Header = () => {
                 iconClick={handleSubmit}
               />
             </form>
-            <Link
-              className={`ssh-header__icons--cart ${
-                activeMenuLink === RouterPaths.CART ? 'active-menu-link' : ''
-              }`}
-              onClick={() => handleLinkClick(RouterPaths.CART)}
-              to={RouterPaths.CART}
-            >
-              <Cart />
-              <span>9+</span>
-            </Link>
-            <Link
-              className={`ssh-header__icons--profile ${
-                activeMenuLink === RouterPaths.PROFILE ? 'active-menu-link' : ''
-              }`}
-              onClick={() => handleLinkClick(RouterPaths.PROFILE)}
-              to={RouterPaths.PROFILE}
-            >
-              <Profile />
-            </Link>
+
+            {menuLink(
+              RouterPaths.CART,
+              <>
+                <Cart />
+                <span>9+</span>
+              </>,
+              'ssh-header__icons--cart'
+            )}
+            {menuLink(
+              RouterPaths.PROFILE,
+              <Profile />,
+              'ssh-header__icons--profile'
+            )}
           </div>
           <div className='ssh-header__col ssh-header__search-mobile'>
-            <form onSubmit={handleSubmitMobile}>
+            <form onSubmit={handleSubmit}>
               <Input
-                validationText='The field is empty.'
-                showValidation={showValidationText}
                 className='ssh-header__input'
                 placeholder='Search...'
                 type='text'
                 value={inputValue}
                 onChange={handleChange}
                 onBlur={hideOverlay}
-                onFocus={showOverlay}
+                onFocus={() => {
+                  setShowSearchOverlay(true);
+                }}
                 icon={Search}
-                iconClick={handleSubmitMobile}
+                iconClick={handleSubmit}
               />
             </form>
           </div>

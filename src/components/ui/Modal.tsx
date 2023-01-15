@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 interface ModalProps {
   children?: React.ReactNode;
   onClose: React.MouseEventHandler<HTMLDivElement>;
+  container: Element;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
@@ -20,7 +21,7 @@ const Modal: React.FC<ModalProps> = (props) => {
       <div onClick={props.onClose} className='ssh-modal__overlay'></div>
       {props.children}
     </div>,
-    document.querySelector('#search-overlay-container')!
+    props.container
   );
 };
 

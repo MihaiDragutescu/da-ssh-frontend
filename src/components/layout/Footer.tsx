@@ -9,22 +9,34 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const { activeMenuLink, updateActiveMenuLink } = useContext(
     ActiveMenuLinkContext
   ) as ActiveMenuLinkContextType;
+
+  const activeMenuLinkClass = 'active-menu-link';
+
+  const menuLink = (
+    route: RouterPaths,
+    content: React.ReactElement
+  ): React.ReactElement => {
+    return (
+      <Link
+        className={`${activeMenuLink === route ? activeMenuLinkClass : ''}`}
+        onClick={() => updateActiveMenuLink(route)}
+        to={route}
+      >
+        {content}
+      </Link>
+    );
+  };
 
   return (
     <footer className='ssh-footer'>
       <div className='ssh-footer__container ssh-container'>
         <div className='ssh-footer__row ssh-row'>
           <div className='ssh-footer__col ssh-footer__logo'>
-            <Link
-              onClick={() => updateActiveMenuLink(RouterPaths.HOME)}
-              to={RouterPaths.HOME}
-            >
-              <img src={logo} alt='logo' />
-            </Link>
+            {menuLink(RouterPaths.HOME, <img src={logo} alt='logo' />)}
             <span className='ssh-footer__copyright'>
               © 2022 All rights reserved
             </span>
@@ -49,50 +61,15 @@ const Footer = () => {
             </a>
           </div>
           <div className='ssh-footer__col ssh-footer__links ssh-footer__links--left'>
-            <Link
-              className={`${
-                activeMenuLink === RouterPaths.PRIVACY_POLICY
-                  ? 'active-menu-link'
-                  : ''
-              }`}
-              onClick={() => updateActiveMenuLink(RouterPaths.PRIVACY_POLICY)}
-              to={RouterPaths.PRIVACY_POLICY}
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              className={`${
-                activeMenuLink === RouterPaths.TERMS_AND_CONDITIONS
-                  ? 'active-menu-link'
-                  : ''
-              }`}
-              onClick={() =>
-                updateActiveMenuLink(RouterPaths.TERMS_AND_CONDITIONS)
-              }
-              to={RouterPaths.TERMS_AND_CONDITIONS}
-            >
-              Terms and Conditions
-            </Link>
+            {menuLink(RouterPaths.PRIVACY_POLICY, <>Privacy Policy</>)}
+            {menuLink(
+              RouterPaths.TERMS_AND_CONDITIONS,
+              <>Terms and Conditions</>
+            )}
           </div>
           <div className='ssh-footer__col ssh-footer__links ssh-footer__links--right'>
-            <Link
-              className={`${
-                activeMenuLink === RouterPaths.CONTACT ? 'active-menu-link' : ''
-              }`}
-              onClick={() => updateActiveMenuLink(RouterPaths.CONTACT)}
-              to={RouterPaths.CONTACT}
-            >
-              Contact
-            </Link>
-            <Link
-              className={`${
-                activeMenuLink === RouterPaths.ABOUT ? 'active-menu-link' : ''
-              }`}
-              onClick={() => updateActiveMenuLink(RouterPaths.ABOUT)}
-              to={RouterPaths.ABOUT}
-            >
-              About Us
-            </Link>
+            {menuLink(RouterPaths.CONTACT, <>Contact</>)}
+            {menuLink(RouterPaths.ABOUT, <>About Us</>)}
           </div>
         </div>
       </div>
