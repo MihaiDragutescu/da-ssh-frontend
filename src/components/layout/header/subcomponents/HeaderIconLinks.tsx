@@ -1,4 +1,4 @@
-import MenuLink from '../../MenuLink';
+import MenuLink from '../../shared/MenuLink';
 import Input from '@Components/form/Input';
 import { RouterPaths } from '@Types/routerPaths';
 import { ReactComponent as Cart } from '@Assets/images/basket-icon.svg';

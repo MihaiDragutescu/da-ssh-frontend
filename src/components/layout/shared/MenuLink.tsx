@@ -19,7 +19,7 @@ const MenuLink: React.FC<MenuLinkProps> = (props: MenuLinkProps) => {
   const handleLinkClick = (route: string) => {
     updateActiveMenuLink(route);
 
-    if (props.handleLinkClick) {
+    if (props.handleLinkClick !== undefined) {
       props.handleLinkClick();
     }
   };

@@ -2,7 +2,7 @@ import './Footer.scss';
 import FooterSocials from './subcomponents/FooterSocials';
 import logo from '@Assets/images/logo.png';
 import { RouterPaths } from '@Types/routerPaths';
-import MenuLink from '../MenuLink';
+import MenuLink from '../shared/MenuLink';
 
 const Footer: React.FC = () => {
   return (

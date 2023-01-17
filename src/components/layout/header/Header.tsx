@@ -4,7 +4,7 @@ import Modal from '@Components/ui/Modal';
 import HeaderLinks from './subcomponents/HeaderLinks';
 import HeaderMobileSearch from './subcomponents/HeaderMobileSearch';
 import HeaderIconLinks from './subcomponents/HeaderIconLinks';
-import MenuLink from '../MenuLink';
+import MenuLink from '../shared/MenuLink';
 import { useState, useEffect } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 

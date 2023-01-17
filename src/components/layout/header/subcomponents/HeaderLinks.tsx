@@ -1,6 +1,6 @@
 import { ReactComponent as MenuExpand } from '@Assets/images/menu-bars.svg';
 import { ReactComponent as MenuCollapse } from '@Assets/images/menu-xmark.svg';
-import MenuLink from '../../MenuLink';
+import MenuLink from '../../shared/MenuLink';
 import { RouterPaths } from '@Types/routerPaths';
 import './HeaderLinks.scss';
 
