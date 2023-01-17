@@ -8,11 +8,11 @@
   }
 
   &__title {
-    font-size: 56px;
+    font-size: $title-size;
     margin-bottom: 20px;
 
     @include for-size(mobile) {
-      font-size: 45px;
+      font-size: $title-size-small;
     }
   }
 
@@ -31,6 +31,10 @@
 
     @include for-size(desktop) {
       width: 315px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 26px;
     }
   }
 }

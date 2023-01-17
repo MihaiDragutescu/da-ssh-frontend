@@ -5,6 +5,7 @@
       "@App/*": ["./*"],
       "@Assets/*": ["./assets/*"],
       "@Components/*": ["./components/*"],
+      "@Context/*": ["./context/*"],
       "@Pages/*": ["./pages/*"],
       "@Styles/*": ["./styles/*"],
       "@Types/*": ["./types/*"],

@@ -60,15 +60,11 @@ const HomeFeaturedProducts: React.FC = () => {
   ];
 
   const goToNext = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
+    sliderRef.current?.slickNext();
   };
 
   const goToPrev = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
+    sliderRef.current?.slickPrev();
   };
 
   const handleClick = () => {

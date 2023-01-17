@@ -6,10 +6,14 @@ interface InputProps {
   placeholder?: string;
   type: React.HTMLInputTypeAttribute;
   name?: string;
+  validationText?: string;
+  showValidation?: boolean;
   onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   icon?: string;
+  iconClick?: (event: React.MouseEvent<HTMLImageElement>) => void;
 }
 
 const Input: React.FC<InputProps> = (props: InputProps) => {
@@ -18,15 +22,31 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
       <label>
         {props.label}
         <input
+          className={`ssh-input--simple ${
+            props.icon ? 'ssh-input--with-icon' : ''
+          }`}
           placeholder={props.placeholder}
           type={props.type}
           name={props.name}
           onBlur={props.onBlur}
+          onFocus={props.onFocus}
           onChange={props.onChange}
           value={props.value}
         />
       </label>
-      <img src={props.icon} alt='' />
+      {props.showValidation && props.validationText && (
+        <span className='ssh-input__validation-text'>
+          {props.validationText}
+        </span>
+      )}
+      {props.icon && (
+        <img
+          className='ssh-input__icon'
+          onClick={props.iconClick}
+          src={props.icon}
+          alt='input-icon'
+        />
+      )}
     </div>
   );
 };
