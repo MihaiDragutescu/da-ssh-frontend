@@ -1,0 +1,21 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-footer__socials {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin: 0 15px;
+  }
+
+  @include for-size(tablet-portrait) {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  @include for-size(mobile) {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+}

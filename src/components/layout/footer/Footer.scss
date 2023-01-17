@@ -50,25 +50,6 @@
     margin-top: 12px;
   }
 
-  &__socials {
-    display: flex;
-    align-items: center;
-
-    svg {
-      margin: 0 15px;
-    }
-
-    @include for-size(tablet-portrait) {
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    @include for-size(mobile) {
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-  }
-
   &__links {
     display: flex;
     flex-direction: column;
