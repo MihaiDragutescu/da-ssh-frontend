@@ -5,13 +5,16 @@ import image1 from '@Assets/images/card-image-1.png';
 import image2 from '@Assets/images/card-image-2.png';
 import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
 import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
+import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { settings } from '@Utils/slider-config';
 import './HomeFeaturedProducts.scss';
 import { useRef } from 'react';
+import useRedirectToUrl from '@Hooks/useRedirectToUrl';
 
 const HomeFeaturedProducts: React.FC = () => {
+  const redirect = useRedirectToUrl();
   let sliderRef = useRef<Slider>(null);
 
   const products = [
@@ -68,7 +71,7 @@ const HomeFeaturedProducts: React.FC = () => {
   };
 
   const handleClick = () => {
-    console.log('Button clicked');
+    redirect.handleRedirect(RouterPaths.SHOP);
   };
 
   return (

@@ -35,16 +35,19 @@ const HeaderLinks: React.FC<HeaderLinksProps> = (props: HeaderLinksProps) => {
           route={RouterPaths.HOME}
           content='Home'
           classes='ssh-header__link'
+          handleLinkClick={props.handleIconClick}
         />
         <MenuLink
           route={RouterPaths.SHOP}
           content='Shop'
           classes='ssh-header__link'
+          handleLinkClick={props.handleIconClick}
         />
         <MenuLink
           route={RouterPaths.CONTACT}
           content='Contact'
           classes='ssh-header__link'
+          handleLinkClick={props.handleIconClick}
         />
       </div>
     </div>

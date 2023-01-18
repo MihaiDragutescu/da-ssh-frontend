@@ -3,9 +3,12 @@ import ProductCard from '@Components/ui/ProductCard';
 import image1 from '@Assets/images/card-image-1.png';
 import image2 from '@Assets/images/card-image-3.png';
 import { CardLayouts } from '@Types/layouts';
+import { RouterPaths } from '@Types/routerPaths';
+import useRedirectToUrl from '@Hooks/useRedirectToUrl';
 import './HomeFeaturedCollections.scss';
 
 const HomeFeaturedCollections: React.FC = () => {
+  const redirect = useRedirectToUrl();
   const checkIndex = (index: number) => index % 3 === 2;
   const collections = [
     {
@@ -38,7 +41,7 @@ const HomeFeaturedCollections: React.FC = () => {
   }));
 
   const handleClick = () => {
-    console.log('Button clicked');
+    redirect.handleRedirect(RouterPaths.SHOP);
   };
 
   return (
