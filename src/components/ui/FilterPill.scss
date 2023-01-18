@@ -1,0 +1,30 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-filter-pill {
+  padding: 4px;
+  min-width: 67px;
+  border: $border-solid-brown;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-transparent;
+  cursor: pointer;
+
+  span {
+    font-family: $font-tertiary;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $color-brown;
+    font-weight: 700;
+  }
+}
+
+.active-filter {
+  background-color: $color-brown;
+
+  span {
+    color: $color-white;
+  }
+}
