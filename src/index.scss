@@ -87,6 +87,10 @@ h3 {
   padding-top: 114px;
 
   @include for-size(tablet-portrait) {
+    padding-top: 161px;
+  }
+
+  @include for-size(mobile) {
     padding-top: 151px;
   }
 }

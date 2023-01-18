@@ -38,8 +38,12 @@ const Header: React.FC = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
+    const windowWidth = window.innerWidth;
 
-    if (position > 50) {
+    if (
+      (position > 60 && windowWidth > 600) ||
+      (position > 50 && windowWidth <= 600)
+    ) {
       setMenuScrolled(true);
     } else {
       setMenuScrolled(false);
