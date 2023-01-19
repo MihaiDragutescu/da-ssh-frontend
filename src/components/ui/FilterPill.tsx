@@ -6,7 +6,7 @@ interface FilterPillProps {
   handleClick: () => void;
 }
 
-const FilterPill: React.FC<FilterPillProps> = (props) => {
+const FilterPill: React.FC<FilterPillProps> = (props: FilterPillProps) => {
   return (
     <div
       onClick={props.handleClick}

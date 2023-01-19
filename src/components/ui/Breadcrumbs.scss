@@ -34,6 +34,7 @@
       font-size: $breadcrumb-size;
       line-height: 1;
       color: $color-brown;
+      cursor: pointer;
 
       @include for-size(mobile) {
         font-size: $breadcrumb-size-mobile;

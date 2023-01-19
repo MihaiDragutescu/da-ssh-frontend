@@ -1,26 +1,24 @@
 import './ProductsList.scss';
-import FilterPill from '@Components/ui/FilterPill';
+import ColorPill from '@Components/ui/ColorPill';
 
 const ProductsList: React.FC = () => {
   return (
     <div className='products-list'>
       <div className='products-list__container ssh-container'>
         <div className='products-list__row ssh-row'>
-          <FilterPill
+          <ColorPill
             handleClick={() => {
-              console.log('asd');
+              console.log('ghj');
             }}
-          >
-            XS
-          </FilterPill>
-          <FilterPill
+            color='#2127AF'
+          />
+          <ColorPill
             handleClick={() => {
-              console.log('asd');
+              console.log('ghj');
             }}
+            color='#2127AF'
             active
-          >
-            M
-          </FilterPill>
+          />
         </div>
       </div>
     </div>

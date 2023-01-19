@@ -1,0 +1,15 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-color-pill {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 50%;
+
+  div {
+    border-radius: 50%;
+    height: 100%;
+    cursor: pointer;
+  }
+}
