@@ -23,18 +23,21 @@ const handleClick = () => {
 const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
     <div className={`product-card ${props.classname ?? ''}`}>
-      <Link
-        to={props.link}
+      <div
         className={`product-card__layout-${
           props.layout ?? CardLayouts.VERTICAL
         } product-card__direction-${
           props.direction ?? CardLayoutDirections.LEFT_TO_RIGHT
         }`}
       >
-        <img className='product-card__image' src={props.image} alt='product' />
+        <Link className='product-card__image' to={props.link}>
+          <img src={props.image} alt='product' />
+        </Link>
         <div className='product-card__content'>
           {props.name && (
-            <span className='product-card__name'>{props.name}</span>
+            <Link className='product-card__name' to={props.link}>
+              <span>{props.name}</span>
+            </Link>
           )}
           {props.price && (
             <span className='product-card__price'>{props.price} €</span>
@@ -51,7 +54,7 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
             </Button>
           )}
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
