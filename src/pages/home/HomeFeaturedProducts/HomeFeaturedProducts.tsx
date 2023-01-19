@@ -8,7 +8,7 @@ import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { settings } from '@Utils/slider-config';
+import { settings } from '@Utils/sliderConfig';
 import './HomeFeaturedProducts.scss';
 import { useRef } from 'react';
 import useRedirectToUrl from '@Hooks/useRedirectToUrl';
