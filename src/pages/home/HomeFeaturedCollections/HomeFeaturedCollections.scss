@@ -39,7 +39,7 @@
       }
 
       img {
-        max-height: 475px;
+        max-height: 450px;
         object-fit: cover;
 
         @include for-size(mobile-small) {

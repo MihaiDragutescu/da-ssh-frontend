@@ -2,6 +2,8 @@
 @use '@Styles/mixins' as *;
 
 .products-list {
+  overflow: hidden;
+
   &__container {
     padding: calc($vertical-padding-desktop / 3) 30px $vertical-padding-desktop
       30px;
@@ -102,6 +104,9 @@
       }
 
       &__image img {
+        max-height: 400px;
+        object-fit: cover;
+
         @include for-size(mobile-small) {
           max-height: 300px;
           object-fit: cover;
