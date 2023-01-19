@@ -49,28 +49,6 @@ const ProductsList: React.FC = () => {
       price: 625,
       link: '#',
     },
-
-    {
-      id: '7',
-      image: image2,
-      name: 'Brown overcoat',
-      price: 525,
-      link: '#',
-    },
-    {
-      id: '8',
-      image: image1,
-      name: 'Brown overcoat',
-      price: 625,
-      link: '#',
-    },
-    {
-      id: '9',
-      image: image2,
-      name: 'Brown overcoat',
-      price: 725,
-      link: '#',
-    },
   ];
 
   return (
