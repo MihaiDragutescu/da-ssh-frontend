@@ -8,4 +8,26 @@
   top: 89px;
   right: 30px;
   padding: 60px 40px;
+  max-width: calc(100vw - 60px);
+
+  @include for-size(tablet-portrait) {
+    right: 50%;
+    top: 69px;
+    transform: translateX(50%);
+  }
+
+  @include for-size(mobile) {
+    top: 51px;
+    padding: 50px 30px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  & > div:not(:last-child) {
+    margin-bottom: 28px;
+
+    @include for-size(mobile) {
+      margin-bottom: 24px;
+    }
+  }
 }
