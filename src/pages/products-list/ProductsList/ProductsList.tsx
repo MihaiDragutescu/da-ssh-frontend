@@ -1,8 +1,6 @@
 import ProductCard from '@Components/ui/ProductCard';
 import image1 from '@Assets/images/card-image-1.png';
 import image2 from '@Assets/images/card-image-2.png';
-import { ReactComponent as Filter } from '@Assets/images/filters-icon.svg';
-import { ReactComponent as Sort } from '@Assets/images/sort-icon.svg';
 import './ProductsList.scss';
 
 const ProductsList: React.FC = () => {
@@ -55,16 +53,6 @@ const ProductsList: React.FC = () => {
     <div className='products-list'>
       <div className='products-list__container ssh-container'>
         <div className='products-list__row ssh-row'>
-          <div className='products-list__actions'>
-            <div className='products-list__filters'>
-              <span>Filters</span>
-              <Filter />
-            </div>
-            <div className='products-list__sort'>
-              <span>Sort</span>
-              <Sort />
-            </div>
-          </div>
           <div className='products-list__results'>
             {products.map((product, index) => {
               return (

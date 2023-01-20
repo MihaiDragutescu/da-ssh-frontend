@@ -3,7 +3,7 @@
 
 .ssh-modal {
   &__overlay {
-    position: fixed;
+    position: absolute;
     inset: 0;
     opacity: 0.8;
     background-color: $color-overlay;
