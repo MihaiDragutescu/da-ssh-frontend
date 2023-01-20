@@ -6,6 +6,7 @@
       "@Assets/*": ["./assets/*"],
       "@Components/*": ["./components/*"],
       "@Context/*": ["./context/*"],
+      "@Hooks/*": ["./hooks/*"],
       "@Pages/*": ["./pages/*"],
       "@Styles/*": ["./styles/*"],
       "@Types/*": ["./types/*"],

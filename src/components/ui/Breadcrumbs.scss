@@ -1,0 +1,44 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-breadcrumbs {
+  &__container {
+    padding: 30px 30px 25px 30px;
+  }
+
+  &__row {
+    & > div:last-child span {
+      font-weight: 400;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 0 8px 5px 0;
+
+    svg {
+      margin-right: 8px;
+      font-size: $breadcrumb-size;
+
+      @include for-size(mobile) {
+        font-size: $breadcrumb-size-mobile;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+
+    span {
+      font-size: $breadcrumb-size;
+      line-height: 1;
+      color: $color-brown;
+      cursor: pointer;
+
+      @include for-size(mobile) {
+        font-size: $breadcrumb-size-mobile;
+      }
+    }
+  }
+}

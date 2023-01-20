@@ -1,10 +1,10 @@
 import './Header.scss';
 import logo from '@Assets/images/logo.png';
 import Modal from '@Components/ui/Modal';
-import HeaderLinks from './subcomponents/HeaderLinks';
-import HeaderMobileSearch from './subcomponents/HeaderMobileSearch';
-import HeaderIconLinks from './subcomponents/HeaderIconLinks';
 import MenuLink from '../shared/MenuLink';
+import HeaderLinks from './subcomponents/HeaderLinks';
+import HeaderIconLinks from './subcomponents/HeaderIconLinks';
+import HeaderMobileSearch from './subcomponents/HeaderMobileSearch';
 import { useState, useEffect } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 
@@ -38,8 +38,12 @@ const Header: React.FC = () => {
 
   const handleScroll = () => {
     const position = window.pageYOffset;
+    const windowWidth = window.innerWidth;
 
-    if (position > 50) {
+    if (
+      (position > 60 && windowWidth > 600) ||
+      (position > 50 && windowWidth <= 600)
+    ) {
       setMenuScrolled(true);
     } else {
       setMenuScrolled(false);

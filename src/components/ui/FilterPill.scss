@@ -1,0 +1,46 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.ssh-filter-pill {
+  padding: 4px;
+  min-width: 67px;
+  width: max-content;
+  border: $border-solid-brown;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-transparent;
+  cursor: pointer;
+
+  span {
+    font-family: $font-tertiary;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $color-brown;
+    font-weight: 700;
+  }
+}
+
+.ssh-sort-pill {
+  border-radius: 8px;
+  padding: 6px 5px 5px 5px;
+  width: 100%;
+
+  span {
+    font-family: $font-primary;
+    font-size: 28px;
+    line-height: 1;
+    color: $color-brown;
+    font-weight: $font-weight-texts;
+    text-transform: uppercase;
+  }
+}
+
+.active-filter {
+  background-color: $color-brown;
+
+  span {
+    color: $color-white;
+  }
+}
