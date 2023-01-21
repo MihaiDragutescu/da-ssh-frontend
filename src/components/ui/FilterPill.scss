@@ -2,7 +2,8 @@
 @use '@Styles/mixins' as *;
 
 .ssh-filter-pill {
-  padding: 4px;
+  padding: 4px 12px;
+  margin: 5px;
   min-width: 67px;
   width: max-content;
   border: $border-solid-brown;

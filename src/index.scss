@@ -94,3 +94,17 @@ h3 {
     padding-top: 151px;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lighten($color: $color-brown, $amount: 30%);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-scrollbar;
+  border-radius: 24px;
+}
