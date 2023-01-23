@@ -21,24 +21,13 @@ const ProductsActions: React.FC = () => {
     }
   };
 
-  const handleFiltersClick = () => {
-    if (showFilters) {
-      setShowFilters(false);
+  const handleActionClick = (filters = true) => {
+    if ((filters && showFilters) || (!filters && showSort)) {
       setShowFiltersOverlay(false);
+      filters ? setShowFilters(false) : setShowSort(false);
     } else {
-      setShowFilters(true);
-      setShowSort(false);
-      setShowFiltersOverlay(true);
-    }
-  };
-
-  const handleSortClick = () => {
-    if (showSort) {
-      setShowSort(false);
-      setShowFiltersOverlay(false);
-    } else {
-      setShowSort(true);
-      setShowFilters(false);
+      setShowFilters(filters);
+      setShowSort(!filters);
       setShowFiltersOverlay(true);
     }
   };
@@ -58,12 +47,19 @@ const ProductsActions: React.FC = () => {
         <div className='products-actions__row ssh-row'>
           <div
             className='products-actions__filters'
-            onClick={handleFiltersClick}
+            onClick={() => {
+              handleActionClick();
+            }}
           >
             <span>Filters</span>
             <Filter />
           </div>
-          <div className='products-actions__sort' onClick={handleSortClick}>
+          <div
+            className='products-actions__sort'
+            onClick={() => {
+              handleActionClick(false);
+            }}
+          >
             <span>Sort</span>
             <Sort />
           </div>

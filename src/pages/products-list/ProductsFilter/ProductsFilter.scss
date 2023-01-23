@@ -15,7 +15,7 @@
   height: calc(100vh - 310px);
   max-height: 522px;
   max-width: calc(100vw - 60px);
-  overflow: hidden scroll;
+  overflow: hidden auto;
 
   @include for-size(tablet-landscape) {
     width: calc(100vw - 60px);
@@ -25,6 +25,9 @@
   @include for-size(tablet-portrait) {
     top: 69px;
     padding: 40px 32px;
+    left: 0;
+    max-width: initial;
+    width: 100%;
   }
 
   @include for-size(mobile) {
