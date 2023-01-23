@@ -2,6 +2,7 @@ import HomePage from '@Pages/home/HomePage';
 import PrivacyPolicyPage from '@Pages/privacy-policy/PrivacyPolicyPage';
 import TermsAndConditionsPage from '@Pages/terms-and-conditions/TermsAndConditionsPage';
 import ProductsListPage from '@Pages/products-list/ProductsListPage';
+import ProductPage from '@Pages/product/ProductPage';
 import ContactPage from '@Pages/contact/ContactPage';
 import AboutPage from '@Pages/about/AboutPage';
 import CartPage from '@Pages/cart/CartPage';
@@ -24,7 +25,10 @@ const App = () => {
         {location.pathname !== RouterPaths.HOME ? <Breadcrumbs /> : ''}
         <Routes>
           <Route path={RouterPaths.HOME} element={<HomePage />} />
-          <Route path={RouterPaths.SHOP} element={<ProductsListPage />} />
+          <Route path={RouterPaths.SHOP}>
+            <Route index element={<ProductsListPage />} />
+            <Route path=':id' element={<ProductPage />} />
+          </Route>
           <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
           <Route path={RouterPaths.CART} element={<CartPage />} />
           <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />

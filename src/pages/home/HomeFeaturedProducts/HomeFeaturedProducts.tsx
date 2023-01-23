@@ -1,66 +1,20 @@
 import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
 import Slider from 'react-slick';
-import image1 from '@Assets/images/card-image-1.png';
-import image2 from '@Assets/images/card-image-2.png';
 import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
 import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
+import products from '@Utils/mocks';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { settings } from '@Utils/sliderConfig';
 import './HomeFeaturedProducts.scss';
 import { useRef } from 'react';
-import useRedirectToUrl from '@Hooks/useRedirectToUrl';
+import { useNavigate } from 'react-router';
 
 const HomeFeaturedProducts: React.FC = () => {
-  const redirect = useRedirectToUrl();
+  const navigate = useNavigate();
   let sliderRef = useRef<Slider>(null);
-
-  const products = [
-    {
-      id: '1',
-      image: image1,
-      name: 'Brown overcoat',
-      price: 125,
-      link: '#',
-    },
-    {
-      id: '2',
-      image: image2,
-      name: 'Brown overcoat',
-      price: 225,
-      link: '#',
-    },
-    {
-      id: '3',
-      image: image1,
-      name: 'Brown overcoat',
-      price: 325,
-      link: '#',
-    },
-    {
-      id: '4',
-      image: image2,
-      name: 'Brown overcoat',
-      price: 425,
-      link: '#',
-    },
-    {
-      id: '5',
-      image: image1,
-      name: 'Brown overcoat',
-      price: 525,
-      link: '#',
-    },
-    {
-      id: '6',
-      image: image2,
-      name: 'Brown overcoat',
-      price: 625,
-      link: '#',
-    },
-  ];
 
   const goToNext = () => {
     sliderRef.current?.slickNext();
@@ -71,7 +25,7 @@ const HomeFeaturedProducts: React.FC = () => {
   };
 
   const handleClick = () => {
-    redirect.handleRedirect(RouterPaths.SHOP);
+    navigate(RouterPaths.SHOP);
   };
 
   return (

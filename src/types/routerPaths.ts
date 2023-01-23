@@ -1,6 +1,6 @@
 export enum RouterPaths {
   HOME = '/',
-  SHOP = '/shop',
+  SHOP = '/products',
   CONTACT = '/contact',
   CART = '/cart',
   PROFILE = '/profile',

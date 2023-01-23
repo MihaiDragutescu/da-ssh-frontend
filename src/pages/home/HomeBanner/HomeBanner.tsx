@@ -2,13 +2,13 @@ import Button from '@Components/ui/Button';
 import image from '@Assets/images/home-banner-img.png';
 import { ReactComponent as Icon } from '@Assets/images/button-icon.svg';
 import { RouterPaths } from '@Types/routerPaths';
-import useRedirectToUrl from '@Hooks/useRedirectToUrl';
+import { useNavigate } from 'react-router-dom';
 import './HomeBanner.scss';
 
 const HomeBanner: React.FC = () => {
-  const redirect = useRedirectToUrl();
+  const navigate = useNavigate();
   const handleClick = () => {
-    redirect.handleRedirect(RouterPaths.SHOP);
+    navigate(RouterPaths.SHOP);
   };
 
   return (
