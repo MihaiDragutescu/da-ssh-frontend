@@ -2,7 +2,8 @@
 @use '@Styles/mixins' as *;
 
 .ssh-filter-pill {
-  padding: 4px;
+  padding: 4px 12px;
+  margin: 5px;
   min-width: 67px;
   width: max-content;
   border: $border-solid-brown;
@@ -25,7 +26,12 @@
 .ssh-sort-pill {
   border-radius: 8px;
   padding: 6px 5px 5px 5px;
-  width: 100%;
+  width: 500px;
+  max-width: 100%;
+
+  @include for-size(mobile) {
+    width: 100%;
+  }
 
   span {
     font-family: $font-primary;
@@ -34,6 +40,10 @@
     color: $color-brown;
     font-weight: $font-weight-texts;
     text-transform: uppercase;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
   }
 }
 

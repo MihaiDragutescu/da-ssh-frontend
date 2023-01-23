@@ -2,20 +2,17 @@
 @use '@Styles/mixins' as *;
 
 .products-list {
-  overflow: hidden;
+  position: relative;
 
   &__container {
-    padding: calc($vertical-padding-desktop / 3) 30px $vertical-padding-desktop
-      30px;
+    padding: 0 30px $vertical-padding-desktop 30px;
 
     @include for-size(tablet-portrait) {
-      padding: calc($vertical-padding-tablet / 4) 30px $vertical-padding-tablet
-        30px;
+      padding: 0 30px $vertical-padding-tablet 30px;
     }
 
     @include for-size(mobile) {
-      padding: calc($vertical-padding-mobile / 4) 30px $vertical-padding-mobile
-        30px;
+      padding: 0 30px $vertical-padding-mobile 30px;
     }
   }
 
@@ -23,47 +20,10 @@
     flex-direction: column;
   }
 
-  &__actions {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-
-    @include for-size(mobile) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &__filters,
-  &__sort {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    span {
-      font-family: $font-secondary;
-      font-size: 28px;
-      line-height: 1.33;
-      margin-right: 20px;
-      color: $color-brown;
-
-      @include for-size(mobile) {
-        font-size: 24px;
-        margin-right: 16px;
-      }
-    }
-
-    svg {
-      @include for-size(mobile) {
-        width: 32px;
-        height: 32px;
-      }
-    }
-  }
-
   &__results {
     display: flex;
     flex-wrap: wrap;
-    margin: -20px -40px;
+    margin: -20px -30px;
 
     @include for-size(tablet-landscape) {
       margin: -20px;
@@ -83,7 +43,7 @@
 
     .product-card {
       width: 33.33%;
-      padding: 20px 40px;
+      padding: 20px 30px;
 
       @include for-size(tablet-landscape) {
         padding: 20px;
@@ -112,6 +72,14 @@
           object-fit: cover;
         }
       }
+    }
+  }
+
+  .ssh-modal__overlay {
+    top: -25px;
+
+    @include for-size(mobile) {
+      top: -12px;
     }
   }
 }
