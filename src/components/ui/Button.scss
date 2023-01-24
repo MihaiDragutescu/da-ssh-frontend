@@ -15,4 +15,8 @@
     padding: 12px;
     width: 100%;
   }
+
+  @include for-size(mobile-small) {
+    font-size: 24px;
+  }
 }

@@ -1,11 +1,12 @@
 import image1 from '@Assets/images/card-image-1.png';
 import image2 from '@Assets/images/card-image-2.png';
+import image3 from '@Assets/images/card-image-3.png';
 import { RouterPaths } from '@Types/routerPaths';
 
 const products = [
   {
     id: '1',
-    image: image1,
+    images: [image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 125,
     description:
@@ -13,11 +14,10 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
   },
   {
     id: '2',
-    image: image2,
+    images: [image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 225,
     description:
@@ -25,11 +25,10 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
   },
   {
     id: '3',
-    image: image1,
+    images: [image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 325,
     description:
@@ -37,11 +36,10 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
   },
   {
     id: '4',
-    image: image2,
+    images: [image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 425,
     description:
@@ -49,11 +47,10 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
   },
   {
     id: '5',
-    image: image1,
+    images: [image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 525,
     description:
@@ -61,11 +58,10 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
   },
   {
     id: '6',
-    image: image2,
+    images: [image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 625,
     description:
@@ -73,7 +69,30 @@ const products = [
     get link() {
       return `${RouterPaths.SHOP}/${this.id}`;
     },
-    gallery: [image2, image2, image2, image2],
+  },
+];
+
+const featuredCollections = [
+  {
+    id: '1',
+    image: image1,
+    collection: 'All Autumn Collection',
+    category: 'Overcoats',
+    link: '#',
+  },
+  {
+    id: '2',
+    image: image1,
+    collection: 'All Autumn Collection',
+    category: 'Overcoats',
+    link: '#',
+  },
+  {
+    id: '3',
+    image: image3,
+    collection: 'Footwear',
+    category: 'Boots',
+    link: '#',
   },
 ];
 
@@ -137,12 +156,20 @@ const accordionList = [
   },
 ];
 
+const sort = [
+  { id: '1', type: 'Price - Low to High' },
+  { id: '2', type: 'Price - High to Low' },
+  { id: '3', type: 'Newest' },
+];
+
 export {
   products,
+  featuredCollections,
   colors,
   sizes,
   brands,
   collections,
   categories,
   accordionList,
+  sort,
 };

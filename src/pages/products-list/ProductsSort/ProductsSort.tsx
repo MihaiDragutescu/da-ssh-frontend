@@ -1,5 +1,6 @@
 import FilterPill from '@Components/ui/FilterPill';
 import { ProductsListActions } from '@Types/productsListActions';
+import { sort } from '@Utils/mocks';
 import { useState } from 'react';
 import './ProductsSort.scss';
 
@@ -16,11 +17,7 @@ const ProductsSort: React.FC<ProductsSortProps> = (
     setActiveSort(id);
   };
 
-  const sortArray = [
-    { id: '1', type: 'Price - Low to High' },
-    { id: '2', type: 'Price - High to Low' },
-    { id: '3', type: 'Newest' },
-  ].map((elem) => {
+  const sortArray = sort.map((elem) => {
     return (
       <FilterPill
         key={elem.id}

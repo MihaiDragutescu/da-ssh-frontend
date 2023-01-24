@@ -12,7 +12,7 @@ const ProductsList: React.FC = () => {
               return (
                 <ProductCard
                   key={product.id}
-                  image={product.image}
+                  image={product.images[0]}
                   name={product.name}
                   price={product.price}
                   link={product.link}

@@ -58,7 +58,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
             return (
               <ProductCard
                 key={product.id}
-                image={product.image}
+                image={product.images[0]}
                 name={product.name}
                 price={product.price}
                 link={product.link}

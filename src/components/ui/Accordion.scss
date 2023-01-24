@@ -4,10 +4,15 @@
 .ssh-accordion {
   & > div:last-child {
     border-bottom: none;
+
+    .ssh-accordion__content {
+      padding-bottom: 0;
+    }
   }
 
   &__item {
     border-bottom: $border-solid-accordion;
+    cursor: pointer;
   }
 
   &__label {
@@ -21,6 +26,11 @@
 
     svg {
       cursor: pointer;
+      margin-left: 16px;
+
+      @include for-size(mobile-small) {
+        width: 20px;
+      }
     }
   }
 

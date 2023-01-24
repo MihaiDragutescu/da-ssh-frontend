@@ -24,6 +24,10 @@
       @include for-size(mobile) {
         font-size: $breadcrumb-size-mobile;
       }
+
+      @include for-size(mobile-small) {
+        font-size: $breadcrumb-size-mobile-small;
+      }
     }
   }
 
@@ -38,6 +42,10 @@
 
       @include for-size(mobile) {
         font-size: $breadcrumb-size-mobile;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: $breadcrumb-size-mobile-small;
       }
     }
   }

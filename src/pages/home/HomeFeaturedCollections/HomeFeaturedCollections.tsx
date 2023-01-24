@@ -1,38 +1,15 @@
 import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
-import image1 from '@Assets/images/card-image-1.png';
-import image2 from '@Assets/images/card-image-3.png';
 import { CardLayouts } from '@Types/layouts';
 import { RouterPaths } from '@Types/routerPaths';
+import { featuredCollections } from '@Utils/mocks';
 import { useNavigate } from 'react-router-dom';
 import './HomeFeaturedCollections.scss';
 
 const HomeFeaturedCollections: React.FC = () => {
   const navigate = useNavigate();
   const checkIndex = (index: number) => index % 3 === 2;
-  const collections = [
-    {
-      id: '1',
-      image: image1,
-      collection: 'All Autumn Collection',
-      category: 'Overcoats',
-      link: '#',
-    },
-    {
-      id: '2',
-      image: image1,
-      collection: 'All Autumn Collection',
-      category: 'Overcoats',
-      link: '#',
-    },
-    {
-      id: '3',
-      image: image2,
-      collection: 'Footwear',
-      category: 'Boots',
-      link: '#',
-    },
-  ].map((collection, index) => ({
+  const collections = featuredCollections.map((collection, index) => ({
     ...collection,
     className: `collection-card ${
       checkIndex(index) ? 'collection-card-large' : ''

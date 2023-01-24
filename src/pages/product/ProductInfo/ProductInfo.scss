@@ -3,12 +3,308 @@
 
 .product-info {
   &__container {
-    padding: $vertical-padding-tablet 30px $vertical-padding-tablet 30px;
+    padding: calc($vertical-padding-desktop / 2) 30px
+      calc($vertical-padding-desktop / 2) 30px;
+
+    @include for-size(tablet-portrait) {
+      padding: calc($vertical-padding-tablet / 2) 30px
+        calc($vertical-padding-tablet / 2) 30px;
+    }
+
+    @include for-size(tablet-portrait) {
+      padding: 30px;
+    }
   }
 
   &__row {
+    @include for-size(tablet-portrait) {
+      flex-direction: column;
+    }
+  }
+
+  &__col--left {
+    width: 40%;
+    padding-right: 40px;
+
+    @include for-size(tablet-landscape) {
+      padding-right: 20px;
+    }
+
+    @include for-size(tablet-portrait) {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    @include for-size(mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__col--right {
+    width: 60%;
+    padding-left: 40px;
+
+    @include for-size(tablet-landscape) {
+      padding-left: 20px;
+    }
   }
 
   &__col {
+    @include for-size(tablet-landscape) {
+      width: 50%;
+    }
+
+    @include for-size(tablet-portrait) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include for-size(tablet-portrait) {
+      width: 50%;
+      padding-right: 10px;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+
+      @include for-size(mobile) {
+        max-height: 400px;
+      }
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    max-height: 450px;
+
+    @include for-size(tablet-portrait) {
+      width: 50%;
+      margin: 0;
+      justify-content: center;
+      padding-left: 10px;
+      overflow: auto;
+    }
+
+    @include for-size(mobile) {
+      padding: 0;
+      width: calc(100% + 20px);
+      margin-left: -10px;
+    }
+
+    & > div {
+      &:nth-child(2),
+      &:nth-child(4) {
+        @include for-size(tablet-portrait) {
+          padding-right: 0;
+        }
+
+        @include for-size(mobile) {
+          padding-right: 10px;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        @include for-size(tablet-portrait) {
+          padding-left: 0;
+        }
+
+        @include for-size(mobile) {
+          padding-left: 10px;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        @include for-size(tablet-portrait) {
+          padding-top: 0;
+        }
+
+        @include for-size(mobile) {
+          padding-top: 10px;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        @include for-size(tablet-portrait) {
+          padding-bottom: 0;
+        }
+
+        @include for-size(mobile) {
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    &-image {
+      width: 25%;
+      padding: 20px 10px 0 10px;
+
+      @include for-size(tablet-portrait) {
+        width: 50%;
+        padding: 10px;
+        max-height: 225px;
+      }
+
+      @include for-size(mobile) {
+        width: 25%;
+      }
+
+      img {
+        @include for-size(tablet-portrait) {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .active-image img {
+      border: $border-solid-brown;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-size(mobile) {
+      align-items: flex-start;
+    }
+
+    h1 {
+      font-family: $font-primary;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color-brown-dark;
+      font-size: 50px;
+      text-align: start;
+
+      @include for-size(mobile) {
+        font-size: 45px;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 40px;
+      }
+    }
+
+    svg {
+      width: 50px;
+      margin-left: 15px;
+
+      @include for-size(mobile) {
+        width: 45px;
+      }
+
+      @include for-size(mobile) {
+        width: 40px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    line-height: 1;
+    color: $color-brown-dark;
+    margin-bottom: 14px;
+  }
+
+  &__price {
+    font-size: 55px;
+    line-height: 1;
+    color: $color-brown-dark;
+
+    @include for-size(mobile) {
+      font-size: 50px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 45px;
+    }
+  }
+
+  &__description {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 200;
+    color: $color-brown-dark;
+    margin: 30px 0;
+
+    @include for-size(mobile) {
+      font-size: 28px;
+    }
+  }
+
+  &__color {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &-list {
+      display: flex;
+      margin: 0 -8px;
+      flex-wrap: wrap;
+
+      .ssh-color-pill {
+        width: 64px;
+        height: 64px;
+        padding: 8px;
+        margin: 0 8px;
+
+        @include for-size(mobile) {
+          width: 50px;
+          height: 50px;
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+
+  &__size {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      .ssh-filter-pill {
+        min-width: 100px;
+        min-height: 45px;
+
+        @include for-size(mobile) {
+          min-width: 80px;
+          min-height: 35px;
+        }
+      }
+    }
+  }
+
+  &__accordion {
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    @include for-size(tablet-portrait) {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
