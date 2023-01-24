@@ -3,16 +3,28 @@ import ProductCard from '@Components/ui/ProductCard';
 import Slider from 'react-slick';
 import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
 import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
-import products from '@Utils/mocks';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { settings } from '@Utils/sliderConfig';
-import './HomeFeaturedProducts.scss';
+import './FeaturedProducts.scss';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 
-const HomeFeaturedProducts: React.FC = () => {
+interface FeaturedProductsProps {
+  products: {
+    id: string;
+    image: string;
+    name: string;
+    price: number;
+    link: string;
+  }[];
+  showButton?: boolean;
+}
+
+const FeaturedProducts: React.FC<FeaturedProductsProps> = (
+  props: FeaturedProductsProps
+) => {
   const navigate = useNavigate();
   let sliderRef = useRef<Slider>(null);
 
@@ -29,25 +41,25 @@ const HomeFeaturedProducts: React.FC = () => {
   };
 
   return (
-    <div className='home-slider'>
-      <div className='home-slider__container ssh-container'>
-        <div className='home-slider__title-container ssh-container'>
-          <h2 className='home-slider__title section-title'>
+    <div className='featured-products'>
+      <div className='featured-products__container ssh-container'>
+        <div className='featured-products__title-container ssh-container'>
+          <h2 className='featured-products__title section-title'>
             Discover your style
           </h2>
-          <div className='home-slider__navigation'>
+          <div className='featured-products__navigation'>
             <Prev
               onClick={goToPrev}
-              className='home-slider__navigation--prev'
+              className='featured-products__navigation--prev'
             />
             <Next
               onClick={goToNext}
-              className='home-slider__navigation--next'
+              className='featured-products__navigation--next'
             />
           </div>
         </div>
         <Slider {...settings} ref={sliderRef}>
-          {products.map((product, index) => {
+          {props.products.map((product) => {
             return (
               <ProductCard
                 key={product.id}
@@ -59,12 +71,14 @@ const HomeFeaturedProducts: React.FC = () => {
             );
           })}
         </Slider>
-        <div className='home-slider__button-container ssh-container'>
-          <Button onClick={handleClick}>See More</Button>
-        </div>
+        {props.showButton && (
+          <div className='featured-products__button-container ssh-container'>
+            <Button onClick={handleClick}>See More</Button>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default HomeFeaturedProducts;
+export default FeaturedProducts;

@@ -1,5 +1,5 @@
 import ProductCard from '@Components/ui/ProductCard';
-import products from '@Utils/mocks';
+import { products } from '@Utils/mocks';
 import './ProductsList.scss';
 
 const ProductsList: React.FC = () => {

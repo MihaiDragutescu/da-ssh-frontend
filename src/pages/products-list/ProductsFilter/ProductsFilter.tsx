@@ -3,6 +3,7 @@ import ColorPill from '@Components/ui/ColorPill';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
 import { ProductsListActions } from '@Types/productsListActions';
 import { useState, useEffect } from 'react';
+import { colors, sizes } from '@Utils/mocks';
 import './ProductsFilter.scss';
 
 interface ProductsFilterProps {
@@ -51,13 +52,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     );
   };
 
-  const sizes = [
-    { id: '1', name: 'XS' },
-    { id: '2', name: 'S' },
-    { id: '3', name: 'M' },
-    { id: '4', name: 'L' },
-    { id: '5', name: 'XL' },
-  ].map((size) => {
+  const sizesList = sizes.map((size) => {
     return filterPill('size', size);
   });
 
@@ -71,14 +66,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     return filterPill('brand', brand);
   });
 
-  const colors = [
-    { id: '1', color: '#CA1010' },
-    { id: '2', color: '#2127AF' },
-    { id: '3', color: '#37940C' },
-    { id: '4', color: '#333333' },
-    { id: '5', color: '#AE19A8' },
-    { id: '6', color: '#633102' },
-  ].map((color) => {
+  const colorsList = colors.map((color) => {
     return (
       <ColorPill
         key={color.id}
@@ -136,7 +124,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <div className={`products-filters ${!props.visible ? 'hidden' : ''}`}>
       <div className='products-filters__size products-filters__col'>
         <div className='products-filters__title'>Size</div>
-        <div className='products-filters__list'>{sizes}</div>
+        <div className='products-filters__list'>{sizesList}</div>
       </div>
       <div className='products-filters__col'>
         <div className='products-filters__title'>Brand</div>
@@ -146,7 +134,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       </div>
       <div className='products-filters__col products-filters__color'>
         <div className='products-filters__title'>COLOUR</div>
-        <div className='products-filters__list'>{colors}</div>
+        <div className='products-filters__list'>{colorsList}</div>
       </div>
       <div className='products-filters__col products-filters__price'>
         <div className='products-filters__title'>Price</div>

@@ -59,4 +59,22 @@ const products = [
   },
 ];
 
-export default products;
+const colors = [
+  { id: '1', color: '#CA1010' },
+  { id: '2', color: '#2127AF' },
+  { id: '3', color: '#37940C' },
+  { id: '4', color: '#333333' },
+  { id: '5', color: '#AE19A8' },
+  { id: '6', color: '#633102' },
+];
+
+const sizes = [
+  { id: '1', name: 'XS' },
+  { id: '2', name: 'S' },
+  { id: '3', name: 'M' },
+  { id: '4', name: 'L' },
+  { id: '5', name: 'XL' },
+  { id: '6', name: 'XXL' },
+];
+
+export { products, colors, sizes };

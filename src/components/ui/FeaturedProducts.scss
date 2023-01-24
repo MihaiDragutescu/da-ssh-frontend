@@ -1,7 +1,7 @@
 @use '@Styles/variables' as *;
 @use '@Styles/mixins' as *;
 
-.home-slider {
+.featured-products {
   &__container {
     padding: calc($vertical-padding-desktop / 2) 0;
     max-width: initial;

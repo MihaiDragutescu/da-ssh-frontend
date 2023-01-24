@@ -2,7 +2,7 @@ import { ReactComponent as Arrow } from '@Assets/images/arrow-breadcrumbs.svg';
 import { RouterPaths } from '@Types/routerPaths';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
-import products from '@Utils/mocks';
+import { products } from '@Utils/mocks';
 import './Breadcrumbs.scss';
 
 const Breadcrumbs: React.FC = () => {

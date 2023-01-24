@@ -1,4 +1,6 @@
 import Accordion from '@Components/ui/Accordion';
+import FeaturedProducts from '@Components/ui/FeaturedProducts';
+import { products } from '@Utils/mocks';
 
 const ProductsPage = () => {
   const accordionList = [
@@ -20,9 +22,10 @@ const ProductsPage = () => {
   ];
 
   return (
-    <div style={{ maxWidth: '710px' }}>
+    <>
       <Accordion accordionList={accordionList} />
-    </div>
+      <FeaturedProducts products={products} />
+    </>
   );
 };
 
