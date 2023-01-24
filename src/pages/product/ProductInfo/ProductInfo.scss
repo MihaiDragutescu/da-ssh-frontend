@@ -1,0 +1,14 @@
+@use '@Styles/variables' as *;
+@use '@Styles/mixins' as *;
+
+.product-info {
+  &__container {
+    padding: $vertical-padding-tablet 30px $vertical-padding-tablet 30px;
+  }
+
+  &__row {
+  }
+
+  &__col {
+  }
+}

@@ -1,29 +1,15 @@
-import Accordion from '@Components/ui/Accordion';
+import ProductInfo from './ProductInfo/ProductInfo';
 import FeaturedProducts from '@Components/ui/FeaturedProducts';
 import { products } from '@Utils/mocks';
+import { useParams } from 'react-router-dom';
 
 const ProductsPage = () => {
-  const accordionList = [
-    {
-      label: 'Size & Fit',
-      content:
-        "Luxury meets utility in the clean-lined Alby Jacket. It's supremely soft and light in Italian cotton garment washed to achieve a smooth, sueded finish while the relaxed fit and boxy shape infuse the look with a modern sensibility.",
-    },
-    {
-      label: 'Shipping Instructions',
-      content:
-        "Luxury meets utility in the clean-lined Alby Jacket. It's supremely soft and light in Italian cotton garment washed to achieve a smooth, sueded finish while the relaxed fit and boxy shape infuse the look with a modern sensibility.",
-    },
-    {
-      label: 'Fit & Size',
-      content:
-        "Luxury meets utility in the clean-lined Alby Jacket. It's supremely soft and light in Italian cotton garment washed to achieve a smooth, sueded finish while the relaxed fit and boxy shape infuse the look with a modern sensibility.",
-    },
-  ];
+  const { id } = useParams();
+  const product = products.find((product) => product.id === id);
 
   return (
     <>
-      <Accordion accordionList={accordionList} />
+      <ProductInfo product={product!} />
       <FeaturedProducts products={products} />
     </>
   );

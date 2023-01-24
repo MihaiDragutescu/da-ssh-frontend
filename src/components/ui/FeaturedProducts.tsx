@@ -3,6 +3,7 @@ import ProductCard from '@Components/ui/ProductCard';
 import Slider from 'react-slick';
 import { ReactComponent as Prev } from '@Assets/images/arrow-left.svg';
 import { ReactComponent as Next } from '@Assets/images/arrow-right.svg';
+import { ProductType } from '@Types/product';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -12,13 +13,7 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 
 interface FeaturedProductsProps {
-  products: {
-    id: string;
-    image: string;
-    name: string;
-    price: number;
-    link: string;
-  }[];
+  products: ProductType[];
   showButton?: boolean;
 }
 
