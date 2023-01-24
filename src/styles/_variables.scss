@@ -1,5 +1,11 @@
 @font-face {
   font-family: YanoneKaffeesatz;
+  src: url('~@Assets/fonts/YanoneKaffeesatz/YanoneKaffeesatz-ExtraLight.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: YanoneKaffeesatz;
   src: url('~@Assets/fonts/YanoneKaffeesatz/YanoneKaffeesatz-Light.ttf');
   font-weight: 300;
 }
@@ -61,6 +67,7 @@ $font-weight-footer: 600;
 
 $border-solid-brown: 1px solid $color-brown;
 $border-solid-menu: 1px solid rgba($color-black, 0.1);
+$border-solid-accordion: 1px solid $color-brown-dark;
 $box-shadow-primary: 0px 2px 6px rgba($color-brown, 0.2);
 
 $vertical-padding-desktop: 120px;

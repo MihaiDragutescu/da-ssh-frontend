@@ -2,4 +2,33 @@
 @use '@Styles/mixins' as *;
 
 .ssh-accordion {
+  & > div:last-child {
+    border-bottom: none;
+  }
+
+  &__item {
+    border-bottom: $border-solid-accordion;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $color-brown-dark;
+    padding: 16px 8px 16px 0;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    font-size: 24px;
+    line-height: 1;
+    color: $color-brown-dark;
+    font-weight: 200;
+    padding-bottom: 40px;
+  }
 }
