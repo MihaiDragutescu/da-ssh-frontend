@@ -26,7 +26,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const gallery = props.product.images.map((image, index) => {
     return (
-      <div
+      <li
         key={index}
         className={`product-info__gallery-image ${
           productInfo.image === image ? 'active-image' : ''
@@ -39,7 +39,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
             handleClick('image', image);
           }}
         />
-      </div>
+      </li>
     );
   });
 
@@ -82,14 +82,14 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   }, []);
 
   return (
-    <div className='product-info'>
+    <section className='product-info'>
       <div className='product-info__container ssh-container'>
         <div className='product-info__row ssh-row'>
           <div className='product-info__col product-info__col--left'>
             <div className='product-info__image'>
               <img src={productInfo.image} alt='product' />
             </div>
-            <div className='product-info__gallery'>{gallery}</div>
+            <ul className='product-info__gallery'>{gallery}</ul>
           </div>
           <div className='product-info__col product-info__col--right'>
             <div className='product-info__title'>
@@ -106,13 +106,13 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               <div className='product-info__subtitle'>
                 <span>Colour</span>
               </div>
-              <div className='product-info__color-list'>{colorsList}</div>
+              <ul className='product-info__color-list'>{colorsList}</ul>
             </div>
             <div className='product-info__size'>
               <div className='product-info__subtitle'>
                 <span>Size</span>
               </div>
-              <div className='product-info__size-list'>{sizesList}</div>
+              <ul className='product-info__size-list'>{sizesList}</ul>
             </div>
             <div className='product-info__accordion'>
               <Accordion accordionList={accordionList} />
@@ -123,7 +123,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

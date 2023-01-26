@@ -22,7 +22,7 @@ const HomeFeaturedCollections: React.FC = () => {
   };
 
   return (
-    <div className='home-collections'>
+    <section className='home-collections'>
       <div className='home-collections__container ssh-container'>
         <div className='home-collections__row ssh-row'>
           <div className='home-collections__title-container'>
@@ -50,7 +50,7 @@ const HomeFeaturedCollections: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

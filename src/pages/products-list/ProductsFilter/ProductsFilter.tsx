@@ -90,17 +90,17 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <div className={`products-filters ${!props.visible ? 'hidden' : ''}`}>
       <div className='products-filters__size products-filters__col'>
         <div className='products-filters__title'>Size</div>
-        <div className='products-filters__list'>{sizesList}</div>
+        <ul className='products-filters__list'>{sizesList}</ul>
       </div>
       <div className='products-filters__col'>
         <div className='products-filters__title'>Brand</div>
-        <div className='products-filters__brand products-filters__list'>
+        <ul className='products-filters__brand products-filters__list'>
           {brandsList}
-        </div>
+        </ul>
       </div>
       <div className='products-filters__col products-filters__color'>
         <div className='products-filters__title'>COLOUR</div>
-        <div className='products-filters__list'>{colorsList}</div>
+        <ul className='products-filters__list'>{colorsList}</ul>
       </div>
       <div className='products-filters__col products-filters__price'>
         <div className='products-filters__title'>Price</div>
@@ -108,11 +108,11 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       </div>
       <div className='products-filters__col products-filters__collection'>
         <div className='products-filters__title'>Collection</div>
-        <div className='products-filters__list'>{collectionsList}</div>
+        <ul className='products-filters__list'>{collectionsList}</ul>
       </div>
       <div className='products-filters__col products-filters__category'>
         <div className='products-filters__title'>Category</div>
-        <div className='products-filters__list'>{categoriesList}</div>
+        <ul className='products-filters__list'>{categoriesList}</ul>
       </div>
     </div>
   );

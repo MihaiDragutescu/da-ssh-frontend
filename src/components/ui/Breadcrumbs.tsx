@@ -22,21 +22,23 @@ const Breadcrumbs: React.FC = () => {
 
   const breadcrumbsNew = breadcrumbs.map(({ match, breadcrumb }, index) => {
     return (
-      <div key={match.pathname} className='ssh-breadcrumbs__item'>
+      <li key={match.pathname} className='ssh-breadcrumbs__item'>
         {index !== 0 ? <Arrow /> : ''}
         <Link to={match.pathname} className='ssh-breadcrumbs__link'>
           {breadcrumb}
         </Link>
-      </div>
+      </li>
     );
   });
 
   return (
-    <div className='ssh-breadcrumbs'>
+    <nav className='ssh-breadcrumbs'>
       <div className='ssh-breadcrumbs__container ssh-container'>
-        <div className='ssh-breadcrumbs__row ssh-row'>{breadcrumbsNew}</div>
+        <div className='ssh-breadcrumbs__row ssh-row'>
+          <ul className='ssh-breadcrumbs__list'>{breadcrumbsNew}</ul>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

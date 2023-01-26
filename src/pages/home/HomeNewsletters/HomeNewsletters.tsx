@@ -15,7 +15,7 @@ const HomeNewsletters: React.FC = () => {
   };
 
   return (
-    <div className='home-newsletters'>
+    <section className='home-newsletters'>
       <div className='home-newsletters__container ssh-container'>
         <div className='home-newsletters__row ssh-row'>
           <h2 className='home-newsletters__title'>Hear more from us</h2>
@@ -34,7 +34,7 @@ const HomeNewsletters: React.FC = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

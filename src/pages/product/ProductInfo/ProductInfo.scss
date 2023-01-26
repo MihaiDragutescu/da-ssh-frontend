@@ -99,12 +99,12 @@
     }
 
     @include for-size(mobile) {
-      padding: 0;
+      padding: 0 5px 0 5px;
       width: calc(100% + 20px);
       margin-left: -10px;
     }
 
-    & > div {
+    & > li {
       &:nth-child(2),
       &:nth-child(4) {
         @include for-size(tablet-portrait) {
@@ -112,7 +112,7 @@
         }
 
         @include for-size(mobile) {
-          padding-right: 10px;
+          padding-right: 5px;
         }
       }
 
@@ -123,7 +123,7 @@
         }
 
         @include for-size(mobile) {
-          padding-left: 10px;
+          padding-left: 5px;
         }
       }
 
@@ -145,8 +145,12 @@
         }
 
         @include for-size(mobile) {
-          padding-bottom: 10px;
+          padding-top: 10px;
         }
+      }
+
+      @include for-size(mobile) {
+        padding: 5px;
       }
     }
 

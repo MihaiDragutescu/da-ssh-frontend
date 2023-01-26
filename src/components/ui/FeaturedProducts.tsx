@@ -36,7 +36,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   };
 
   return (
-    <div className='featured-products'>
+    <section className='featured-products'>
       <div className='featured-products__container ssh-container'>
         <div className='featured-products__title-container ssh-container'>
           <h2 className='featured-products__title section-title'>
@@ -72,7 +72,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

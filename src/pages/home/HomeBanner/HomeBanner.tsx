@@ -12,7 +12,7 @@ const HomeBanner: React.FC = () => {
   };
 
   return (
-    <div className='home-banner'>
+    <section className='home-banner'>
       <div className='home-banner__container ssh-container'>
         <div className='home-banner__row ssh-row'>
           <div className='home-banner__col home-banner__col--left'>
@@ -34,7 +34,7 @@ const HomeBanner: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -34,7 +34,7 @@ const ProductsSort: React.FC<ProductsSortProps> = (
 
   return (
     <div className={`products-sort ${!props.visible ? 'hidden' : ''}`}>
-      <>{sortArray}</>
+      <ul>{sortArray}</ul>
     </div>
   );
 };

@@ -6,8 +6,11 @@
     padding: 30px 30px 25px 30px;
   }
 
-  &__row {
-    & > div:last-child span {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li:last-child span {
       font-weight: 400;
     }
   }
