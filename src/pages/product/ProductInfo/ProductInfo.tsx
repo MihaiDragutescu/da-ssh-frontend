@@ -7,6 +7,7 @@ import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.
 import { sizes, accordionList } from '@Utils/mocks';
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
+import ProductImages from '../ProductImages/ProductImages';
 import { useState, useEffect } from 'react';
 import './ProductInfo.scss';
 
@@ -23,25 +24,6 @@ interface ProductState {
 const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   const [productInfo, setProductInfo] = useState<ProductState>({});
   const [productInWishlist, setProductInWishlist] = useState(false);
-
-  const gallery = props.product.images.map((image, index) => {
-    return (
-      <li
-        key={index}
-        className={`product-info__gallery-image ${
-          productInfo.image === image ? 'active-image' : ''
-        }`}
-      >
-        <img
-          src={image}
-          alt='product'
-          onClick={() => {
-            handleClick('image', image);
-          }}
-        />
-      </li>
-    );
-  });
 
   const toggleWishlist = () => {
     setProductInWishlist(!productInWishlist);
@@ -86,10 +68,11 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
       <div className='product-info__container ssh-container'>
         <div className='product-info__row ssh-row'>
           <div className='product-info__col product-info__col--left'>
-            <div className='product-info__image'>
-              <img src={productInfo.image} alt='product' />
-            </div>
-            <ul className='product-info__gallery'>{gallery}</ul>
+            <ProductImages
+              images={props.product.images}
+              currentImage={productInfo.image!}
+              handleImageClick={handleClick}
+            />
           </div>
           <div className='product-info__col product-info__col--right'>
             <div className='product-info__title'>
