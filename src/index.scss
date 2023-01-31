@@ -1,5 +1,4 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,31 +23,51 @@ h6 {
 }
 
 h1 {
-  font-size: $title-size;
+  font-size: var(--font-h1-desktop);
+
+  @include for-size(tablet-portrait) {
+    font-size: var(--font-h1-tablet);
+  }
 
   @include for-size(mobile) {
-    font-size: $title-size-small;
+    font-size: var(--font-h1-mobile);
+  }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h1-mobile-small);
   }
 }
 
 h2 {
-  font-size: 40px;
+  font-size: var(--font-h2-desktop);
 
   @include for-size(tablet-portrait) {
-    font-size: 36px;
+    font-size: var(--font-h2-tablet);
   }
 
   @include for-size(mobile) {
-    font-size: 32px;
+    font-size: var(--font-h2-mobile);
+  }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h2-mobile-small);
   }
 }
 
 h3 {
-  font-size: 30px;
+  font-size: var(--font-h3-desktop);
 
   @include for-size(mobile) {
-    font-size: 24px;
+    font-size: var(--font-h3-mobile);
   }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h3-mobile-small);
+  }
+}
+
+li {
+  list-style: none;
 }
 
 .ssh-container {
@@ -107,4 +126,10 @@ h3 {
 ::-webkit-scrollbar-track {
   background: $color-scrollbar;
   border-radius: 24px;
+}
+
+:root {
+  @each $key, $value in $font-sizes {
+    --font-#{$key}: #{$value};
+  }
 }
