@@ -1,113 +1,138 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 
 .product-info {
   &__image {
     width: 100%;
+    max-height: 550px;
+    height: 75%;
 
     @include for-size(tablet-portrait) {
-      width: 50%;
+      width: 60%;
       padding-right: 10px;
+      height: 550px;
     }
 
     @include for-size(mobile) {
       width: 100%;
       padding: 0;
+      max-height: 450px;
     }
 
     img {
       width: 100%;
-      max-height: 450px;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
+      max-height: 550px;
+
+      @include for-size(tablet-portrait) {
+        object-fit: cover;
+      }
 
       @include for-size(mobile) {
-        max-height: 400px;
+        max-height: 450px;
       }
     }
   }
 
   &__gallery {
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 -10px;
-    max-height: 450px;
+    height: 25%;
+    max-height: 200px;
+
+    @include for-size(tablet-landscape) {
+      max-height: 150px;
+    }
 
     @include for-size(tablet-portrait) {
-      width: 50%;
-      margin: 0;
-      justify-content: center;
+      width: 40%;
+      margin: -20px 0 0 0;
       padding-left: 10px;
-      overflow: auto;
+      max-height: 550px;
+    }
+
+    @media (max-width: 700px) {
+      padding-left: 0;
     }
 
     @include for-size(mobile) {
-      padding: 0 5px 0 5px;
+      padding: 0 5px;
       width: calc(100% + 20px);
-      margin-left: -10px;
+      margin: 0 0 0 -10px;
     }
 
-    & > li {
-      &:nth-child(2),
-      &:nth-child(4) {
-        @include for-size(tablet-portrait) {
-          padding-right: 0;
-        }
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+      height: 100%;
+    }
 
-        @include for-size(mobile) {
-          padding-right: 5px;
-        }
+    .slick-list,
+    .slick-track {
+      @include for-size(tablet-portrait) {
+        max-height: 575px;
+        touch-action: none;
       }
+    }
 
-      &:nth-child(1),
-      &:nth-child(3) {
-        @include for-size(tablet-portrait) {
-          padding-left: 0;
-        }
+    .slick-slide {
+      @include for-size(tablet-portrait) {
+        height: 33.33%;
+        display: flex;
 
-        @include for-size(mobile) {
-          padding-left: 5px;
-        }
-      }
+        & > div {
+          width: 50%;
 
-      &:nth-child(1),
-      &:nth-child(2) {
-        @include for-size(tablet-portrait) {
-          padding-top: 0;
-        }
+          &:first-child {
+            padding-right: 10px;
 
-        @include for-size(mobile) {
-          padding-top: 10px;
-        }
-      }
+            @media (max-width: 700px) {
+              padding-right: 5px;
+            }
+          }
 
-      &:nth-child(3),
-      &:nth-child(4) {
-        @include for-size(tablet-portrait) {
-          padding-bottom: 0;
-        }
+          &:last-child {
+            padding-left: 10px;
 
-        @include for-size(mobile) {
-          padding-top: 10px;
+            @media (max-width: 700px) {
+              padding-left: 5px;
+            }
+          }
         }
       }
 
       @include for-size(mobile) {
-        padding: 5px;
+        height: initial;
+
+        & > div {
+          width: initial;
+
+          &:last-child,
+          &:first-child {
+            padding: 0;
+          }
+        }
       }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .slick-slide div {
+      height: 100%;
     }
 
     &-image {
-      width: 25%;
       padding: 20px 10px 0 10px;
 
       @include for-size(tablet-portrait) {
-        width: 50%;
-        padding: 10px;
-        max-height: 225px;
+        padding: 20px 0 0 0;
       }
 
       @include for-size(mobile) {
-        width: 25%;
+        padding: 10px 5px 5px 5px;
       }
 
       img {
@@ -119,8 +144,12 @@
       }
     }
 
-    .active-image img {
-      border: $border-solid-brown;
+    .active-image > div {
+      border: 3px solid $color-brown;
+
+      img {
+        transform: scale(0.85);
+      }
     }
   }
 }

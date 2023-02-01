@@ -1,4 +1,6 @@
 import { FilterType } from '@Types/filter';
+import Slider from 'react-slick';
+import { productImagesSettings } from '@App/utils/slidersConfig';
 import './ProductImages.scss';
 
 interface ProductImagesProps {
@@ -12,20 +14,22 @@ const ProductImages: React.FC<ProductImagesProps> = (
 ) => {
   const gallery = props.images.map((image, index) => {
     return (
-      <li
+      <div
         key={index}
         className={`product-info__gallery-image ${
           props.currentImage === image ? 'active-image' : ''
         }`}
       >
-        <img
-          src={image}
-          alt='product'
-          onClick={() => {
-            props.handleImageClick('image', image);
-          }}
-        />
-      </li>
+        <div>
+          <img
+            src={image}
+            alt='product'
+            onClick={() => {
+              props.handleImageClick('image', image);
+            }}
+          />
+        </div>
+      </div>
     );
   });
 
@@ -34,7 +38,9 @@ const ProductImages: React.FC<ProductImagesProps> = (
       <div className='product-info__image'>
         <img src={props.currentImage} alt='product' />
       </div>
-      <ul className='product-info__gallery'>{gallery}</ul>
+      <div className='product-info__gallery'>
+        <Slider {...productImagesSettings}>{gallery}</Slider>
+      </div>
     </>
   );
 };

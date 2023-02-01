@@ -7,7 +7,7 @@ import { ProductType } from '@Types/product';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { settings } from '@Utils/sliderConfig';
+import { productsSliderSettings } from '@App/utils/slidersConfig';
 import './FeaturedProducts.scss';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
@@ -53,7 +53,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
             />
           </div>
         </div>
-        <Slider {...settings} ref={sliderRef}>
+        <Slider {...productsSliderSettings} ref={sliderRef}>
           {props.products.map((product) => {
             return (
               <ProductCard

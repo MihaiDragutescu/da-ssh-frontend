@@ -6,7 +6,7 @@ import { RouterPaths } from '@Types/routerPaths';
 const products = [
   {
     id: '1',
-    images: [image1, image2, image1, image2],
+    images: [image1, image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 125,
     description:
@@ -17,7 +17,7 @@ const products = [
   },
   {
     id: '2',
-    images: [image2, image1, image2, image1],
+    images: [image2, image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 225,
     description:
@@ -28,7 +28,7 @@ const products = [
   },
   {
     id: '3',
-    images: [image1, image2, image1, image2],
+    images: [image1, image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 325,
     description:
@@ -39,7 +39,7 @@ const products = [
   },
   {
     id: '4',
-    images: [image2, image1, image2, image1],
+    images: [image2, image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 425,
     description:
@@ -50,7 +50,7 @@ const products = [
   },
   {
     id: '5',
-    images: [image1, image2, image1, image2],
+    images: [image1, image2, image1, image2, image1, image2, image1],
     name: 'Brown overcoat',
     price: 525,
     description:
@@ -61,7 +61,7 @@ const products = [
   },
   {
     id: '6',
-    images: [image2, image1, image2, image1],
+    images: [image2, image1, image2, image1, image2],
     name: 'Brown overcoat',
     price: 625,
     description:
