@@ -3,7 +3,7 @@ import { colors } from '@Utils/mocks';
 import { FilterType } from '@Types/filter';
 
 interface ColorsListProps {
-  activeColor: string;
+  activeColor?: string;
   handleClick: (type: keyof FilterType, value: string | number) => void;
 }
 

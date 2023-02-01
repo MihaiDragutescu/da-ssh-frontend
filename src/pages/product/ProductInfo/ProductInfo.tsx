@@ -39,14 +39,14 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   };
 
   const colorsList = (
-    <ColorsList activeColor={productInfo.color!} handleClick={handleClick} />
+    <ColorsList activeColor={productInfo.color} handleClick={handleClick} />
   );
 
   const sizesList = (
     <FilterItemsList
       list={sizes}
       type='size'
-      activeFilter={productInfo.size!}
+      activeFilter={productInfo.size}
       handleClick={handleClick}
     />
   );
@@ -70,7 +70,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
           <div className='product-info__col product-info__col--left'>
             <ProductImages
               images={props.product.images}
-              currentImage={productInfo.image!}
+              currentImage={productInfo.image ?? props.product.images[0]}
               handleImageClick={handleClick}
             />
           </div>

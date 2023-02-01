@@ -49,7 +49,7 @@ const Header: React.FC = () => {
       (position > 50 && windowWidth <= 600)
     ) {
       setMenuScrolled(true);
-      setMobileMenuExpanded(false);
+      closeMobileMenu();
     } else {
       setMenuScrolled(false);
     }

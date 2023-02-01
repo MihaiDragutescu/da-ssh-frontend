@@ -28,7 +28,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <FilterItemsList
       list={sizes}
       type='size'
-      activeFilter={activeFilters.size!}
+      activeFilter={activeFilters.size}
       handleClick={handleClick}
     />
   );
@@ -37,20 +37,20 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <FilterItemsList
       list={brands}
       type='brand'
-      activeFilter={activeFilters.brand!}
+      activeFilter={activeFilters.brand}
       handleClick={handleClick}
     />
   );
 
   const colorsList = (
-    <ColorsList activeColor={activeFilters.color!} handleClick={handleClick} />
+    <ColorsList activeColor={activeFilters.color} handleClick={handleClick} />
   );
 
   const collectionsList = (
     <FilterItemsList
       list={collections}
       type='collection'
-      activeFilter={activeFilters.collection!}
+      activeFilter={activeFilters.collection}
       handleClick={handleClick}
     />
   );
@@ -59,7 +59,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <FilterItemsList
       list={categories}
       type='category'
-      activeFilter={activeFilters.category!}
+      activeFilter={activeFilters.category}
       handleClick={handleClick}
     />
   );

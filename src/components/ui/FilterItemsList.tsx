@@ -5,7 +5,7 @@ import { ProductsListActions } from '@Types/productsListActions';
 interface FilterListProps {
   list: { id: string; name: string }[];
   type: keyof FilterType;
-  activeFilter: string;
+  activeFilter?: string;
   handleClick: (type: keyof FilterType, filter: string) => void;
 }
 

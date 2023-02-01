@@ -8,14 +8,12 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = (props: AccordionProps) => {
-  const [expandedIndex, setExpandedIndex] = useState(-1);
+  const [expandedIndex, setExpandedIndex] = useState<number | undefined>(
+    undefined
+  );
   const handleClick = (nextIndex: number) => {
     setExpandedIndex((currentIndex) => {
-      if (currentIndex === nextIndex) {
-        return -1;
-      } else {
-        return nextIndex;
-      }
+      return currentIndex === nextIndex ? undefined : nextIndex;
     });
   };
 
@@ -33,7 +31,11 @@ const Accordion: React.FC<AccordionProps> = (props: AccordionProps) => {
         <div className='ssh-accordion__label'>
           {item.label} {isExpanded ? <ArrowUp /> : <ArrowDown />}
         </div>
-        <div className={`ssh-accordion__content ${isExpanded ? '' : 'hidden'}`}>
+        <div
+          className={`ssh-accordion__content ${
+            isExpanded ? '' : 'hidden-item'
+          }`}
+        >
           {item.content}
         </div>
       </div>

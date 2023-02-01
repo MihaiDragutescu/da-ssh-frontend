@@ -60,6 +60,24 @@
       margin: 0 0 0 -10px;
     }
 
+    .slick-next,
+    .slick-prev {
+      height: calc(100% - 20px);
+      background: rgba(0, 0, 0, 0.2);
+      transform: initial;
+      bottom: 0;
+      top: initial;
+      z-index: 10;
+    }
+
+    .slick-next {
+      right: 10px;
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
     .slick-slider,
     .slick-list,
     .slick-track {

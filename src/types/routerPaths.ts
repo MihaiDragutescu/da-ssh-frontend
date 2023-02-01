@@ -7,4 +7,5 @@ export enum RouterPaths {
   PRIVACY_POLICY = '/privacy-policy',
   TERMS_AND_CONDITIONS = '/terms-and-conditions',
   ABOUT = '/about',
+  NOT_FOUND = '/404',
 }
