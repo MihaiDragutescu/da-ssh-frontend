@@ -8,17 +8,17 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = (props: AccordionProps) => {
-  const [expandedIndex, setExpandedIndex] = useState<number | undefined>(
-    undefined
-  );
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
   const handleClick = (nextIndex: number) => {
-    setExpandedIndex((currentIndex) => {
-      return currentIndex === nextIndex ? undefined : nextIndex;
+    setExpandedIndexes((currentIndexes) => {
+      return currentIndexes.includes(nextIndex)
+        ? currentIndexes.filter((index) => index !== nextIndex)
+        : [...currentIndexes, nextIndex];
     });
   };
 
   const list = props.accordionList.map((item, index) => {
-    const isExpanded = expandedIndex === index;
+    const isExpanded = expandedIndexes.includes(index);
 
     return (
       <div
