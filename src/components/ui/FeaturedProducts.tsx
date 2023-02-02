@@ -21,7 +21,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   props: FeaturedProductsProps
 ) => {
   const navigate = useNavigate();
-  let sliderRef = useRef<Slider>(null);
+  const sliderRef = useRef<Slider>(null);
 
   const goToNext = () => {
     sliderRef.current?.slickNext();

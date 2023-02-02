@@ -8,7 +8,7 @@ const ProductsList: React.FC = () => {
       <div className='products-list__container ssh-container'>
         <div className='products-list__row ssh-row'>
           <div className='products-list__results'>
-            {products.map((product, index) => {
+            {products.map((product) => {
               return (
                 <ProductCard
                   key={product.id}

@@ -31,7 +31,7 @@ const HomeFeaturedCollections: React.FC = () => {
             </h2>
           </div>
           <div className='home-collections__list'>
-            {collections.map((collection, index) => {
+            {collections.map((collection) => {
               return (
                 <ProductCard
                   classname={collection.className}

@@ -25,7 +25,7 @@ const ProductsSort: React.FC<ProductsSortProps> = (
         handleClick={() => {
           handleClick(elem.id);
         }}
-        active={elem.id === activeSort ? true : false}
+        active={elem.id === activeSort}
       >
         {elem.type}
       </FilterPill>

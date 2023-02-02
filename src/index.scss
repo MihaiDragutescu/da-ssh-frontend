@@ -36,10 +36,6 @@ h1 {
   @include for-size(mobile-small) {
     font-size: var(--font-h1-mobile-small);
   }
-
-  @include for-size(mobile-small) {
-    font-size: $title-size-extrasmall;
-  }
 }
 
 h2 {
@@ -55,10 +51,6 @@ h2 {
 
   @include for-size(mobile-small) {
     font-size: var(--font-h2-mobile-small);
-  }
-
-  @include for-size(mobile-small) {
-    font-size: 28px;
   }
 }
 

@@ -16,7 +16,7 @@ const ColorsList: React.FC<ColorsListProps> = (props: ColorsListProps) => {
         handleClick={() => {
           props.handleClick('color', color.id);
         }}
-        active={color.id === props.activeColor ? true : false}
+        active={color.id === props.activeColor}
       />
     );
   });
