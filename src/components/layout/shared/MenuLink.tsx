@@ -1,7 +1,4 @@
-import { ActiveMenuLinkContextType } from '@Types/menu';
-import ActiveMenuLinkContext from '@Context/activeMenuLink';
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 
 interface MenuLinkProps {
@@ -12,28 +9,22 @@ interface MenuLinkProps {
 }
 
 const MenuLink: React.FC<MenuLinkProps> = (props: MenuLinkProps) => {
-  const { activeMenuLink, updateActiveMenuLink } = useContext(
-    ActiveMenuLinkContext
-  ) as ActiveMenuLinkContextType;
-
   const handleLinkClick = (route: string) => {
-    updateActiveMenuLink(route);
-
     if (props.handleLinkClick !== undefined) {
       props.handleLinkClick();
     }
   };
 
   return (
-    <Link
-      className={`${props.classes} ${
-        activeMenuLink === props.route ? 'active-menu-link' : ''
-      }`}
+    <NavLink
+      className={({ isActive }) =>
+        isActive ? `${props.classes} active-menu-link` : `${props.classes}`
+      }
       onClick={() => handleLinkClick(props.route)}
       to={props.route}
     >
       {props.content}
-    </Link>
+    </NavLink>
   );
 };
 

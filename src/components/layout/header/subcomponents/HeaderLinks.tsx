@@ -26,30 +26,36 @@ const HeaderLinks: React.FC<HeaderLinksProps> = (props: HeaderLinksProps) => {
           }`}
         />
       </div>
-      <div
+      <ul
         className={`ssh-header__links-list ${
           props.mobileMenuExpanded ? 'mobile-visible' : ''
         }`}
       >
-        <MenuLink
-          route={RouterPaths.HOME}
-          content='Home'
-          classes='ssh-header__link'
-          handleLinkClick={props.handleIconClick}
-        />
-        <MenuLink
-          route={RouterPaths.SHOP}
-          content='Shop'
-          classes='ssh-header__link'
-          handleLinkClick={props.handleIconClick}
-        />
-        <MenuLink
-          route={RouterPaths.CONTACT}
-          content='Contact'
-          classes='ssh-header__link'
-          handleLinkClick={props.handleIconClick}
-        />
-      </div>
+        <li>
+          <MenuLink
+            route={RouterPaths.HOME}
+            content='Home'
+            classes='ssh-header__link'
+            handleLinkClick={props.handleIconClick}
+          />
+        </li>
+        <li>
+          <MenuLink
+            route={RouterPaths.SHOP}
+            content='Shop'
+            classes='ssh-header__link'
+            handleLinkClick={props.handleIconClick}
+          />
+        </li>
+        <li>
+          <MenuLink
+            route={RouterPaths.CONTACT}
+            content='Contact'
+            classes='ssh-header__link'
+            handleLinkClick={props.handleIconClick}
+          />
+        </li>
+      </ul>
     </div>
   );
 };

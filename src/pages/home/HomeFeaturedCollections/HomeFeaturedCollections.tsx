@@ -1,38 +1,15 @@
 import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
-import image1 from '@Assets/images/card-image-1.png';
-import image2 from '@Assets/images/card-image-3.png';
 import { CardLayouts } from '@Types/layouts';
 import { RouterPaths } from '@Types/routerPaths';
-import useRedirectToUrl from '@Hooks/useRedirectToUrl';
+import { featuredCollections } from '@Utils/mocks';
+import { useNavigate } from 'react-router-dom';
 import './HomeFeaturedCollections.scss';
 
 const HomeFeaturedCollections: React.FC = () => {
-  const redirect = useRedirectToUrl();
+  const navigate = useNavigate();
   const checkIndex = (index: number) => index % 3 === 2;
-  const collections = [
-    {
-      id: '1',
-      image: image1,
-      collection: 'All Autumn Collection',
-      category: 'Overcoats',
-      link: '#',
-    },
-    {
-      id: '2',
-      image: image1,
-      collection: 'All Autumn Collection',
-      category: 'Overcoats',
-      link: '#',
-    },
-    {
-      id: '3',
-      image: image2,
-      collection: 'Footwear',
-      category: 'Boots',
-      link: '#',
-    },
-  ].map((collection, index) => ({
+  const collections = featuredCollections.map((collection, index) => ({
     ...collection,
     className: `collection-card ${
       checkIndex(index) ? 'collection-card-large' : ''
@@ -41,11 +18,11 @@ const HomeFeaturedCollections: React.FC = () => {
   }));
 
   const handleClick = () => {
-    redirect.handleRedirect(RouterPaths.SHOP);
+    navigate(RouterPaths.SHOP);
   };
 
   return (
-    <div className='home-collections'>
+    <section className='home-collections'>
       <div className='home-collections__container ssh-container'>
         <div className='home-collections__row ssh-row'>
           <div className='home-collections__title-container'>
@@ -73,7 +50,7 @@ const HomeFeaturedCollections: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

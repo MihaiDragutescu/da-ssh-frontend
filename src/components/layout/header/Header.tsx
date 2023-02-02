@@ -36,6 +36,10 @@ const Header: React.FC = () => {
     setMobileMenuExpanded(!mobileMenuExpanded);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuExpanded(false);
+  };
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     const windowWidth = window.innerWidth;
@@ -45,6 +49,7 @@ const Header: React.FC = () => {
       (position > 50 && windowWidth <= 600)
     ) {
       setMenuScrolled(true);
+      closeMobileMenu();
     } else {
       setMenuScrolled(false);
     }
@@ -84,6 +89,7 @@ const Header: React.FC = () => {
               route={RouterPaths.HOME}
               content={<img src={logo} alt='logo' />}
               classes='ssh-header__link'
+              handleLinkClick={closeMobileMenu}
             />
           </div>
           <HeaderLinks
@@ -95,6 +101,7 @@ const Header: React.FC = () => {
             inputValue={inputValue}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            handleIconClick={closeMobileMenu}
           />
           <HeaderMobileSearch
             menuScrolled={menuScrolled}

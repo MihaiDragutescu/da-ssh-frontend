@@ -10,14 +10,14 @@ interface FilterPillProps {
 
 const FilterPill: React.FC<FilterPillProps> = (props: FilterPillProps) => {
   return (
-    <div
+    <li
       onClick={props.handleClick}
       className={`ssh-filter-pill ${
         props.type === ProductsListActions.SORT ? 'ssh-sort-pill' : ''
       } ${props.active ? 'active-filter' : ''}`}
     >
       <span>{props.children}</span>
-    </div>
+    </li>
   );
 };
 

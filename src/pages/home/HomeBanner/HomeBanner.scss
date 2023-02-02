@@ -38,6 +38,10 @@
 
       svg {
         margin-left: 20px;
+
+        @include for-size(mobile-small) {
+          max-height: 30px;
+        }
       }
     }
   }

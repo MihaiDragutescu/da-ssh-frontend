@@ -2,17 +2,17 @@ import Button from '@Components/ui/Button';
 import image from '@Assets/images/home-banner-img.png';
 import { ReactComponent as Icon } from '@Assets/images/button-icon.svg';
 import { RouterPaths } from '@Types/routerPaths';
-import useRedirectToUrl from '@Hooks/useRedirectToUrl';
+import { useNavigate } from 'react-router-dom';
 import './HomeBanner.scss';
 
 const HomeBanner: React.FC = () => {
-  const redirect = useRedirectToUrl();
+  const navigate = useNavigate();
   const handleClick = () => {
-    redirect.handleRedirect(RouterPaths.SHOP);
+    navigate(RouterPaths.SHOP);
   };
 
   return (
-    <div className='home-banner'>
+    <section className='home-banner'>
       <div className='home-banner__container ssh-container'>
         <div className='home-banner__row ssh-row'>
           <div className='home-banner__col home-banner__col--left'>
@@ -34,7 +34,7 @@ const HomeBanner: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
