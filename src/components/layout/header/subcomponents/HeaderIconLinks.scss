@@ -1,5 +1,4 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 
 .ssh-header {
   &__icons {
@@ -12,6 +11,8 @@
     &--profile {
       margin-left: 24px;
       z-index: 1;
+      display: flex;
+
       @include for-size(mobile) {
         margin-left: 12px;
       }
@@ -59,7 +60,7 @@
       }
     }
 
-    form {
+    &-form {
       flex: 1;
 
       @include for-size(tablet-portrait) {

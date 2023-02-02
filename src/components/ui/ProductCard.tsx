@@ -16,11 +16,11 @@ interface ProductCardProps {
   add_to_basket?: boolean;
 }
 
-const handleClick = () => {
-  console.log('Product added to basket');
-};
+const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
+  const handleClick = () => {
+    console.log('Product added to basket');
+  };
 
-const ProductCard: React.FC<ProductCardProps> = (props) => {
   return (
     <div className={`product-card ${props.classname ?? ''}`}>
       <div

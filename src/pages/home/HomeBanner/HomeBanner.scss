@@ -1,5 +1,4 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 
 .home-banner {
   display: flex;
@@ -39,6 +38,10 @@
 
       svg {
         margin-left: 20px;
+
+        @include for-size(mobile-small) {
+          max-height: 30px;
+        }
       }
     }
   }

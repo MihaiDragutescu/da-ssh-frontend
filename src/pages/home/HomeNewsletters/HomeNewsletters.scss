@@ -1,5 +1,5 @@
-@use '@Styles/variables' as *;
 @use '@Styles/mixins' as *;
+@use '@Styles/variables' as *;
 
 .home-newsletters {
   &__row {
@@ -13,6 +13,10 @@
 
     @include for-size(mobile) {
       font-size: $title-size-small;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: $title-size-extrasmall;
     }
   }
 
@@ -35,6 +39,10 @@
 
     @include for-size(mobile) {
       font-size: 26px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 24px;
     }
   }
 }

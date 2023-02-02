@@ -1,0 +1,24 @@
+@use './fonts' as *;
+
+$font-primary: YanoneKaffeesatz;
+$font-secondary: NothingYouCouldDo;
+$font-tertiary: DancingScript;
+
+$font-weight-texts: 300;
+$font-weight-titles: 400;
+$font-weight-footer: 600;
+
+$font-sizes: (
+  h1-desktop: 48px,
+  h1-tablet: 44px,
+  h1-mobile: 32px,
+  h1-mobile-small: 28px,
+  h2-desktop: 40px,
+  h2-tablet: 32px,
+  h2-mobile: 24px,
+  h2-mobile-small: 20px,
+  h3-desktop: 28px,
+  h3-tablet: 24px,
+  h3-mobile: 20px,
+  h3-mobile-small: 16px,
+);

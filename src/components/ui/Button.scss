@@ -1,5 +1,4 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 
 .ssh-button {
   border: 1px solid $color-brown;
@@ -14,5 +13,9 @@
     font-size: 26px;
     padding: 12px;
     width: 100%;
+  }
+
+  @include for-size(mobile-small) {
+    font-size: 24px;
   }
 }

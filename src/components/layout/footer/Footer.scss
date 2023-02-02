@@ -1,5 +1,4 @@
-@use '@Styles/variables' as *;
-@use '@Styles/mixins' as *;
+@use '@Styles/' as *;
 
 .ssh-footer {
   background-color: $secondary-color;
@@ -48,6 +47,7 @@
     font-weight: $font-weight-footer;
     display: inline-block;
     margin-top: 12px;
+    text-align: center;
   }
 
   &__links {
@@ -55,14 +55,20 @@
     flex-direction: column;
     justify-content: center;
 
-    a.ssh-footer__link {
-      font-size: 32px;
-      font-weight: $font-weight-footer;
-      color: $color-brown-dark;
-    }
+    li {
+      @include for-size(mobile) {
+        text-align: center;
+      }
 
-    a.active-menu-link {
-      text-decoration: underline;
+      a.ssh-footer__link {
+        font-size: 32px;
+        font-weight: $font-weight-footer;
+        color: $color-brown-dark;
+      }
+
+      a.active-menu-link {
+        text-decoration: underline;
+      }
     }
 
     &--right {
