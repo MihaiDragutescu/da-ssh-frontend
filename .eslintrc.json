@@ -35,14 +35,14 @@
     "key-spacing": "warn",
     "max-lines": ["error", 200],
     "prefer-const": ["error", { "destructuring": "any" }],
-    "quotes": ["warn", "single"],
+    "quotes": ["warn", "single", { "avoidEscape": true }],
     "require-await": "error",
     "semi": ["error", "always"],
     "no-else-return": ["error", { "allowElseIf": true }],
-    "no-shadow": "warn",
+    "@typescript-eslint/no-shadow": "warn",
     "no-trailing-spaces": "warn",
     "no-unneeded-ternary": ["warn", { "defaultAssignment": false }],
-    "no-unused-vars": [
+    "@typescript-eslint/no-unused-vars": [
       "warn",
       { "args": "none", "argsIgnorePattern": "^_$", "vars": "local" }
     ],
