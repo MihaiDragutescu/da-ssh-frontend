@@ -9,11 +9,14 @@ interface ColorPillProps {
 const ColorPill: React.FC<ColorPillProps> = (props: ColorPillProps) => {
   return (
     <li
-      onClick={props.handleClick}
       className='ssh-color-pill'
-      style={props.active ? { border: `2px solid ${props.color}` } : undefined}
+      style={props.active ? { border: `2px solid ${props.color}` } : {}}
     >
-      <div style={{ backgroundColor: props.color }}></div>
+      <button
+        type='button'
+        onClick={props.handleClick}
+        style={{ backgroundColor: props.color }}
+      ></button>
     </li>
   );
 };

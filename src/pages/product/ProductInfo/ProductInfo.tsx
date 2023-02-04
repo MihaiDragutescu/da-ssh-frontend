@@ -77,9 +77,13 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
           <div className='product-info__col product-info__col--right'>
             <div className='product-info__title'>
               <h1>{props.product.name}</h1>
-              <div className='product-info__wishlist' onClick={toggleWishlist}>
+              <button
+                type='button'
+                className='product-info__wishlist'
+                onClick={toggleWishlist}
+              >
                 {productInWishlist ? <HeartFilled /> : <Heart />}
-              </div>
+              </button>
             </div>
             <div className='product-info__price'>{props.product.price} €</div>
             <div className='product-info__description'>

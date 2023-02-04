@@ -20,15 +20,14 @@ const ProductImages: React.FC<ProductImagesProps> = (
           props.currentImage === image ? 'active-image' : ''
         }`}
       >
-        <div>
-          <img
-            src={image}
-            alt='product'
-            onClick={() => {
-              props.handleImageClick('image', image);
-            }}
-          />
-        </div>
+        <button
+          type='button'
+          onClick={() => {
+            props.handleImageClick('image', image);
+          }}
+        >
+          <img src={image} alt='product' />
+        </button>
       </div>
     );
   });
