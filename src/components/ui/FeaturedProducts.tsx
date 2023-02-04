@@ -43,14 +43,12 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
             Discover your style
           </h2>
           <div className='featured-products__navigation'>
-            <Prev
-              onClick={goToPrev}
-              className='featured-products__navigation--prev'
-            />
-            <Next
-              onClick={goToNext}
-              className='featured-products__navigation--next'
-            />
+            <button type='button' onClick={goToPrev}>
+              <Prev className='featured-products__navigation--prev' />
+            </button>
+            <button type='button' onClick={goToNext}>
+              <Next className='featured-products__navigation--next' />
+            </button>
           </div>
         </div>
         <Slider {...productsSliderSettings} ref={sliderRef}>

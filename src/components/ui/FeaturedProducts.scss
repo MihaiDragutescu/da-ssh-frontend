@@ -41,11 +41,10 @@
 
     &--prev,
     &--next {
-      cursor: pointer;
       width: 40px;
     }
 
-    &--prev {
+    button:first-child {
       margin-right: 16px;
     }
   }

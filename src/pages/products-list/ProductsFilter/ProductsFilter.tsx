@@ -76,6 +76,10 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     });
   }, []);
 
+  useEffect(() => {
+    (document.querySelector('.ssh-filter-pill button')! as HTMLElement).focus();
+  }, [props.visible]);
+
   const handlePriceChange = (min: number, max: number) => {
     setActiveFilters((prev) => {
       return {
