@@ -3,10 +3,10 @@ import ProductsList from './ProductsList/ProductsList';
 
 const ProductsListPage = () => {
   return (
-    <section className='products-section'>
+    <div className='products-section'>
       <ProductsActions />
       <ProductsList />
-    </section>
+    </div>
   );
 };
 

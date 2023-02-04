@@ -29,27 +29,29 @@ const App = () => {
         ) : (
           ''
         )}
-        <Routes>
-          <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
-          <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
-          <Route path={RouterPaths.HOME} element={<HomePage />} />
-          <Route path={RouterPaths.SHOP}>
-            <Route index element={<ProductsListPage />} />
-            <Route path=':id' element={<ProductPage />} />
-          </Route>
-          <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
-          <Route path={RouterPaths.CART} element={<CartPage />} />
-          <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
-          <Route
-            path={RouterPaths.PRIVACY_POLICY}
-            element={<PrivacyPolicyPage />}
-          />
-          <Route
-            path={RouterPaths.TERMS_AND_CONDITIONS}
-            element={<TermsAndConditionsPage />}
-          />
-          <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
+            <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
+            <Route path={RouterPaths.HOME} element={<HomePage />} />
+            <Route path={RouterPaths.SHOP}>
+              <Route index element={<ProductsListPage />} />
+              <Route path=':id' element={<ProductPage />} />
+            </Route>
+            <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
+            <Route path={RouterPaths.CART} element={<CartPage />} />
+            <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
+            <Route
+              path={RouterPaths.PRIVACY_POLICY}
+              element={<PrivacyPolicyPage />}
+            />
+            <Route
+              path={RouterPaths.TERMS_AND_CONDITIONS}
+              element={<TermsAndConditionsPage />}
+            />
+            <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
+          </Routes>
+        </main>
         <Footer />
       </div>
     </Provider>
