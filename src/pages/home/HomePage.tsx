@@ -8,9 +8,11 @@ const HomePage = () => {
   return (
     <>
       <HomeBanner />
-      <FeaturedProducts products={products} showButton />
-      <HomeFeaturedCollections />
-      <HomeNewsletters />
+      <main id='main'>
+        <FeaturedProducts products={products} showButton />
+        <HomeFeaturedCollections />
+        <HomeNewsletters />
+      </main>
     </>
   );
 };

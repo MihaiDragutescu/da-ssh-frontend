@@ -42,8 +42,6 @@ const ProductsActions: React.FC = () => {
   return (
     <div className='products-actions'>
       <div className='products-actions__container ssh-container'>
-        <ProductsFilter visible={showFilters} />
-        <ProductsSort visible={showSort} />
         <div className='products-actions__row ssh-row'>
           <button
             type='button'
@@ -67,6 +65,8 @@ const ProductsActions: React.FC = () => {
           </button>
           {showFiltersOverlay && modal}
         </div>
+        <ProductsFilter visible={showFilters} />
+        <ProductsSort visible={showSort} />
       </div>
     </div>
   );

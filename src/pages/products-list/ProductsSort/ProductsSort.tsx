@@ -1,7 +1,7 @@
 import FilterPill from '@Components/ui/FilterPill';
 import { ProductsListActions } from '@Types/productsListActions';
 import { sort } from '@Utils/mocks';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './ProductsSort.scss';
 
 interface ProductsSortProps {
@@ -31,10 +31,6 @@ const ProductsSort: React.FC<ProductsSortProps> = (
       </FilterPill>
     );
   });
-
-  useEffect(() => {
-    (document.querySelector('.ssh-sort-pill button')! as HTMLElement).focus();
-  }, [props.visible]);
 
   return (
     <div className={`products-sort ${!props.visible ? 'hidden' : ''}`}>

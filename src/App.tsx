@@ -11,7 +11,6 @@ import ProfilePage from '@Pages/profile/ProfilePage';
 import Footer from '@Components/layout/footer/Footer';
 import Header from '@Components/layout/header/Header';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
-import { Provider } from '@Context/activeMenuLink';
 import { RouterPaths } from '@Types/routerPaths';
 import Breadcrumbs from '@Components/ui/Breadcrumbs';
 import './App.scss';
@@ -20,7 +19,10 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <Provider>
+    <>
+      <a className='skip-to-content-link' href='#main'>
+        Skip to content
+      </a>
       <Header />
       <div id='search-overlay-container'>
         {location.pathname !== RouterPaths.HOME &&
@@ -29,32 +31,30 @@ const App = () => {
         ) : (
           ''
         )}
-        <main>
-          <Routes>
-            <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
-            <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
-            <Route path={RouterPaths.HOME} element={<HomePage />} />
-            <Route path={RouterPaths.SHOP}>
-              <Route index element={<ProductsListPage />} />
-              <Route path=':id' element={<ProductPage />} />
-            </Route>
-            <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
-            <Route path={RouterPaths.CART} element={<CartPage />} />
-            <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
-            <Route
-              path={RouterPaths.PRIVACY_POLICY}
-              element={<PrivacyPolicyPage />}
-            />
-            <Route
-              path={RouterPaths.TERMS_AND_CONDITIONS}
-              element={<TermsAndConditionsPage />}
-            />
-            <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
+          <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
+          <Route path={RouterPaths.HOME} element={<HomePage />} />
+          <Route path={RouterPaths.SHOP}>
+            <Route index element={<ProductsListPage />} />
+            <Route path=':id' element={<ProductPage />} />
+          </Route>
+          <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
+          <Route path={RouterPaths.CART} element={<CartPage />} />
+          <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
+          <Route
+            path={RouterPaths.PRIVACY_POLICY}
+            element={<PrivacyPolicyPage />}
+          />
+          <Route
+            path={RouterPaths.TERMS_AND_CONDITIONS}
+            element={<TermsAndConditionsPage />}
+          />
+          <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
+        </Routes>
         <Footer />
       </div>
-    </Provider>
+    </>
   );
 };
 

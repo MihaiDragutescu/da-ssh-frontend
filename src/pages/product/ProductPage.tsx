@@ -13,10 +13,10 @@ const ProductsPage = () => {
   }
 
   return (
-    <>
+    <main id='main'>
       <ProductInfo product={product} />
       <FeaturedProducts products={products} />
-    </>
+    </main>
   );
 };
 

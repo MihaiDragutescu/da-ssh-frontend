@@ -74,10 +74,33 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       collection: '3',
       category: '3',
     });
+
+    const lastFilterButton = document.querySelector(
+      '.products-filters__category ul li:last-child button'
+    )! as HTMLElement;
+
+    const filterButton = document.querySelector(
+      'button.products-actions__filters'
+    )! as HTMLElement;
+
+    const eventHnadler = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') {
+        filterButton.focus();
+      }
+    };
+
+    lastFilterButton.addEventListener('keydown', eventHnadler);
+
+    return () => {
+      lastFilterButton.removeEventListener('keydown', eventHnadler);
+    };
   }, []);
 
   useEffect(() => {
-    (document.querySelector('.ssh-filter-pill button')! as HTMLElement).focus();
+    const focusedButton = document.querySelector(
+      '.products-filters  .ssh-filter-pill button'
+    )! as HTMLElement;
+    focusedButton.focus();
   }, [props.visible]);
 
   const handlePriceChange = (min: number, max: number) => {
