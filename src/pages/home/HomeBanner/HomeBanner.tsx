@@ -30,7 +30,7 @@ const HomeBanner: React.FC = () => {
             </Button>
           </div>
           <div className='home-banner__col home-banner__col--right'>
-            <img src={image} alt='home-banner-img' />
+            <img src={image} alt='' />
           </div>
         </div>
       </div>

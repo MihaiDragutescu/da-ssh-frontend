@@ -13,6 +13,7 @@ const ColorPill: React.FC<ColorPillProps> = (props: ColorPillProps) => {
       style={props.active ? { border: `2px solid ${props.color}` } : {}}
     >
       <button
+        title='Color'
         type='button'
         onClick={props.handleClick}
         style={{ backgroundColor: props.color }}

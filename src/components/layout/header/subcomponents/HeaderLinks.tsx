@@ -13,14 +13,22 @@ const HeaderLinks: React.FC<HeaderLinksProps> = (props: HeaderLinksProps) => {
   return (
     <div className='ssh-header__col ssh-header__links'>
       <div className='ssh-header__mobile-icons'>
-        <button type='button' onClick={props.handleIconClick}>
+        <button
+          type='button'
+          onClick={props.handleIconClick}
+          title='Expand Menu'
+        >
           <MenuExpand
             className={`ssh-header__mobile-icons--expand ${
               props.mobileMenuExpanded ? 'invisible-icon' : ''
             }`}
           />
         </button>
-        <button type='button' onClick={props.handleIconClick}>
+        <button
+          type='button'
+          onClick={props.handleIconClick}
+          title='Collapse Menu'
+        >
           <MenuCollapse
             className={`ssh-header__mobile-icons--collapse ${
               !props.mobileMenuExpanded ? 'invisible-icon' : ''

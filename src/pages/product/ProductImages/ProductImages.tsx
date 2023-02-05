@@ -35,7 +35,7 @@ const ProductImages: React.FC<ProductImagesProps> = (
   return (
     <>
       <div className='product-info__image'>
-        <img src={props.currentImage} alt='product' />
+        <img src={props.currentImage} alt='selected-product' />
       </div>
       <div className='product-info__gallery'>
         <Slider {...productImagesSettings}>{gallery}</Slider>

@@ -81,6 +81,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
                 type='button'
                 className='product-info__wishlist'
                 onClick={toggleWishlist}
+                title='Toggle Wishlist'
               >
                 {productInWishlist ? <HeartFilled /> : <Heart />}
               </button>

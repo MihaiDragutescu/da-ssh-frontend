@@ -30,7 +30,7 @@ const Accordion: React.FC<AccordionProps> = (props: AccordionProps) => {
       >
         <div className='ssh-accordion__label'>
           {item.label}
-          <button type='button'>
+          <button type='button' title='Toggle Accordion Panel'>
             {isExpanded ? <ArrowUp /> : <ArrowDown />}
           </button>
         </div>

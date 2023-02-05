@@ -87,7 +87,7 @@ const Header: React.FC = () => {
           <div className='ssh-header__col ssh-header__logo'>
             <MenuLink
               route={RouterPaths.HOME}
-              content={<img src={logo} alt='logo' />}
+              content={<img src={logo} alt='DaSSH' />}
               classes='ssh-header__link'
               handleLinkClick={closeMobileMenu}
             />
