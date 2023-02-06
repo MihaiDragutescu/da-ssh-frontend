@@ -9,18 +9,12 @@ interface MenuLinkProps {
 }
 
 const MenuLink: React.FC<MenuLinkProps> = (props: MenuLinkProps) => {
-  const handleLinkClick = (route: string) => {
-    if (props.handleLinkClick !== undefined) {
-      props.handleLinkClick();
-    }
-  };
-
   return (
     <NavLink
       className={({ isActive }) =>
         isActive ? `${props.classes} active-menu-link` : `${props.classes}`
       }
-      onClick={() => handleLinkClick(props.route)}
+      onClick={props.handleLinkClick}
       to={props.route}
     >
       {props.content}

@@ -42,10 +42,9 @@ const ProductsActions: React.FC = () => {
   return (
     <div className='products-actions'>
       <div className='products-actions__container ssh-container'>
-        <ProductsFilter visible={showFilters} />
-        <ProductsSort visible={showSort} />
         <div className='products-actions__row ssh-row'>
-          <div
+          <button
+            type='button'
             className='products-actions__filters'
             onClick={() => {
               handleActionClick();
@@ -53,8 +52,9 @@ const ProductsActions: React.FC = () => {
           >
             <span>Filters</span>
             <Filter />
-          </div>
-          <div
+          </button>
+          <button
+            type='button'
             className='products-actions__sort'
             onClick={() => {
               handleActionClick(false);
@@ -62,9 +62,11 @@ const ProductsActions: React.FC = () => {
           >
             <span>Sort</span>
             <Sort />
-          </div>
+          </button>
           {showFiltersOverlay && modal}
         </div>
+        <ProductsFilter visible={showFilters} />
+        <ProductsSort visible={showSort} />
       </div>
     </div>
   );

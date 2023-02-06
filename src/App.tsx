@@ -11,7 +11,6 @@ import ProfilePage from '@Pages/profile/ProfilePage';
 import Footer from '@Components/layout/footer/Footer';
 import Header from '@Components/layout/header/Header';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
-import { Provider } from '@Context/activeMenuLink';
 import { RouterPaths } from '@Types/routerPaths';
 import Breadcrumbs from '@Components/ui/Breadcrumbs';
 import './App.scss';
@@ -20,7 +19,10 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <Provider>
+    <>
+      <a className='skip-to-content-link' href='#main'>
+        Skip to content
+      </a>
       <Header />
       <div id='search-overlay-container'>
         {location.pathname !== RouterPaths.HOME &&
@@ -52,7 +54,7 @@ const App = () => {
         </Routes>
         <Footer />
       </div>
-    </Provider>
+    </>
   );
 };
 

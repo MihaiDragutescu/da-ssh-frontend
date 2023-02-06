@@ -6,17 +6,17 @@ import { RouterPaths } from '@Types/routerPaths';
 
 const ProductsPage = () => {
   const { id } = useParams();
-  const product = products.find((product) => product.id === id);
+  const product = products.find((prod) => prod.id === id);
 
   if (product === undefined) {
     return <Navigate to={RouterPaths.NOT_FOUND} />;
   }
 
   return (
-    <>
+    <main id='main'>
       <ProductInfo product={product} />
       <FeaturedProducts products={products} />
-    </>
+    </main>
   );
 };
 

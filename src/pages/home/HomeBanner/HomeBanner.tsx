@@ -23,14 +23,14 @@ const HomeBanner: React.FC = () => {
               Find your new favourite piece here
             </h3>
             <Button className='home-banner__button' onClick={handleClick}>
-              <div className='home-banner__button-content'>
+              <span className='home-banner__button-content'>
                 <span>BEGIN YOUR JOURNEY</span>
                 <Icon />
-              </div>
+              </span>
             </Button>
           </div>
           <div className='home-banner__col home-banner__col--right'>
-            <img src={image} alt='home-banner-img' />
+            <img src={image} alt='' />
           </div>
         </div>
       </div>

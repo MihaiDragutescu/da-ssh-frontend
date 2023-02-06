@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  webpack: function (config, env) {
+  webpack: function (config) {
     config = {
       ...config,
       resolve: {

@@ -20,15 +20,14 @@ const ProductImages: React.FC<ProductImagesProps> = (
           props.currentImage === image ? 'active-image' : ''
         }`}
       >
-        <div>
-          <img
-            src={image}
-            alt='product'
-            onClick={() => {
-              props.handleImageClick('image', image);
-            }}
-          />
-        </div>
+        <button
+          type='button'
+          onClick={() => {
+            props.handleImageClick('image', image);
+          }}
+        >
+          <img src={image} alt='product' />
+        </button>
       </div>
     );
   });
@@ -36,7 +35,7 @@ const ProductImages: React.FC<ProductImagesProps> = (
   return (
     <>
       <div className='product-info__image'>
-        <img src={props.currentImage} alt='product' />
+        <img src={props.currentImage} alt='selected-product' />
       </div>
       <div className='product-info__gallery'>
         <Slider {...productImagesSettings}>{gallery}</Slider>

@@ -8,17 +8,32 @@ const FooterSocials: React.FC = () => {
     <div className='ssh-footer__col'>
       <ul className='ssh-footer__socials'>
         <li>
-          <a href='https://www.facebook.com/' target='_blank' rel='noreferrer'>
+          <a
+            href='https://www.facebook.com/'
+            target='_blank'
+            rel='noreferrer'
+            aria-label='Facebook page'
+          >
             <Facebook />
           </a>
         </li>
         <li>
-          <a href='https://twitter.com/' target='_blank' rel='noreferrer'>
+          <a
+            href='https://twitter.com/'
+            target='_blank'
+            rel='noreferrer'
+            aria-label='Twitter page'
+          >
             <Twitter />
           </a>
         </li>
         <li>
-          <a href='https://www.instagram.com/' target='_blank' rel='noreferrer'>
+          <a
+            href='https://www.instagram.com/'
+            target='_blank'
+            rel='noreferrer'
+            aria-label='Instagram page'
+          >
             <Instagram />
           </a>
         </li>

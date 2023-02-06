@@ -10,8 +10,13 @@ const HomeNewsletters: React.FC = () => {
     setInputValue(event.target.value);
   };
 
-  const handleClick = () => {
-    console.log(`Form submitted with value ${inputValue}`);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (inputValue) {
+      console.log(`Form submitted with value ${inputValue}`);
+      setInputValue('');
+    }
   };
 
   return (
@@ -22,16 +27,18 @@ const HomeNewsletters: React.FC = () => {
           <h3 className='home-newsletters__subtitle'>
             Subscribe to our newsletter
           </h3>
-          <Input
-            className='home-newsletters__input'
-            placeholder='Email...'
-            type='email'
-            value={inputValue}
-            onChange={handleChange}
-          />
-          <Button className='home-newsletters__button' onClick={handleClick}>
-            SUBSCRIBE
-          </Button>
+          <form className='home-newsletters__form' onSubmit={handleSubmit}>
+            <Input
+              className='home-newsletters__input'
+              placeholder='Email...'
+              type='email'
+              value={inputValue}
+              onChange={handleChange}
+            />
+            <Button type='submit' className='home-newsletters__button'>
+              SUBSCRIBE
+            </Button>
+          </form>
         </div>
       </div>
     </section>

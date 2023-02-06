@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <MenuLink
               classes='ssh-footer__link'
               route={RouterPaths.HOME}
-              content={<img src={logo} alt='logo' />}
+              content={<img src={logo} alt='DaSSH' />}
             />
             <span className='ssh-footer__copyright'>
               © 2022 All rights reserved

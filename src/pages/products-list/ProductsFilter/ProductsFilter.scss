@@ -12,7 +12,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 60px 80px;
   width: min-content;
-  height: calc(100vh - 310px);
+  height: calc(100vh - 285px);
   max-height: 522px;
   max-width: calc(100vw - 60px);
   overflow: hidden auto;
@@ -28,6 +28,8 @@
     left: 0;
     max-width: initial;
     width: 100%;
+    height: auto;
+    max-height: calc(100vh - 310px);
   }
 
   @include for-size(mobile) {
@@ -38,11 +40,13 @@
     padding: 40px 30px;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px 20px;
+    max-height: calc(100vh - 280px);
   }
 
   @include for-size(mobile-small) {
     grid-template-columns: 1fr;
     padding: 30px;
+    max-height: calc(100vh - 277px);
   }
 
   &__title {
@@ -91,6 +95,10 @@
   &__price {
     grid-area: 2 / 1 / 2 / 4;
     max-width: calc(100vw - 124px);
+
+    @include for-size(tablet-portrait) {
+      max-width: calc(100vw - 64px);
+    }
 
     @include for-size(mobile) {
       max-width: calc(100vw - 60px);

@@ -21,7 +21,7 @@ const FiltersList: React.FC<FilterListProps> = (props: FilterListProps) => {
         handleClick={() => {
           props.handleClick(filterType, filter.id);
         }}
-        active={filter.id === props.activeFilter ? true : false}
+        active={filter.id === props.activeFilter}
       >
         {filter.name}
       </FilterPill>

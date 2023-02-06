@@ -153,6 +153,11 @@
         padding: 10px 5px 5px 5px;
       }
 
+      button {
+        height: 100%;
+        width: 100%;
+      }
+
       img {
         @include for-size(tablet-portrait) {
           object-fit: cover;
@@ -162,7 +167,7 @@
       }
     }
 
-    .active-image > div {
+    .active-image > button {
       border: 3px solid $color-brown;
 
       img {

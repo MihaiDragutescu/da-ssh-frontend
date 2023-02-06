@@ -21,7 +21,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   props: FeaturedProductsProps
 ) => {
   const navigate = useNavigate();
-  let sliderRef = useRef<Slider>(null);
+  const sliderRef = useRef<Slider>(null);
 
   const goToNext = () => {
     sliderRef.current?.slickNext();
@@ -43,14 +43,16 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
             Discover your style
           </h2>
           <div className='featured-products__navigation'>
-            <Prev
+            <button
+              type='button'
               onClick={goToPrev}
-              className='featured-products__navigation--prev'
-            />
-            <Next
-              onClick={goToNext}
-              className='featured-products__navigation--next'
-            />
+              title='Go To Previous Slides'
+            >
+              <Prev className='featured-products__navigation--prev' />
+            </button>
+            <button type='button' onClick={goToNext} title='Go To Next Slides'>
+              <Next className='featured-products__navigation--next' />
+            </button>
           </div>
         </div>
         <Slider {...productsSliderSettings} ref={sliderRef}>
