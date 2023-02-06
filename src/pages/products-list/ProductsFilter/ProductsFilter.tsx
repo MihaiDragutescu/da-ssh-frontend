@@ -77,11 +77,11 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
     const lastFilterButton = document.querySelector(
       '.products-filters__category ul li:last-child button'
-    )! as HTMLElement;
+    ) as HTMLElement;
 
     const filterButton = document.querySelector(
       'button.products-actions__filters'
-    )! as HTMLElement;
+    ) as HTMLElement;
 
     const eventHnadler = (e: KeyboardEvent) => {
       if (e.key === 'Tab') {
@@ -99,7 +99,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   useEffect(() => {
     const focusedButton = document.querySelector(
       '.products-filters  .ssh-filter-pill button'
-    )! as HTMLElement;
+    ) as HTMLElement;
     focusedButton.focus();
   }, [props.visible]);
 
