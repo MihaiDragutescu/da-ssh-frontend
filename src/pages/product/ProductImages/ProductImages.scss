@@ -20,21 +20,18 @@
       max-height: 450px;
     }
 
-    &-box {
-      height: 100% !important;
-      max-width: initial !important;
-      position: absolute;
-      inset: 0;
+    > div {
+      height: 100%;
+      max-height: 550px;
     }
 
     img {
-      visibility: hidden;
       height: 100%;
       object-fit: contain;
-      max-height: 550px;
 
       @include for-size(tablet-portrait) {
         object-fit: cover;
+        width: 100%;
       }
 
       @include for-size(mobile) {
@@ -47,6 +44,10 @@
     margin: 0 -10px;
     height: 25%;
     max-height: 200px;
+    margin-top: 20px;
+    background-color: $color-white;
+    z-index: 1;
+    position: relative;
 
     @include for-size(tablet-landscape) {
       max-height: 150px;
@@ -71,7 +72,7 @@
 
     .slick-next,
     .slick-prev {
-      height: calc(100% - 20px);
+      height: 100%;
       background: rgba(0, 0, 0, 0.2);
       transform: initial;
       bottom: 0;
@@ -152,7 +153,7 @@
     }
 
     &-image {
-      padding: 20px 10px 0 10px;
+      padding: 0 10px;
 
       @include for-size(tablet-portrait) {
         padding: 20px 0 0 0;
