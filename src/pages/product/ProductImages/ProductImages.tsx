@@ -1,6 +1,7 @@
 import { FilterType } from '@Types/filter';
 import Slider from 'react-slick';
 import { productImagesSettings } from '@App/utils/slidersConfig';
+import { Zoom } from 'reactjs-image-zoom';
 import './ProductImages.scss';
 
 interface ProductImagesProps {
@@ -36,6 +37,14 @@ const ProductImages: React.FC<ProductImagesProps> = (
     <>
       <div className='product-info__image'>
         <img src={props.currentImage} alt='selected-product' />
+        <Zoom
+          position='center'
+          imagesrc={props.currentImage}
+          size={200}
+          cursor='zoom-in'
+          repeat='repeat'
+          className='product-info__image-box'
+        />
       </div>
       <div className='product-info__gallery'>
         <Slider {...productImagesSettings}>{gallery}</Slider>

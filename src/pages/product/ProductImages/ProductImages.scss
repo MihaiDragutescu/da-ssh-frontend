@@ -2,9 +2,11 @@
 
 .product-info {
   &__image {
-    width: 100%;
+    width: max-content;
     max-height: 550px;
     height: 75%;
+    position: relative;
+    margin: 0 auto;
 
     @include for-size(tablet-portrait) {
       width: 60%;
@@ -18,8 +20,15 @@
       max-height: 450px;
     }
 
+    &-box {
+      height: 100% !important;
+      max-width: initial !important;
+      position: absolute;
+      inset: 0;
+    }
+
     img {
-      width: 100%;
+      visibility: hidden;
       height: 100%;
       object-fit: contain;
       max-height: 550px;
