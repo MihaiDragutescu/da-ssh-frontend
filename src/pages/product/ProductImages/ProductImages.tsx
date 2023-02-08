@@ -2,6 +2,7 @@ import { FilterType } from '@Types/filter';
 import Slider from 'react-slick';
 import { productImagesSettings } from '@App/utils/slidersConfig';
 import ImageMagnifier from '../ImageMagnifier';
+import { useEffect } from 'react';
 import './ProductImages.scss';
 
 interface ProductImagesProps {
@@ -33,10 +34,19 @@ const ProductImages: React.FC<ProductImagesProps> = (
     );
   });
 
+  useEffect(() => {
+    const buttons = document.querySelectorAll(
+      '.product-info__gallery .slick-prev, .product-info__gallery .slick-next'
+    ) as NodeListOf<HTMLElement>;
+
+    buttons.forEach((button) => {
+      button.tabIndex = -1;
+    });
+  }, []);
+
   return (
     <>
       <div className='product-info__image'>
-        {/* <img src={props.currentImage} alt='selected-product' /> */}
         <ImageMagnifier
           src={props.currentImage}
           magnifierHeight={150}

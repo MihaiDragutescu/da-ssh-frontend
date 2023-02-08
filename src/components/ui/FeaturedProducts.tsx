@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { productsSliderSettings } from '@App/utils/slidersConfig';
 import './FeaturedProducts.scss';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
 interface FeaturedProductsProps {
@@ -34,6 +34,16 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   const handleClick = () => {
     navigate(RouterPaths.SHOP);
   };
+
+  useEffect(() => {
+    const links = document.querySelectorAll(
+      '.featured-products .slick-slide a'
+    ) as NodeListOf<HTMLElement>;
+
+    links.forEach((link) => {
+      link.tabIndex = -1;
+    });
+  }, []);
 
   return (
     <section className='featured-products'>
