@@ -4,7 +4,7 @@ export const productsSliderSettings = {
   autoplay: true,
   slidesToShow: 5,
   slidesToScroll: 1,
-  arrows: true,
+  arrows: false,
   responsive: [
     {
       breakpoint: 1500,
@@ -28,7 +28,7 @@ export const productsSliderSettings = {
 };
 
 export const productImagesSettings = {
-  infinite: true,
+  infinite: false,
   autoplay: false,
   slidesToShow: 4,
   slidesToScroll: 1,
