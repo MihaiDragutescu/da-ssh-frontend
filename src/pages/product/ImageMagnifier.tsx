@@ -34,8 +34,8 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = (
 
   return (
     <div
+      className='relative'
       style={{
-        position: 'relative',
         height: props.height,
         width: props.width,
       }}
@@ -52,19 +52,14 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = (
       />
 
       <div
+        className='absolute pointer-events-none opacity-100 bg-white bg-no-repeat border border-solid border-[#d3d3d3]'
         style={{
           display: showMagnifier ? '' : 'none',
-          position: 'absolute',
-          pointerEvents: 'none',
           height: `${props.magnifierHeight}px`,
           width: `${props.magnifieWidth}px`,
           top: `${y - props.magnifierHeight / 2}px`,
           left: `${x - props.magnifieWidth / 2}px`,
-          opacity: '1',
-          border: '1px solid lightgray',
-          backgroundColor: 'white',
           backgroundImage: `url('${props.src}')`,
-          backgroundRepeat: 'no-repeat',
           backgroundSize: `${imgWidth * props.zoomLevel}px ${
             imgHeight * props.zoomLevel
           }px`,
