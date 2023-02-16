@@ -50,7 +50,7 @@
     position: relative;
 
     @include for-size(tablet-landscape) {
-      max-height: 150px;
+      max-height: 175px;
     }
 
     @include for-size(tablet-portrait) {
