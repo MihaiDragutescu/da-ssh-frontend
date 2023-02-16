@@ -12,17 +12,17 @@
     { "id": 10, "type": "brand", "name": "Dolce & Gabbana" },
     { "id": 11, "type": "brand", "name": "Gucci" },
     { "id": 12, "type": "brand", "name": "Prada" },
-    { "id": 13, "type": "color", "name": "#ff2802" },
-    { "id": 14, "type": "color", "name": "#ff8900" },
-    { "id": 15, "type": "color", "name": "#f9d900" },
-    { "id": 16, "type": "color", "name": "#00bc02" },
-    { "id": 17, "type": "color", "name": "#00b8f7" },
-    { "id": 18, "type": "color", "name": "#9785cf" },
-    { "id": 19, "type": "color", "name": "#ffb5d9" },
-    { "id": 20, "type": "color", "name": "#756153" },
-    { "id": 21, "type": "color", "name": "#ffffff" },
-    { "id": 22, "type": "color", "name": "#323232" },
-    { "id": 23, "type": "color", "name": "#ebebeb" },
+    { "id": 13, "type": "color", "name": "ff2802" },
+    { "id": 14, "type": "color", "name": "ff8900" },
+    { "id": 15, "type": "color", "name": "f9d900" },
+    { "id": 16, "type": "color", "name": "00bc02" },
+    { "id": 17, "type": "color", "name": "00b8f7" },
+    { "id": 18, "type": "color", "name": "9785cf" },
+    { "id": 19, "type": "color", "name": "ffb5d9" },
+    { "id": 20, "type": "color", "name": "756153" },
+    { "id": 21, "type": "color", "name": "ffffff" },
+    { "id": 22, "type": "color", "name": "323232" },
+    { "id": 23, "type": "color", "name": "ebebeb" },
     { "id": 24, "type": "collection", "name": "Spring collection" },
     { "id": 25, "type": "collection", "name": "Office trend" },
     { "id": 26, "type": "collection", "name": "Urban style" },
@@ -41,7 +41,7 @@
       "id": 1,
       "name": "Bag 42501",
       "brand": "Armani",
-      "colors": ["#00b8f7", "#ff2802", "#f9d900", "#756153", "#ff8900"],
+      "colors": ["00b8f7", "ff2802", "f9d900", "756153", "ff8900"],
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
@@ -55,7 +55,7 @@
       "id": 2,
       "name": "Bag 42502",
       "brand": "Burberry",
-      "colors": ["#f9d900", "#ff2802", "#756153", "#323232", "#ff8900"],
+      "colors": ["f9d900", "ff2802", "756153", "323232", "ff8900"],
       "collection": "Office trend",
       "category": "Bags",
       "images": [
@@ -69,7 +69,7 @@
       "id": 3,
       "name": "Bag 42503",
       "brand": "Dolce & Gabbana",
-      "colors": ["#ff2802", "#f9d900", "#756153", "#323232", "#00bc02"],
+      "colors": ["ff2802", "f9d900", "756153", "323232", "00bc02"],
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
@@ -83,7 +83,7 @@
       "id": 4,
       "name": "Bag 42504",
       "brand": "Gucci",
-      "colors": ["#323232", "#00b8f7", "#ff2802", "#756153", "#f9d900"],
+      "colors": ["323232", "00b8f7", "ff2802", "756153", "f9d900"],
       "collection": "Urban style",
       "category": "Bags",
       "images": [
@@ -97,7 +97,7 @@
       "id": 5,
       "name": "Bag 42505",
       "brand": "Prada",
-      "colors": ["#756153", "#00b8f7", "#ff2802", "#ff8900", "#00bc02"],
+      "colors": ["756153", "00b8f7", "ff2802", "ff8900", "00bc02"],
       "collection": "Office trend",
       "category": "Bags",
       "images": [
@@ -111,7 +111,7 @@
       "id": 6,
       "name": "Coat 42501",
       "brand": "Armani",
-      "colors": ["#323232", "#756153", "#00b8f7", "#ff2802", "#00bc02"],
+      "colors": ["323232", "756153", "00b8f7", "ff2802", "00bc02"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
@@ -125,7 +125,7 @@
       "id": 7,
       "name": "Coat 42502",
       "brand": "Burberry",
-      "colors": ["#756153", "#323232", "#00b8f7", "#00bc02", "#f9d900"],
+      "colors": ["756153", "323232", "00b8f7", "00bc02", "f9d900"],
       "collection": "Urban style",
       "category": "Coats",
       "images": [
@@ -139,7 +139,7 @@
       "id": 8,
       "name": "Coat 42503",
       "brand": "Dior",
-      "colors": ["#323232", "#756153", "#00b8f7", "#f9d900", "#ff8900"],
+      "colors": ["323232", "756153", "00b8f7", "f9d900", "ff8900"],
       "collection": "Office trend",
       "category": "Coats",
       "images": [
@@ -153,7 +153,7 @@
       "id": 9,
       "name": "Coat 42504",
       "brand": "Gucci",
-      "colors": ["#00bc02", "#9785cf", "#756153", "#00b8f7", "#ff2802"],
+      "colors": ["00bc02", "9785cf", "756153", "00b8f7", "ff2802"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
@@ -167,7 +167,7 @@
       "id": 10,
       "name": "Coat 42505",
       "brand": "Prada",
-      "colors": ["#ff2802", "#323232", "#00b8f7", "#f9d900", "#ff8900"],
+      "colors": ["ff2802", "323232", "00b8f7", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
@@ -181,7 +181,7 @@
       "id": 11,
       "name": "Dress 42501",
       "brand": "Armani",
-      "colors": ["#ff2802", "#323232", "#00b8f7", "#f9d900", "#ff8900"],
+      "colors": ["ff2802", "323232", "00b8f7", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
@@ -195,7 +195,7 @@
       "id": 12,
       "name": "Dress 42502",
       "brand": "Burberry",
-      "colors": ["#ff8900", "#ff2802", "#f9d900", "#ffb5d9", "#9785cf"],
+      "colors": ["ff8900", "ff2802", "f9d900", "ffb5d9", "9785cf"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
@@ -209,7 +209,7 @@
       "id": 13,
       "name": "Dress 42503",
       "brand": "Dior",
-      "colors": ["#f9d900", "#ff2802", "#ffffff", "#00b8f7", "#ebebeb"],
+      "colors": ["f9d900", "ff2802", "ffffff", "00b8f7", "ebebeb"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
@@ -223,7 +223,7 @@
       "id": 14,
       "name": "Dress 42504",
       "brand": "Gucci",
-      "colors": ["#00bc02", "#323232", "#ffffff", "#f9d900", "#ebebeb"],
+      "colors": ["00bc02", "323232", "ffffff", "f9d900", "ebebeb"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
@@ -237,7 +237,7 @@
       "id": 15,
       "name": "Dress 42505",
       "brand": "Prada",
-      "colors": ["#9785cf", "#ffb5d9", "#ff2802", "#00b8f7", "#ff8900"],
+      "colors": ["9785cf", "ffb5d9", "ff2802", "00b8f7", "ff8900"],
       "collection": "Office trend",
       "category": "Dresses",
       "images": [
@@ -251,7 +251,7 @@
       "id": 16,
       "name": "Jacket 42501",
       "brand": "Armani",
-      "colors": ["#756153", "#323232", "#ff2802", "#ebebeb", "#ff8900"],
+      "colors": ["756153", "323232", "ff2802", "ebebeb", "ff8900"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
@@ -265,7 +265,7 @@
       "id": 17,
       "name": "Jacket 42502",
       "brand": "Dior",
-      "colors": ["#323232", "#756153", "#00b8f7", "#f9d900", "#ff8900"],
+      "colors": ["323232", "756153", "00b8f7", "f9d900", "ff8900"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
@@ -279,7 +279,7 @@
       "id": 18,
       "name": "Jacket 42503",
       "brand": "Dolce & Gabbana",
-      "colors": ["#00b8f7", "#756153", "#323232", "#00bc02", "#9785cf"],
+      "colors": ["00b8f7", "756153", "323232", "00bc02", "9785cf"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
@@ -293,7 +293,7 @@
       "id": 19,
       "name": "Jacket 42504",
       "brand": "Gucci",
-      "colors": ["#00bc02", "#9785cf", "#756153", "#ebebeb", "#ff8900"],
+      "colors": ["00bc02", "9785cf", "756153", "ebebeb", "ff8900"],
       "collection": "Spring collection",
       "category": "Jackets",
       "images": [
@@ -307,7 +307,7 @@
       "id": 20,
       "name": "Jacket 42505",
       "brand": "Prada",
-      "colors": ["#ff2802", "#ff8900", "#f9d900", "#ebebeb", "#00b8f7"],
+      "colors": ["ff2802", "ff8900", "f9d900", "ebebeb", "00b8f7"],
       "collection": "Office trend",
       "category": "Jackets",
       "images": [
@@ -321,7 +321,7 @@
       "id": 21,
       "name": "Jeans 42501",
       "brand": "Armani",
-      "colors": ["#323232", "#756153", "#00b8f7", "#ebebeb", "#ffffff"],
+      "colors": ["323232", "756153", "00b8f7", "ebebeb", "ffffff"],
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
@@ -335,7 +335,7 @@
       "id": 22,
       "name": "Jeans 42502",
       "brand": "Burberry",
-      "colors": ["#323232", "#756153", "#00b8f7", "#ebebeb", "#ffffff"],
+      "colors": ["323232", "756153", "00b8f7", "ebebeb", "ffffff"],
       "collection": "Office trend",
       "category": "Jeans",
       "images": [
@@ -349,7 +349,7 @@
       "id": 23,
       "name": "Jeans 42503",
       "brand": "Dior",
-      "colors": ["#00b8f7", "#323232", "#756153", "#ebebeb", "#ffffff"],
+      "colors": ["00b8f7", "323232", "756153", "ebebeb", "ffffff"],
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
@@ -363,7 +363,7 @@
       "id": 24,
       "name": "Jeans 42504",
       "brand": "Dolce & Gabbana",
-      "colors": ["#ebebeb", "#323232", "#756153", "#00b8f7", "#ffffff"],
+      "colors": ["ebebeb", "323232", "756153", "00b8f7", "ffffff"],
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
@@ -377,7 +377,7 @@
       "id": 25,
       "name": "Jeans 42505",
       "brand": "Prada",
-      "colors": ["#00b8f7", "#323232", "#756153", "#ebebeb", "#ffffff"],
+      "colors": ["00b8f7", "323232", "756153", "ebebeb", "ffffff"],
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
@@ -391,7 +391,7 @@
       "id": 26,
       "name": "Pants 42501",
       "brand": "Armani",
-      "colors": ["#f9d900", "#ff8900", "#ff2802", "#9785cf", "#ffb5d9"],
+      "colors": ["f9d900", "ff8900", "ff2802", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
@@ -405,7 +405,7 @@
       "id": 27,
       "name": "Pants 42502",
       "brand": "Burberry",
-      "colors": ["#9785cf", "#ffb5d9", "#ff2802", "#f9d900", "#ff8900"],
+      "colors": ["9785cf", "ffb5d9", "ff2802", "f9d900", "ff8900"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
@@ -419,7 +419,7 @@
       "id": 28,
       "name": "Pants 42503",
       "brand": "Dior",
-      "colors": ["#ffffff", "#ebebeb", "#00b8f7", "#9785cf", "#ffb5d9"],
+      "colors": ["ffffff", "ebebeb", "00b8f7", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
@@ -433,7 +433,7 @@
       "id": 29,
       "name": "Pants 42504",
       "brand": "Dolce & Gabbana",
-      "colors": ["#00bc02", "#f9d900", "#ff8900", "#756153", "#323232"],
+      "colors": ["00bc02", "f9d900", "ff8900", "756153", "323232"],
       "collection": "Urban style",
       "category": "Pants",
       "images": [
@@ -447,7 +447,7 @@
       "id": 30,
       "name": "Pants 42505",
       "brand": "Gucci",
-      "colors": ["#ff8900", "#f9d900", "#ff2802", "#00bc02", "#ffb5d9"],
+      "colors": ["ff8900", "f9d900", "ff2802", "00bc02", "ffb5d9"],
       "collection": "Spring collection",
       "category": "Pants",
       "images": [
@@ -461,7 +461,7 @@
       "id": 31,
       "name": "Shirt 42501",
       "brand": "Burberry",
-      "colors": ["#00b8f7", "#9785cf", "#ffb5d9", "#ff2802", "#00bc02"],
+      "colors": ["00b8f7", "9785cf", "ffb5d9", "ff2802", "00bc02"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
@@ -475,7 +475,7 @@
       "id": 32,
       "name": "Shirt 42502",
       "brand": "Dior",
-      "colors": ["#ffb5d9", "#00b8f7", "#9785cf", "#ff8900", "#f9d900"],
+      "colors": ["ffb5d9", "00b8f7", "9785cf", "ff8900", "f9d900"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
@@ -489,7 +489,7 @@
       "id": 33,
       "name": "Shirt 42503",
       "brand": "Dolce & Gabbana",
-      "colors": ["#ffffff", "#ebebeb", "#323232", "#9785cf", "#ffb5d9"],
+      "colors": ["ffffff", "ebebeb", "323232", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
@@ -503,7 +503,7 @@
       "id": 34,
       "name": "Shirt 42504",
       "brand": "Gucci",
-      "colors": ["#ff2802", "#ff8900", "#f9d900", "#00bc02", "#ebebeb"],
+      "colors": ["ff2802", "ff8900", "f9d900", "00bc02", "ebebeb"],
       "collection": "Spring collection",
       "category": "Shirts",
       "images": [
@@ -517,7 +517,7 @@
       "id": 35,
       "name": "Shirt 42505",
       "brand": "Prada",
-      "colors": ["#f9d900", "#ff2802", "#00bc02", "#00b8f7", "#9785cf"],
+      "colors": ["f9d900", "ff2802", "00bc02", "00b8f7", "9785cf"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
@@ -531,7 +531,7 @@
       "id": 36,
       "name": "Boots 42501",
       "brand": "Armani",
-      "colors": ["#323232", "#756153", "#ebebeb", "#ffffff", "#00b8f7"],
+      "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
       "category": "Shoes",
       "images": [
@@ -545,7 +545,7 @@
       "id": 37,
       "name": "Boots 42502",
       "brand": "Dolce & Gabbana",
-      "colors": ["#323232", "#756153", "#ebebeb", "#ffffff", "#00b8f7"],
+      "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
       "category": "Shoes",
       "images": [
@@ -559,7 +559,7 @@
       "id": 38,
       "name": "Sandals 42503",
       "brand": "Dior",
-      "colors": ["#323232", "#756153", "#ebebeb", "#ffffff", "#00b8f7"],
+      "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
       "category": "Shoes",
       "images": [
@@ -573,7 +573,7 @@
       "id": 39,
       "name": "Sandals 42504",
       "brand": "Prada",
-      "colors": ["#756153", "#323232", "#ebebeb", "#ffffff", "#00b8f7"],
+      "colors": ["756153", "323232", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Urban style",
       "category": "Shoes",
       "images": [
@@ -587,7 +587,7 @@
       "id": 40,
       "name": "Shoes 42505",
       "brand": "Gucci",
-      "colors": ["#756153", "#323232", "#ebebeb", "#ffffff", "#00b8f7"],
+      "colors": ["756153", "323232", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Urban style",
       "category": "Shoes",
       "images": [
@@ -601,7 +601,7 @@
       "id": 41,
       "name": "Sweater 42501",
       "brand": "Armani",
-      "colors": ["#9785cf", "#ffb5d9", "#ff2802", "#f9d900", "#ff8900"],
+      "colors": ["9785cf", "ffb5d9", "ff2802", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
@@ -615,7 +615,7 @@
       "id": 42,
       "name": "Sweater 42502",
       "brand": "Burberry",
-      "colors": ["#ff2802", "#f9d900", "#ff8900", "#00bc02", "#00b8f7"],
+      "colors": ["ff2802", "f9d900", "ff8900", "00bc02", "00b8f7"],
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
@@ -629,7 +629,7 @@
       "id": 43,
       "name": "Sweater 42503",
       "brand": "Dior",
-      "colors": ["#00bc02", "#00b8f7", "#9785cf", "#ffb5d9", "#756153"],
+      "colors": ["00bc02", "00b8f7", "9785cf", "ffb5d9", "756153"],
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
@@ -643,7 +643,7 @@
       "id": 44,
       "name": "Sweater 42504",
       "brand": "Gucci",
-      "colors": ["#323232", "#756153", "#ebebeb", "#9785cf", "#ffb5d9"],
+      "colors": ["323232", "756153", "ebebeb", "9785cf", "ffb5d9"],
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
@@ -657,7 +657,7 @@
       "id": 45,
       "name": "Sweater 42505",
       "brand": "Prada",
-      "colors": ["#f9d900", "#ff8900", "#ff2802", "#9785cf", "#ffb5d9"],
+      "colors": ["f9d900", "ff8900", "ff2802", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Sweaters",
       "images": [
