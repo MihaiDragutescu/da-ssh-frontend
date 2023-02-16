@@ -3,8 +3,8 @@ import { colors } from '@Utils/mocks';
 import { FilterType } from '@Types/filter';
 
 interface ColorsListProps {
-  activeColor?: string;
-  handleClick: (type: keyof FilterType, value: string | number) => void;
+  activeColor?: string[];
+  handleClick: (type: keyof FilterType, value: string) => void;
 }
 
 const ColorsList: React.FC<ColorsListProps> = (props: ColorsListProps) => {
@@ -16,7 +16,7 @@ const ColorsList: React.FC<ColorsListProps> = (props: ColorsListProps) => {
         handleClick={() => {
           props.handleClick('color', color.id);
         }}
-        active={color.id === props.activeColor}
+        active={props.activeColor?.includes(color.id)}
       />
     );
   });

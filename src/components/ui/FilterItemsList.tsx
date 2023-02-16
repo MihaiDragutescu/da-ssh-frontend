@@ -5,7 +5,7 @@ import { ProductsListActions } from '@Types/productsListActions';
 interface FilterListProps {
   list: { id: string; name: string }[];
   type: keyof FilterType;
-  activeFilter?: string;
+  activeFilter?: string[];
   handleClick: (type: keyof FilterType, filter: string) => void;
 }
 
@@ -21,7 +21,7 @@ const FiltersList: React.FC<FilterListProps> = (props: FilterListProps) => {
         handleClick={() => {
           props.handleClick(filterType, filter.id);
         }}
-        active={filter.id === props.activeFilter}
+        active={props.activeFilter?.includes(filter.id)}
       >
         {filter.name}
       </FilterPill>

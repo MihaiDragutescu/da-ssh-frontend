@@ -1,5 +1,5 @@
 import MultiRangeSlider, { ChangeResult } from 'multi-range-slider-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './PriceRangeSlider.scss';
 
 interface PriceSliderProps {
@@ -9,6 +9,10 @@ interface PriceSliderProps {
 const PriceSlider: React.FC<PriceSliderProps> = (props: PriceSliderProps) => {
   const [minValue, setMinValue] = useState(1000);
   const [maxValue, setMaxValue] = useState(9000);
+
+  useEffect(() => {
+    props.handlePriceChange(minValue, maxValue);
+  }, [minValue, maxValue]);
 
   return (
     <>
@@ -27,7 +31,6 @@ const PriceSlider: React.FC<PriceSliderProps> = (props: PriceSliderProps) => {
         onInput={(e: ChangeResult) => {
           setMinValue(e.minValue);
           setMaxValue(e.maxValue);
-          props.handlePriceChange(minValue, maxValue);
         }}
       />
     </>

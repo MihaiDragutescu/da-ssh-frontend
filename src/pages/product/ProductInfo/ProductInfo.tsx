@@ -29,7 +29,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     setProductInWishlist(!productInWishlist);
   };
 
-  const handleClick = (filter: keyof FilterType, value: string | number) => {
+  const handleClick = (filter: keyof FilterType, value: string) => {
     setProductInfo((prev) => {
       return {
         ...prev,
@@ -39,14 +39,17 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   };
 
   const colorsList = (
-    <ColorsList activeColor={productInfo.color} handleClick={handleClick} />
+    <ColorsList
+      activeColor={[productInfo.color as string]}
+      handleClick={handleClick}
+    />
   );
 
   const sizesList = (
     <FilterItemsList
       list={sizes}
       type='size'
-      activeFilter={productInfo.size}
+      activeFilter={[productInfo.size as string]}
       handleClick={handleClick}
     />
   );

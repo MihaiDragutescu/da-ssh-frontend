@@ -15,11 +15,15 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 ) => {
   const [activeFilters, setActiveFilters] = useState<FilterType>({});
 
-  const handleClick = (filter: keyof FilterType, value: string | number) => {
+  const handleClick = (filter: keyof FilterType, value: string) => {
     setActiveFilters((prev) => {
       return {
         ...prev,
-        [filter]: value,
+        [filter]: Array.isArray(prev[filter])
+          ? (prev[filter] as string[]).includes(value)
+            ? (prev[filter] as string[]).filter((elem) => elem !== value)
+            : [...(prev[filter] as string[]), value]
+          : value,
       };
     });
   };
@@ -66,13 +70,13 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   useEffect(() => {
     setActiveFilters({
-      size: '3',
-      brand: '3',
-      color: '6',
+      size: ['3'],
+      brand: ['3'],
+      color: ['6'],
       minPrice: 1000,
-      maxPrice: 10000,
-      collection: '3',
-      category: '3',
+      maxPrice: 9000,
+      collection: ['3'],
+      category: ['3'],
     });
 
     const lastFilterButton = document.querySelector(
@@ -105,11 +109,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   const handlePriceChange = (min: number, max: number) => {
     setActiveFilters((prev) => {
-      return {
-        ...prev,
-        minPrice: min,
-        maxPrice: max,
-      };
+      return { ...prev, minPrice: min, maxPrice: max };
     });
   };
 

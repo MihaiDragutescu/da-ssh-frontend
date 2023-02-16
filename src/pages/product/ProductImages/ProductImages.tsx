@@ -7,7 +7,7 @@ import './ProductImages.scss';
 
 interface ProductImagesProps {
   images: string[];
-  handleImageClick: (type: keyof FilterType, value: string | number) => void;
+  handleImageClick: (type: keyof FilterType, value: string) => void;
   currentImage: string;
 }
 
