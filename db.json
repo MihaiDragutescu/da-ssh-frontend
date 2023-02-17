@@ -1,671 +1,826 @@
 {
   "filters": [
-    { "id": 1, "type": "size", "name": "XS" },
-    { "id": 2, "type": "size", "name": "S" },
-    { "id": 3, "type": "size", "name": "M" },
-    { "id": 4, "type": "size", "name": "L" },
-    { "id": 5, "type": "size", "name": "XL" },
-    { "id": 6, "type": "size", "name": "XXL" },
-    { "id": 7, "type": "brand", "name": "Armani" },
-    { "id": 8, "type": "brand", "name": "Burberry" },
-    { "id": 9, "type": "brand", "name": "Dior" },
-    { "id": 10, "type": "brand", "name": "Dolce & Gabbana" },
-    { "id": 11, "type": "brand", "name": "Gucci" },
-    { "id": 12, "type": "brand", "name": "Prada" },
-    { "id": 13, "type": "color", "name": "ff2802" },
-    { "id": 14, "type": "color", "name": "ff8900" },
-    { "id": 15, "type": "color", "name": "f9d900" },
-    { "id": 16, "type": "color", "name": "00bc02" },
-    { "id": 17, "type": "color", "name": "00b8f7" },
-    { "id": 18, "type": "color", "name": "9785cf" },
-    { "id": 19, "type": "color", "name": "ffb5d9" },
-    { "id": 20, "type": "color", "name": "756153" },
-    { "id": 21, "type": "color", "name": "ffffff" },
-    { "id": 22, "type": "color", "name": "323232" },
-    { "id": 23, "type": "color", "name": "ebebeb" },
-    { "id": 24, "type": "collection", "name": "Spring collection" },
-    { "id": 25, "type": "collection", "name": "Office trend" },
-    { "id": 26, "type": "collection", "name": "Urban style" },
-    { "id": 27, "type": "category", "name": "Coats" },
-    { "id": 28, "type": "category", "name": "Jackets" },
-    { "id": 29, "type": "category", "name": "Dresses" },
-    { "id": 30, "type": "category", "name": "Shirts" },
-    { "id": 31, "type": "category", "name": "Sweaters" },
-    { "id": 32, "type": "category", "name": "Pants" },
-    { "id": 33, "type": "category", "name": "Jeans" },
-    { "id": 34, "type": "category", "name": "Bags" },
-    { "id": 35, "type": "category", "name": "Shoes" }
+    { "id": "1", "type": "size", "name": "XS" },
+    { "id": "2", "type": "size", "name": "S" },
+    { "id": "3", "type": "size", "name": "M" },
+    { "id": "4", "type": "size", "name": "L" },
+    { "id": "5", "type": "size", "name": "XL" },
+    { "id": "6", "type": "size", "name": "XXL" },
+    { "id": "7", "type": "brand", "name": "Armani" },
+    { "id": "8", "type": "brand", "name": "Burberry" },
+    { "id": "9", "type": "brand", "name": "Dior" },
+    { "id": "10", "type": "brand", "name": "Dolce & Gabbana" },
+    { "id": "11", "type": "brand", "name": "Gucci" },
+    { "id": "12", "type": "brand", "name": "Prada" },
+    { "id": "13", "type": "color", "name": "ff2802" },
+    { "id": "14", "type": "color", "name": "ff8900" },
+    { "id": "15", "type": "color", "name": "f9d900" },
+    { "id": "16", "type": "color", "name": "00bc02" },
+    { "id": "17", "type": "color", "name": "00b8f7" },
+    { "id": "18", "type": "color", "name": "9785cf" },
+    { "id": "19", "type": "color", "name": "ffb5d9" },
+    { "id": "20", "type": "color", "name": "756153" },
+    { "id": "21", "type": "color", "name": "ffffff" },
+    { "id": "22", "type": "color", "name": "323232" },
+    { "id": "23", "type": "color", "name": "ebebeb" },
+    {
+      "id": "24",
+      "type": "collection",
+      "name": "Spring collection",
+      "featured": true
+    },
+    {
+      "id": "25",
+      "type": "collection",
+      "name": "Office trend",
+      "featured": false
+    },
+    {
+      "id": "26",
+      "type": "collection",
+      "name": "Urban style",
+      "featured": false
+    },
+    {
+      "id": "27",
+      "type": "category",
+      "name": "Coats",
+      "image": "./src/assets/products/Coats-category.png"
+    },
+    { "id": "28", "type": "category", "name": "Jackets", "image": "" },
+    {
+      "id": "29",
+      "type": "category",
+      "name": "Dresses",
+      "image": "./src/assets/products/Dresses-category.jpg"
+    },
+    { "id": "30", "type": "category", "name": "Shirts", "image": "" },
+    { "id": "31", "type": "category", "name": "Sweaters", "image": "" },
+    { "id": "32", "type": "category", "name": "Pants", "image": "" },
+    { "id": "33", "type": "category", "name": "Jeans", "image": "" },
+    { "id": "34", "type": "category", "name": "Bags", "image": "" },
+    {
+      "id": "35",
+      "type": "category",
+      "name": "Boots",
+      "image": "./src/assets/products/Boots-category.png"
+    }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bag 42501",
+      "price": 150,
       "brand": "Armani",
       "colors": ["00b8f7", "ff2802", "f9d900", "756153", "ff8900"],
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
-        "./src/assets/Bags/Bag-Armani-1-1.png",
-        "./src/assets/Bags/Bag-Armani-1-2.png",
-        "./src/assets/Bags/Bag-Armani-1-3.png",
-        "./src/assets/Bags/Bag-Armani-1-4.png"
-      ]
+        "./src/assets/products/Bags/Bag-Armani-1-1.png",
+        "./src/assets/products/Bags/Bag-Armani-1-2.png",
+        "./src/assets/products/Bags/Bag-Armani-1-3.png",
+        "./src/assets/products/Bags/Bag-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 2,
+      "id": "2",
+      "price": 175,
       "name": "Bag 42502",
       "brand": "Burberry",
       "colors": ["f9d900", "ff2802", "756153", "323232", "ff8900"],
       "collection": "Office trend",
       "category": "Bags",
       "images": [
-        "./src/assets/Bags/Bag-Burberry-1-1.png",
-        "./src/assets/Bags/Bag-Burberry-1-2.png",
-        "./src/assets/Bags/Bag-Burberry-1-3.png",
-        "./src/assets/Bags/Bag-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Bags/Bag-Burberry-1-1.png",
+        "./src/assets/products/Bags/Bag-Burberry-1-2.png",
+        "./src/assets/products/Bags/Bag-Burberry-1-3.png",
+        "./src/assets/products/Bags/Bag-Burberry-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 3,
+      "id": "3",
+      "price": 125,
       "name": "Bag 42503",
       "brand": "Dolce & Gabbana",
       "colors": ["ff2802", "f9d900", "756153", "323232", "00bc02"],
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
-        "./src/assets/Bags/Bag-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Bags/Bag-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Bags/Bag-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Bags/Bag-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 4,
+      "id": "4",
+      "price": 200,
       "name": "Bag 42504",
       "brand": "Gucci",
       "colors": ["323232", "00b8f7", "ff2802", "756153", "f9d900"],
       "collection": "Urban style",
       "category": "Bags",
       "images": [
-        "./src/assets/Bags/Bag-Gucci-1-1.png",
-        "./src/assets/Bags/Bag-Gucci-1-2.png",
-        "./src/assets/Bags/Bag-Gucci-1-3.png",
-        "./src/assets/Bags/Bag-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Bags/Bag-Gucci-1-1.png",
+        "./src/assets/products/Bags/Bag-Gucci-1-2.png",
+        "./src/assets/products/Bags/Bag-Gucci-1-3.png",
+        "./src/assets/products/Bags/Bag-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 5,
+      "id": "5",
+      "price": 250,
       "name": "Bag 42505",
       "brand": "Prada",
       "colors": ["756153", "00b8f7", "ff2802", "ff8900", "00bc02"],
       "collection": "Office trend",
       "category": "Bags",
       "images": [
-        "./src/assets/Bags/Bag-Prada-1-1.png",
-        "./src/assets/Bags/Bag-Prada-1-2.png",
-        "./src/assets/Bags/Bag-Prada-1-3.png",
-        "./src/assets/Bags/Bag-Prada-1-4.png"
-      ]
+        "./src/assets/products/Bags/Bag-Prada-1-1.png",
+        "./src/assets/products/Bags/Bag-Prada-1-2.png",
+        "./src/assets/products/Bags/Bag-Prada-1-3.png",
+        "./src/assets/products/Bags/Bag-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Coat 42501",
+      "price": 750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Armani",
       "colors": ["323232", "756153", "00b8f7", "ff2802", "00bc02"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/Coats/Coat-Armani-1-1.png",
-        "./src/assets/Coats/Coat-Armani-1-2.png",
-        "./src/assets/Coats/Coat-Armani-1-3.png",
-        "./src/assets/Coats/Coat-Armani-1-4.png"
-      ]
+        "./src/assets/products/Coats/Coat-Armani-1-1.png",
+        "./src/assets/products/Coats/Coat-Armani-1-2.png",
+        "./src/assets/products/Coats/Coat-Armani-1-3.png",
+        "./src/assets/products/Coats/Coat-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Coat 42502",
+      "price": 600,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["756153", "323232", "00b8f7", "00bc02", "f9d900"],
       "collection": "Urban style",
       "category": "Coats",
       "images": [
-        "./src/assets/Coats/Coat-Burberry-1-1.png",
-        "./src/assets/Coats/Coat-Burberry-1-2.png",
-        "./src/assets/Coats/Coat-Burberry-1-3.png",
-        "./src/assets/Coats/Coat-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Coats/Coat-Burberry-1-1.png",
+        "./src/assets/products/Coats/Coat-Burberry-1-2.png",
+        "./src/assets/products/Coats/Coat-Burberry-1-3.png",
+        "./src/assets/products/Coats/Coat-Burberry-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Coat 42503",
+      "price": 900,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["323232", "756153", "00b8f7", "f9d900", "ff8900"],
       "collection": "Office trend",
       "category": "Coats",
       "images": [
-        "./src/assets/Coats/Coat-Dior-1-1.png",
-        "./src/assets/Coats/Coat-Dior-1-2.png",
-        "./src/assets/Coats/Coat-Dior-1-3.png",
-        "./src/assets/Coats/Coat-Dior-1-4.png"
-      ]
+        "./src/assets/products/Coats/Coat-Dior-1-1.png",
+        "./src/assets/products/Coats/Coat-Dior-1-2.png",
+        "./src/assets/products/Coats/Coat-Dior-1-3.png",
+        "./src/assets/products/Coats/Coat-Dior-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Coat 42504",
+      "price": 1200,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["00bc02", "9785cf", "756153", "00b8f7", "ff2802"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/Coats/Coat-Gucci-1-1.png",
-        "./src/assets/Coats/Coat-Gucci-1-2.png",
-        "./src/assets/Coats/Coat-Gucci-1-3.png",
-        "./src/assets/Coats/Coat-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Coats/Coat-Gucci-1-1.png",
+        "./src/assets/products/Coats/Coat-Gucci-1-2.png",
+        "./src/assets/products/Coats/Coat-Gucci-1-3.png",
+        "./src/assets/products/Coats/Coat-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Coat 42505",
+      "price": 850,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["ff2802", "323232", "00b8f7", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/Coats/Coat-Prada-1-1.png",
-        "./src/assets/Coats/Coat-Prada-1-2.png",
-        "./src/assets/Coats/Coat-Prada-1-3.png",
-        "./src/assets/Coats/Coat-Prada-1-4.png"
-      ]
+        "./src/assets/products/Coats/Coat-Prada-1-1.png",
+        "./src/assets/products/Coats/Coat-Prada-1-2.png",
+        "./src/assets/products/Coats/Coat-Prada-1-3.png",
+        "./src/assets/products/Coats/Coat-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Dress 42501",
+      "price": 1300,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Armani",
       "colors": ["ff2802", "323232", "00b8f7", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/Dresses/Dress-Armani-1-1.png",
-        "./src/assets/Dresses/Dress-Armani-1-2.png",
-        "./src/assets/Dresses/Dress-Armani-1-3.png",
-        "./src/assets/Dresses/Dress-Armani-1-4.png"
-      ]
+        "./src/assets/products/Dresses/Dress-Armani-1-1.png",
+        "./src/assets/products/Dresses/Dress-Armani-1-2.png",
+        "./src/assets/products/Dresses/Dress-Armani-1-3.png",
+        "./src/assets/products/Dresses/Dress-Armani-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Dress 42502",
+      "price": 1000,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["ff8900", "ff2802", "f9d900", "ffb5d9", "9785cf"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/Dresses/Dress-Burberry-1-1.png",
-        "./src/assets/Dresses/Dress-Burberry-1-2.png",
-        "./src/assets/Dresses/Dress-Burberry-1-3.png",
-        "./src/assets/Dresses/Dress-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Dresses/Dress-Burberry-1-1.png",
+        "./src/assets/products/Dresses/Dress-Burberry-1-2.png",
+        "./src/assets/products/Dresses/Dress-Burberry-1-3.png",
+        "./src/assets/products/Dresses/Dress-Burberry-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Dress 42503",
+      "price": 1500,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["f9d900", "ff2802", "ffffff", "00b8f7", "ebebeb"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/Dresses/Dress-Dior-1-1.png",
-        "./src/assets/Dresses/Dress-Dior-1-2.png",
-        "./src/assets/Dresses/Dress-Dior-1-3.png",
-        "./src/assets/Dresses/Dress-Dior-1-4.png"
-      ]
+        "./src/assets/products/Dresses/Dress-Dior-1-1.png",
+        "./src/assets/products/Dresses/Dress-Dior-1-2.png",
+        "./src/assets/products/Dresses/Dress-Dior-1-3.png",
+        "./src/assets/products/Dresses/Dress-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Dress 42504",
+      "price": 900,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["00bc02", "323232", "ffffff", "f9d900", "ebebeb"],
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/Dresses/Dress-Gucci-1-1.png",
-        "./src/assets/Dresses/Dress-Gucci-1-2.png",
-        "./src/assets/Dresses/Dress-Gucci-1-3.png",
-        "./src/assets/Dresses/Dress-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Dresses/Dress-Gucci-1-1.png",
+        "./src/assets/products/Dresses/Dress-Gucci-1-2.png",
+        "./src/assets/products/Dresses/Dress-Gucci-1-3.png",
+        "./src/assets/products/Dresses/Dress-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Dress 42505",
+      "price": 1750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["9785cf", "ffb5d9", "ff2802", "00b8f7", "ff8900"],
       "collection": "Office trend",
       "category": "Dresses",
       "images": [
-        "./src/assets/Dresses/Dress-Prada-1-1.png",
-        "./src/assets/Dresses/Dress-Prada-1-2.png",
-        "./src/assets/Dresses/Dress-Prada-1-3.png",
-        "./src/assets/Dresses/Dress-Prada-1-4.png"
-      ]
+        "./src/assets/products/Dresses/Dress-Prada-1-1.png",
+        "./src/assets/products/Dresses/Dress-Prada-1-2.png",
+        "./src/assets/products/Dresses/Dress-Prada-1-3.png",
+        "./src/assets/products/Dresses/Dress-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Jacket 42501",
+      "price": 800,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Armani",
       "colors": ["756153", "323232", "ff2802", "ebebeb", "ff8900"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/Jackets/Jacket-Armani-1-1.png",
-        "./src/assets/Jackets/Jacket-Armani-1-2.png",
-        "./src/assets/Jackets/Jacket-Armani-1-3.png",
-        "./src/assets/Jackets/Jacket-Armani-1-4.png"
-      ]
+        "./src/assets/products/Jackets/Jacket-Armani-1-1.png",
+        "./src/assets/products/Jackets/Jacket-Armani-1-2.png",
+        "./src/assets/products/Jackets/Jacket-Armani-1-3.png",
+        "./src/assets/products/Jackets/Jacket-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Jacket 42502",
+      "price": 650,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["323232", "756153", "00b8f7", "f9d900", "ff8900"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/Jackets/Jacket-Dior-1-1.png",
-        "./src/assets/Jackets/Jacket-Dior-1-2.png",
-        "./src/assets/Jackets/Jacket-Dior-1-3.png",
-        "./src/assets/Jackets/Jacket-Dior-1-4.png"
-      ]
+        "./src/assets/products/Jackets/Jacket-Dior-1-1.png",
+        "./src/assets/products/Jackets/Jacket-Dior-1-2.png",
+        "./src/assets/products/Jackets/Jacket-Dior-1-3.png",
+        "./src/assets/products/Jackets/Jacket-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Jacket 42503",
+      "price": 1100,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dolce & Gabbana",
       "colors": ["00b8f7", "756153", "323232", "00bc02", "9785cf"],
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/Jackets/Jacket-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Jackets/Jacket-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Jackets/Jacket-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Jackets/Jacket-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Jacket 42504",
+      "price": 1350,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["00bc02", "9785cf", "756153", "ebebeb", "ff8900"],
       "collection": "Spring collection",
       "category": "Jackets",
       "images": [
-        "./src/assets/Jackets/Jacket-Gucci-1-1.png",
-        "./src/assets/Jackets/Jacket-Gucci-1-2.png",
-        "./src/assets/Jackets/Jacket-Gucci-1-3.png",
-        "./src/assets/Jackets/Jacket-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Jackets/Jacket-Gucci-1-1.png",
+        "./src/assets/products/Jackets/Jacket-Gucci-1-2.png",
+        "./src/assets/products/Jackets/Jacket-Gucci-1-3.png",
+        "./src/assets/products/Jackets/Jacket-Gucci-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Jacket 42505",
+      "price": 750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["ff2802", "ff8900", "f9d900", "ebebeb", "00b8f7"],
       "collection": "Office trend",
       "category": "Jackets",
       "images": [
-        "./src/assets/Jackets/Jacket-Prada-1-1.png",
-        "./src/assets/Jackets/Jacket-Prada-1-2.png",
-        "./src/assets/Jackets/Jacket-Prada-1-3.png",
-        "./src/assets/Jackets/Jacket-Prada-1-4.png"
-      ]
+        "./src/assets/products/Jackets/Jacket-Prada-1-1.png",
+        "./src/assets/products/Jackets/Jacket-Prada-1-2.png",
+        "./src/assets/products/Jackets/Jacket-Prada-1-3.png",
+        "./src/assets/products/Jackets/Jacket-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Jeans 42501",
       "brand": "Armani",
+      "price": 500,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "colors": ["323232", "756153", "00b8f7", "ebebeb", "ffffff"],
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
-        "./src/assets/Jeans/Jeans-Armani-1-1.png",
-        "./src/assets/Jeans/Jeans-Armani-1-2.png",
-        "./src/assets/Jeans/Jeans-Armani-1-3.png",
-        "./src/assets/Jeans/Jeans-Armani-1-4.png"
-      ]
+        "./src/assets/products/Jeans/Jeans-Armani-1-1.png",
+        "./src/assets/products/Jeans/Jeans-Armani-1-2.png",
+        "./src/assets/products/Jeans/Jeans-Armani-1-3.png",
+        "./src/assets/products/Jeans/Jeans-Armani-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Jeans 42502",
+      "price": 650,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["323232", "756153", "00b8f7", "ebebeb", "ffffff"],
       "collection": "Office trend",
       "category": "Jeans",
       "images": [
-        "./src/assets/Jeans/Jeans-Burberry-1-1.png",
-        "./src/assets/Jeans/Jeans-Burberry-1-2.png",
-        "./src/assets/Jeans/Jeans-Burberry-1-3.png",
-        "./src/assets/Jeans/Jeans-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Jeans/Jeans-Burberry-1-1.png",
+        "./src/assets/products/Jeans/Jeans-Burberry-1-2.png",
+        "./src/assets/products/Jeans/Jeans-Burberry-1-3.png",
+        "./src/assets/products/Jeans/Jeans-Burberry-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Jeans 42503",
+      "price": 800,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["00b8f7", "323232", "756153", "ebebeb", "ffffff"],
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
-        "./src/assets/Jeans/Jeans-Dior-1-1.png",
-        "./src/assets/Jeans/Jeans-Dior-1-2.png",
-        "./src/assets/Jeans/Jeans-Dior-1-3.png",
-        "./src/assets/Jeans/Jeans-Dior-1-4.png"
-      ]
+        "./src/assets/products/Jeans/Jeans-Dior-1-1.png",
+        "./src/assets/products/Jeans/Jeans-Dior-1-2.png",
+        "./src/assets/products/Jeans/Jeans-Dior-1-3.png",
+        "./src/assets/products/Jeans/Jeans-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Jeans 42504",
+      "price": 1000,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dolce & Gabbana",
       "colors": ["ebebeb", "323232", "756153", "00b8f7", "ffffff"],
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
-        "./src/assets/Jeans/Jeans-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Jeans/Jeans-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Jeans/Jeans-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Jeans/Jeans-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Jeans 42505",
+      "price": 950,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["00b8f7", "323232", "756153", "ebebeb", "ffffff"],
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
-        "./src/assets/Jeans/Jeans-Prada-1-1.png",
-        "./src/assets/Jeans/Jeans-Prada-1-2.png",
-        "./src/assets/Jeans/Jeans-Prada-1-3.png",
-        "./src/assets/Jeans/Jeans-Prada-1-4.png"
-      ]
+        "./src/assets/products/Jeans/Jeans-Prada-1-1.png",
+        "./src/assets/products/Jeans/Jeans-Prada-1-2.png",
+        "./src/assets/products/Jeans/Jeans-Prada-1-3.png",
+        "./src/assets/products/Jeans/Jeans-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Pants 42501",
+      "price": 1100,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Armani",
       "colors": ["f9d900", "ff8900", "ff2802", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/Pants/Pants-Armani-1-1.png",
-        "./src/assets/Pants/Pants-Armani-1-2.png",
-        "./src/assets/Pants/Pants-Armani-1-3.png",
-        "./src/assets/Pants/Pants-Armani-1-4.png"
-      ]
+        "./src/assets/products/Pants/Pants-Armani-1-1.png",
+        "./src/assets/products/Pants/Pants-Armani-1-2.png",
+        "./src/assets/products/Pants/Pants-Armani-1-3.png",
+        "./src/assets/products/Pants/Pants-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Pants 42502",
+      "price": 900,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["9785cf", "ffb5d9", "ff2802", "f9d900", "ff8900"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/Pants/Pants-Burberry-1-1.png",
-        "./src/assets/Pants/Pants-Burberry-1-2.png",
-        "./src/assets/Pants/Pants-Burberry-1-3.png",
-        "./src/assets/Pants/Pants-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Pants/Pants-Burberry-1-1.png",
+        "./src/assets/products/Pants/Pants-Burberry-1-2.png",
+        "./src/assets/products/Pants/Pants-Burberry-1-3.png",
+        "./src/assets/products/Pants/Pants-Burberry-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Pants 42503",
+      "price": 750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["ffffff", "ebebeb", "00b8f7", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/Pants/Pants-Dior-1-1.png",
-        "./src/assets/Pants/Pants-Dior-1-2.png",
-        "./src/assets/Pants/Pants-Dior-1-3.png",
-        "./src/assets/Pants/Pants-Dior-1-4.png"
-      ]
+        "./src/assets/products/Pants/Pants-Dior-1-1.png",
+        "./src/assets/products/Pants/Pants-Dior-1-2.png",
+        "./src/assets/products/Pants/Pants-Dior-1-3.png",
+        "./src/assets/products/Pants/Pants-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Pants 42504",
+      "price": 600,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dolce & Gabbana",
       "colors": ["00bc02", "f9d900", "ff8900", "756153", "323232"],
       "collection": "Urban style",
       "category": "Pants",
       "images": [
-        "./src/assets/Pants/Pants-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Pants/Pants-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Pants/Pants-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Pants/Pants-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Pants 42505",
+      "price": 1250,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["ff8900", "f9d900", "ff2802", "00bc02", "ffb5d9"],
       "collection": "Spring collection",
       "category": "Pants",
       "images": [
-        "./src/assets/Pants/Pants-Gucci-1-1.png",
-        "./src/assets/Pants/Pants-Gucci-1-2.png",
-        "./src/assets/Pants/Pants-Gucci-1-3.png",
-        "./src/assets/Pants/Pants-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Pants/Pants-Gucci-1-1.png",
+        "./src/assets/products/Pants/Pants-Gucci-1-2.png",
+        "./src/assets/products/Pants/Pants-Gucci-1-3.png",
+        "./src/assets/products/Pants/Pants-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 31,
+      "id": "31",
       "name": "Shirt 42501",
+      "price": 1000,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["00b8f7", "9785cf", "ffb5d9", "ff2802", "00bc02"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/Shirts/Shirt-Burberry-1-1.png",
-        "./src/assets/Shirts/Shirt-Burberry-1-2.png",
-        "./src/assets/Shirts/Shirt-Burberry-1-3.png",
-        "./src/assets/Shirts/Shirt-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Shirts/Shirt-Burberry-1-1.png",
+        "./src/assets/products/Shirts/Shirt-Burberry-1-2.png",
+        "./src/assets/products/Shirts/Shirt-Burberry-1-3.png",
+        "./src/assets/products/Shirts/Shirt-Burberry-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 32,
+      "id": "32",
       "name": "Shirt 42502",
+      "price": 1250,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["ffb5d9", "00b8f7", "9785cf", "ff8900", "f9d900"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/Shirts/Shirt-Dior-1-1.png",
-        "./src/assets/Shirts/Shirt-Dior-1-2.png",
-        "./src/assets/Shirts/Shirt-Dior-1-3.png",
-        "./src/assets/Shirts/Shirt-Dior-1-4.png"
-      ]
+        "./src/assets/products/Shirts/Shirt-Dior-1-1.png",
+        "./src/assets/products/Shirts/Shirt-Dior-1-2.png",
+        "./src/assets/products/Shirts/Shirt-Dior-1-3.png",
+        "./src/assets/products/Shirts/Shirt-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 33,
+      "id": "33",
       "name": "Shirt 42503",
+      "price": 850,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dolce & Gabbana",
       "colors": ["ffffff", "ebebeb", "323232", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/Shirts/Shirt-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Shirts/Shirt-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Shirts/Shirt-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Shirts/Shirt-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 34,
+      "id": "34",
       "name": "Shirt 42504",
+      "price": 750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["ff2802", "ff8900", "f9d900", "00bc02", "ebebeb"],
       "collection": "Spring collection",
       "category": "Shirts",
       "images": [
-        "./src/assets/Shirts/Shirt-Gucci-1-1.png",
-        "./src/assets/Shirts/Shirt-Gucci-1-2.png",
-        "./src/assets/Shirts/Shirt-Gucci-1-3.png",
-        "./src/assets/Shirts/Shirt-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Shirts/Shirt-Gucci-1-1.png",
+        "./src/assets/products/Shirts/Shirt-Gucci-1-2.png",
+        "./src/assets/products/Shirts/Shirt-Gucci-1-3.png",
+        "./src/assets/products/Shirts/Shirt-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 35,
+      "id": "35",
       "name": "Shirt 42505",
+      "price": 1500,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["f9d900", "ff2802", "00bc02", "00b8f7", "9785cf"],
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/Shirts/Shirt-Prada-1-1.png",
-        "./src/assets/Shirts/Shirt-Prada-1-2.png",
-        "./src/assets/Shirts/Shirt-Prada-1-3.png",
-        "./src/assets/Shirts/Shirt-Prada-1-4.png"
-      ]
+        "./src/assets/products/Shirts/Shirt-Prada-1-1.png",
+        "./src/assets/products/Shirts/Shirt-Prada-1-2.png",
+        "./src/assets/products/Shirts/Shirt-Prada-1-3.png",
+        "./src/assets/products/Shirts/Shirt-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 36,
+      "id": "36",
       "name": "Boots 42501",
+      "price": 1000,
       "brand": "Armani",
       "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
-      "category": "Shoes",
+      "category": "Boots",
       "images": [
-        "./src/assets/Shoes/Boots-Armani-1-1.png",
-        "./src/assets/Shoes/Boots-Armani-1-2.png",
-        "./src/assets/Shoes/Boots-Armani-1-3.png",
-        "./src/assets/Shoes/Boots-Armani-1-4.png"
-      ]
+        "./src/assets/products/Shoes/Boots-Armani-1-1.png",
+        "./src/assets/products/Shoes/Boots-Armani-1-2.png",
+        "./src/assets/products/Shoes/Boots-Armani-1-3.png",
+        "./src/assets/products/Shoes/Boots-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 37,
+      "id": "37",
       "name": "Boots 42502",
+      "price": 600,
       "brand": "Dolce & Gabbana",
       "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
-      "category": "Shoes",
+      "category": "Boots",
       "images": [
-        "./src/assets/Shoes/Boots-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/Shoes/Boots-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/Shoes/Boots-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/Shoes/Boots-Dolce-&-Gabbana-1-4.png"
-      ]
+        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-1.png",
+        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-2.png",
+        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-3.png",
+        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 38,
+      "id": "38",
       "name": "Sandals 42503",
+      "price": 1250,
       "brand": "Dior",
       "colors": ["323232", "756153", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Spring collection",
-      "category": "Shoes",
+      "category": "Boots",
       "images": [
-        "./src/assets/Shoes/Sandals-Dior-1-1.png",
-        "./src/assets/Shoes/Sandals-Dior-1-2.png",
-        "./src/assets/Shoes/Sandals-Dior-1-3.png",
-        "./src/assets/Shoes/Sandals-Dior-1-4.png"
-      ]
+        "./src/assets/products/Shoes/Sandals-Dior-1-1.png",
+        "./src/assets/products/Shoes/Sandals-Dior-1-2.png",
+        "./src/assets/products/Shoes/Sandals-Dior-1-3.png",
+        "./src/assets/products/Shoes/Sandals-Dior-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 39,
+      "id": "39",
       "name": "Sandals 42504",
+      "price": 900,
       "brand": "Prada",
       "colors": ["756153", "323232", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Urban style",
-      "category": "Shoes",
+      "category": "Boots",
       "images": [
-        "./src/assets/Shoes/Sandals-Prada-1-1.png",
-        "./src/assets/Shoes/Sandals-Prada-1-2.png",
-        "./src/assets/Shoes/Sandals-Prada-1-3.png",
-        "./src/assets/Shoes/Sandals-Prada-1-4.png"
-      ]
+        "./src/assets/products/Shoes/Sandals-Prada-1-1.png",
+        "./src/assets/products/Shoes/Sandals-Prada-1-2.png",
+        "./src/assets/products/Shoes/Sandals-Prada-1-3.png",
+        "./src/assets/products/Shoes/Sandals-Prada-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 40,
+      "id": "40",
       "name": "Shoes 42505",
+      "price": 1100,
       "brand": "Gucci",
       "colors": ["756153", "323232", "ebebeb", "ffffff", "00b8f7"],
       "collection": "Urban style",
-      "category": "Shoes",
+      "category": "Boots",
       "images": [
-        "./src/assets/Shoes/Shoes-Gucci-1-1.png",
-        "./src/assets/Shoes/Shoes-Gucci-1-2.png",
-        "./src/assets/Shoes/Shoes-Gucci-1-3.png",
-        "./src/assets/Shoes/Shoes-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Shoes/Shoes-Gucci-1-1.png",
+        "./src/assets/products/Shoes/Shoes-Gucci-1-2.png",
+        "./src/assets/products/Shoes/Shoes-Gucci-1-3.png",
+        "./src/assets/products/Shoes/Shoes-Gucci-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 41,
+      "id": "41",
       "name": "Sweater 42501",
+      "price": 550,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Armani",
       "colors": ["9785cf", "ffb5d9", "ff2802", "f9d900", "ff8900"],
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
-        "./src/assets/Sweaters/Sweater-Armani-1-1.png",
-        "./src/assets/Sweaters/Sweater-Armani-1-2.png",
-        "./src/assets/Sweaters/Sweater-Armani-1-3.png",
-        "./src/assets/Sweaters/Sweater-Armani-1-4.png"
-      ]
+        "./src/assets/products/Sweaters/Sweater-Armani-1-1.png",
+        "./src/assets/products/Sweaters/Sweater-Armani-1-2.png",
+        "./src/assets/products/Sweaters/Sweater-Armani-1-3.png",
+        "./src/assets/products/Sweaters/Sweater-Armani-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 42,
+      "id": "42",
       "name": "Sweater 42502",
+      "price": 650,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Burberry",
       "colors": ["ff2802", "f9d900", "ff8900", "00bc02", "00b8f7"],
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
-        "./src/assets/Sweaters/Sweater-Burberry-1-1.png",
-        "./src/assets/Sweaters/Sweater-Burberry-1-2.png",
-        "./src/assets/Sweaters/Sweater-Burberry-1-3.png",
-        "./src/assets/Sweaters/Sweater-Burberry-1-4.png"
-      ]
+        "./src/assets/products/Sweaters/Sweater-Burberry-1-1.png",
+        "./src/assets/products/Sweaters/Sweater-Burberry-1-2.png",
+        "./src/assets/products/Sweaters/Sweater-Burberry-1-3.png",
+        "./src/assets/products/Sweaters/Sweater-Burberry-1-4.png"
+      ],
+      "featured": false
     },
     {
-      "id": 43,
+      "id": "43",
       "name": "Sweater 42503",
+      "price": 1000,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
       "colors": ["00bc02", "00b8f7", "9785cf", "ffb5d9", "756153"],
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
-        "./src/assets/Sweaters/Sweater-Dior-1-1.png",
-        "./src/assets/Sweaters/Sweater-Dior-1-2.png",
-        "./src/assets/Sweaters/Sweater-Dior-1-3.png",
-        "./src/assets/Sweaters/Sweater-Dior-1-4.png"
-      ]
+        "./src/assets/products/Sweaters/Sweater-Dior-1-1.png",
+        "./src/assets/products/Sweaters/Sweater-Dior-1-2.png",
+        "./src/assets/products/Sweaters/Sweater-Dior-1-3.png",
+        "./src/assets/products/Sweaters/Sweater-Dior-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 44,
+      "id": "44",
       "name": "Sweater 42504",
+      "price": 750,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Gucci",
       "colors": ["323232", "756153", "ebebeb", "9785cf", "ffb5d9"],
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
-        "./src/assets/Sweaters/Sweater-Gucci-1-1.png",
-        "./src/assets/Sweaters/Sweater-Gucci-1-2.png",
-        "./src/assets/Sweaters/Sweater-Gucci-1-3.png",
-        "./src/assets/Sweaters/Sweater-Gucci-1-4.png"
-      ]
+        "./src/assets/products/Sweaters/Sweater-Gucci-1-1.png",
+        "./src/assets/products/Sweaters/Sweater-Gucci-1-2.png",
+        "./src/assets/products/Sweaters/Sweater-Gucci-1-3.png",
+        "./src/assets/products/Sweaters/Sweater-Gucci-1-4.png"
+      ],
+      "featured": true
     },
     {
-      "id": 45,
+      "id": "45",
       "name": "Sweater 42505",
+      "price": 1250,
+      "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Prada",
       "colors": ["f9d900", "ff8900", "ff2802", "9785cf", "ffb5d9"],
       "collection": "Office trend",
       "category": "Sweaters",
       "images": [
-        "./src/assets/Sweaters/Sweater-Prada-1-1.png",
-        "./src/assets/Sweaters/Sweater-Prada-1-2.png",
-        "./src/assets/Sweaters/Sweater-Prada-1-3.png",
-        "./src/assets/Sweaters/Sweater-Prada-1-4.png"
-      ]
+        "./src/assets/products/Sweaters/Sweater-Prada-1-1.png",
+        "./src/assets/products/Sweaters/Sweater-Prada-1-2.png",
+        "./src/assets/products/Sweaters/Sweater-Prada-1-3.png",
+        "./src/assets/products/Sweaters/Sweater-Prada-1-4.png"
+      ],
+      "featured": false
     }
   ]
 }

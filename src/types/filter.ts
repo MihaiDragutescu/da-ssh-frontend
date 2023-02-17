@@ -6,5 +6,6 @@ export type FilterType = {
   maxPrice?: number;
   collection?: string[];
   category?: string[];
+  quantity?: number;
   image?: string;
 };

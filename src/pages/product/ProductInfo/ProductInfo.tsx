@@ -19,11 +19,13 @@ interface ProductState {
   size?: string;
   color?: string;
   image?: string;
+  quantity?: number;
 }
 
 const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   const [productInfo, setProductInfo] = useState<ProductState>({});
   const [productInWishlist, setProductInWishlist] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const toggleWishlist = () => {
     setProductInWishlist(!productInWishlist);
@@ -58,10 +60,31 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     console.log('Added to Cart');
   };
 
+  const handleAddQuantity = () => {
+    const newQuantity = quantity >= 99 ? 99 : quantity + 1;
+
+    setProductInfo((prev) => {
+      return { ...prev, quantity: newQuantity };
+    });
+
+    setQuantity(newQuantity);
+  };
+
+  const handleSubtractQuantity = () => {
+    const newQuantity = quantity <= 1 ? 1 : quantity - 1;
+
+    setProductInfo((prev) => {
+      return { ...prev, quantity: newQuantity };
+    });
+
+    setQuantity(newQuantity);
+  };
+
   useEffect(() => {
     setProductInfo({
       size: '3',
       color: '6',
+      quantity: 1,
       image: props.product.images[0],
     });
   }, []);
@@ -104,6 +127,26 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
                 <span>Size</span>
               </div>
               <ul className='product-info__size-list'>{sizesList}</ul>
+            </div>
+            <div className='product-info__quantity'>
+              <div className='product-info__subtitle'>
+                <span>Quantity</span>
+              </div>
+              <div className='product-info__quantity-box'>
+                <button
+                  className='quantity-button quantity-button--subtract'
+                  onClick={handleSubtractQuantity}
+                >
+                  -
+                </button>
+                <span className='product-quantity'>{quantity}</span>
+                <button
+                  className='quantity-button quantity-button--add'
+                  onClick={handleAddQuantity}
+                >
+                  +
+                </button>
+              </div>
             </div>
             <div className='product-info__accordion'>
               <Accordion accordionList={accordionList} />

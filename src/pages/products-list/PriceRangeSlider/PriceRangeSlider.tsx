@@ -3,12 +3,14 @@ import { useState, useEffect } from 'react';
 import './PriceRangeSlider.scss';
 
 interface PriceSliderProps {
+  minPrice: number;
+  maxPrice: number;
   handlePriceChange: (min: number, max: number) => void;
 }
 
 const PriceSlider: React.FC<PriceSliderProps> = (props: PriceSliderProps) => {
-  const [minValue, setMinValue] = useState(1000);
-  const [maxValue, setMaxValue] = useState(9000);
+  const [minValue, setMinValue] = useState(props.minPrice);
+  const [maxValue, setMaxValue] = useState(props.maxPrice);
 
   useEffect(() => {
     props.handlePriceChange(minValue, maxValue);

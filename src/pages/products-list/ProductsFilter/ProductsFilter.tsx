@@ -70,13 +70,13 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   useEffect(() => {
     setActiveFilters({
-      size: ['3'],
-      brand: ['3'],
-      color: ['6'],
-      minPrice: 1000,
-      maxPrice: 9000,
-      collection: ['3'],
-      category: ['3'],
+      size: [],
+      brand: [],
+      color: [],
+      minPrice: 100,
+      maxPrice: 9900,
+      collection: [],
+      category: [],
     });
 
     const lastFilterButton = document.querySelector(
@@ -131,7 +131,11 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       </div>
       <div className='products-filters__col products-filters__price'>
         <div className='products-filters__title'>Price</div>
-        <PriceSlider handlePriceChange={handlePriceChange} />
+        <PriceSlider
+          minPrice={activeFilters.minPrice ?? 100}
+          maxPrice={activeFilters.maxPrice ?? 9900}
+          handlePriceChange={handlePriceChange}
+        />
       </div>
       <div className='products-filters__col products-filters__collection'>
         <div className='products-filters__title'>Collection</div>
