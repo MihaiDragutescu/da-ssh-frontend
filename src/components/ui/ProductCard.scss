@@ -72,7 +72,8 @@
   }
 
   &__name,
-  &__price {
+  &__price,
+  &__brand {
     line-height: 1;
     color: $color-brown-dark;
   }
@@ -87,6 +88,20 @@
 
     @include for-size(mobile) {
       font-size: calc($card-text-size - 12px);
+    }
+  }
+
+  &__brand {
+    font-size: calc($card-text-size - 8px);
+    margin-bottom: 8px;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size - 12px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 16px);
+      margin-bottom: 6px;
     }
   }
 

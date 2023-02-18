@@ -73,6 +73,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
                 id={product.id}
                 image={product.images[0]}
                 name={product.name}
+                brand={product.brand}
                 price={product.price}
               />
             );

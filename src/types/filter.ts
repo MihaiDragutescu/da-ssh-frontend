@@ -1,11 +1,18 @@
 export type FilterType = {
-  size?: string[];
-  brand?: string[];
-  color?: string[];
-  minPrice?: number;
-  maxPrice?: number;
-  collection?: string[];
-  category?: string[];
-  quantity?: number;
-  image?: string;
+  id: string;
+  type: string;
+  name: string;
+};
+
+export type CategoryType = {
+  id: string;
+  name: string;
+  image: string;
+};
+
+export type FeaturedCollectionType = {
+  id: string;
+  name: string;
+  image: string;
+  categories: CategoryType[];
 };

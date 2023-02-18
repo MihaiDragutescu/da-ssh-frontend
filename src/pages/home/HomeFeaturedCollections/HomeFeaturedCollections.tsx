@@ -2,20 +2,60 @@ import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
 import { CardLayouts } from '@Types/layouts';
 import { RouterPaths } from '@Types/routerPaths';
-import { featuredCollections } from '@Utils/mocks';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '@Components/ui/Spinner';
+import ResponseMessage from '@Components/ui/ResponseMessage';
+import { useGetFeaturedCollectionsQuery } from '@Store/index';
 import './HomeFeaturedCollections.scss';
 
 const HomeFeaturedCollections: React.FC = () => {
   const navigate = useNavigate();
-  const checkIndex = (index: number) => index % 3 === 2;
-  const collections = featuredCollections.map((collection, index) => ({
-    ...collection,
-    className: `collection-card ${
-      checkIndex(index) ? 'collection-card-large' : ''
-    }`,
-    layout: checkIndex(index) ? CardLayouts.HORIZONTAL : CardLayouts.VERTICAL,
-  }));
+
+  const { data, error, isFetching } = useGetFeaturedCollectionsQuery();
+
+  let content;
+  if (isFetching) {
+    content = <Spinner />;
+  } else if (error) {
+    content = <ResponseMessage>Error fetching collections.</ResponseMessage>;
+  } else {
+    if (data && data.length !== 0) {
+      const checkIndex = (index: number) => index % 3 === 2;
+      const collections = data[0].categories.map((category, index) => ({
+        id: data[0].id,
+        categoryId: category.id,
+        name: data[0].name,
+        image: category.image,
+        category: category.name,
+        className: `collection-card ${
+          checkIndex(index) ? 'collection-card-large' : ''
+        }`,
+        layout: checkIndex(index)
+          ? CardLayouts.HORIZONTAL
+          : CardLayouts.VERTICAL,
+      }));
+
+      content = (
+        <div className='home-collections__list'>
+          {collections.map((collection, index) => {
+            return (
+              <ProductCard
+                id={collection.id}
+                classname={collection.className}
+                key={collection.categoryId}
+                image={collection.image}
+                collection={collection.name}
+                category={collection.category}
+                layout={collection.layout}
+              />
+            );
+          })}
+        </div>
+      );
+    } else {
+      content = <ResponseMessage>No collections found.</ResponseMessage>;
+    }
+  }
 
   const handleClick = () => {
     navigate(RouterPaths.SHOP);
@@ -30,21 +70,7 @@ const HomeFeaturedCollections: React.FC = () => {
               Fresh out of the oven
             </h2>
           </div>
-          <div className='home-collections__list'>
-            {collections.map((collection) => {
-              return (
-                <ProductCard
-                  classname={collection.className}
-                  key={collection.id}
-                  id={collection.id}
-                  image={collection.image}
-                  collection={collection.collection}
-                  category={collection.category}
-                  layout={collection.layout}
-                />
-              );
-            })}
-          </div>
+          {content}
           <div className='home-collections__button-container'>
             <Button onClick={handleClick}>See More</Button>
           </div>

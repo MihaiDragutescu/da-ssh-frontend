@@ -1,7 +1,7 @@
 import Accordion from '@Components/ui/Accordion';
 import Button from '@Components/ui/Button';
 import { ProductType } from '@Types/product';
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@App/types/filtersList';
 import { ReactComponent as Heart } from '@Assets/images/heart-icon.svg';
 import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.svg';
 import { sizes, accordionList } from '@Utils/mocks';
@@ -31,7 +31,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     setProductInWishlist(!productInWishlist);
   };
 
-  const handleClick = (filter: keyof FilterType, value: string) => {
+  const handleClick = (filter: keyof FiltersListType, value: string) => {
     setProductInfo((prev) => {
       return {
         ...prev,

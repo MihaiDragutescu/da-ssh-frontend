@@ -1,4 +1,4 @@
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@App/types/filtersList';
 import Slider from 'react-slick';
 import { productImagesSettings } from '@App/utils/slidersConfig';
 import ImageMagnifier from '../ImageMagnifier';
@@ -7,7 +7,7 @@ import './ProductImages.scss';
 
 interface ProductImagesProps {
   images: string[];
-  handleImageClick: (type: keyof FilterType, value: string) => void;
+  handleImageClick: (type: keyof FiltersListType, value: string) => void;
   currentImage: string;
 }
 

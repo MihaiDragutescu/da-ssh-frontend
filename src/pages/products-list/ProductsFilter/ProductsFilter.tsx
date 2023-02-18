@@ -1,7 +1,7 @@
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@App/types/filtersList';
 import { useState, useEffect } from 'react';
 import { sizes, brands, collections, categories } from '@Utils/mocks';
 import './ProductsFilter.scss';
@@ -13,9 +13,9 @@ interface ProductsFilterProps {
 const ProductsFilter: React.FC<ProductsFilterProps> = (
   props: ProductsFilterProps
 ) => {
-  const [activeFilters, setActiveFilters] = useState<FilterType>({});
+  const [activeFilters, setActiveFilters] = useState<FiltersListType>({});
 
-  const handleClick = (filter: keyof FilterType, value: string) => {
+  const handleClick = (filter: keyof FiltersListType, value: string) => {
     setActiveFilters((prev) => {
       return {
         ...prev,

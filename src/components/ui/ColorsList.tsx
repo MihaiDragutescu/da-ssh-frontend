@@ -1,10 +1,10 @@
 import ColorPill from './ColorPill';
 import { colors } from '@Utils/mocks';
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@App/types/filtersList';
 
 interface ColorsListProps {
   activeColor?: string[];
-  handleClick: (type: keyof FilterType, value: string) => void;
+  handleClick: (type: keyof FiltersListType, value: string) => void;
 }
 
 const ColorsList: React.FC<ColorsListProps> = (props: ColorsListProps) => {

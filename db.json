@@ -1,32 +1,28 @@
 {
-  "sizes": [
-    { "id": "1", "name": "XS" },
-    { "id": "2", "name": "S" },
-    { "id": "3", "name": "M" },
-    { "id": "4", "name": "L" },
-    { "id": "5", "name": "XL" },
-    { "id": "6", "name": "XXL" }
-  ],
-  "brands": [
-    { "id": "1", "name": "Armani" },
-    { "id": "2", "name": "Burberry" },
-    { "id": "3", "name": "Dior" },
-    { "id": "4", "name": "Dolce & Gabbana" },
-    { "id": "5", "name": "Gucci" },
-    { "id": "6", "name": "Prada" }
-  ],
-  "colors": [
-    { "id": "1", "name": "ff2802" },
-    { "id": "2", "name": "ff8900" },
-    { "id": "3", "name": "f9d900" },
-    { "id": "4", "name": "00bc02" },
-    { "id": "5", "name": "00b8f7" },
-    { "id": "6", "name": "9785cf" },
-    { "id": "7", "name": "ffb5d9" },
-    { "id": "8", "name": "756153" },
-    { "id": "9", "name": "ffffff" },
-    { "id": "10", "name": "323232" },
-    { "id": "11", "name": "ebebeb" }
+  "filters": [
+    { "id": "1", "type": "size", "name": "XS" },
+    { "id": "2", "type": "size", "name": "S" },
+    { "id": "3", "type": "size", "name": "M" },
+    { "id": "4", "type": "size", "name": "L" },
+    { "id": "5", "type": "size", "name": "XL" },
+    { "id": "6", "type": "size", "name": "XXL" },
+    { "id": "7", "type": "brand", "name": "Armani" },
+    { "id": "8", "type": "brand", "name": "Burberry" },
+    { "id": "9", "type": "brand", "name": "Dior" },
+    { "id": "10", "type": "brand", "name": "Dolce & Gabbana" },
+    { "id": "11", "type": "color", "name": "Gucci" },
+    { "id": "12", "type": "color", "name": "Prada" },
+    { "id": "13", "type": "color", "name": "ff2802" },
+    { "id": "14", "type": "color", "name": "ff8900" },
+    { "id": "15", "type": "color", "name": "f9d900" },
+    { "id": "16", "type": "color", "name": "00bc02" },
+    { "id": "17", "type": "color", "name": "00b8f7" },
+    { "id": "18", "type": "color", "name": "9785cf" },
+    { "id": "19", "type": "color", "name": "ffb5d9" },
+    { "id": "20", "type": "color", "name": "756153" },
+    { "id": "21", "type": "color", "name": "ffffff" },
+    { "id": "22", "type": "color", "name": "323232" },
+    { "id": "23", "type": "color", "name": "ebebeb" }
   ],
   "collections": [
     {
@@ -56,13 +52,13 @@
       "id": "2",
       "name": "Jackets",
       "image": "",
-      "collectionId": "1"
+      "collectionId": ""
     },
     {
       "id": "3",
       "name": "Dresses",
       "image": "./products/Dresses-category.jpg",
-      "collectionId": ""
+      "collectionId": "1"
     },
     {
       "id": "4",

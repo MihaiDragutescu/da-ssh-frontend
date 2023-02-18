@@ -10,6 +10,7 @@ interface ProductCardProps {
   id: string;
   name?: string;
   price?: number;
+  brand?: string;
   collection?: string;
   category?: string;
   layout?: CardLayouts;
@@ -45,6 +46,9 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
             >
               <span>{props.name}</span>
             </Link>
+          )}
+          {props.brand && (
+            <span className='product-card__brand'>by {props.brand}</span>
           )}
           {props.price && (
             <span className='product-card__price'>{props.price} €</span>

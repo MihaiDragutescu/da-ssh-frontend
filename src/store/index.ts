@@ -1,17 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { productsApi } from './apis/productsApi';
+import { sshApi } from './api';
 
 export const store = configureStore({
   reducer: {
-    [productsApi.reducerPath]: productsApi.reducer,
+    [sshApi.reducerPath]: sshApi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(sshApi.middleware);
+  },
 });
+
 setupListeners(store.dispatch);
 
 export {
   useGetProductsQuery,
   useGetFeaturedProductsQuery,
-} from './apis/productsApi';
+  useGetFeaturedCollectionsQuery,
+} from './api';

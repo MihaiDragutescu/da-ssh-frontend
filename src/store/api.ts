@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ProductType } from '@Types/product';
+import { FeaturedCollectionType } from '@Types/filter';
 
-export const productsApi = createApi({
-  reducerPath: 'products',
+export const sshApi = createApi({
+  reducerPath: 'sshApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001' }),
 
-  tagTypes: ['Product'],
   endpoints: (builder) => {
     return {
       getProducts: builder.query<ProductType, number>({
@@ -14,8 +14,15 @@ export const productsApi = createApi({
       getFeaturedProducts: builder.query<ProductType[], void>({
         query: () => '/products?featured=true',
       }),
+      getFeaturedCollections: builder.query<FeaturedCollectionType[], void>({
+        query: () => '/collections?featured=true&_embed=categories',
+      }),
     };
   },
 });
 
-export const { useGetProductsQuery, useGetFeaturedProductsQuery } = productsApi;
+export const {
+  useGetProductsQuery,
+  useGetFeaturedProductsQuery,
+  useGetFeaturedCollectionsQuery,
+} = sshApi;
