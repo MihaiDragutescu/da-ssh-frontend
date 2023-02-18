@@ -3,6 +3,7 @@ import HomeNewsletters from './HomeNewsletters/HomeNewsletters';
 import FeaturedProducts from '@Components/ui/FeaturedProducts';
 import HomeFeaturedCollections from './HomeFeaturedCollections/HomeFeaturedCollections';
 import Spinner from '@Components/ui/Spinner';
+import ResponseMessage from '@Components/ui/ResponseMessage';
 import { useGetFeaturedProductsQuery } from '@Store/index';
 
 const HomePage = () => {
@@ -12,11 +13,11 @@ const HomePage = () => {
   if (isFetching) {
     content = <Spinner />;
   } else if (error) {
-    content = <div>Error fetching products.</div>;
+    content = <ResponseMessage>Error fetching products.</ResponseMessage>;
   } else {
-    data
+    data && data.length !== 0
       ? (content = <FeaturedProducts products={data} showButton />)
-      : (content = <div>No products found.</div>);
+      : (content = <ResponseMessage>No products found.</ResponseMessage>);
   }
 
   return (

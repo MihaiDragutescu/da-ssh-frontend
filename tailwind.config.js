@@ -7,6 +7,9 @@ module.exports = {
       md: '991px',
       lg: '1250px',
     },
+    colors: {
+      brown: '#895f5f',
+    },
   },
   plugins: [],
   important: true,
