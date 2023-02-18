@@ -12,10 +12,10 @@ const ProductsList: React.FC = () => {
               return (
                 <ProductCard
                   key={product.id}
+                  id={product.id}
                   image={product.images[0]}
                   name={product.name}
                   price={product.price}
-                  link={product.link}
                   add_to_basket
                 />
               );

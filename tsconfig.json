@@ -8,6 +8,7 @@
       "@Context/*": ["./context/*"],
       "@Hooks/*": ["./hooks/*"],
       "@Pages/*": ["./pages/*"],
+      "@Store/*": ["./store/*"],
       "@Styles/*": ["./styles/*"],
       "@Types/*": ["./types/*"],
       "@Utils/*": ["./utils/*"]

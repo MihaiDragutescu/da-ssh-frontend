@@ -1,69 +1,104 @@
 {
-  "filters": [
-    { "id": "1", "type": "size", "name": "XS" },
-    { "id": "2", "type": "size", "name": "S" },
-    { "id": "3", "type": "size", "name": "M" },
-    { "id": "4", "type": "size", "name": "L" },
-    { "id": "5", "type": "size", "name": "XL" },
-    { "id": "6", "type": "size", "name": "XXL" },
-    { "id": "7", "type": "brand", "name": "Armani" },
-    { "id": "8", "type": "brand", "name": "Burberry" },
-    { "id": "9", "type": "brand", "name": "Dior" },
-    { "id": "10", "type": "brand", "name": "Dolce & Gabbana" },
-    { "id": "11", "type": "brand", "name": "Gucci" },
-    { "id": "12", "type": "brand", "name": "Prada" },
-    { "id": "13", "type": "color", "name": "ff2802" },
-    { "id": "14", "type": "color", "name": "ff8900" },
-    { "id": "15", "type": "color", "name": "f9d900" },
-    { "id": "16", "type": "color", "name": "00bc02" },
-    { "id": "17", "type": "color", "name": "00b8f7" },
-    { "id": "18", "type": "color", "name": "9785cf" },
-    { "id": "19", "type": "color", "name": "ffb5d9" },
-    { "id": "20", "type": "color", "name": "756153" },
-    { "id": "21", "type": "color", "name": "ffffff" },
-    { "id": "22", "type": "color", "name": "323232" },
-    { "id": "23", "type": "color", "name": "ebebeb" },
+  "sizes": [
+    { "id": "1", "name": "XS" },
+    { "id": "2", "name": "S" },
+    { "id": "3", "name": "M" },
+    { "id": "4", "name": "L" },
+    { "id": "5", "name": "XL" },
+    { "id": "6", "name": "XXL" }
+  ],
+  "brands": [
+    { "id": "1", "name": "Armani" },
+    { "id": "2", "name": "Burberry" },
+    { "id": "3", "name": "Dior" },
+    { "id": "4", "name": "Dolce & Gabbana" },
+    { "id": "5", "name": "Gucci" },
+    { "id": "6", "name": "Prada" }
+  ],
+  "colors": [
+    { "id": "1", "name": "ff2802" },
+    { "id": "2", "name": "ff8900" },
+    { "id": "3", "name": "f9d900" },
+    { "id": "4", "name": "00bc02" },
+    { "id": "5", "name": "00b8f7" },
+    { "id": "6", "name": "9785cf" },
+    { "id": "7", "name": "ffb5d9" },
+    { "id": "8", "name": "756153" },
+    { "id": "9", "name": "ffffff" },
+    { "id": "10", "name": "323232" },
+    { "id": "11", "name": "ebebeb" }
+  ],
+  "collections": [
     {
-      "id": "24",
-      "type": "collection",
+      "id": "1",
       "name": "Spring collection",
       "featured": true
     },
     {
-      "id": "25",
-      "type": "collection",
+      "id": "2",
       "name": "Office trend",
       "featured": false
     },
     {
-      "id": "26",
-      "type": "collection",
+      "id": "3",
       "name": "Urban style",
       "featured": false
-    },
+    }
+  ],
+  "categories": [
     {
-      "id": "27",
-      "type": "category",
+      "id": "1",
       "name": "Coats",
-      "image": "./src/assets/products/Coats-category.png"
+      "image": "./products/Coats-category.png",
+      "collectionId": "1"
     },
-    { "id": "28", "type": "category", "name": "Jackets", "image": "" },
     {
-      "id": "29",
-      "type": "category",
+      "id": "2",
+      "name": "Jackets",
+      "image": "",
+      "collectionId": "1"
+    },
+    {
+      "id": "3",
       "name": "Dresses",
-      "image": "./src/assets/products/Dresses-category.jpg"
+      "image": "./products/Dresses-category.jpg",
+      "collectionId": ""
     },
-    { "id": "30", "type": "category", "name": "Shirts", "image": "" },
-    { "id": "31", "type": "category", "name": "Sweaters", "image": "" },
-    { "id": "32", "type": "category", "name": "Pants", "image": "" },
-    { "id": "33", "type": "category", "name": "Jeans", "image": "" },
-    { "id": "34", "type": "category", "name": "Bags", "image": "" },
     {
-      "id": "35",
-      "type": "category",
+      "id": "4",
+      "name": "Shirts",
+      "image": "",
+      "collectionId": ""
+    },
+    {
+      "id": "5",
+      "name": "Sweaters",
+      "image": "",
+      "collectionId": ""
+    },
+    {
+      "id": "6",
+      "name": "Pants",
+      "image": "",
+      "collectionId": ""
+    },
+    {
+      "id": "7",
+      "name": "Jeans",
+      "image": "",
+      "collectionId": ""
+    },
+    {
+      "id": "8",
+      "name": "Bags",
+      "image": "",
+      "collectionId": ""
+    },
+    {
+      "id": "9",
       "name": "Boots",
-      "image": "./src/assets/products/Boots-category.png"
+      "image": "./products/Boots-category.png",
+      "collectionId": "1"
     }
   ],
   "products": [
@@ -76,10 +111,10 @@
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
-        "./src/assets/products/Bags/Bag-Armani-1-1.png",
-        "./src/assets/products/Bags/Bag-Armani-1-2.png",
-        "./src/assets/products/Bags/Bag-Armani-1-3.png",
-        "./src/assets/products/Bags/Bag-Armani-1-4.png"
+        "./products/Bags/Bag-Armani-1-1.png",
+        "./products/Bags/Bag-Armani-1-2.png",
+        "./products/Bags/Bag-Armani-1-3.png",
+        "./products/Bags/Bag-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -92,10 +127,10 @@
       "collection": "Office trend",
       "category": "Bags",
       "images": [
-        "./src/assets/products/Bags/Bag-Burberry-1-1.png",
-        "./src/assets/products/Bags/Bag-Burberry-1-2.png",
-        "./src/assets/products/Bags/Bag-Burberry-1-3.png",
-        "./src/assets/products/Bags/Bag-Burberry-1-4.png"
+        "./products/Bags/Bag-Burberry-1-1.png",
+        "./products/Bags/Bag-Burberry-1-2.png",
+        "./products/Bags/Bag-Burberry-1-3.png",
+        "./products/Bags/Bag-Burberry-1-4.png"
       ],
       "featured": true
     },
@@ -108,10 +143,10 @@
       "collection": "Spring collection",
       "category": "Bags",
       "images": [
-        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Bags/Bag-Dolce-&-Gabbana-1-4.png"
+        "./products/Bags/Bag-Dolce-&-Gabbana-1-1.png",
+        "./products/Bags/Bag-Dolce-&-Gabbana-1-2.png",
+        "./products/Bags/Bag-Dolce-&-Gabbana-1-3.png",
+        "./products/Bags/Bag-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": false
     },
@@ -124,10 +159,10 @@
       "collection": "Urban style",
       "category": "Bags",
       "images": [
-        "./src/assets/products/Bags/Bag-Gucci-1-1.png",
-        "./src/assets/products/Bags/Bag-Gucci-1-2.png",
-        "./src/assets/products/Bags/Bag-Gucci-1-3.png",
-        "./src/assets/products/Bags/Bag-Gucci-1-4.png"
+        "./products/Bags/Bag-Gucci-1-1.png",
+        "./products/Bags/Bag-Gucci-1-2.png",
+        "./products/Bags/Bag-Gucci-1-3.png",
+        "./products/Bags/Bag-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -140,10 +175,10 @@
       "collection": "Office trend",
       "category": "Bags",
       "images": [
-        "./src/assets/products/Bags/Bag-Prada-1-1.png",
-        "./src/assets/products/Bags/Bag-Prada-1-2.png",
-        "./src/assets/products/Bags/Bag-Prada-1-3.png",
-        "./src/assets/products/Bags/Bag-Prada-1-4.png"
+        "./products/Bags/Bag-Prada-1-1.png",
+        "./products/Bags/Bag-Prada-1-2.png",
+        "./products/Bags/Bag-Prada-1-3.png",
+        "./products/Bags/Bag-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -157,10 +192,10 @@
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/products/Coats/Coat-Armani-1-1.png",
-        "./src/assets/products/Coats/Coat-Armani-1-2.png",
-        "./src/assets/products/Coats/Coat-Armani-1-3.png",
-        "./src/assets/products/Coats/Coat-Armani-1-4.png"
+        "./products/Coats/Coat-Armani-1-1.png",
+        "./products/Coats/Coat-Armani-1-2.png",
+        "./products/Coats/Coat-Armani-1-3.png",
+        "./products/Coats/Coat-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -174,10 +209,10 @@
       "collection": "Urban style",
       "category": "Coats",
       "images": [
-        "./src/assets/products/Coats/Coat-Burberry-1-1.png",
-        "./src/assets/products/Coats/Coat-Burberry-1-2.png",
-        "./src/assets/products/Coats/Coat-Burberry-1-3.png",
-        "./src/assets/products/Coats/Coat-Burberry-1-4.png"
+        "./products/Coats/Coat-Burberry-1-1.png",
+        "./products/Coats/Coat-Burberry-1-2.png",
+        "./products/Coats/Coat-Burberry-1-3.png",
+        "./products/Coats/Coat-Burberry-1-4.png"
       ],
       "featured": false
     },
@@ -191,10 +226,10 @@
       "collection": "Office trend",
       "category": "Coats",
       "images": [
-        "./src/assets/products/Coats/Coat-Dior-1-1.png",
-        "./src/assets/products/Coats/Coat-Dior-1-2.png",
-        "./src/assets/products/Coats/Coat-Dior-1-3.png",
-        "./src/assets/products/Coats/Coat-Dior-1-4.png"
+        "./products/Coats/Coat-Dior-1-1.png",
+        "./products/Coats/Coat-Dior-1-2.png",
+        "./products/Coats/Coat-Dior-1-3.png",
+        "./products/Coats/Coat-Dior-1-4.png"
       ],
       "featured": true
     },
@@ -208,10 +243,10 @@
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/products/Coats/Coat-Gucci-1-1.png",
-        "./src/assets/products/Coats/Coat-Gucci-1-2.png",
-        "./src/assets/products/Coats/Coat-Gucci-1-3.png",
-        "./src/assets/products/Coats/Coat-Gucci-1-4.png"
+        "./products/Coats/Coat-Gucci-1-1.png",
+        "./products/Coats/Coat-Gucci-1-2.png",
+        "./products/Coats/Coat-Gucci-1-3.png",
+        "./products/Coats/Coat-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -225,10 +260,10 @@
       "collection": "Spring collection",
       "category": "Coats",
       "images": [
-        "./src/assets/products/Coats/Coat-Prada-1-1.png",
-        "./src/assets/products/Coats/Coat-Prada-1-2.png",
-        "./src/assets/products/Coats/Coat-Prada-1-3.png",
-        "./src/assets/products/Coats/Coat-Prada-1-4.png"
+        "./products/Coats/Coat-Prada-1-1.png",
+        "./products/Coats/Coat-Prada-1-2.png",
+        "./products/Coats/Coat-Prada-1-3.png",
+        "./products/Coats/Coat-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -242,10 +277,10 @@
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/products/Dresses/Dress-Armani-1-1.png",
-        "./src/assets/products/Dresses/Dress-Armani-1-2.png",
-        "./src/assets/products/Dresses/Dress-Armani-1-3.png",
-        "./src/assets/products/Dresses/Dress-Armani-1-4.png"
+        "./products/Dresses/Dress-Armani-1-1.png",
+        "./products/Dresses/Dress-Armani-1-2.png",
+        "./products/Dresses/Dress-Armani-1-3.png",
+        "./products/Dresses/Dress-Armani-1-4.png"
       ],
       "featured": true
     },
@@ -259,10 +294,10 @@
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/products/Dresses/Dress-Burberry-1-1.png",
-        "./src/assets/products/Dresses/Dress-Burberry-1-2.png",
-        "./src/assets/products/Dresses/Dress-Burberry-1-3.png",
-        "./src/assets/products/Dresses/Dress-Burberry-1-4.png"
+        "./products/Dresses/Dress-Burberry-1-1.png",
+        "./products/Dresses/Dress-Burberry-1-2.png",
+        "./products/Dresses/Dress-Burberry-1-3.png",
+        "./products/Dresses/Dress-Burberry-1-4.png"
       ],
       "featured": false
     },
@@ -276,10 +311,10 @@
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/products/Dresses/Dress-Dior-1-1.png",
-        "./src/assets/products/Dresses/Dress-Dior-1-2.png",
-        "./src/assets/products/Dresses/Dress-Dior-1-3.png",
-        "./src/assets/products/Dresses/Dress-Dior-1-4.png"
+        "./products/Dresses/Dress-Dior-1-1.png",
+        "./products/Dresses/Dress-Dior-1-2.png",
+        "./products/Dresses/Dress-Dior-1-3.png",
+        "./products/Dresses/Dress-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -293,10 +328,10 @@
       "collection": "Spring collection",
       "category": "Dresses",
       "images": [
-        "./src/assets/products/Dresses/Dress-Gucci-1-1.png",
-        "./src/assets/products/Dresses/Dress-Gucci-1-2.png",
-        "./src/assets/products/Dresses/Dress-Gucci-1-3.png",
-        "./src/assets/products/Dresses/Dress-Gucci-1-4.png"
+        "./products/Dresses/Dress-Gucci-1-1.png",
+        "./products/Dresses/Dress-Gucci-1-2.png",
+        "./products/Dresses/Dress-Gucci-1-3.png",
+        "./products/Dresses/Dress-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -310,10 +345,10 @@
       "collection": "Office trend",
       "category": "Dresses",
       "images": [
-        "./src/assets/products/Dresses/Dress-Prada-1-1.png",
-        "./src/assets/products/Dresses/Dress-Prada-1-2.png",
-        "./src/assets/products/Dresses/Dress-Prada-1-3.png",
-        "./src/assets/products/Dresses/Dress-Prada-1-4.png"
+        "./products/Dresses/Dress-Prada-1-1.png",
+        "./products/Dresses/Dress-Prada-1-2.png",
+        "./products/Dresses/Dress-Prada-1-3.png",
+        "./products/Dresses/Dress-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -327,10 +362,10 @@
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/products/Jackets/Jacket-Armani-1-1.png",
-        "./src/assets/products/Jackets/Jacket-Armani-1-2.png",
-        "./src/assets/products/Jackets/Jacket-Armani-1-3.png",
-        "./src/assets/products/Jackets/Jacket-Armani-1-4.png"
+        "./products/Jackets/Jacket-Armani-1-1.png",
+        "./products/Jackets/Jacket-Armani-1-2.png",
+        "./products/Jackets/Jacket-Armani-1-3.png",
+        "./products/Jackets/Jacket-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -344,10 +379,10 @@
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/products/Jackets/Jacket-Dior-1-1.png",
-        "./src/assets/products/Jackets/Jacket-Dior-1-2.png",
-        "./src/assets/products/Jackets/Jacket-Dior-1-3.png",
-        "./src/assets/products/Jackets/Jacket-Dior-1-4.png"
+        "./products/Jackets/Jacket-Dior-1-1.png",
+        "./products/Jackets/Jacket-Dior-1-2.png",
+        "./products/Jackets/Jacket-Dior-1-3.png",
+        "./products/Jackets/Jacket-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -361,10 +396,10 @@
       "collection": "Urban style",
       "category": "Jackets",
       "images": [
-        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Jackets/Jacket-Dolce-&-Gabbana-1-4.png"
+        "./products/Jackets/Jacket-Dolce-&-Gabbana-1-1.png",
+        "./products/Jackets/Jacket-Dolce-&-Gabbana-1-2.png",
+        "./products/Jackets/Jacket-Dolce-&-Gabbana-1-3.png",
+        "./products/Jackets/Jacket-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": false
     },
@@ -378,10 +413,10 @@
       "collection": "Spring collection",
       "category": "Jackets",
       "images": [
-        "./src/assets/products/Jackets/Jacket-Gucci-1-1.png",
-        "./src/assets/products/Jackets/Jacket-Gucci-1-2.png",
-        "./src/assets/products/Jackets/Jacket-Gucci-1-3.png",
-        "./src/assets/products/Jackets/Jacket-Gucci-1-4.png"
+        "./products/Jackets/Jacket-Gucci-1-1.png",
+        "./products/Jackets/Jacket-Gucci-1-2.png",
+        "./products/Jackets/Jacket-Gucci-1-3.png",
+        "./products/Jackets/Jacket-Gucci-1-4.png"
       ],
       "featured": true
     },
@@ -395,10 +430,10 @@
       "collection": "Office trend",
       "category": "Jackets",
       "images": [
-        "./src/assets/products/Jackets/Jacket-Prada-1-1.png",
-        "./src/assets/products/Jackets/Jacket-Prada-1-2.png",
-        "./src/assets/products/Jackets/Jacket-Prada-1-3.png",
-        "./src/assets/products/Jackets/Jacket-Prada-1-4.png"
+        "./products/Jackets/Jacket-Prada-1-1.png",
+        "./products/Jackets/Jacket-Prada-1-2.png",
+        "./products/Jackets/Jacket-Prada-1-3.png",
+        "./products/Jackets/Jacket-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -412,10 +447,10 @@
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
-        "./src/assets/products/Jeans/Jeans-Armani-1-1.png",
-        "./src/assets/products/Jeans/Jeans-Armani-1-2.png",
-        "./src/assets/products/Jeans/Jeans-Armani-1-3.png",
-        "./src/assets/products/Jeans/Jeans-Armani-1-4.png"
+        "./products/Jeans/Jeans-Armani-1-1.png",
+        "./products/Jeans/Jeans-Armani-1-2.png",
+        "./products/Jeans/Jeans-Armani-1-3.png",
+        "./products/Jeans/Jeans-Armani-1-4.png"
       ],
       "featured": true
     },
@@ -429,10 +464,10 @@
       "collection": "Office trend",
       "category": "Jeans",
       "images": [
-        "./src/assets/products/Jeans/Jeans-Burberry-1-1.png",
-        "./src/assets/products/Jeans/Jeans-Burberry-1-2.png",
-        "./src/assets/products/Jeans/Jeans-Burberry-1-3.png",
-        "./src/assets/products/Jeans/Jeans-Burberry-1-4.png"
+        "./products/Jeans/Jeans-Burberry-1-1.png",
+        "./products/Jeans/Jeans-Burberry-1-2.png",
+        "./products/Jeans/Jeans-Burberry-1-3.png",
+        "./products/Jeans/Jeans-Burberry-1-4.png"
       ],
       "featured": false
     },
@@ -446,10 +481,10 @@
       "collection": "Urban style",
       "category": "Jeans",
       "images": [
-        "./src/assets/products/Jeans/Jeans-Dior-1-1.png",
-        "./src/assets/products/Jeans/Jeans-Dior-1-2.png",
-        "./src/assets/products/Jeans/Jeans-Dior-1-3.png",
-        "./src/assets/products/Jeans/Jeans-Dior-1-4.png"
+        "./products/Jeans/Jeans-Dior-1-1.png",
+        "./products/Jeans/Jeans-Dior-1-2.png",
+        "./products/Jeans/Jeans-Dior-1-3.png",
+        "./products/Jeans/Jeans-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -463,10 +498,10 @@
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
-        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Jeans/Jeans-Dolce-&-Gabbana-1-4.png"
+        "./products/Jeans/Jeans-Dolce-&-Gabbana-1-1.png",
+        "./products/Jeans/Jeans-Dolce-&-Gabbana-1-2.png",
+        "./products/Jeans/Jeans-Dolce-&-Gabbana-1-3.png",
+        "./products/Jeans/Jeans-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": false
     },
@@ -480,10 +515,10 @@
       "collection": "Spring collection",
       "category": "Jeans",
       "images": [
-        "./src/assets/products/Jeans/Jeans-Prada-1-1.png",
-        "./src/assets/products/Jeans/Jeans-Prada-1-2.png",
-        "./src/assets/products/Jeans/Jeans-Prada-1-3.png",
-        "./src/assets/products/Jeans/Jeans-Prada-1-4.png"
+        "./products/Jeans/Jeans-Prada-1-1.png",
+        "./products/Jeans/Jeans-Prada-1-2.png",
+        "./products/Jeans/Jeans-Prada-1-3.png",
+        "./products/Jeans/Jeans-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -497,10 +532,10 @@
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/products/Pants/Pants-Armani-1-1.png",
-        "./src/assets/products/Pants/Pants-Armani-1-2.png",
-        "./src/assets/products/Pants/Pants-Armani-1-3.png",
-        "./src/assets/products/Pants/Pants-Armani-1-4.png"
+        "./products/Pants/Pants-Armani-1-1.png",
+        "./products/Pants/Pants-Armani-1-2.png",
+        "./products/Pants/Pants-Armani-1-3.png",
+        "./products/Pants/Pants-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -514,10 +549,10 @@
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/products/Pants/Pants-Burberry-1-1.png",
-        "./src/assets/products/Pants/Pants-Burberry-1-2.png",
-        "./src/assets/products/Pants/Pants-Burberry-1-3.png",
-        "./src/assets/products/Pants/Pants-Burberry-1-4.png"
+        "./products/Pants/Pants-Burberry-1-1.png",
+        "./products/Pants/Pants-Burberry-1-2.png",
+        "./products/Pants/Pants-Burberry-1-3.png",
+        "./products/Pants/Pants-Burberry-1-4.png"
       ],
       "featured": true
     },
@@ -531,10 +566,10 @@
       "collection": "Office trend",
       "category": "Pants",
       "images": [
-        "./src/assets/products/Pants/Pants-Dior-1-1.png",
-        "./src/assets/products/Pants/Pants-Dior-1-2.png",
-        "./src/assets/products/Pants/Pants-Dior-1-3.png",
-        "./src/assets/products/Pants/Pants-Dior-1-4.png"
+        "./products/Pants/Pants-Dior-1-1.png",
+        "./products/Pants/Pants-Dior-1-2.png",
+        "./products/Pants/Pants-Dior-1-3.png",
+        "./products/Pants/Pants-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -548,10 +583,10 @@
       "collection": "Urban style",
       "category": "Pants",
       "images": [
-        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Pants/Pants-Dolce-&-Gabbana-1-4.png"
+        "./products/Pants/Pants-Dolce-&-Gabbana-1-1.png",
+        "./products/Pants/Pants-Dolce-&-Gabbana-1-2.png",
+        "./products/Pants/Pants-Dolce-&-Gabbana-1-3.png",
+        "./products/Pants/Pants-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": false
     },
@@ -565,10 +600,10 @@
       "collection": "Spring collection",
       "category": "Pants",
       "images": [
-        "./src/assets/products/Pants/Pants-Gucci-1-1.png",
-        "./src/assets/products/Pants/Pants-Gucci-1-2.png",
-        "./src/assets/products/Pants/Pants-Gucci-1-3.png",
-        "./src/assets/products/Pants/Pants-Gucci-1-4.png"
+        "./products/Pants/Pants-Gucci-1-1.png",
+        "./products/Pants/Pants-Gucci-1-2.png",
+        "./products/Pants/Pants-Gucci-1-3.png",
+        "./products/Pants/Pants-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -582,10 +617,10 @@
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/products/Shirts/Shirt-Burberry-1-1.png",
-        "./src/assets/products/Shirts/Shirt-Burberry-1-2.png",
-        "./src/assets/products/Shirts/Shirt-Burberry-1-3.png",
-        "./src/assets/products/Shirts/Shirt-Burberry-1-4.png"
+        "./products/Shirts/Shirt-Burberry-1-1.png",
+        "./products/Shirts/Shirt-Burberry-1-2.png",
+        "./products/Shirts/Shirt-Burberry-1-3.png",
+        "./products/Shirts/Shirt-Burberry-1-4.png"
       ],
       "featured": true
     },
@@ -599,10 +634,10 @@
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/products/Shirts/Shirt-Dior-1-1.png",
-        "./src/assets/products/Shirts/Shirt-Dior-1-2.png",
-        "./src/assets/products/Shirts/Shirt-Dior-1-3.png",
-        "./src/assets/products/Shirts/Shirt-Dior-1-4.png"
+        "./products/Shirts/Shirt-Dior-1-1.png",
+        "./products/Shirts/Shirt-Dior-1-2.png",
+        "./products/Shirts/Shirt-Dior-1-3.png",
+        "./products/Shirts/Shirt-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -616,10 +651,10 @@
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Shirts/Shirt-Dolce-&-Gabbana-1-4.png"
+        "./products/Shirts/Shirt-Dolce-&-Gabbana-1-1.png",
+        "./products/Shirts/Shirt-Dolce-&-Gabbana-1-2.png",
+        "./products/Shirts/Shirt-Dolce-&-Gabbana-1-3.png",
+        "./products/Shirts/Shirt-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": false
     },
@@ -633,10 +668,10 @@
       "collection": "Spring collection",
       "category": "Shirts",
       "images": [
-        "./src/assets/products/Shirts/Shirt-Gucci-1-1.png",
-        "./src/assets/products/Shirts/Shirt-Gucci-1-2.png",
-        "./src/assets/products/Shirts/Shirt-Gucci-1-3.png",
-        "./src/assets/products/Shirts/Shirt-Gucci-1-4.png"
+        "./products/Shirts/Shirt-Gucci-1-1.png",
+        "./products/Shirts/Shirt-Gucci-1-2.png",
+        "./products/Shirts/Shirt-Gucci-1-3.png",
+        "./products/Shirts/Shirt-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -650,10 +685,10 @@
       "collection": "Office trend",
       "category": "Shirts",
       "images": [
-        "./src/assets/products/Shirts/Shirt-Prada-1-1.png",
-        "./src/assets/products/Shirts/Shirt-Prada-1-2.png",
-        "./src/assets/products/Shirts/Shirt-Prada-1-3.png",
-        "./src/assets/products/Shirts/Shirt-Prada-1-4.png"
+        "./products/Shirts/Shirt-Prada-1-1.png",
+        "./products/Shirts/Shirt-Prada-1-2.png",
+        "./products/Shirts/Shirt-Prada-1-3.png",
+        "./products/Shirts/Shirt-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -666,10 +701,10 @@
       "collection": "Spring collection",
       "category": "Boots",
       "images": [
-        "./src/assets/products/Shoes/Boots-Armani-1-1.png",
-        "./src/assets/products/Shoes/Boots-Armani-1-2.png",
-        "./src/assets/products/Shoes/Boots-Armani-1-3.png",
-        "./src/assets/products/Shoes/Boots-Armani-1-4.png"
+        "./products/Shoes/Boots-Armani-1-1.png",
+        "./products/Shoes/Boots-Armani-1-2.png",
+        "./products/Shoes/Boots-Armani-1-3.png",
+        "./products/Shoes/Boots-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -682,10 +717,10 @@
       "collection": "Spring collection",
       "category": "Boots",
       "images": [
-        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-1.png",
-        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-2.png",
-        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-3.png",
-        "./src/assets/products/Shoes/Boots-Dolce-&-Gabbana-1-4.png"
+        "./products/Shoes/Boots-Dolce-&-Gabbana-1-1.png",
+        "./products/Shoes/Boots-Dolce-&-Gabbana-1-2.png",
+        "./products/Shoes/Boots-Dolce-&-Gabbana-1-3.png",
+        "./products/Shoes/Boots-Dolce-&-Gabbana-1-4.png"
       ],
       "featured": true
     },
@@ -698,10 +733,10 @@
       "collection": "Spring collection",
       "category": "Boots",
       "images": [
-        "./src/assets/products/Shoes/Sandals-Dior-1-1.png",
-        "./src/assets/products/Shoes/Sandals-Dior-1-2.png",
-        "./src/assets/products/Shoes/Sandals-Dior-1-3.png",
-        "./src/assets/products/Shoes/Sandals-Dior-1-4.png"
+        "./products/Shoes/Sandals-Dior-1-1.png",
+        "./products/Shoes/Sandals-Dior-1-2.png",
+        "./products/Shoes/Sandals-Dior-1-3.png",
+        "./products/Shoes/Sandals-Dior-1-4.png"
       ],
       "featured": false
     },
@@ -714,10 +749,10 @@
       "collection": "Urban style",
       "category": "Boots",
       "images": [
-        "./src/assets/products/Shoes/Sandals-Prada-1-1.png",
-        "./src/assets/products/Shoes/Sandals-Prada-1-2.png",
-        "./src/assets/products/Shoes/Sandals-Prada-1-3.png",
-        "./src/assets/products/Shoes/Sandals-Prada-1-4.png"
+        "./products/Shoes/Sandals-Prada-1-1.png",
+        "./products/Shoes/Sandals-Prada-1-2.png",
+        "./products/Shoes/Sandals-Prada-1-3.png",
+        "./products/Shoes/Sandals-Prada-1-4.png"
       ],
       "featured": false
     },
@@ -730,10 +765,10 @@
       "collection": "Urban style",
       "category": "Boots",
       "images": [
-        "./src/assets/products/Shoes/Shoes-Gucci-1-1.png",
-        "./src/assets/products/Shoes/Shoes-Gucci-1-2.png",
-        "./src/assets/products/Shoes/Shoes-Gucci-1-3.png",
-        "./src/assets/products/Shoes/Shoes-Gucci-1-4.png"
+        "./products/Shoes/Shoes-Gucci-1-1.png",
+        "./products/Shoes/Shoes-Gucci-1-2.png",
+        "./products/Shoes/Shoes-Gucci-1-3.png",
+        "./products/Shoes/Shoes-Gucci-1-4.png"
       ],
       "featured": false
     },
@@ -747,10 +782,10 @@
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
-        "./src/assets/products/Sweaters/Sweater-Armani-1-1.png",
-        "./src/assets/products/Sweaters/Sweater-Armani-1-2.png",
-        "./src/assets/products/Sweaters/Sweater-Armani-1-3.png",
-        "./src/assets/products/Sweaters/Sweater-Armani-1-4.png"
+        "./products/Sweaters/Sweater-Armani-1-1.png",
+        "./products/Sweaters/Sweater-Armani-1-2.png",
+        "./products/Sweaters/Sweater-Armani-1-3.png",
+        "./products/Sweaters/Sweater-Armani-1-4.png"
       ],
       "featured": false
     },
@@ -764,10 +799,10 @@
       "collection": "Spring collection",
       "category": "Sweaters",
       "images": [
-        "./src/assets/products/Sweaters/Sweater-Burberry-1-1.png",
-        "./src/assets/products/Sweaters/Sweater-Burberry-1-2.png",
-        "./src/assets/products/Sweaters/Sweater-Burberry-1-3.png",
-        "./src/assets/products/Sweaters/Sweater-Burberry-1-4.png"
+        "./products/Sweaters/Sweater-Burberry-1-1.png",
+        "./products/Sweaters/Sweater-Burberry-1-2.png",
+        "./products/Sweaters/Sweater-Burberry-1-3.png",
+        "./products/Sweaters/Sweater-Burberry-1-4.png"
       ],
       "featured": false
     },
@@ -781,10 +816,10 @@
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
-        "./src/assets/products/Sweaters/Sweater-Dior-1-1.png",
-        "./src/assets/products/Sweaters/Sweater-Dior-1-2.png",
-        "./src/assets/products/Sweaters/Sweater-Dior-1-3.png",
-        "./src/assets/products/Sweaters/Sweater-Dior-1-4.png"
+        "./products/Sweaters/Sweater-Dior-1-1.png",
+        "./products/Sweaters/Sweater-Dior-1-2.png",
+        "./products/Sweaters/Sweater-Dior-1-3.png",
+        "./products/Sweaters/Sweater-Dior-1-4.png"
       ],
       "featured": true
     },
@@ -798,10 +833,10 @@
       "collection": "Urban style",
       "category": "Sweaters",
       "images": [
-        "./src/assets/products/Sweaters/Sweater-Gucci-1-1.png",
-        "./src/assets/products/Sweaters/Sweater-Gucci-1-2.png",
-        "./src/assets/products/Sweaters/Sweater-Gucci-1-3.png",
-        "./src/assets/products/Sweaters/Sweater-Gucci-1-4.png"
+        "./products/Sweaters/Sweater-Gucci-1-1.png",
+        "./products/Sweaters/Sweater-Gucci-1-2.png",
+        "./products/Sweaters/Sweater-Gucci-1-3.png",
+        "./products/Sweaters/Sweater-Gucci-1-4.png"
       ],
       "featured": true
     },
@@ -815,10 +850,10 @@
       "collection": "Office trend",
       "category": "Sweaters",
       "images": [
-        "./src/assets/products/Sweaters/Sweater-Prada-1-1.png",
-        "./src/assets/products/Sweaters/Sweater-Prada-1-2.png",
-        "./src/assets/products/Sweaters/Sweater-Prada-1-3.png",
-        "./src/assets/products/Sweaters/Sweater-Prada-1-4.png"
+        "./products/Sweaters/Sweater-Prada-1-1.png",
+        "./products/Sweaters/Sweater-Prada-1-2.png",
+        "./products/Sweaters/Sweater-Prada-1-3.png",
+        "./products/Sweaters/Sweater-Prada-1-4.png"
       ],
       "featured": false
     }

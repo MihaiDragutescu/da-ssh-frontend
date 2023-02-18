@@ -1,16 +1,17 @@
 import Button from '@Components/ui/Button';
 import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
 import { Link } from 'react-router-dom';
+import { RouterPaths } from '@Types/routerPaths';
 import './ProductCard.scss';
 
 interface ProductCardProps {
   classname?: string;
   image: string;
+  id: string;
   name?: string;
   price?: number;
   collection?: string;
   category?: string;
-  link: string;
   layout?: CardLayouts;
   direction?: CardLayoutDirections;
   add_to_basket?: boolean;
@@ -30,12 +31,18 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
           props.direction ?? CardLayoutDirections.LEFT_TO_RIGHT
         }`}
       >
-        <Link className='product-card__image' to={props.link}>
+        <Link
+          className='product-card__image'
+          to={`${RouterPaths.SHOP}/${props.id}`}
+        >
           <img src={props.image} alt='product' />
         </Link>
         <div className='product-card__content'>
           {props.name && (
-            <Link className='product-card__name' to={props.link}>
+            <Link
+              className='product-card__name'
+              to={`${RouterPaths.SHOP}/${props.id}`}
+            >
               <span>{props.name}</span>
             </Link>
           )}
