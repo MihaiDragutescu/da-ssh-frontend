@@ -13,6 +13,7 @@ import Header from '@Components/layout/header/Header';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import Breadcrumbs from '@Components/ui/Breadcrumbs';
+import { RemoveTrailingSlash } from '@Utils/RemoveTrailingSlash';
 import './App.scss';
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         ) : (
           ''
         )}
+        <RemoveTrailingSlash />
         <Routes>
           <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
           <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
