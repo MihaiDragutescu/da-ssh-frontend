@@ -13,7 +13,8 @@ export const sshApi = createApi({
         { products: ProductType[]; totalCount: number },
         number
       >({
-        query: (page = 1) => `/products?_page=${page}&_limit=${paginateNumber}`,
+        query: (page = 1) =>
+          `/products?_page=${page}&_limit=${paginateNumber}&_sort=price`,
         transformResponse: (apiResponse: ProductType[], meta) => {
           return {
             products: apiResponse,
@@ -24,7 +25,13 @@ export const sshApi = createApi({
           return endpointName;
         },
         merge: (currentCache, newData) => {
-          currentCache.products.push(...newData.products);
+          if (
+            !currentCache.products.find(
+              (product) => product.id === newData.products[0].id
+            )
+          ) {
+            currentCache.products.push(...newData.products);
+          }
         },
         forceRefetch({ currentArg, previousArg }) {
           return currentArg !== previousArg;

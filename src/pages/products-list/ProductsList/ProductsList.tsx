@@ -8,27 +8,7 @@ import './ProductsList.scss';
 const ProductsList: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data, error, isFetching } = useGetProductsQuery(page);
-
-  let productsList;
-  if (data && data.products.length !== 0) {
-    productsList = (
-      <div className='products-list__results'>
-        {data.products.map((product) => {
-          return (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              image={product.images[0]}
-              name={product.name}
-              brand={product.brand}
-              price={product.price}
-              add_to_basket
-            />
-          );
-        })}
-      </div>
-    );
-  }
+  const productsList = data?.products ?? [];
 
   useEffect(() => {
     const onScroll = () => {
@@ -38,6 +18,7 @@ const ProductsList: React.FC = () => {
       const scrolledToBottom =
         window.innerHeight + window.scrollY >=
         document.body.offsetHeight - footerHeight;
+
       if (scrolledToBottom && !isFetching) {
         const totalCount = data?.totalCount ?? 0;
         const productsListed = data?.products.length ?? 0;
@@ -58,7 +39,7 @@ const ProductsList: React.FC = () => {
     <div className='products-list'>
       <div className='products-list__container ssh-container'>
         <div className='products-list__row ssh-row'>
-          <>
+          <div className='products-list__results'>
             {isFetching && <Spinner />}
             {error && (
               <ResponseMessage>Error fetching products.</ResponseMessage>
@@ -66,9 +47,21 @@ const ProductsList: React.FC = () => {
             {data && data.products.length === 0 ? (
               <ResponseMessage>No products found.</ResponseMessage>
             ) : (
-              productsList
+              productsList.map((product, index) => {
+                return (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    image={product.images[0]}
+                    name={product.name}
+                    brand={product.brand}
+                    price={product.price}
+                    add_to_basket
+                  />
+                );
+              })
             )}
-          </>
+          </div>
         </div>
       </div>
     </div>
