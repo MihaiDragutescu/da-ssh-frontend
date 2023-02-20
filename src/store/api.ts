@@ -9,6 +9,9 @@ export const sshApi = createApi({
 
   endpoints: (builder) => {
     return {
+      getAllProducts: builder.query<ProductType[], void>({
+        query: () => '/products',
+      }),
       getProducts: builder.query<
         { products: ProductType[]; totalCount: number },
         number
@@ -40,6 +43,12 @@ export const sshApi = createApi({
       getFeaturedProducts: builder.query<ProductType[], void>({
         query: () => '/products?featured=true',
       }),
+      getRelatedProducts: builder.query<ProductType[], string>({
+        query: (category) => `/products?category=${category}`,
+      }),
+      getProduct: builder.query<ProductType, string>({
+        query: (id: string) => `/products/${id}`,
+      }),
       getFeaturedCollections: builder.query<FeaturedCollectionType[], void>({
         query: () => '/collections?featured=true&_embed=categories',
       }),
@@ -48,7 +57,10 @@ export const sshApi = createApi({
 });
 
 export const {
+  useGetAllProductsQuery,
   useGetProductsQuery,
   useGetFeaturedProductsQuery,
+  useGetRelatedProductsQuery,
+  useGetProductQuery,
   useGetFeaturedCollectionsQuery,
 } = sshApi;

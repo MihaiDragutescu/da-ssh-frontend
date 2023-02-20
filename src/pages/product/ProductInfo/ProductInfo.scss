@@ -77,15 +77,15 @@
       font-weight: 300;
       text-transform: uppercase;
       color: $color-brown-dark;
-      font-size: 50px;
+      font-size: 45px;
       text-align: start;
 
       @include for-size(mobile) {
-        font-size: 45px;
+        font-size: 40px;
       }
 
       @include for-size(mobile-small) {
-        font-size: 40px;
+        font-size: 36px;
       }
     }
 
@@ -114,16 +114,16 @@
   }
 
   &__price {
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1;
     color: $color-brown-dark;
 
     @include for-size(mobile) {
-      font-size: 50px;
+      font-size: 45px;
     }
 
     @include for-size(mobile-small) {
-      font-size: 45px;
+      font-size: 40px;
     }
   }
 

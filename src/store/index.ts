@@ -14,7 +14,10 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export {
+  useGetAllProductsQuery,
   useGetProductsQuery,
   useGetFeaturedProductsQuery,
+  useGetRelatedProductsQuery,
+  useGetProductQuery,
   useGetFeaturedCollectionsQuery,
 } from './api';

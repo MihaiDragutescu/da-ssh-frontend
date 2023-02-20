@@ -5,17 +5,29 @@ import useBreadcrumbs, {
   BreadcrumbsRoute,
 } from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
-import { products } from '@Utils/mocks';
+import { useGetAllProductsQuery } from '@Store/index';
 import './Breadcrumbs.scss';
 
 const Breadcrumbs: React.FC = () => {
-  const productsById: { [key: string]: string } = products.reduce(
-    (acc, cur) => ({ ...acc, [cur.id]: cur.name }),
-    {}
-  );
+  const { data, error } = useGetAllProductsQuery();
+
+  let productsById: {
+    [key: string]: string;
+  };
+
+  if (!error && data) {
+    productsById = data.reduce(
+      (acc, cur) => ({ ...acc, [cur.id]: cur.name }),
+      {}
+    );
+  }
 
   const DynamicProductBreadcrumb: BreadcrumbComponentType = ({ match }) => {
-    return <span>{productsById[match.params.id ?? '']}</span>;
+    return productsById ? (
+      <span>{productsById[match.params.id ?? '']}</span>
+    ) : (
+      <></>
+    );
   };
 
   const routes: BreadcrumbsRoute[] = [
