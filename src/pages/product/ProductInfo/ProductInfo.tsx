@@ -131,31 +131,30 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
                 <ul className='product-info__size-list'>{sizesList}</ul>
               </div>
             )}
-            <div className='product-info__quantity'>
-              <div className='product-info__subtitle'>
-                <span>Quantity</span>
-              </div>
-              <div className='product-info__quantity-box'>
-                <button
-                  className='quantity-button quantity-button--subtract'
-                  onClick={handleSubtractQuantity}
-                >
-                  -
-                </button>
-                <span className='product-quantity'>{quantity}</span>
-                <button
-                  className='quantity-button quantity-button--add'
-                  onClick={handleAddQuantity}
-                >
-                  +
-                </button>
-              </div>
-            </div>
             <div className='product-info__accordion'>
               <Accordion accordionList={accordionList} />
             </div>
-            <div className='product-info__button'>
-              <Button onClick={handleButtonClick}>Add to Cart</Button>
+            <div className='product-info__footer'>
+              <div className='product-info__quantity'>
+                <div className='product-info__quantity-box'>
+                  <button
+                    className='quantity-button quantity-button--subtract'
+                    onClick={handleSubtractQuantity}
+                  >
+                    -
+                  </button>
+                  <span className='product-quantity'>{quantity}</span>
+                  <button
+                    className='quantity-button quantity-button--add'
+                    onClick={handleAddQuantity}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div className='product-info__button'>
+                <Button onClick={handleButtonClick}>Add to Cart</Button>
+              </div>
             </div>
           </div>
         </div>

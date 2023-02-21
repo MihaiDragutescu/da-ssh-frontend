@@ -150,15 +150,15 @@
       flex-wrap: wrap;
 
       .ssh-color-pill {
-        width: 64px;
-        height: 64px;
-        padding: 8px;
-        margin: 0 8px;
+        width: 64px !important;
+        height: 64px !important;
+        padding: 8px !important;
+        margin: 0 8px !important;
 
         @include for-size(mobile) {
-          width: 50px;
-          height: 50px;
-          margin: 0 4px;
+          width: 50px !important;
+          height: 50px !important;
+          margin: 0 4px !important;
         }
       }
     }
@@ -185,14 +185,41 @@
     }
   }
 
-  &__quantity {
+  &__accordion {
     margin-bottom: 30px;
+
+    @include for-size(mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
     align-items: center;
+
+    @include for-size(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__quantity {
+    align-items: center;
+    margin-right: 32px;
+
+    @include for-size(mobile) {
+      width: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
 
     &-box {
       display: flex;
       align-items: center;
       padding: 5px;
+      max-height: 62px;
+      margin-left: -16px;
     }
 
     .product-quantity,
@@ -200,47 +227,35 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 45px;
       color: $color-brown;
-
-      @include for-size(mobile) {
-        height: 35px;
-      }
     }
 
     .product-quantity {
       padding: 0 14px;
-      font-size: 24px;
-      border-top: $border-solid-brown;
-      border-bottom: $border-solid-brown;
+      font-size: 36px;
+
+      @include for-size(mobile) {
+        font-size: 32px;
+        padding: 0 12px;
+      }
     }
 
     .quantity-button {
-      border: $border-solid-brown;
       width: 45px;
-      font-size: 44px;
+      font-size: 60px;
       padding-top: 2px;
-
-      &--subtract {
-        border-radius: 24px 0 0 24px;
-        padding-left: 1px;
-      }
-
-      &--add {
-        border-radius: 0 24px 24px 0;
-        padding-right: 1px;
-      }
+      line-height: 100%;
     }
-  }
-
-  &__accordion {
-    margin-bottom: 30px;
   }
 
   &__button {
     @include for-size(tablet-portrait) {
       display: flex;
       justify-content: center;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
     }
   }
 }

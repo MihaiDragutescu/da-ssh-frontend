@@ -9,4 +9,5 @@ export type ProductType = {
   category?: string;
   images: string[];
   description?: string;
+  featured?: boolean;
 };

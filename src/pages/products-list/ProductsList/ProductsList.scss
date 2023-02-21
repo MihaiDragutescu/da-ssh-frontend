@@ -76,10 +76,10 @@
   }
 
   .ssh-modal__overlay {
-    top: -25px;
+    top: -25px !important;
 
     @include for-size(mobile) {
-      top: -12px;
+      top: -12px !important;
     }
   }
 }
