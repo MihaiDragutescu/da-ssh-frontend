@@ -9,5 +9,6 @@ export type ProductType = {
   category?: string;
   images: string[];
   description?: string;
+  information?: { label: string; content: string }[];
   featured?: boolean;
 };

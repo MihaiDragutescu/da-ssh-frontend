@@ -4,7 +4,6 @@ import { ProductType } from '@Types/product';
 import { FiltersListType } from '@App/types/filtersList';
 import { ReactComponent as Heart } from '@Assets/images/heart-icon.svg';
 import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.svg';
-import { accordionList } from '@Utils/mocks';
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import ProductImages from '../ProductImages/ProductImages';
@@ -88,7 +87,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
       quantity: 1,
       image: props.product.images[0],
     });
-  }, []);
+  }, [props.product.id]);
 
   return (
     <section className='product-info'>
@@ -132,7 +131,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               </div>
             )}
             <div className='product-info__accordion'>
-              <Accordion accordionList={accordionList} />
+              <Accordion accordionList={props.product.information ?? []} />
             </div>
             <div className='product-info__footer'>
               <div className='product-info__quantity'>

@@ -116,6 +116,20 @@
         "/products/Bags/Bag-Armani-1-3.png",
         "/products/Bags/Bag-Armani-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Material",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -132,6 +146,20 @@
         "/products/Bags/Bag-Burberry-1-2.png",
         "/products/Bags/Bag-Burberry-1-3.png",
         "/products/Bags/Bag-Burberry-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Material",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -150,6 +178,20 @@
         "/products/Bags/Bag-Dolce-&-Gabbana-1-3.png",
         "/products/Bags/Bag-Dolce-&-Gabbana-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Material",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -167,6 +209,20 @@
         "/products/Bags/Bag-Gucci-1-3.png",
         "/products/Bags/Bag-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Material",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -183,6 +239,20 @@
         "/products/Bags/Bag-Prada-1-2.png",
         "/products/Bags/Bag-Prada-1-3.png",
         "/products/Bags/Bag-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Material",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -202,6 +272,20 @@
         "/products/Coats/Coat-Armani-1-3.png",
         "/products/Coats/Coat-Armani-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -219,6 +303,20 @@
         "/products/Coats/Coat-Burberry-1-2.png",
         "/products/Coats/Coat-Burberry-1-3.png",
         "/products/Coats/Coat-Burberry-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -238,6 +336,20 @@
         "/products/Coats/Coat-Dior-1-3.png",
         "/products/Coats/Coat-Dior-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": true
     },
     {
@@ -255,6 +367,20 @@
         "/products/Coats/Coat-Gucci-1-2.png",
         "/products/Coats/Coat-Gucci-1-3.png",
         "/products/Coats/Coat-Gucci-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -274,6 +400,20 @@
         "/products/Coats/Coat-Prada-1-3.png",
         "/products/Coats/Coat-Prada-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -291,6 +431,20 @@
         "/products/Dresses/Dress-Armani-1-2.png",
         "/products/Dresses/Dress-Armani-1-3.png",
         "/products/Dresses/Dress-Armani-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -310,6 +464,20 @@
         "/products/Dresses/Dress-Burberry-1-3.png",
         "/products/Dresses/Dress-Burberry-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -327,6 +495,20 @@
         "/products/Dresses/Dress-Dior-1-2.png",
         "/products/Dresses/Dress-Dior-1-3.png",
         "/products/Dresses/Dress-Dior-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -346,6 +528,20 @@
         "/products/Dresses/Dress-Gucci-1-3.png",
         "/products/Dresses/Dress-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -363,6 +559,20 @@
         "/products/Dresses/Dress-Prada-1-2.png",
         "/products/Dresses/Dress-Prada-1-3.png",
         "/products/Dresses/Dress-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -382,6 +592,20 @@
         "/products/Jackets/Jacket-Armani-1-3.png",
         "/products/Jackets/Jacket-Armani-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -399,6 +623,20 @@
         "/products/Jackets/Jacket-Dior-1-2.png",
         "/products/Jackets/Jacket-Dior-1-3.png",
         "/products/Jackets/Jacket-Dior-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -418,6 +656,20 @@
         "/products/Jackets/Jacket-Dolce-&-Gabbana-1-3.png",
         "/products/Jackets/Jacket-Dolce-&-Gabbana-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -435,6 +687,20 @@
         "/products/Jackets/Jacket-Gucci-1-2.png",
         "/products/Jackets/Jacket-Gucci-1-3.png",
         "/products/Jackets/Jacket-Gucci-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -454,6 +720,20 @@
         "/products/Jackets/Jacket-Prada-1-3.png",
         "/products/Jackets/Jacket-Prada-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -471,6 +751,20 @@
         "/products/Jeans/Jeans-Armani-1-2.png",
         "/products/Jeans/Jeans-Armani-1-3.png",
         "/products/Jeans/Jeans-Armani-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -490,6 +784,20 @@
         "/products/Jeans/Jeans-Burberry-1-3.png",
         "/products/Jeans/Jeans-Burberry-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -507,6 +815,20 @@
         "/products/Jeans/Jeans-Dior-1-2.png",
         "/products/Jeans/Jeans-Dior-1-3.png",
         "/products/Jeans/Jeans-Dior-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -526,6 +848,20 @@
         "/products/Jeans/Jeans-Dolce-&-Gabbana-1-3.png",
         "/products/Jeans/Jeans-Dolce-&-Gabbana-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -543,6 +879,20 @@
         "/products/Jeans/Jeans-Prada-1-2.png",
         "/products/Jeans/Jeans-Prada-1-3.png",
         "/products/Jeans/Jeans-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -562,6 +912,20 @@
         "/products/Pants/Pants-Armani-1-3.png",
         "/products/Pants/Pants-Armani-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -579,6 +943,20 @@
         "/products/Pants/Pants-Burberry-1-2.png",
         "/products/Pants/Pants-Burberry-1-3.png",
         "/products/Pants/Pants-Burberry-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -598,6 +976,20 @@
         "/products/Pants/Pants-Dior-1-3.png",
         "/products/Pants/Pants-Dior-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -615,6 +1007,20 @@
         "/products/Pants/Pants-Dolce-&-Gabbana-1-2.png",
         "/products/Pants/Pants-Dolce-&-Gabbana-1-3.png",
         "/products/Pants/Pants-Dolce-&-Gabbana-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -634,6 +1040,20 @@
         "/products/Pants/Pants-Gucci-1-3.png",
         "/products/Pants/Pants-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -651,6 +1071,20 @@
         "/products/Shirts/Shirt-Burberry-1-2.png",
         "/products/Shirts/Shirt-Burberry-1-3.png",
         "/products/Shirts/Shirt-Burberry-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -670,6 +1104,20 @@
         "/products/Shirts/Shirt-Dior-1-3.png",
         "/products/Shirts/Shirt-Dior-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -687,6 +1135,20 @@
         "/products/Shirts/Shirt-Dolce-&-Gabbana-1-2.png",
         "/products/Shirts/Shirt-Dolce-&-Gabbana-1-3.png",
         "/products/Shirts/Shirt-Dolce-&-Gabbana-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -706,6 +1168,20 @@
         "/products/Shirts/Shirt-Gucci-1-3.png",
         "/products/Shirts/Shirt-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -723,6 +1199,20 @@
         "/products/Shirts/Shirt-Prada-1-2.png",
         "/products/Shirts/Shirt-Prada-1-3.png",
         "/products/Shirts/Shirt-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -742,6 +1232,20 @@
         "/products/Shoes/Boots-Armani-1-3.png",
         "/products/Shoes/Boots-Armani-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -759,6 +1263,20 @@
         "/products/Shoes/Boots-Dolce-&-Gabbana-1-2.png",
         "/products/Shoes/Boots-Dolce-&-Gabbana-1-3.png",
         "/products/Shoes/Boots-Dolce-&-Gabbana-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -778,6 +1296,20 @@
         "/products/Shoes/Sandals-Dior-1-3.png",
         "/products/Shoes/Sandals-Dior-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -795,6 +1327,20 @@
         "/products/Shoes/Sandals-Prada-1-2.png",
         "/products/Shoes/Sandals-Prada-1-3.png",
         "/products/Shoes/Sandals-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -814,6 +1360,20 @@
         "/products/Shoes/Shoes-Gucci-1-3.png",
         "/products/Shoes/Shoes-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -831,6 +1391,20 @@
         "/products/Sweaters/Sweater-Armani-1-2.png",
         "/products/Sweaters/Sweater-Armani-1-3.png",
         "/products/Sweaters/Sweater-Armani-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     },
@@ -850,6 +1424,20 @@
         "/products/Sweaters/Sweater-Burberry-1-3.png",
         "/products/Sweaters/Sweater-Burberry-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": false
     },
     {
@@ -867,6 +1455,20 @@
         "/products/Sweaters/Sweater-Dior-1-2.png",
         "/products/Sweaters/Sweater-Dior-1-3.png",
         "/products/Sweaters/Sweater-Dior-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": true
     },
@@ -886,6 +1488,20 @@
         "/products/Sweaters/Sweater-Gucci-1-3.png",
         "/products/Sweaters/Sweater-Gucci-1-4.png"
       ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
+      ],
       "featured": true
     },
     {
@@ -903,6 +1519,20 @@
         "/products/Sweaters/Sweater-Prada-1-2.png",
         "/products/Sweaters/Sweater-Prada-1-3.png",
         "/products/Sweaters/Sweater-Prada-1-4.png"
+      ],
+      "information": [
+        {
+          "label": "Size & Fit",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Shipping Instructions",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        },
+        {
+          "label": "Other info",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim."
+        }
       ],
       "featured": false
     }
