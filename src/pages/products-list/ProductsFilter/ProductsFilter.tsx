@@ -2,7 +2,9 @@ import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
 import { FiltersListType } from '@App/types/filtersList';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import debouce from 'lodash.debounce';
+import Button from '@Components/ui/Button';
 import {
   useGetFiltersQuery,
   useGetCollectionsQuery,
@@ -20,7 +22,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   const [activeFilters, setActiveFilters] = useState<FiltersListType>({});
   const filtersData = useGetFiltersQuery();
 
-  const handleClick = (filter: keyof FiltersListType, value: string) => {
+  const handleFilterClick = (filter: keyof FiltersListType, value: string) => {
     setActiveFilters((prev) => {
       return {
         ...prev,
@@ -41,7 +43,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       list={sizes}
       type='size'
       activeFilter={activeFilters.size}
-      handleClick={handleClick}
+      handleClick={handleFilterClick}
     />
   );
 
@@ -53,7 +55,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       list={brands}
       type='brand'
       activeFilter={activeFilters.brand}
-      handleClick={handleClick}
+      handleClick={handleFilterClick}
     />
   );
 
@@ -64,7 +66,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     <ColorsList
       colors={colors}
       activeColor={activeFilters.color}
-      handleClick={handleClick}
+      handleClick={handleFilterClick}
     />
   );
 
@@ -76,7 +78,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       list={collections}
       type='collection'
       activeFilter={activeFilters.collection}
-      handleClick={handleClick}
+      handleClick={handleFilterClick}
     />
   );
 
@@ -88,11 +90,11 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       list={categories}
       type='category'
       activeFilter={activeFilters.category}
-      handleClick={handleClick}
+      handleClick={handleFilterClick}
     />
   );
 
-  useEffect(() => {
+  const resetFilters = () => {
     setActiveFilters({
       size: [],
       brand: [],
@@ -102,6 +104,10 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       collection: [],
       category: [],
     });
+  };
+
+  useEffect(() => {
+    resetFilters();
 
     const lastFilterButton = document.querySelector(
       '.products-filters__category ul li:last-child button'
@@ -140,6 +146,16 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     });
   };
 
+  const debouncePriceChange = useMemo(() => {
+    return debouce(handlePriceChange, 300);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      debouncePriceChange.cancel();
+    };
+  });
+
   return (
     <div className={`products-filters ${!props.visible ? 'hidden' : ''}`}>
       <div className='products-filters__size products-filters__col'>
@@ -161,7 +177,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
         <PriceSlider
           minPrice={activeFilters.minPrice ?? 100}
           maxPrice={activeFilters.maxPrice ?? 9900}
-          handlePriceChange={handlePriceChange}
+          handlePriceChange={debouncePriceChange}
         />
       </div>
       <div className='products-filters__col products-filters__collection'>
@@ -171,6 +187,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       <div className='products-filters__col products-filters__category'>
         <div className='products-filters__title'>Category</div>
         <ul className='products-filters__list'>{categoriesList}</ul>
+      </div>
+      <div className='products-filters__col products-filters__reset'>
+        <Button onClick={resetFilters}>Reset filters</Button>
       </div>
     </div>
   );

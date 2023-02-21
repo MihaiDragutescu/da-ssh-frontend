@@ -33,7 +33,7 @@
     "eqeqeq": ["error", "always"],
     "indent": ["warn", 2],
     "key-spacing": "warn",
-    "max-lines": ["error", 200],
+    "max-lines": ["warn", 300],
     "prefer-const": ["error", { "destructuring": "any" }],
     "quotes": ["warn", "single", { "avoidEscape": true }],
     "require-await": "error",

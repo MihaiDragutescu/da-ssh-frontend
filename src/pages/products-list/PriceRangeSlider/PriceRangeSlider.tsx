@@ -26,13 +26,13 @@ const PriceSlider: React.FC<PriceSliderProps> = (props: PriceSliderProps) => {
       <MultiRangeSlider
         min={0}
         max={10000}
-        minValue={minValue}
-        maxValue={maxValue}
+        minValue={props.minPrice}
+        maxValue={props.maxPrice}
         step={100}
         stepOnly
         onInput={(e: ChangeResult) => {
-          setMinValue(e.minValue);
-          setMaxValue(e.maxValue);
+          setMinValue(() => e.minValue);
+          setMaxValue(() => e.maxValue);
         }}
       />
     </>
