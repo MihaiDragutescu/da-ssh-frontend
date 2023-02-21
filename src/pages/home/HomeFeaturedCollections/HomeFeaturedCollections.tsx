@@ -13,11 +13,13 @@ const HomeFeaturedCollections: React.FC = () => {
 
   const { data, error, isFetching } = useGetFeaturedCollectionsQuery();
 
-  let content;
+  let featuredCollections;
   if (isFetching) {
-    content = <Spinner />;
+    featuredCollections = <Spinner />;
   } else if (error) {
-    content = <ResponseMessage>Error fetching collections.</ResponseMessage>;
+    featuredCollections = (
+      <ResponseMessage>Error fetching collections.</ResponseMessage>
+    );
   } else {
     if (data && data.length !== 0) {
       const checkIndex = (index: number) => index % 3 === 2;
@@ -35,7 +37,7 @@ const HomeFeaturedCollections: React.FC = () => {
           : CardLayouts.VERTICAL,
       }));
 
-      content = (
+      featuredCollections = (
         <div className='home-collections__list'>
           {collections.map((collection, index) => {
             return (
@@ -53,7 +55,9 @@ const HomeFeaturedCollections: React.FC = () => {
         </div>
       );
     } else {
-      content = <ResponseMessage>No collections found.</ResponseMessage>;
+      featuredCollections = (
+        <ResponseMessage>No collections found.</ResponseMessage>
+      );
     }
   }
 
@@ -70,7 +74,7 @@ const HomeFeaturedCollections: React.FC = () => {
               Fresh out of the oven
             </h2>
           </div>
-          {content}
+          {featuredCollections}
           <div className='home-collections__button-container'>
             <Button onClick={handleClick}>See More</Button>
           </div>

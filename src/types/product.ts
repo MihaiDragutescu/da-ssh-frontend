@@ -2,9 +2,9 @@ export type ProductType = {
   id: string;
   name: string;
   price: number;
-  size?: string;
+  sizes?: string[];
   brand?: string;
-  color?: string;
+  colors: string[];
   collection?: string;
   category?: string;
   images: string[];

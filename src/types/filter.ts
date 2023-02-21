@@ -10,7 +10,7 @@ export type CategoryType = {
   image: string;
 };
 
-export type FeaturedCollectionType = {
+export type CollectionType = {
   id: string;
   name: string;
   image: string;

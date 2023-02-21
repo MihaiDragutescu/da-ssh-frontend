@@ -4,7 +4,7 @@ import { ProductType } from '@Types/product';
 import { FiltersListType } from '@App/types/filtersList';
 import { ReactComponent as Heart } from '@Assets/images/heart-icon.svg';
 import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.svg';
-import { sizes, accordionList } from '@Utils/mocks';
+import { accordionList } from '@Utils/mocks';
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import ProductImages from '../ProductImages/ProductImages';
@@ -42,6 +42,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const colorsList = (
     <ColorsList
+      colors={props.product.colors}
       activeColor={[productInfo.color as string]}
       handleClick={handleClick}
     />
@@ -49,7 +50,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const sizesList = (
     <FilterItemsList
-      list={sizes}
+      list={props.product.sizes}
       type='size'
       activeFilter={[productInfo.size as string]}
       handleClick={handleClick}
@@ -82,8 +83,8 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   useEffect(() => {
     setProductInfo({
-      size: '3',
-      color: '6',
+      size: props.product.sizes ? props.product.sizes[0] : '',
+      color: props.product.colors[0],
       quantity: 1,
       image: props.product.images[0],
     });
@@ -122,12 +123,14 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               </div>
               <ul className='product-info__color-list'>{colorsList}</ul>
             </div>
-            <div className='product-info__size'>
-              <div className='product-info__subtitle'>
-                <span>Size</span>
+            {props.product.sizes && (
+              <div className='product-info__size'>
+                <div className='product-info__subtitle'>
+                  <span>Size</span>
+                </div>
+                <ul className='product-info__size-list'>{sizesList}</ul>
               </div>
-              <ul className='product-info__size-list'>{sizesList}</ul>
-            </div>
+            )}
             <div className='product-info__quantity'>
               <div className='product-info__subtitle'>
                 <span>Quantity</span>

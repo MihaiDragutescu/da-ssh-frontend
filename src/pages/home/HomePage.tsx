@@ -9,22 +9,26 @@ import { useGetFeaturedProductsQuery } from '@Store/index';
 const HomePage = () => {
   const { data, error, isFetching } = useGetFeaturedProductsQuery();
 
-  let content;
+  let featuredProducts;
   if (isFetching) {
-    content = <Spinner />;
+    featuredProducts = <Spinner />;
   } else if (error) {
-    content = <ResponseMessage>Error fetching products.</ResponseMessage>;
+    featuredProducts = (
+      <ResponseMessage>Error fetching products.</ResponseMessage>
+    );
   } else {
     data && data.length !== 0
-      ? (content = <FeaturedProducts products={data} showButton />)
-      : (content = <ResponseMessage>No products found.</ResponseMessage>);
+      ? (featuredProducts = <FeaturedProducts products={data} showButton />)
+      : (featuredProducts = (
+          <ResponseMessage>No products found.</ResponseMessage>
+        ));
   }
 
   return (
     <>
       <HomeBanner />
       <main id='main'>
-        {content}
+        {featuredProducts}
         <HomeFeaturedCollections />
         <HomeNewsletters />
       </main>

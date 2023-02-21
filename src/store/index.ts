@@ -20,4 +20,7 @@ export {
   useGetRelatedProductsQuery,
   useGetProductQuery,
   useGetFeaturedCollectionsQuery,
+  useGetFiltersQuery,
+  useGetCollectionsQuery,
+  useGetCategoriesQuery,
 } from './api';

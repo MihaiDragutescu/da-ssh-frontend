@@ -3,7 +3,11 @@ import FilterItemsList from '@Components/ui/FilterItemsList';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
 import { FiltersListType } from '@App/types/filtersList';
 import { useState, useEffect } from 'react';
-import { sizes, brands, collections, categories } from '@Utils/mocks';
+import {
+  useGetFiltersQuery,
+  useGetCollectionsQuery,
+  useGetCategoriesQuery,
+} from '@Store/index';
 import './ProductsFilter.scss';
 
 interface ProductsFilterProps {
@@ -14,6 +18,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   props: ProductsFilterProps
 ) => {
   const [activeFilters, setActiveFilters] = useState<FiltersListType>({});
+  const filtersData = useGetFiltersQuery();
 
   const handleClick = (filter: keyof FiltersListType, value: string) => {
     setActiveFilters((prev) => {
@@ -28,6 +33,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     });
   };
 
+  const sizes = filtersData.data
+    ?.filter((size) => size.type === 'size')
+    .map((size) => size.name);
   const sizesList = (
     <FilterItemsList
       list={sizes}
@@ -37,6 +45,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     />
   );
 
+  const brands = filtersData.data
+    ?.filter((brand) => brand.type === 'brand')
+    .map((brand) => brand.name);
   const brandsList = (
     <FilterItemsList
       list={brands}
@@ -46,10 +57,20 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     />
   );
 
+  const colors = filtersData.data
+    ?.filter((color) => color.type === 'color')
+    .map((color) => color.name);
   const colorsList = (
-    <ColorsList activeColor={activeFilters.color} handleClick={handleClick} />
+    <ColorsList
+      colors={colors}
+      activeColor={activeFilters.color}
+      handleClick={handleClick}
+    />
   );
 
+  const collections = useGetCollectionsQuery().data?.map(
+    (collection) => collection.name
+  );
   const collectionsList = (
     <FilterItemsList
       list={collections}
@@ -59,6 +80,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     />
   );
 
+  const categories = useGetCategoriesQuery().data?.map(
+    (category) => category.name
+  );
   const categoriesList = (
     <FilterItemsList
       list={categories}
@@ -87,16 +111,18 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       'button.products-actions__filters'
     ) as HTMLElement;
 
-    const eventHnadler = (e: KeyboardEvent) => {
+    const eventHandler = (e: KeyboardEvent) => {
       if (e.key === 'Tab') {
-        filterButton.focus();
+        filterButton && filterButton.focus();
       }
     };
 
-    lastFilterButton.addEventListener('keydown', eventHnadler);
+    lastFilterButton &&
+      lastFilterButton.addEventListener('keydown', eventHandler);
 
     return () => {
-      lastFilterButton.removeEventListener('keydown', eventHnadler);
+      lastFilterButton &&
+        lastFilterButton.removeEventListener('keydown', eventHandler);
     };
   }, []);
 
@@ -104,7 +130,8 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     const focusedButton = document.querySelector(
       '.products-filters  .ssh-filter-pill button'
     ) as HTMLElement;
-    focusedButton.focus();
+
+    focusedButton && focusedButton.focus();
   }, [props.visible]);
 
   const handlePriceChange = (min: number, max: number) => {

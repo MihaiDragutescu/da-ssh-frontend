@@ -1,25 +1,31 @@
 import ColorPill from './ColorPill';
-import { colors } from '@Utils/mocks';
-import { FiltersListType } from '@App/types/filtersList';
+import { FiltersListType } from '@Types/filtersList';
+import ResponseMessage from './ResponseMessage';
 
 interface ColorsListProps {
+  colors: string[] | undefined;
   activeColor?: string[];
   handleClick: (type: keyof FiltersListType, value: string) => void;
 }
 
 const ColorsList: React.FC<ColorsListProps> = (props: ColorsListProps) => {
-  const colorsList = colors.map((color) => {
-    return (
-      <ColorPill
-        key={color.id}
-        color={color.color}
-        handleClick={() => {
-          props.handleClick('color', color.id);
-        }}
-        active={props.activeColor?.includes(color.id)}
-      />
-    );
-  });
+  let colorsList;
+  if (props.colors === undefined) {
+    colorsList = <ResponseMessage>Error fetching colors.</ResponseMessage>;
+  } else {
+    colorsList = props.colors.map((color, index) => {
+      return (
+        <ColorPill
+          key={index}
+          color={color}
+          handleClick={() => {
+            props.handleClick('color', color);
+          }}
+          active={props.activeColor?.includes(color)}
+        />
+      );
+    });
+  }
 
   return <>{colorsList}</>;
 };

@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ProductType } from '@Types/product';
-import { FeaturedCollectionType } from '@Types/filter';
+import { CollectionType, FilterType, CategoryType } from '@Types/filter';
 import { paginateNumber } from '@Utils/constants';
 
 export const sshApi = createApi({
@@ -47,10 +47,19 @@ export const sshApi = createApi({
         query: (category) => `/products?category=${category}`,
       }),
       getProduct: builder.query<ProductType, string>({
-        query: (id: string) => `/products/${id}`,
+        query: (id) => `/products/${id}`,
       }),
-      getFeaturedCollections: builder.query<FeaturedCollectionType[], void>({
+      getFeaturedCollections: builder.query<CollectionType[], void>({
         query: () => '/collections?featured=true&_embed=categories',
+      }),
+      getFilters: builder.query<FilterType[], void>({
+        query: () => '/filters',
+      }),
+      getCollections: builder.query<CollectionType[], void>({
+        query: () => '/collections',
+      }),
+      getCategories: builder.query<CategoryType[], void>({
+        query: () => '/categories',
       }),
     };
   },
@@ -63,4 +72,7 @@ export const {
   useGetRelatedProductsQuery,
   useGetProductQuery,
   useGetFeaturedCollectionsQuery,
+  useGetFiltersQuery,
+  useGetCollectionsQuery,
+  useGetCategoriesQuery,
 } = sshApi;
