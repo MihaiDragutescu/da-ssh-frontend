@@ -41,7 +41,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const colorsList = (
     <ColorsList
-      colors={props.product.colors}
+      colors={props.product.color}
       activeColor={[productInfo.color as string]}
       handleClick={handleClick}
     />
@@ -49,7 +49,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const sizesList = (
     <FilterItemsList
-      list={props.product.sizes}
+      list={props.product.size}
       type='size'
       activeFilter={[productInfo.size as string]}
       handleClick={handleClick}
@@ -82,8 +82,8 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   useEffect(() => {
     setProductInfo({
-      size: props.product.sizes ? props.product.sizes[0] : '',
-      color: props.product.colors[0],
+      size: props.product.size ? props.product.size[0] : '',
+      color: props.product.color[0],
       quantity: 1,
       image: props.product.images[0],
     });
@@ -122,7 +122,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               </div>
               <ul className='product-info__color-list'>{colorsList}</ul>
             </div>
-            {props.product.sizes && (
+            {props.product.size && (
               <div className='product-info__size'>
                 <div className='product-info__subtitle'>
                   <span>Size</span>

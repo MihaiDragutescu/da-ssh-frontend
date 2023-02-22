@@ -107,8 +107,6 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   };
 
   useEffect(() => {
-    resetFilters();
-
     const lastFilterButton = document.querySelector(
       '.products-filters__category ul li:last-child button'
     ) as HTMLElement;
