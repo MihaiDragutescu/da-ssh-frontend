@@ -4,12 +4,18 @@ import ProductsSort from '../ProductsSort/ProductsSort';
 import { ReactComponent as Filter } from '@Assets/images/filters-icon.svg';
 import { ReactComponent as Sort } from '@Assets/images/sort-icon.svg';
 import { useState } from 'react';
+import { ReactComponent as Info } from '@Assets/images/info.svg';
 import './ProductsActions.scss';
 
 const ProductsActions: React.FC = () => {
   const [showFiltersOverlay, setShowFiltersOverlay] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const [noFilters, setNoFilters] = useState(true);
   const [showSort, setShowSort] = useState(false);
+
+  const handleNoFilters = (value: boolean) => {
+    setNoFilters(value);
+  };
 
   const toggleOverlay = () => {
     if (showFiltersOverlay) {
@@ -50,7 +56,9 @@ const ProductsActions: React.FC = () => {
               handleActionClick();
             }}
           >
-            <span>Filters</span>
+            <span className='products-actions__filters-label'>
+              Filters {!noFilters && <Info />}
+            </span>
             <Filter />
           </button>
           <button
@@ -65,7 +73,10 @@ const ProductsActions: React.FC = () => {
           </button>
           {showFiltersOverlay && modal}
         </div>
-        <ProductsFilter visible={showFilters} />
+        <ProductsFilter
+          handleNoFilters={handleNoFilters}
+          visible={showFilters}
+        />
         <ProductsSort visible={showSort} />
       </div>
     </div>

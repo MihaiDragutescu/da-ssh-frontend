@@ -4,6 +4,7 @@ import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
 import { FiltersListType } from '@App/types/filtersList';
 import { useState, useEffect, useMemo } from 'react';
 import debouce from 'lodash.debounce';
+import _ from 'lodash';
 import Button from '@Components/ui/Button';
 import {
   useGetFiltersQuery,
@@ -14,6 +15,7 @@ import './ProductsFilter.scss';
 
 interface ProductsFilterProps {
   visible: boolean;
+  handleNoFilters: (value: boolean) => void;
 }
 
 const ProductsFilter: React.FC<ProductsFilterProps> = (
@@ -21,6 +23,19 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 ) => {
   const [activeFilters, setActiveFilters] = useState<FiltersListType>({});
   const filtersData = useGetFiltersQuery();
+  const noFiltersState = {
+    size: [],
+    brand: [],
+    color: [],
+    minPrice: 100,
+    maxPrice: 9900,
+    collection: [],
+    category: [],
+  };
+
+  const checkNoFiltersState = () => {
+    props.handleNoFilters(_.isEqual(activeFilters, noFiltersState));
+  };
 
   const handleFilterClick = (filter: keyof FiltersListType, value: string) => {
     setActiveFilters((prev) => {
@@ -95,15 +110,8 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   );
 
   const resetFilters = () => {
-    setActiveFilters({
-      size: [],
-      brand: [],
-      color: [],
-      minPrice: 100,
-      maxPrice: 9900,
-      collection: [],
-      category: [],
-    });
+    props.handleNoFilters(true);
+    setActiveFilters(noFiltersState);
   };
 
   useEffect(() => {
@@ -151,6 +159,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   }, []);
 
   useEffect(() => {
+    checkNoFiltersState();
     return () => {
       debouncePriceChange.cancel();
     };

@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { ProductType } from '@Types/product';
 import { CollectionType, FilterType, CategoryType } from '@Types/filter';
+import { FiltersListType } from '@Types/filtersList';
 import { paginateNumber } from '@Utils/constants';
 
 export const sshApi = createApi({
@@ -46,6 +47,9 @@ export const sshApi = createApi({
       getRelatedProducts: builder.query<ProductType[], string>({
         query: (category) => `/products?category=${category}`,
       }),
+      // getFilteredProducts: builder.query<ProductType[], FiltersListType>({
+      //   query: (filtersList) => `/products?category=${category}`,
+      // }),
       getProduct: builder.query<ProductType, string>({
         query: (id) => `/products/${id}`,
       }),
