@@ -1,8 +1,9 @@
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
-import { FiltersListType } from '@App/types/filtersList';
-import { useState, useEffect, useMemo } from 'react';
+import { FiltersListType } from '@Types/filtersList';
+import { initialFiltersState } from '@Utils/constants';
+import { useEffect, useMemo } from 'react';
 import debouce from 'lodash.debounce';
 import _ from 'lodash';
 import Button from '@Components/ui/Button';
@@ -10,6 +11,13 @@ import {
   useGetFiltersQuery,
   useGetCollectionsQuery,
   useGetCategoriesQuery,
+} from '@Store/index';
+import type { RootState } from '@Store/index';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  updateActiveFilters,
+  updatePriceRange,
+  resetActiveFilters,
 } from '@Store/index';
 import './ProductsFilter.scss';
 
@@ -21,33 +29,17 @@ interface ProductsFilterProps {
 const ProductsFilter: React.FC<ProductsFilterProps> = (
   props: ProductsFilterProps
 ) => {
-  const [activeFilters, setActiveFilters] = useState<FiltersListType>({});
   const filtersData = useGetFiltersQuery();
-  const noFiltersState = {
-    size: [],
-    brand: [],
-    color: [],
-    minPrice: 100,
-    maxPrice: 9900,
-    collection: [],
-    category: [],
-  };
+  const activeFilters = useSelector((state: RootState) => state.filters);
+  const noFiltersState = initialFiltersState;
+  const dispatch = useDispatch();
 
   const checkNoFiltersState = () => {
     props.handleNoFilters(_.isEqual(activeFilters, noFiltersState));
   };
 
   const handleFilterClick = (filter: keyof FiltersListType, value: string) => {
-    setActiveFilters((prev) => {
-      return {
-        ...prev,
-        [filter]: Array.isArray(prev[filter])
-          ? (prev[filter] as string[]).includes(value)
-            ? (prev[filter] as string[]).filter((elem) => elem !== value)
-            : [...(prev[filter] as string[]), value]
-          : value,
-      };
-    });
+    dispatch(updateActiveFilters({ filter, value }));
   };
 
   const sizes = filtersData.data
@@ -111,7 +103,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   const resetFilters = () => {
     props.handleNoFilters(true);
-    setActiveFilters(noFiltersState);
+    dispatch(resetActiveFilters());
   };
 
   useEffect(() => {
@@ -149,9 +141,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   }, [props.visible]);
 
   const handlePriceChange = (min: number, max: number) => {
-    setActiveFilters((prev) => {
-      return { ...prev, minPrice: min, maxPrice: max };
-    });
+    dispatch(updatePriceRange({ min, max }));
   };
 
   const debouncePriceChange = useMemo(() => {

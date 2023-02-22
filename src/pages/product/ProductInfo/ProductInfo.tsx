@@ -1,7 +1,7 @@
 import Accordion from '@Components/ui/Accordion';
 import Button from '@Components/ui/Button';
 import { ProductType } from '@Types/product';
-import { FiltersListType } from '@App/types/filtersList';
+import { FiltersListType } from '@Types/filtersList';
 import { ReactComponent as Heart } from '@Assets/images/heart-icon.svg';
 import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.svg';
 import ColorsList from '@Components/ui/ColorsList';

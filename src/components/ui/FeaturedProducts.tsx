@@ -7,7 +7,7 @@ import { ProductType } from '@Types/product';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { productsSliderSettings } from '@App/utils/slidersConfig';
+import { productsSliderSettings } from '@Utils/slidersConfig';
 import './FeaturedProducts.scss';
 import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';

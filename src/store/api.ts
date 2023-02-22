@@ -47,9 +47,27 @@ export const sshApi = createApi({
       getRelatedProducts: builder.query<ProductType[], string>({
         query: (category) => `/products?category=${category}`,
       }),
-      // getFilteredProducts: builder.query<ProductType[], FiltersListType>({
-      //   query: (filtersList) => `/products?category=${category}`,
-      // }),
+      getFilteredProducts: builder.query<ProductType[], FiltersListType>({
+        query: (filtersList) => {
+          let queryParams = '?';
+          for (const [key, value] of Object.entries(filtersList)) {
+            if (key === 'minPrice') {
+              queryParams += `price_gte=${value}&`;
+            } else if (key === 'maxPrice') {
+              queryParams += `price_lte=${value}&`;
+            } else if (
+              ['size', 'brand', 'color', 'collection', 'category'].includes(key)
+            ) {
+              const params = (value as string[]).map(
+                (val: string) => `${key}_like=${val}&`
+              );
+              queryParams += params;
+            }
+          }
+          queryParams = queryParams.slice(0, -1);
+          return `/products${queryParams}`;
+        },
+      }),
       getProduct: builder.query<ProductType, string>({
         query: (id) => `/products/${id}`,
       }),
@@ -74,6 +92,7 @@ export const {
   useGetProductsQuery,
   useGetFeaturedProductsQuery,
   useGetRelatedProductsQuery,
+  useGetFilteredProductsQuery,
   useGetProductQuery,
   useGetFeaturedCollectionsQuery,
   useGetFiltersQuery,

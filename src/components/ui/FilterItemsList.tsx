@@ -1,5 +1,5 @@
 import FilterPill from './FilterPill';
-import { FiltersListType } from '@App/types/filtersList';
+import { FiltersListType } from '@Types/filtersList';
 import { ProductsListActions } from '@Types/productsListActions';
 import ResponseMessage from './ResponseMessage';
 
