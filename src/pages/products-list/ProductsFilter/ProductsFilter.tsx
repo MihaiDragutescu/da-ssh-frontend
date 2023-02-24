@@ -8,17 +8,20 @@ import debouce from 'lodash.debounce';
 import _ from 'lodash';
 import Button from '@Components/ui/Button';
 import {
+  useGetFilteredProductsQuery,
   useGetFiltersQuery,
   useGetCollectionsQuery,
   useGetCategoriesQuery,
+  resetCurrentPage,
 } from '@Store/index';
-import type { RootState } from '@Store/index';
+import type { RootState, AppDispatch } from '@Store/index';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   updateActiveFilters,
   updatePriceRange,
   resetActiveFilters,
 } from '@Store/index';
+import { sshApi } from '@Store/api';
 import './ProductsFilter.scss';
 
 interface ProductsFilterProps {
@@ -31,15 +34,36 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 ) => {
   const filtersData = useGetFiltersQuery();
   const activeFilters = useSelector((state: RootState) => state.filters);
+  const { refetch } = useGetFilteredProductsQuery({
+    page: 1,
+    filtersList: activeFilters,
+  });
   const noFiltersState = initialFiltersState;
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const checkNoFiltersState = () => {
     props.handleNoFilters(_.isEqual(activeFilters, noFiltersState));
   };
 
+  const resetCachedProducts = async () => {
+    await dispatch(
+      sshApi.util.updateQueryData(
+        'getFilteredProducts',
+        { page: 1, filtersList: activeFilters },
+        (draftProducts) => {
+          draftProducts.products = [];
+          draftProducts.totalCount = 0;
+        }
+      )
+    );
+
+    refetch();
+  };
+
   const handleFilterClick = (filter: keyof FiltersListType, value: string) => {
+    dispatch(resetCurrentPage());
     dispatch(updateActiveFilters({ filter, value }));
+    resetCachedProducts();
   };
 
   const sizes = filtersData.data
@@ -103,7 +127,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   const resetFilters = () => {
     props.handleNoFilters(true);
+    dispatch(resetCurrentPage());
     dispatch(resetActiveFilters());
+    resetCachedProducts();
   };
 
   useEffect(() => {
@@ -139,7 +165,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   }, [props.visible]);
 
   const handlePriceChange = (min: number, max: number) => {
+    dispatch(resetCurrentPage());
     dispatch(updatePriceRange({ min, max }));
+    resetCachedProducts();
   };
 
   const debouncePriceChange = useMemo(() => {

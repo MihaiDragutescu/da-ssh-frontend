@@ -1,14 +1,23 @@
 import ProductCard from '@Components/ui/ProductCard';
-import { useState, useEffect } from 'react';
-import { useGetProductsQuery } from '@Store/index';
+import { useEffect } from 'react';
+import { useGetFilteredProductsQuery } from '@Store/index';
+import type { RootState, AppDispatch } from '@Store/index';
+import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '@Components/ui/Spinner';
 import ResponseMessage from '@Components/ui/ResponseMessage';
+import { updateCurrentPage, resetCurrentPage } from '@Store/index';
+import { paginateNumber } from '@Utils/constants';
 import './ProductsList.scss';
 
 const ProductsList: React.FC = () => {
-  const [page, setPage] = useState(1);
-  const { data, error, isFetching } = useGetProductsQuery(page);
+  const activeFilters = useSelector((state: RootState) => state.filters);
+  const currentPage = useSelector((state: RootState) => state.pages.page);
+  const { data, error, isFetching } = useGetFilteredProductsQuery({
+    page: currentPage,
+    filtersList: activeFilters,
+  });
   const productsList = data?.products ?? [];
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const onScroll = () => {
@@ -23,8 +32,13 @@ const ProductsList: React.FC = () => {
         const totalCount = data?.totalCount ?? 0;
         const productsListed = data?.products.length ?? 0;
 
-        if (productsListed < totalCount) {
-          setPage(page + 1);
+        if (
+          productsListed < totalCount &&
+          currentPage < totalCount / paginateNumber
+        ) {
+          dispatch(updateCurrentPage());
+        } else {
+          dispatch(resetCurrentPage());
         }
       }
     };
@@ -33,7 +47,7 @@ const ProductsList: React.FC = () => {
     return function () {
       document.removeEventListener('scroll', onScroll);
     };
-  }, [page, isFetching]);
+  }, [isFetching, currentPage]);
 
   return (
     <div className='products-list'>

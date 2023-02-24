@@ -7,39 +7,10 @@ import { paginateNumber } from '@Utils/constants';
 export const sshApi = createApi({
   reducerPath: 'sshApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001' }),
-
   endpoints: (builder) => {
     return {
       getAllProducts: builder.query<ProductType[], void>({
         query: () => '/products',
-      }),
-      getProducts: builder.query<
-        { products: ProductType[]; totalCount: number },
-        number
-      >({
-        query: (page = 1) =>
-          `/products?_page=${page}&_limit=${paginateNumber}&_sort=price`,
-        transformResponse: (apiResponse: ProductType[], meta) => {
-          return {
-            products: apiResponse,
-            totalCount: Number(meta?.response?.headers.get('X-Total-Count')),
-          };
-        },
-        serializeQueryArgs: ({ endpointName }) => {
-          return endpointName;
-        },
-        merge: (currentCache, newData) => {
-          if (
-            !currentCache.products.find(
-              (product) => product.id === newData.products[0].id
-            )
-          ) {
-            currentCache.products.push(...newData.products);
-          }
-        },
-        forceRefetch({ currentArg, previousArg }) {
-          return currentArg !== previousArg;
-        },
       }),
       getFeaturedProducts: builder.query<ProductType[], void>({
         query: () => '/products?featured=true',
@@ -51,7 +22,7 @@ export const sshApi = createApi({
         { products: ProductType[]; totalCount: number },
         { page: number; filtersList: FiltersListType }
       >({
-        query: ({ page, filtersList }) => {
+        query: ({ page = 1, filtersList }) => {
           let queryParams = '?';
           for (const [key, value] of Object.entries(filtersList)) {
             if (key === 'minPrice') {
@@ -71,7 +42,7 @@ export const sshApi = createApi({
             }
           }
           queryParams = queryParams.slice(0, -1);
-          // console.log(`/products${queryParams}`);
+
           return `/products${queryParams}&_page=${page}&_limit=${paginateNumber}&_sort=price`;
         },
         transformResponse: (apiResponse: ProductType[], meta) => {
@@ -91,8 +62,8 @@ export const sshApi = createApi({
           ) {
             currentCache.products.push(...newData.products);
           }
-          // currentCache.products = [...newData.products];
-          // currentCache.products.push(...newData.products);
+
+          currentCache.totalCount = newData.totalCount;
         },
         forceRefetch({ currentArg, previousArg }) {
           return currentArg !== previousArg;
@@ -119,7 +90,6 @@ export const sshApi = createApi({
 
 export const {
   useGetAllProductsQuery,
-  useGetProductsQuery,
   useGetFeaturedProductsQuery,
   useGetRelatedProductsQuery,
   useGetFilteredProductsQuery,
