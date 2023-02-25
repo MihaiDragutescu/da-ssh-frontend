@@ -10,7 +10,6 @@ module.exports = {
           '@App': path.resolve(__dirname, 'src/'),
           '@Assets': path.resolve(__dirname, 'src/assets/'),
           '@Components': path.resolve(__dirname, 'src/components/'),
-          '@Context': path.resolve(__dirname, 'src/context/'),
           '@Hooks': path.resolve(__dirname, 'src/hooks/'),
           '@Pages': path.resolve(__dirname, 'src/pages/'),
           '@Store': path.resolve(__dirname, 'src/store/'),

@@ -13,16 +13,21 @@ import {
   useGetCollectionsQuery,
   useGetCategoriesQuery,
   resetCurrentPage,
-} from '@Store/index';
-import type { RootState, AppDispatch } from '@Store/index';
-import { useSelector, useDispatch } from 'react-redux';
-import {
   updateActiveFilters,
   updatePriceRange,
   resetActiveFilters,
 } from '@Store/index';
+import type { RootState, AppDispatch } from '@Store/index';
+import { useSelector, useDispatch } from 'react-redux';
 import { sshApi } from '@Store/api';
 import './ProductsFilter.scss';
+import {
+  useQueryParams,
+  NumberParam,
+  ArrayParam,
+  withDefault,
+} from 'use-query-params';
+import { useState } from 'react';
 
 interface ProductsFilterProps {
   visible: boolean;
@@ -32,6 +37,7 @@ interface ProductsFilterProps {
 const ProductsFilter: React.FC<ProductsFilterProps> = (
   props: ProductsFilterProps
 ) => {
+  const dispatch = useDispatch<AppDispatch>();
   const filtersData = useGetFiltersQuery();
   const activeFilters = useSelector((state: RootState) => state.filters);
   const { refetch } = useGetFilteredProductsQuery({
@@ -39,7 +45,33 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     filtersList: activeFilters,
   });
   const noFiltersState = initialFiltersState;
-  const dispatch = useDispatch<AppDispatch>();
+  const [filterSelected, setFilterSelected] = useState<keyof FiltersListType>();
+  const [filterValue, setFilterValue] = useState<string | number>();
+
+  const paramsKeys = Object.keys(initialFiltersState) as Array<
+    keyof FiltersListType
+  >;
+
+  const paramsKeysArray = paramsKeys.map((key: keyof FiltersListType) => {
+    return {
+      [key]:
+        key === 'minPrice'
+          ? withDefault(NumberParam, 100)
+          : key === 'maxPrice'
+          ? withDefault(NumberParam, 9900)
+          : withDefault(ArrayParam, []),
+    };
+  });
+
+  const paramKeysObj = {};
+
+  paramsKeysArray.forEach((elem) =>
+    Object.assign(paramKeysObj, {
+      [Object.keys(elem)[0]]: elem[Object.keys(elem)[0]],
+    })
+  );
+
+  const [queryParams, setQueryParams] = useQueryParams(paramKeysObj);
 
   const checkNoFiltersState = () => {
     props.handleNoFilters(_.isEqual(activeFilters, noFiltersState));
@@ -63,7 +95,13 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   const handleFilterClick = (filter: keyof FiltersListType, value: string) => {
     dispatch(resetCurrentPage());
     dispatch(updateActiveFilters({ filter, value }));
+    setFilterSelected(filter);
+    setFilterValue(value);
     resetCachedProducts();
+    // setQuery(
+    //   { x: Math.random().toString(), filters: [...filters, 'foo'], q: 'bar' },
+    //   'push'
+    // );
   };
 
   const sizes = filtersData.data
@@ -133,6 +171,9 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   };
 
   useEffect(() => {
+    dispatch(
+      updateActiveFilters({ filter: 'collection', value: 'Office trend' })
+    );
     const lastFilterButton = document.querySelector(
       '.products-filters__category ul li:last-child button'
     ) as HTMLElement;
@@ -155,6 +196,17 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
         lastFilterButton.removeEventListener('keydown', eventHandler);
     };
   }, []);
+
+  useEffect(() => {
+    if (filterSelected !== undefined) {
+      filterSelected === 'minPrice' || filterSelected === 'maxPrice'
+        ? setQueryParams({ [filterSelected as string]: filterValue })
+        : setQueryParams({
+            [filterSelected as string]:
+              activeFilters[filterSelected ?? 'brand'],
+          });
+    }
+  }, [activeFilters]);
 
   useEffect(() => {
     const focusedButton = document.querySelector(

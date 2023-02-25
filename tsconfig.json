@@ -5,7 +5,6 @@
       "@App/*": ["./*"],
       "@Assets/*": ["./assets/*"],
       "@Components/*": ["./components/*"],
-      "@Context/*": ["./context/*"],
       "@Hooks/*": ["./hooks/*"],
       "@Pages/*": ["./pages/*"],
       "@Store/*": ["./store/*"],
@@ -13,7 +12,7 @@
       "@Types/*": ["./types/*"],
       "@Utils/*": ["./utils/*"]
     },
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,

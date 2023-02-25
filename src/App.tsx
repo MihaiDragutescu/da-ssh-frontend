@@ -14,6 +14,8 @@ import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import Breadcrumbs from '@Components/ui/Breadcrumbs';
 import { RemoveTrailingSlash } from '@Utils/RemoveTrailingSlash';
+import { QueryParamProvider } from 'use-query-params';
+import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
 import './App.scss';
 
 const App = () => {
@@ -33,27 +35,29 @@ const App = () => {
           ''
         )}
         <RemoveTrailingSlash />
-        <Routes>
-          <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
-          <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
-          <Route path={RouterPaths.HOME} element={<HomePage />} />
-          <Route path={RouterPaths.SHOP}>
-            <Route index element={<ProductsListPage />} />
-            <Route path=':id' element={<ProductPage />} />
-          </Route>
-          <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
-          <Route path={RouterPaths.CART} element={<CartPage />} />
-          <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
-          <Route
-            path={RouterPaths.PRIVACY_POLICY}
-            element={<PrivacyPolicyPage />}
-          />
-          <Route
-            path={RouterPaths.TERMS_AND_CONDITIONS}
-            element={<TermsAndConditionsPage />}
-          />
-          <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
-        </Routes>
+        <QueryParamProvider adapter={ReactRouter6Adapter}>
+          <Routes>
+            <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />
+            <Route path={RouterPaths.NOT_FOUND} element={<NotFound />} />
+            <Route path={RouterPaths.HOME} element={<HomePage />} />
+            <Route path={RouterPaths.SHOP}>
+              <Route index element={<ProductsListPage />} />
+              <Route path=':id' element={<ProductPage />} />
+            </Route>
+            <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
+            <Route path={RouterPaths.CART} element={<CartPage />} />
+            <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
+            <Route
+              path={RouterPaths.PRIVACY_POLICY}
+              element={<PrivacyPolicyPage />}
+            />
+            <Route
+              path={RouterPaths.TERMS_AND_CONDITIONS}
+              element={<TermsAndConditionsPage />}
+            />
+            <Route path={RouterPaths.ABOUT} element={<AboutPage />} />
+          </Routes>
+        </QueryParamProvider>
         <Footer />
       </div>
     </>

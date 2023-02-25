@@ -2,18 +2,37 @@ import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
 import { CardLayouts } from '@Types/layouts';
 import { RouterPaths } from '@Types/routerPaths';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 import Spinner from '@Components/ui/Spinner';
 import ResponseMessage from '@Components/ui/ResponseMessage';
-import { useGetFeaturedCollectionsQuery } from '@Store/index';
+import {
+  useGetFeaturedCollectionsQuery,
+  updateActiveFilters,
+  AppDispatch,
+  resetActiveFilters,
+  RootState,
+} from '@Store/index';
+import { useDispatch, useSelector } from 'react-redux';
 import './HomeFeaturedCollections.scss';
+import { sshApi } from '@App/store/api';
+
+interface CollectionType {
+  id: string;
+  category: string;
+  categoryId: string;
+  className: string;
+  image: string;
+  layout: CardLayouts;
+  name: string;
+}
 
 const HomeFeaturedCollections: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const { data, error, isFetching } = useGetFeaturedCollectionsQuery();
 
-  let featuredCollections;
+  let featuredCollections, collections: CollectionType[];
   if (isFetching) {
     featuredCollections = <Spinner />;
   } else if (error) {
@@ -23,7 +42,7 @@ const HomeFeaturedCollections: React.FC = () => {
   } else {
     if (data && data.length !== 0) {
       const checkIndex = (index: number) => index % 3 === 2;
-      const collections = data[0].categories.map((category, index) => ({
+      collections = data[0].categories.map((category, index) => ({
         id: data[0].id,
         categoryId: category.id,
         name: data[0].name,
@@ -61,8 +80,41 @@ const HomeFeaturedCollections: React.FC = () => {
     }
   }
 
+  const activeFilters = useSelector((state: RootState) => state.filters);
+  // const { refetch } = useGetFilteredProductsQuery({
+  //   page: 1,
+  //   filtersList: activeFilters,
+  // });
+
+  const resetCachedProducts = async () => {
+    await dispatch(
+      sshApi.util.updateQueryData(
+        'getFilteredProducts',
+        { page: 1, filtersList: activeFilters },
+        (draftProducts) => {
+          draftProducts.products = [];
+          draftProducts.totalCount = 0;
+        }
+      )
+    );
+
+    //   // refetch();
+  };
+
   const handleClick = () => {
-    navigate(RouterPaths.SHOP);
+    dispatch(resetActiveFilters());
+    dispatch(
+      updateActiveFilters({ filter: 'collection', value: collections[0].name })
+    );
+
+    resetCachedProducts();
+
+    navigate({
+      pathname: RouterPaths.SHOP,
+      search: createSearchParams({
+        collection: `${collections[0].name}`,
+      }).toString(),
+    });
   };
 
   return (

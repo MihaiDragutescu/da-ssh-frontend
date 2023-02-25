@@ -1,6 +1,8 @@
+import { FiltersListType } from '@Types/filtersList';
+
 export const paginateNumber = 9;
 
-export const initialFiltersState = {
+export const initialFiltersState: FiltersListType = {
   size: [],
   brand: [],
   color: [],
