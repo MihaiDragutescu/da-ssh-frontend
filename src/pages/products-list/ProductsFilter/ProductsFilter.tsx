@@ -24,6 +24,7 @@ import { priceRange } from '@Types/priceRange';
 import { parseFiltersObject } from '@Utils/parseFiltersObject';
 import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './ProductsFilter.scss';
+import { RouterPaths } from '@Types/routerPaths';
 
 interface ProductsFilterProps {
   visible: boolean;
@@ -150,11 +151,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     props.handleNoFilters(true);
     dispatch(resetCurrentPage());
     dispatch(resetActiveFilters());
-    setQueryParams({
-      ...initialFiltersState,
-      minPrice: undefined,
-      maxPrice: undefined,
-    });
+    window.history.pushState({}, document.title, RouterPaths.SHOP);
     resetCachedProducts();
   };
 
