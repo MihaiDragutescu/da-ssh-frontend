@@ -2,8 +2,19 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { FiltersListType } from '@Types/filtersList';
 import { initialFiltersState } from '@Utils/constants';
+import { getQueryParams } from '@Utils/getQueryParams';
 
-const initialState: FiltersListType = initialFiltersState;
+const initialState: FiltersListType = { ...initialFiltersState };
+const queryParams = getQueryParams(window.location.search);
+
+for (const [key, value] of Object.entries(queryParams)) {
+  const myKey = key as keyof FiltersListType;
+  if (myKey !== 'minPrice' && myKey !== 'maxPrice') {
+    (initialState[myKey] as string[]) = queryParams[myKey] as string[];
+  } else {
+    (initialState[myKey] as number) = queryParams[myKey] as number;
+  }
+}
 
 export const filtersSlice = createSlice({
   name: 'filters',

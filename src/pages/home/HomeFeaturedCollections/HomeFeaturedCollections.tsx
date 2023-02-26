@@ -10,11 +10,10 @@ import {
   updateActiveFilters,
   AppDispatch,
   resetActiveFilters,
-  RootState,
 } from '@Store/index';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './HomeFeaturedCollections.scss';
-import { sshApi } from '@App/store/api';
 
 interface CollectionType {
   id: string;
@@ -29,6 +28,7 @@ interface CollectionType {
 const HomeFeaturedCollections: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  const { resetCache } = useResetCachedProducts();
 
   const { data, error, isFetching } = useGetFeaturedCollectionsQuery();
 
@@ -80,34 +80,12 @@ const HomeFeaturedCollections: React.FC = () => {
     }
   }
 
-  const activeFilters = useSelector((state: RootState) => state.filters);
-  // const { refetch } = useGetFilteredProductsQuery({
-  //   page: 1,
-  //   filtersList: activeFilters,
-  // });
-
-  const resetCachedProducts = async () => {
-    await dispatch(
-      sshApi.util.updateQueryData(
-        'getFilteredProducts',
-        { page: 1, filtersList: activeFilters },
-        (draftProducts) => {
-          draftProducts.products = [];
-          draftProducts.totalCount = 0;
-        }
-      )
-    );
-
-    //   // refetch();
-  };
-
   const handleClick = () => {
     dispatch(resetActiveFilters());
     dispatch(
       updateActiveFilters({ filter: 'collection', value: collections[0].name })
     );
-
-    resetCachedProducts();
+    resetCache();
 
     navigate({
       pathname: RouterPaths.SHOP,

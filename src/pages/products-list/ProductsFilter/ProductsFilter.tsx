@@ -2,8 +2,8 @@ import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import PriceSlider from '../PriceRangeSlider/PriceRangeSlider';
 import { FiltersListType } from '@Types/filtersList';
-import { initialFiltersState } from '@Utils/constants';
-import { useEffect, useMemo } from 'react';
+import { initialFiltersState, priceRangeValues } from '@Utils/constants';
+import { useEffect, useMemo, useState } from 'react';
 import debouce from 'lodash.debounce';
 import _ from 'lodash';
 import Button from '@Components/ui/Button';
@@ -19,15 +19,11 @@ import {
 } from '@Store/index';
 import type { RootState, AppDispatch } from '@Store/index';
 import { useSelector, useDispatch } from 'react-redux';
-import { sshApi } from '@Store/api';
+import { useQueryParams } from 'use-query-params';
+import { priceRange } from '@Types/priceRange';
+import { parseFiltersObject } from '@Utils/parseFiltersObject';
+import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './ProductsFilter.scss';
-import {
-  useQueryParams,
-  NumberParam,
-  ArrayParam,
-  withDefault,
-} from 'use-query-params';
-import { useState } from 'react';
 
 interface ProductsFilterProps {
   visible: boolean;
@@ -44,33 +40,11 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     page: 1,
     filtersList: activeFilters,
   });
-  const noFiltersState = initialFiltersState;
+  const { resetCache } = useResetCachedProducts();
   const [filterSelected, setFilterSelected] = useState<keyof FiltersListType>();
   const [filterValue, setFilterValue] = useState<string | number>();
-
-  const paramsKeys = Object.keys(initialFiltersState) as Array<
-    keyof FiltersListType
-  >;
-
-  const paramsKeysArray = paramsKeys.map((key: keyof FiltersListType) => {
-    return {
-      [key]:
-        key === 'minPrice'
-          ? withDefault(NumberParam, 100)
-          : key === 'maxPrice'
-          ? withDefault(NumberParam, 9900)
-          : withDefault(ArrayParam, []),
-    };
-  });
-
-  const paramKeysObj = {};
-
-  paramsKeysArray.forEach((elem) =>
-    Object.assign(paramKeysObj, {
-      [Object.keys(elem)[0]]: elem[Object.keys(elem)[0]],
-    })
-  );
-
+  const noFiltersState = { ...initialFiltersState };
+  const paramKeysObj = parseFiltersObject(initialFiltersState);
   const [queryParams, setQueryParams] = useQueryParams(paramKeysObj);
 
   const checkNoFiltersState = () => {
@@ -78,17 +52,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   };
 
   const resetCachedProducts = async () => {
-    await dispatch(
-      sshApi.util.updateQueryData(
-        'getFilteredProducts',
-        { page: 1, filtersList: activeFilters },
-        (draftProducts) => {
-          draftProducts.products = [];
-          draftProducts.totalCount = 0;
-        }
-      )
-    );
-
+    await resetCache();
     refetch();
   };
 
@@ -98,10 +62,6 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     setFilterSelected(filter);
     setFilterValue(value);
     resetCachedProducts();
-    // setQuery(
-    //   { x: Math.random().toString(), filters: [...filters, 'foo'], q: 'bar' },
-    //   'push'
-    // );
   };
 
   const sizes = filtersData.data
@@ -163,17 +123,64 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     />
   );
 
+  const handlePriceChange = (
+    min: number,
+    max: number,
+    priceChanged: priceRange
+  ) => {
+    dispatch(resetCurrentPage());
+    dispatch(updatePriceRange({ min, max }));
+
+    if (priceChanged === priceRange.MIN_PRICE) {
+      setFilterSelected('minPrice');
+      setFilterValue(min);
+    } else if (priceChanged === priceRange.MAX_PRICE) {
+      setFilterSelected('maxPrice');
+      setFilterValue(max);
+    }
+
+    resetCachedProducts();
+  };
+
+  const debouncePriceChange = useMemo(() => {
+    return debouce(handlePriceChange, 300);
+  }, []);
+
   const resetFilters = () => {
     props.handleNoFilters(true);
     dispatch(resetCurrentPage());
     dispatch(resetActiveFilters());
+    setQueryParams({
+      ...initialFiltersState,
+      minPrice: undefined,
+      maxPrice: undefined,
+    });
     resetCachedProducts();
   };
 
   useEffect(() => {
-    dispatch(
-      updateActiveFilters({ filter: 'collection', value: 'Office trend' })
-    );
+    if (filterSelected !== undefined) {
+      if (filterSelected === 'minPrice' || filterSelected === 'maxPrice') {
+        filterValue === priceRangeValues[filterSelected]
+          ? setQueryParams({ [filterSelected]: undefined })
+          : setQueryParams({ [filterSelected]: filterValue });
+      } else {
+        setQueryParams({
+          [filterSelected as string]: activeFilters[filterSelected],
+        });
+      }
+    }
+  }, [activeFilters, filterValue]);
+
+  useEffect(() => {
+    const focusedButton = document.querySelector(
+      '.products-filters  .ssh-filter-pill button'
+    ) as HTMLElement;
+
+    focusedButton && focusedButton.focus();
+  }, [props.visible]);
+
+  useEffect(() => {
     const lastFilterButton = document.querySelector(
       '.products-filters__category ul li:last-child button'
     ) as HTMLElement;
@@ -195,35 +202,6 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       lastFilterButton &&
         lastFilterButton.removeEventListener('keydown', eventHandler);
     };
-  }, []);
-
-  useEffect(() => {
-    if (filterSelected !== undefined) {
-      filterSelected === 'minPrice' || filterSelected === 'maxPrice'
-        ? setQueryParams({ [filterSelected as string]: filterValue })
-        : setQueryParams({
-            [filterSelected as string]:
-              activeFilters[filterSelected ?? 'brand'],
-          });
-    }
-  }, [activeFilters]);
-
-  useEffect(() => {
-    const focusedButton = document.querySelector(
-      '.products-filters  .ssh-filter-pill button'
-    ) as HTMLElement;
-
-    focusedButton && focusedButton.focus();
-  }, [props.visible]);
-
-  const handlePriceChange = (min: number, max: number) => {
-    dispatch(resetCurrentPage());
-    dispatch(updatePriceRange({ min, max }));
-    resetCachedProducts();
-  };
-
-  const debouncePriceChange = useMemo(() => {
-    return debouce(handlePriceChange, 300);
   }, []);
 
   useEffect(() => {
@@ -252,8 +230,8 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
       <div className='products-filters__col products-filters__price'>
         <div className='products-filters__title'>Price</div>
         <PriceSlider
-          minPrice={activeFilters.minPrice ?? 100}
-          maxPrice={activeFilters.maxPrice ?? 9900}
+          minPrice={activeFilters.minPrice ?? priceRangeValues.minPrice}
+          maxPrice={activeFilters.maxPrice ?? priceRangeValues.maxPrice}
           handlePriceChange={debouncePriceChange}
         />
       </div>

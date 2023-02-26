@@ -10,14 +10,15 @@ import { paginateNumber } from '@Utils/constants';
 import './ProductsList.scss';
 
 const ProductsList: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const activeFilters = useSelector((state: RootState) => state.filters);
   const currentPage = useSelector((state: RootState) => state.pages.page);
+
   const { data, error, isFetching } = useGetFilteredProductsQuery({
     page: currentPage,
     filtersList: activeFilters,
   });
   const productsList = data?.products ?? [];
-  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const onScroll = () => {
@@ -44,6 +45,7 @@ const ProductsList: React.FC = () => {
     };
 
     document.addEventListener('scroll', onScroll);
+
     return function () {
       document.removeEventListener('scroll', onScroll);
     };
