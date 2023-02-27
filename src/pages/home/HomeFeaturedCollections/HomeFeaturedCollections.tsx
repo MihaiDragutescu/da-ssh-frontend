@@ -2,7 +2,7 @@ import Button from '@Components/ui/Button';
 import ProductCard from '@Components/ui/ProductCard';
 import { CardLayouts } from '@Types/layouts';
 import { RouterPaths } from '@Types/routerPaths';
-import { useNavigate, createSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Spinner from '@Components/ui/Spinner';
 import ResponseMessage from '@Components/ui/ResponseMessage';
 import {
@@ -87,12 +87,7 @@ const HomeFeaturedCollections: React.FC = () => {
     );
     resetCache();
 
-    navigate({
-      pathname: RouterPaths.SHOP,
-      search: createSearchParams({
-        collection: `${collections[0].name}`,
-      }).toString(),
-    });
+    navigate(`${RouterPaths.SHOP}?collection=${collections[0].name}`);
   };
 
   return (

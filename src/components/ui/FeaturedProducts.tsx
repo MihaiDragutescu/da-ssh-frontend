@@ -11,6 +11,7 @@ import { productsSliderSettings } from '@Utils/slidersConfig';
 import './FeaturedProducts.scss';
 import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import useSetQueryParams from '@App/hooks/useSetQueryParams';
 
 interface FeaturedProductsProps {
   products: ProductType[];
@@ -21,6 +22,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   props: FeaturedProductsProps
 ) => {
   const navigate = useNavigate();
+  const { route } = useSetQueryParams(RouterPaths.SHOP);
   const sliderRef = useRef<Slider>(null);
 
   const goToNext = () => {
@@ -32,7 +34,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   };
 
   const handleClick = () => {
-    navigate(RouterPaths.SHOP);
+    navigate(route);
   };
 
   useEffect(() => {

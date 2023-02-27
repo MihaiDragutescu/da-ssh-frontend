@@ -2,6 +2,13 @@ import Button from '@Components/ui/Button';
 import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
 import { Link } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
+import {
+  updateActiveFilters,
+  AppDispatch,
+  resetActiveFilters,
+} from '@Store/index';
+import { useDispatch } from 'react-redux';
+import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './ProductCard.scss';
 
 interface ProductCardProps {
@@ -19,7 +26,30 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
-  const handleClick = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { resetCache } = useResetCachedProducts();
+  const route =
+    props.category || props.collection
+      ? `${RouterPaths.SHOP}?collection=${props.collection}&category=${props.category}`
+      : `${RouterPaths.SHOP}/${props.id}`;
+
+  const handleLinkClick = () => {
+    if (props.collection && props.category) {
+      dispatch(resetActiveFilters());
+      dispatch(
+        updateActiveFilters({
+          filter: 'collection',
+          value: props.collection ?? '',
+        })
+      );
+      dispatch(
+        updateActiveFilters({ filter: 'category', value: props.category ?? '' })
+      );
+      resetCache();
+    }
+  };
+
+  const handleButtonClick = () => {
     console.log('Product added to basket');
   };
 
@@ -34,7 +64,8 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
       >
         <Link
           className='product-card__image'
-          to={`${RouterPaths.SHOP}/${props.id}`}
+          to={route}
+          onClick={handleLinkClick}
         >
           <img src={props.image} alt='product' />
         </Link>
@@ -42,7 +73,8 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
           {props.name && (
             <Link
               className='product-card__name'
-              to={`${RouterPaths.SHOP}/${props.id}`}
+              to={route}
+              onClick={handleLinkClick}
             >
               <span>{props.name}</span>
             </Link>
@@ -60,7 +92,10 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
             <span className='product-card__category'>{props.category}</span>
           )}
           {props.add_to_basket && (
-            <Button className='product-card__button' onClick={handleClick}>
+            <Button
+              className='product-card__button'
+              onClick={handleButtonClick}
+            >
               Add to basket
             </Button>
           )}
