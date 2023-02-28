@@ -1,4 +1,5 @@
 import { FiltersListType } from '@Types/filtersList';
+import { sortTypes } from '@Types/sortTypes';
 
 export const paginateNumber = 9;
 
@@ -15,4 +16,5 @@ export const initialFiltersState: FiltersListType = {
   maxPrice: priceRangeValues.maxPrice,
   collection: [],
   category: [],
+  sort: sortTypes.PRICE_LOW_TO_HIGH,
 };

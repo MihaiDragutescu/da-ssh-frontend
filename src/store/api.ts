@@ -3,6 +3,7 @@ import { ProductType } from '@Types/product';
 import { CollectionType, FilterType, CategoryType } from '@Types/filter';
 import { FiltersListType } from '@Types/filtersList';
 import { paginateNumber } from '@Utils/constants';
+import { sortTypes } from '@Types/sortTypes';
 
 export const sshApi = createApi({
   reducerPath: 'sshApi',
@@ -42,8 +43,14 @@ export const sshApi = createApi({
             }
           }
           queryParams = queryParams.slice(0, -1);
+          let sortParam;
+          filtersList.sort === sortTypes.PRICE_HIGHT_TO_LOW
+            ? (sortParam = '&_sort=price&_order=desc')
+            : filtersList.sort === sortTypes.NEWEST
+            ? (sortParam = '')
+            : (sortParam = '&_sort=price');
 
-          return `/products${queryParams}&_page=${page}&_limit=${paginateNumber}&_sort=price`;
+          return `/products${queryParams}&_page=${page}&_limit=${paginateNumber}${sortParam}`;
         },
         transformResponse: (apiResponse: ProductType[], meta) => {
           return {

@@ -14,7 +14,8 @@ const useSetQueryParams = (route: string) => {
   for (const [key, value] of Object.entries(activeFilters)) {
     if (
       (key === 'minPrice' && value !== priceRangeValues.minPrice) ||
-      (key === 'maxPrice' && value !== priceRangeValues.maxPrice)
+      (key === 'maxPrice' && value !== priceRangeValues.maxPrice) ||
+      key === 'sort'
     ) {
       route += `${key}=${value}&`;
     } else {

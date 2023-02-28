@@ -1,6 +1,12 @@
 import { FiltersListType } from '@Types/filtersList';
 import { priceRangeValues } from './constants';
-import { NumberParam, ArrayParam, withDefault } from 'use-query-params';
+import {
+  NumberParam,
+  ArrayParam,
+  withDefault,
+  StringParam,
+} from 'use-query-params';
+import { sortTypes } from '@Types/sortTypes';
 
 export const parseFiltersObject = (filtersObj: FiltersListType) => {
   const paramsKeys = Object.keys(filtersObj) as Array<keyof FiltersListType>;
@@ -11,6 +17,8 @@ export const parseFiltersObject = (filtersObj: FiltersListType) => {
           ? withDefault(NumberParam, priceRangeValues.minPrice)
           : key === 'maxPrice'
           ? withDefault(NumberParam, priceRangeValues.maxPrice)
+          : key === 'sort'
+          ? withDefault(StringParam, sortTypes.PRICE_LOW_TO_HIGH)
           : withDefault(ArrayParam, []),
     };
   });

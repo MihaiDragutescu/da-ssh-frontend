@@ -49,7 +49,12 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
   const [queryParams, setQueryParams] = useQueryParams(paramKeysObj);
 
   const checkNoFiltersState = () => {
-    props.handleNoFilters(_.isEqual(activeFilters, noFiltersState));
+    props.handleNoFilters(
+      _.isEqual(
+        _.omit(activeFilters, ['sort']),
+        _.omit(noFiltersState, ['sort'])
+      )
+    );
   };
 
   const resetCachedProducts = async () => {

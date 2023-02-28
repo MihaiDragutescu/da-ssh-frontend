@@ -9,10 +9,10 @@ const queryParams = getQueryParams(window.location.search);
 
 for (const [key, value] of Object.entries(queryParams)) {
   const myKey = key as keyof FiltersListType;
-  if (myKey !== 'minPrice' && myKey !== 'maxPrice') {
+  if (!['minPrice', 'maxPrice', 'sort'].includes(myKey)) {
     (initialState[myKey] as string[]) = value as string[];
   } else {
-    (initialState[myKey] as number) = value as number;
+    (initialState[myKey] as string) = value as string;
   }
 }
 

@@ -1,9 +1,22 @@
 import FilterPill from '@Components/ui/FilterPill';
 import { ProductsListActions } from '@Types/productsListActions';
-import { useState } from 'react';
-import { useGetFiltersQuery } from '@Store/index';
+import { useState, useEffect } from 'react';
+import {
+  AppDispatch,
+  resetCurrentPage,
+  RootState,
+  updateActiveFilters,
+  useGetFiltersQuery,
+  useGetFilteredProductsQuery,
+} from '@Store/index';
 import ResponseMessage from '@Components/ui/ResponseMessage';
+import { useDispatch, useSelector } from 'react-redux';
+import useResetCachedProducts from '@Hooks/useResetCachedProducts';
+import { parseFiltersObject } from '@Utils/parseFiltersObject';
+import { useQueryParams } from 'use-query-params';
+import { initialFiltersState } from '@Utils/constants';
 import './ProductsSort.scss';
+import { sortTypes } from '@App/types/sortTypes';
 
 interface ProductsSortProps {
   visible: boolean;
@@ -12,10 +25,29 @@ interface ProductsSortProps {
 const ProductsSort: React.FC<ProductsSortProps> = (
   props: ProductsSortProps
 ) => {
-  const [activeSort, setActiveSort] = useState('Price - Low to High');
+  const dispatch = useDispatch<AppDispatch>();
+  const activeFilters = useSelector((state: RootState) => state.filters);
+  const { refetch } = useGetFilteredProductsQuery({
+    page: 1,
+    filtersList: activeFilters,
+  });
+  const [activeSort, setActiveSort] = useState<string>(
+    activeFilters.sort ?? sortTypes.PRICE_LOW_TO_HIGH
+  );
+  const { resetCache } = useResetCachedProducts();
+  const paramKeysObj = parseFiltersObject(initialFiltersState);
+  const [queryParams, setQueryParams] = useQueryParams(paramKeysObj);
 
-  const handleClick = (id: string) => {
-    setActiveSort(id);
+  const resetCachedProducts = async () => {
+    await resetCache();
+    refetch();
+  };
+
+  const handleClick = (sortType: string) => {
+    setActiveSort(sortType);
+    dispatch(resetCurrentPage());
+    dispatch(updateActiveFilters({ filter: 'sort', value: sortType }));
+    resetCachedProducts();
   };
 
   const sortItems = useGetFiltersQuery();
@@ -41,6 +73,19 @@ const ProductsSort: React.FC<ProductsSortProps> = (
         );
       });
   }
+
+  useEffect(() => {
+    setActiveSort(activeFilters.sort ?? sortTypes.PRICE_LOW_TO_HIGH);
+    if (activeFilters.sort !== sortTypes.PRICE_LOW_TO_HIGH) {
+      setQueryParams({
+        sort: activeFilters.sort,
+      });
+    } else {
+      setQueryParams({
+        sort: undefined,
+      });
+    }
+  }, [activeFilters]);
 
   return (
     <div className={`products-sort ${!props.visible ? 'hidden' : ''}`}>

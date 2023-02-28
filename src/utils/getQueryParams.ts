@@ -8,8 +8,7 @@ export const getQueryParams = (queryString: string) => {
     value = decodeURI(value);
     if (
       params[myKey] !== undefined &&
-      myKey !== 'minPrice' &&
-      myKey !== 'maxPrice'
+      !['minPrice', 'maxPrice', 'sort'].includes(myKey)
     ) {
       if (!Array.isArray(params[myKey])) {
         (params[myKey] as string[]) = [value];
@@ -17,8 +16,7 @@ export const getQueryParams = (queryString: string) => {
       (params[myKey] as string[]).push(value);
     } else if (
       params[myKey] === undefined &&
-      myKey !== 'minPrice' &&
-      myKey !== 'maxPrice'
+      !['minPrice', 'maxPrice', 'sort'].includes(myKey)
     ) {
       (params[myKey] as string[]) = [value];
     } else {
