@@ -37,6 +37,9 @@ const ProductsSort: React.FC<ProductsSortProps> = (
   const { resetCache } = useResetCachedProducts();
   const paramKeysObj = parseFiltersObject(initialFiltersState);
   const [queryParams, setQueryParams] = useQueryParams(paramKeysObj);
+  const sortButton = document.querySelector(
+    'button.products-actions__sort'
+  ) as HTMLElement;
 
   const resetCachedProducts = async () => {
     await resetCache();
@@ -48,6 +51,7 @@ const ProductsSort: React.FC<ProductsSortProps> = (
     dispatch(resetCurrentPage());
     dispatch(updateActiveFilters({ filter: 'sort', value: sortType }));
     resetCachedProducts();
+    sortButton.focus();
   };
 
   const sortItems = useGetFiltersQuery();
@@ -86,6 +90,13 @@ const ProductsSort: React.FC<ProductsSortProps> = (
       });
     }
   }, [activeFilters]);
+
+  useEffect(() => {
+    const focusedButton = document.querySelector(
+      '.products-sort  .ssh-sort-pill button'
+    ) as HTMLElement;
+    focusedButton && focusedButton.focus();
+  }, [props.visible]);
 
   return (
     <div className={`products-sort ${!props.visible ? 'hidden' : ''}`}>

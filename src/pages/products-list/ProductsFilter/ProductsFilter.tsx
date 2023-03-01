@@ -178,33 +178,8 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
     const focusedButton = document.querySelector(
       '.products-filters  .ssh-filter-pill button'
     ) as HTMLElement;
-
     focusedButton && focusedButton.focus();
   }, [props.visible]);
-
-  useEffect(() => {
-    const lastFilterButton = document.querySelector(
-      '.products-filters__category ul li:last-child button'
-    ) as HTMLElement;
-
-    const filterButton = document.querySelector(
-      'button.products-actions__filters'
-    ) as HTMLElement;
-
-    const eventHandler = (e: KeyboardEvent) => {
-      if (e.key === 'Tab') {
-        filterButton && filterButton.focus();
-      }
-    };
-
-    lastFilterButton &&
-      lastFilterButton.addEventListener('keydown', eventHandler);
-
-    return () => {
-      lastFilterButton &&
-        lastFilterButton.removeEventListener('keydown', eventHandler);
-    };
-  }, []);
 
   useEffect(() => {
     checkNoFiltersState();
