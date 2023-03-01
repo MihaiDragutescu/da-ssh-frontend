@@ -4,7 +4,6 @@ import ProductsSort from '../ProductsSort/ProductsSort';
 import { ReactComponent as Filter } from '@Assets/images/filters-icon.svg';
 import { ReactComponent as Sort } from '@Assets/images/sort-icon.svg';
 import { useState } from 'react';
-import { ReactComponent as Info } from '@Assets/images/info.svg';
 import './ProductsActions.scss';
 
 const ProductsActions: React.FC = () => {
@@ -62,7 +61,8 @@ const ProductsActions: React.FC = () => {
             }}
           >
             <span className='products-actions__filters-label'>
-              Filters {!noFilters && <Info />}
+              Filters
+              {!noFilters && <span className='active-filters'></span>}
             </span>
             <Filter />
           </button>

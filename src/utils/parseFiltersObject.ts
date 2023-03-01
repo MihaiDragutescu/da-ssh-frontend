@@ -18,7 +18,7 @@ export const parseFiltersObject = (filtersObj: FiltersListType) => {
           : key === 'maxPrice'
           ? withDefault(NumberParam, priceRangeValues.maxPrice)
           : key === 'sort'
-          ? withDefault(StringParam, sortTypes.PRICE_LOW_TO_HIGH)
+          ? withDefault(StringParam, sortTypes.NEWEST)
           : withDefault(ArrayParam, []),
     };
   });

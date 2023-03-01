@@ -32,7 +32,7 @@ const ProductsSort: React.FC<ProductsSortProps> = (
     filtersList: activeFilters,
   });
   const [activeSort, setActiveSort] = useState<string>(
-    activeFilters.sort ?? sortTypes.PRICE_LOW_TO_HIGH
+    activeFilters.sort ?? sortTypes.NEWEST
   );
   const { resetCache } = useResetCachedProducts();
   const paramKeysObj = parseFiltersObject(initialFiltersState);
@@ -79,8 +79,8 @@ const ProductsSort: React.FC<ProductsSortProps> = (
   }
 
   useEffect(() => {
-    setActiveSort(activeFilters.sort ?? sortTypes.PRICE_LOW_TO_HIGH);
-    if (activeFilters.sort !== sortTypes.PRICE_LOW_TO_HIGH) {
+    setActiveSort(activeFilters.sort ?? sortTypes.NEWEST);
+    if (activeFilters.sort !== sortTypes.NEWEST) {
       setQueryParams({
         sort: activeFilters.sort,
       });

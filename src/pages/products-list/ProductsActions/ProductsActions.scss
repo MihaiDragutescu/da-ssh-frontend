@@ -48,17 +48,21 @@
     display: flex;
     position: relative;
 
-    svg {
-      width: 16px;
+    .active-filters {
+      margin: 0;
+      width: 12px;
+      height: 12px;
       position: absolute;
       top: -4px;
       right: -16px;
+      background-color: $color-brown;
+      border-radius: 50%;
 
       @include for-size(mobile) {
-        width: 12px;
-        position: absolute;
-        top: -12px;
-        right: -14px;
+        width: 10px;
+        height: 10px;
+        top: -3px;
+        right: -13px;
       }
     }
   }

@@ -16,5 +16,5 @@ export const initialFiltersState: FiltersListType = {
   maxPrice: priceRangeValues.maxPrice,
   collection: [],
   category: [],
-  sort: sortTypes.PRICE_LOW_TO_HIGH,
+  sort: sortTypes.NEWEST,
 };

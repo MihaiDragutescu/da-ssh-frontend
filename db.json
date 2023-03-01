@@ -23,9 +23,9 @@
     { "id": "21", "type": "color", "name": "e7e7e7" },
     { "id": "22", "type": "color", "name": "323232" },
     { "id": "23", "type": "color", "name": "989898" },
-    { "id": "24", "type": "sort", "name": "Price - Low to High" },
-    { "id": "25", "type": "sort", "name": "Price - High to Low" },
-    { "id": "26", "type": "sort", "name": "Newest" }
+    { "id": "24", "type": "sort", "name": "Newest" },
+    { "id": "25", "type": "sort", "name": "Price - Low to High" },
+    { "id": "26", "type": "sort", "name": "Price - High to Low" }
   ],
   "collections": [
     {
