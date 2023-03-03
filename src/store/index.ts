@@ -3,11 +3,13 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import { sshApi } from './api';
 import filtersReducer from './slices/filtersSlice';
 import currentPageReducer from './slices/currentPageSlice';
+import cartReducer from './slices/cartSlice';
 
 export const store = configureStore({
   reducer: {
-    filters: filtersReducer,
+    cart: cartReducer,
     pages: currentPageReducer,
+    filters: filtersReducer,
     [sshApi.reducerPath]: sshApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
@@ -32,13 +34,20 @@ export {
   useGetCategoriesQuery,
 } from './api';
 
+export { updateCurrentPage, resetCurrentPage } from './slices/currentPageSlice';
+
 export {
   updateActiveFilters,
   updatePriceRange,
   resetActiveFilters,
 } from './slices/filtersSlice';
 
-export { updateCurrentPage, resetCurrentPage } from './slices/currentPageSlice';
+export {
+  addToCart,
+  updateCartItemQuantity,
+  removeFromCart,
+  clearCart,
+} from './slices/cartSlice';
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
