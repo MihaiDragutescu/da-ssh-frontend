@@ -121,4 +121,22 @@
       margin-top: -40px;
     }
   }
+
+  &__reset {
+    grid-area: 4 / 1 / 4 / 2;
+
+    @include for-size(mobile) {
+      grid-area: 5 / 1 / 5 / 3;
+    }
+
+    @include for-size(mobile-small) {
+      grid-area: auto;
+    }
+
+    button {
+      height: fit-content;
+      font-size: 28px;
+      padding: 8px 16px;
+    }
+  }
 }

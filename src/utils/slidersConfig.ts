@@ -36,9 +36,14 @@ export const productImagesSettings = {
   arrows: true,
   responsive: [
     {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
       breakpoint: 991,
       settings: {
-        infinite: false,
         arrows: false,
         vertical: true,
         verticalSwiping: true,

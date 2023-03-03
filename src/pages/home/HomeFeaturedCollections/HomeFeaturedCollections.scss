@@ -47,6 +47,12 @@
       }
     }
 
+    .collection-card:not(.collection-card-large) {
+      img {
+        aspect-ratio: 0.83;
+      }
+    }
+
     & > div:nth-child(3n + 1),
     & > div:nth-child(3n + 2) {
       a {

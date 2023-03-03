@@ -5,17 +5,31 @@ import useBreadcrumbs, {
   BreadcrumbsRoute,
 } from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
-import { products } from '@Utils/mocks';
+import { useGetAllProductsQuery } from '@Store/index';
+import useSetQueryParams from '@Hooks/useSetQueryParams';
 import './Breadcrumbs.scss';
 
 const Breadcrumbs: React.FC = () => {
-  const productsById: { [key: string]: string } = products.reduce(
-    (acc, cur) => ({ ...acc, [cur.id]: cur.name }),
-    {}
-  );
+  const { data, error } = useGetAllProductsQuery();
+  const { route } = useSetQueryParams(RouterPaths.SHOP);
+
+  let productsById: {
+    [key: string]: string;
+  };
+
+  if (!error && data) {
+    productsById = data.reduce(
+      (acc, cur) => ({ ...acc, [cur.id]: cur.name }),
+      {}
+    );
+  }
 
   const DynamicProductBreadcrumb: BreadcrumbComponentType = ({ match }) => {
-    return <span>{productsById[match.params.id ?? '']}</span>;
+    return productsById ? (
+      <span>{productsById[match.params.id ?? '']}</span>
+    ) : (
+      <></>
+    );
   };
 
   const routes: BreadcrumbsRoute[] = [
@@ -28,10 +42,13 @@ const Breadcrumbs: React.FC = () => {
   const breadcrumbs = useBreadcrumbs(routes);
 
   const breadcrumbsNew = breadcrumbs.map(({ match, breadcrumb }, index) => {
+    const myRoute =
+      match.pathname === RouterPaths.SHOP ? route : match.pathname;
+
     return (
       <li key={match.pathname} className='ssh-breadcrumbs__item'>
         {index !== 0 ? <Arrow /> : ''}
-        <Link to={match.pathname} className='ssh-breadcrumbs__link'>
+        <Link to={myRoute} className='ssh-breadcrumbs__link'>
           {breadcrumb}
         </Link>
       </li>

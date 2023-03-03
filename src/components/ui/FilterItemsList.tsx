@@ -1,38 +1,47 @@
 import FilterPill from './FilterPill';
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@Types/filtersList';
 import { ProductsListActions } from '@Types/productsListActions';
+import ResponseMessage from './ResponseMessage';
 
 interface FilterListProps {
-  list: { id: string; name: string }[];
-  type: keyof FilterType;
-  activeFilter?: string;
-  handleClick: (type: keyof FilterType, filter: string) => void;
+  list?: string[];
+  type: keyof FiltersListType;
+  activeFilter?: string[];
+  handleClick: (type: keyof FiltersListType, filter: string) => void;
 }
 
 const FiltersList: React.FC<FilterListProps> = (props: FilterListProps) => {
   const filterPill = (
-    filterType: keyof FilterType,
-    filter: { id: string; name: string }
+    filterType: keyof FiltersListType,
+    filter: string,
+    key: number
   ) => {
     return (
       <FilterPill
-        key={filter.id}
+        key={key}
         type={ProductsListActions.FILTER}
         handleClick={() => {
-          props.handleClick(filterType, filter.id);
+          props.handleClick(filterType, filter);
         }}
-        active={filter.id === props.activeFilter}
+        active={props.activeFilter?.includes(filter)}
       >
-        {filter.name}
+        {filter}
       </FilterPill>
     );
   };
 
-  const filtersList = props.list.map((item) => {
-    return filterPill(props.type, item);
-  });
+  let filtersItemsList;
+  if (props.list === undefined) {
+    filtersItemsList = (
+      <ResponseMessage>Error fetching filter data.</ResponseMessage>
+    );
+  } else {
+    filtersItemsList = props.list.map((item, index) => {
+      return filterPill(props.type, item, index);
+    });
+  }
 
-  return <>{filtersList}</>;
+  return <>{filtersItemsList}</>;
 };
 
 export default FiltersList;

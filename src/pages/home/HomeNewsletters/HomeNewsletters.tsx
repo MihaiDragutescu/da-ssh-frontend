@@ -32,6 +32,7 @@ const HomeNewsletters: React.FC = () => {
               className='home-newsletters__input'
               placeholder='Email...'
               type='email'
+              required
               value={inputValue}
               onChange={handleChange}
             />

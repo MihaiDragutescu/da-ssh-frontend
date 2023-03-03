@@ -7,10 +7,11 @@ import { ProductType } from '@Types/product';
 import { RouterPaths } from '@Types/routerPaths';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { productsSliderSettings } from '@App/utils/slidersConfig';
+import { productsSliderSettings } from '@Utils/slidersConfig';
 import './FeaturedProducts.scss';
 import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import useSetQueryParams from '@App/hooks/useSetQueryParams';
 
 interface FeaturedProductsProps {
   products: ProductType[];
@@ -21,6 +22,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   props: FeaturedProductsProps
 ) => {
   const navigate = useNavigate();
+  const { route } = useSetQueryParams(RouterPaths.SHOP);
   const sliderRef = useRef<Slider>(null);
 
   const goToNext = () => {
@@ -32,7 +34,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   };
 
   const handleClick = () => {
-    navigate(RouterPaths.SHOP);
+    navigate(route);
   };
 
   useEffect(() => {
@@ -70,10 +72,11 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
             return (
               <ProductCard
                 key={product.id}
+                id={product.id}
                 image={product.images[0]}
                 name={product.name}
+                brand={product.brand}
                 price={product.price}
-                link={product.link}
               />
             );
           })}

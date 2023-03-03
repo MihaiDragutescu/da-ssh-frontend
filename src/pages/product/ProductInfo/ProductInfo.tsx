@@ -1,10 +1,9 @@
 import Accordion from '@Components/ui/Accordion';
 import Button from '@Components/ui/Button';
 import { ProductType } from '@Types/product';
-import { FilterType } from '@Types/filter';
+import { FiltersListType } from '@Types/filtersList';
 import { ReactComponent as Heart } from '@Assets/images/heart-icon.svg';
 import { ReactComponent as HeartFilled } from '@Assets/images/heart-filled-icon.svg';
-import { sizes, accordionList } from '@Utils/mocks';
 import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import ProductImages from '../ProductImages/ProductImages';
@@ -19,17 +18,19 @@ interface ProductState {
   size?: string;
   color?: string;
   image?: string;
+  quantity?: number;
 }
 
 const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   const [productInfo, setProductInfo] = useState<ProductState>({});
   const [productInWishlist, setProductInWishlist] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const toggleWishlist = () => {
     setProductInWishlist(!productInWishlist);
   };
 
-  const handleClick = (filter: keyof FilterType, value: string | number) => {
+  const handleClick = (filter: keyof FiltersListType, value: string) => {
     setProductInfo((prev) => {
       return {
         ...prev,
@@ -39,14 +40,18 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   };
 
   const colorsList = (
-    <ColorsList activeColor={productInfo.color} handleClick={handleClick} />
+    <ColorsList
+      colors={props.product.color}
+      activeColor={[productInfo.color ?? '']}
+      handleClick={handleClick}
+    />
   );
 
   const sizesList = (
     <FilterItemsList
-      list={sizes}
+      list={props.product.size}
       type='size'
-      activeFilter={productInfo.size}
+      activeFilter={[productInfo.size ?? '']}
       handleClick={handleClick}
     />
   );
@@ -55,13 +60,34 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     console.log('Added to Cart');
   };
 
+  const handleAddQuantity = () => {
+    const newQuantity = quantity >= 99 ? 99 : quantity + 1;
+
+    setProductInfo((prev) => {
+      return { ...prev, quantity: newQuantity };
+    });
+
+    setQuantity(newQuantity);
+  };
+
+  const handleSubtractQuantity = () => {
+    const newQuantity = quantity <= 1 ? 1 : quantity - 1;
+
+    setProductInfo((prev) => {
+      return { ...prev, quantity: newQuantity };
+    });
+
+    setQuantity(newQuantity);
+  };
+
   useEffect(() => {
     setProductInfo({
-      size: '3',
-      color: '6',
+      size: props.product.size ? props.product.size[0] : '',
+      color: props.product.color[0],
+      quantity: 1,
       image: props.product.images[0],
     });
-  }, []);
+  }, [props.product.id]);
 
   return (
     <section className='product-info'>
@@ -96,17 +122,38 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               </div>
               <ul className='product-info__color-list'>{colorsList}</ul>
             </div>
-            <div className='product-info__size'>
-              <div className='product-info__subtitle'>
-                <span>Size</span>
+            {props.product.size && (
+              <div className='product-info__size'>
+                <div className='product-info__subtitle'>
+                  <span>Size</span>
+                </div>
+                <ul className='product-info__size-list'>{sizesList}</ul>
               </div>
-              <ul className='product-info__size-list'>{sizesList}</ul>
-            </div>
+            )}
             <div className='product-info__accordion'>
-              <Accordion accordionList={accordionList} />
+              <Accordion accordionList={props.product.information ?? []} />
             </div>
-            <div className='product-info__button'>
-              <Button onClick={handleButtonClick}>Add to Cart</Button>
+            <div className='product-info__footer'>
+              <div className='product-info__quantity'>
+                <div className='product-info__quantity-box'>
+                  <button
+                    className='quantity-button quantity-button--subtract'
+                    onClick={handleSubtractQuantity}
+                  >
+                    -
+                  </button>
+                  <span className='product-quantity'>{quantity}</span>
+                  <button
+                    className='quantity-button quantity-button--add'
+                    onClick={handleAddQuantity}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div className='product-info__button'>
+                <Button onClick={handleButtonClick}>Add to Cart</Button>
+              </div>
             </div>
           </div>
         </div>

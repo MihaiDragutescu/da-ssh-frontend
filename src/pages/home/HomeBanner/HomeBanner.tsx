@@ -3,12 +3,14 @@ import image from '@Assets/images/home-banner-img.png';
 import { ReactComponent as Icon } from '@Assets/images/button-icon.svg';
 import { RouterPaths } from '@Types/routerPaths';
 import { useNavigate } from 'react-router-dom';
+import useSetQueryParams from '@Hooks/useSetQueryParams';
 import './HomeBanner.scss';
 
 const HomeBanner: React.FC = () => {
   const navigate = useNavigate();
+  const { route } = useSetQueryParams(RouterPaths.SHOP);
   const handleClick = () => {
-    navigate(RouterPaths.SHOP);
+    navigate(route);
   };
 
   return (
