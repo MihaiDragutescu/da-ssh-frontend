@@ -27,6 +27,7 @@ export {
   useGetFeaturedProductsQuery,
   useGetRelatedProductsQuery,
   useGetFilteredProductsQuery,
+  useGetCartProductsQuery,
   useGetProductQuery,
   useGetFeaturedCollectionsQuery,
   useGetFiltersQuery,

@@ -77,6 +77,21 @@ export const sshApi = createApi({
           return currentArg !== previousArg;
         },
       }),
+      getCartProducts: builder.query<ProductType[], { productIds: string[] }>({
+        query: ({ productIds }) => {
+          const queryParams = productIds
+            .reduce((acc, id) => acc + `id=${id}&`, '?')
+            .slice(0, -1);
+          return `/products${queryParams}`;
+        },
+        transformResponse: (apiResponse: ProductType[], meta, arg) => {
+          if (!arg.productIds.length) {
+            return [];
+          }
+
+          return apiResponse;
+        },
+      }),
       getProduct: builder.query<ProductType, string>({
         query: (id) => `/products/${id}`,
       }),
@@ -101,6 +116,7 @@ export const {
   useGetFeaturedProductsQuery,
   useGetRelatedProductsQuery,
   useGetFilteredProductsQuery,
+  useGetCartProductsQuery,
   useGetProductQuery,
   useGetFeaturedCollectionsQuery,
   useGetFiltersQuery,

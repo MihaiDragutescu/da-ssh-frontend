@@ -159,5 +159,19 @@
     @include for-size(mobile) {
       font-size: calc($card-text-size - 12px);
     }
+
+    svg {
+      height: 36px;
+      margin: 0 auto;
+    }
+
+    .ssh-spinner {
+      padding: 0 !important;
+      height: 36px !important;
+
+      svg {
+        height: 100%;
+      }
+    }
   }
 }

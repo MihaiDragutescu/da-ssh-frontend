@@ -1,6 +1,4 @@
-import { ProductType } from '@Types/product';
-
 export type cartItemType = {
-  product: ProductType;
+  productId: string;
   quantity: number;
 };
