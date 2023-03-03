@@ -161,13 +161,29 @@
     }
 
     svg {
-      height: 36px;
+      height: $card-text-size;
       margin: 0 auto;
+
+      @include for-size(tablet-portrait) {
+        height: calc($card-text-size - 4px);
+      }
+
+      @include for-size(mobile) {
+        height: calc($card-text-size - 12px);
+      }
     }
 
     .ssh-spinner {
       padding: 0 !important;
-      height: 36px !important;
+      height: $card-text-size !important;
+
+      @include for-size(tablet-portrait) {
+        height: calc($card-text-size - 4px) !important;
+      }
+
+      @include for-size(mobile) {
+        height: calc($card-text-size - 12px) !important;
+      }
 
       svg {
         height: 100%;
