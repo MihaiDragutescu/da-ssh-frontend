@@ -10,7 +10,7 @@ const ProductsListPage = () => {
   useEffect(() => {
     const goHome = () => {
       if (window.location.pathname === RouterPaths.SHOP) {
-        navigate(RouterPaths.HOME);
+        navigate(-1);
       }
     };
 

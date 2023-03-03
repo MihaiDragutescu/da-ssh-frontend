@@ -13,7 +13,6 @@ import Header from '@Components/layout/header/Header';
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import Breadcrumbs from '@Components/ui/Breadcrumbs';
-import { RemoveTrailingSlash } from '@Utils/RemoveTrailingSlash';
 import { QueryParamProvider } from 'use-query-params';
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
 import './App.scss';
@@ -34,7 +33,6 @@ const App = () => {
         ) : (
           ''
         )}
-        <RemoveTrailingSlash />
         <QueryParamProvider adapter={ReactRouter6Adapter}>
           <Routes>
             <Route path='*' element={<Navigate to={RouterPaths.NOT_FOUND} />} />

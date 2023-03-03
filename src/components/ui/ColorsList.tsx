@@ -3,7 +3,7 @@ import { FiltersListType } from '@Types/filtersList';
 import ResponseMessage from './ResponseMessage';
 
 interface ColorsListProps {
-  colors: string[] | undefined;
+  colors?: string[];
   activeColor?: string[];
   handleClick: (type: keyof FiltersListType, value: string) => void;
 }

@@ -42,7 +42,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   const colorsList = (
     <ColorsList
       colors={props.product.color}
-      activeColor={[productInfo.color as string]}
+      activeColor={[productInfo.color ?? '']}
       handleClick={handleClick}
     />
   );
@@ -51,7 +51,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     <FilterItemsList
       list={props.product.size}
       type='size'
-      activeFilter={[productInfo.size as string]}
+      activeFilter={[productInfo.size ?? '']}
       handleClick={handleClick}
     />
   );

@@ -4,6 +4,7 @@ import { CollectionType, FilterType, CategoryType } from '@Types/filter';
 import { FiltersListType } from '@Types/filtersList';
 import { paginateNumber } from '@Utils/constants';
 import { sortTypes } from '@Types/sortTypes';
+import { isStringArray } from '@Utils/isTypeGuards';
 
 export const sshApi = createApi({
   reducerPath: 'sshApi',
@@ -33,22 +34,22 @@ export const sshApi = createApi({
             } else if (
               ['size', 'brand', 'color', 'collection', 'category'].includes(key)
             ) {
-              const params = (value as string[])
-                .map((val: string) => {
-                  return `${key}_like=${val}&`;
-                })
-                .join('');
-
-              queryParams += params;
+              if (isStringArray(value)) {
+                const params = value
+                  .map((val: string) => `${key}_like=${val}&`)
+                  .join('');
+                queryParams += params;
+              }
             }
           }
           queryParams = queryParams.slice(0, -1);
-          let sortParam;
-          filtersList.sort === sortTypes.PRICE_HIGHT_TO_LOW
-            ? (sortParam = '&_sort=price&_order=desc')
-            : filtersList.sort === sortTypes.NEWEST
-            ? (sortParam = '')
-            : (sortParam = '&_sort=price');
+
+          let sortParam = '';
+          if (filtersList.sort === sortTypes.PRICE_HIGH_TO_LOW) {
+            sortParam = '&_sort=price&_order=desc';
+          } else if (filtersList.sort === sortTypes.PRICE_LOW_TO_HIGH) {
+            sortParam = '&_sort=price';
+          }
 
           return `/products${queryParams}&_page=${page}&_limit=${paginateNumber}${sortParam}`;
         },

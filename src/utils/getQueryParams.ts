@@ -1,28 +1,26 @@
 import { FiltersListType } from '@Types/filtersList';
+import { isStringArray } from './isTypeGuards';
 
 export const getQueryParams = (queryString: string) => {
-  const params: FiltersListType = {};
+  return Array.from(new URLSearchParams(queryString).entries()).reduce(
+    (acc, [key, value]) => {
+      const myKey = key as keyof FiltersListType;
+      const myParams = acc[myKey];
+      value = decodeURI(value);
 
-  new URLSearchParams(queryString).forEach(function (value, key) {
-    const myKey = key as keyof FiltersListType;
-    value = decodeURI(value);
-    if (
-      params[myKey] !== undefined &&
-      !['minPrice', 'maxPrice', 'sort'].includes(myKey)
-    ) {
-      if (!Array.isArray(params[myKey])) {
-        (params[myKey] as string[]) = [value];
+      if (!['minPrice', 'maxPrice', 'sort'].includes(myKey)) {
+        if (myParams !== undefined) {
+          if (isStringArray(myParams)) {
+            return { ...acc, [key]: [...myParams, value] };
+          }
+        } else {
+          return { ...acc, [key]: [value] };
+        }
+      } else {
+        return { ...acc, [key]: value };
       }
-      (params[myKey] as string[]).push(value);
-    } else if (
-      params[myKey] === undefined &&
-      !['minPrice', 'maxPrice', 'sort'].includes(myKey)
-    ) {
-      (params[myKey] as string[]) = [value];
-    } else {
-      (params[myKey] as string) = value;
-    }
-  });
-
-  return params;
+      return acc;
+    },
+    {} as FiltersListType
+  );
 };

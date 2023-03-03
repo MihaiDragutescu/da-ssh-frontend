@@ -168,7 +168,7 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
           : setQueryParams({ [filterSelected]: filterValue });
       } else {
         setQueryParams({
-          [filterSelected as string]: activeFilters[filterSelected],
+          [filterSelected]: activeFilters[filterSelected],
         });
       }
     }

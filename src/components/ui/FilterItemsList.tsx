@@ -4,7 +4,7 @@ import { ProductsListActions } from '@Types/productsListActions';
 import ResponseMessage from './ResponseMessage';
 
 interface FilterListProps {
-  list: string[] | undefined;
+  list?: string[];
   type: keyof FiltersListType;
   activeFilter?: string[];
   handleClick: (type: keyof FiltersListType, filter: string) => void;
