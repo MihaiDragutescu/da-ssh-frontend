@@ -11,8 +11,8 @@ import { useState, useEffect } from 'react';
 import Spinner from '@Components/ui/Spinner';
 import { ReactComponent as Check } from '@Assets/images/check-icon.svg';
 import { timeout } from '@Utils/timeout';
-import { AppDispatch, addToCart } from '@Store/index';
-import { useDispatch } from 'react-redux';
+import { AppDispatch, addToCart, RootState } from '@Store/index';
+import { useDispatch, useSelector } from 'react-redux';
 import './ProductInfo.scss';
 
 interface ProductInfoProps {
@@ -33,6 +33,7 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
+  const cart = useSelector((state: RootState) => state.cart);
 
   const toggleWishlist = () => {
     setProductInWishlist(!productInWishlist);
@@ -107,6 +108,14 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
       image: props.product.images[0],
     });
   }, [props.product.id]);
+
+  useEffect(() => {
+    const localStorageCart = {
+      ...JSON.parse(localStorage.getItem('cart') ?? '{}'),
+      ...cart.cartItems,
+    };
+    localStorage.setItem('cart', JSON.stringify(localStorageCart));
+  }, [cart]);
 
   return (
     <section className='product-info'>
