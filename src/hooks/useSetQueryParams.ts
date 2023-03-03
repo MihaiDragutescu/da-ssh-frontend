@@ -12,8 +12,7 @@ const useSetQueryParams = (route: string) => {
 
   return {
     route: Object.entries(activeFilters)
-      .reduce((acc, obj) => {
-        const [key, value] = obj;
+      .reduce((acc, [key, value]) => {
         if (typeof value !== 'object') {
           if (
             ((key === 'minPrice' || key === 'maxPrice') &&
