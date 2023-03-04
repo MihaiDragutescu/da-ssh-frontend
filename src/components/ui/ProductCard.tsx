@@ -1,19 +1,14 @@
 import Button from '@Components/ui/Button';
 import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
-import Spinner from '@Components/ui/Spinner';
-import { ReactComponent as Check } from '@Assets/images/check-icon.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import {
   updateActiveFilters,
   AppDispatch,
   resetActiveFilters,
-  addToCart,
 } from '@Store/index';
 import { useDispatch } from 'react-redux';
 import useResetCachedProducts from '@Hooks/useResetCachedProducts';
-import { useState } from 'react';
-import { timeout } from '@Utils/timeout';
 import './ProductCard.scss';
 
 interface ProductCardProps {
@@ -32,8 +27,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
   const dispatch = useDispatch<AppDispatch>();
-  const [isAddingToCart, setIsAddingToCart] = useState(false);
-  const [addedToCart, setAddedToCart] = useState(false);
+  const navigate = useNavigate();
   const { resetCache } = useResetCachedProducts();
   const route =
     props.category || props.collection
@@ -56,14 +50,8 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
     }
   };
 
-  const handleButtonClick = async () => {
-    setIsAddingToCart(true);
-    dispatch(addToCart({ productId: props.id, quantity: 1 }));
-    await timeout(500);
-    setIsAddingToCart(false);
-    setAddedToCart(true);
-    await timeout(1000);
-    setAddedToCart(false);
+  const handleButtonClick = () => {
+    navigate(route);
   };
 
   return (
@@ -109,13 +97,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
               className='product-card__button'
               onClick={handleButtonClick}
             >
-              {isAddingToCart ? (
-                <Spinner />
-              ) : addedToCart ? (
-                <Check />
-              ) : (
-                'Add to basket'
-              )}
+              Add to basket
             </Button>
           )}
         </div>

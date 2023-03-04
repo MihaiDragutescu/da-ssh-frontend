@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { cartItemType } from '@Types/cartItem';
+import { cartItemType, cartProductType } from '@Types/cartItem';
+import _ from 'lodash';
 
 const localStorageCart = {
   ...JSON.parse(localStorage.getItem('cart') ?? '{}'),
@@ -17,23 +18,24 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (
       state,
-      action: PayloadAction<{ productId: string; quantity: number }>
+      action: PayloadAction<{ product: cartProductType; quantity: number }>
     ) => {
-      const itemInCart = state.cartItems.find(
-        (item) => item.productId === action.payload.productId
+      const itemInCart = state.cartItems.find((item) =>
+        _.isEqual(item.product, action.payload.product)
       );
+
       if (itemInCart) {
         itemInCart.quantity += action.payload.quantity;
       } else {
         state.cartItems.push({
-          productId: action.payload.productId,
+          product: action.payload.product,
           quantity: action.payload.quantity,
         });
       }
     },
     removeFromCart: (state, action: PayloadAction<{ productId: string }>) => {
       state.cartItems = [...state.cartItems].filter(
-        (item) => item.productId !== action.payload.productId
+        (item) => item.product.id !== action.payload.productId
       );
     },
     updateCartItemQuantity: (
@@ -41,7 +43,7 @@ export const cartSlice = createSlice({
       action: PayloadAction<{ productId: string; quantity: number }>
     ) => {
       const cartItem = state.cartItems.find(
-        (item) => item.productId === action.payload.productId
+        (item) => item.product.id === action.payload.productId
       );
 
       if (cartItem) {

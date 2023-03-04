@@ -13,6 +13,7 @@ import { ReactComponent as Check } from '@Assets/images/check-icon.svg';
 import { timeout } from '@Utils/timeout';
 import { AppDispatch, addToCart, RootState } from '@Store/index';
 import { useDispatch, useSelector } from 'react-redux';
+import { cartProductType } from '@Types/cartItem';
 import './ProductInfo.scss';
 
 interface ProductInfoProps {
@@ -67,9 +68,22 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
 
   const handleButtonClick = async () => {
     setIsAddingToCart(true);
+
+    const product: cartProductType = {
+      id: props.product.id,
+      name: props.product.name,
+      price: props.product.price,
+      size: productInfo.size,
+      color: productInfo.color ?? '',
+      brand: props.product.brand ?? '',
+      collection: props.product.collection ?? '',
+      category: props.product.category ?? '',
+      images: props.product.images,
+    };
+
     dispatch(
       addToCart({
-        productId: props.product.id,
+        product: product,
         quantity: productInfo.quantity ?? 1,
       })
     );
