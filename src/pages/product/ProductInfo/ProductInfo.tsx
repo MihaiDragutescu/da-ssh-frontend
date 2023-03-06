@@ -76,8 +76,6 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
       size: productInfo.size,
       color: productInfo.color ?? '',
       brand: props.product.brand ?? '',
-      collection: props.product.collection ?? '',
-      category: props.product.category ?? '',
       images: props.product.images,
     };
 

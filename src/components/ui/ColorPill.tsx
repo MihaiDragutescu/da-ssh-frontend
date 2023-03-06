@@ -1,6 +1,6 @@
 interface ColorPillProps {
   active?: boolean;
-  handleClick: () => void;
+  handleClick?: () => void;
   color: string;
 }
 

@@ -1,0 +1,45 @@
+@use '@Styles/' as *;
+
+.cart-list {
+  &__container {
+    padding: calc($vertical-padding-desktop / 4) 30px
+      calc($vertical-padding-desktop / 2) 30px;
+  }
+
+  &__table {
+    width: 100%;
+
+    &-head {
+      display: flex;
+      border-bottom: $border-solid-menu;
+
+      div:first-child {
+        width: 55%;
+      }
+    }
+
+    &-title {
+      width: 15%;
+      padding-bottom: 20px;
+
+      span {
+        font-family: $font-secondary;
+        color: $color-brown-dark;
+        line-height: 1;
+        font-size: 28px;
+      }
+    }
+
+    .table-title-price {
+      text-align: start;
+    }
+
+    .table-title-quantity {
+      text-align: center;
+    }
+
+    .table-title-total {
+      text-align: end;
+    }
+  }
+}

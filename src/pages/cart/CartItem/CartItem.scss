@@ -1,0 +1,94 @@
+@use '@Styles/' as *;
+
+.cart-item {
+  display: flex;
+  height: 185px;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: $border-solid-menu;
+
+  div {
+    max-height: 185px;
+    color: $color-brown-dark;
+  }
+
+  span {
+    color: $color-brown;
+    margin-right: 8px;
+    font-weight: 300;
+  }
+
+  &__price,
+  &__quantity,
+  &__total {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  &__info {
+    display: flex;
+    width: 55%;
+
+    &-image {
+      img {
+        height: 100%;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    &-name {
+      font-weight: 400;
+      font-size: 28px;
+    }
+
+    &-color {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 4px;
+      }
+
+      .ssh-color-pill {
+        display: flex;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 0 3px 0 !important;
+
+        button {
+          cursor: initial;
+        }
+      }
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__remove {
+    margin-left: 16px;
+    padding: 4px;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+    }
+  }
+}

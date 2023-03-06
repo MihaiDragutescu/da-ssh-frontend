@@ -1,5 +1,5 @@
 import Button from '@Components/ui/Button';
-import image from '@Assets/images/home-banner-img.png';
+import image from '@Assets/images/home-banner-img.webp';
 import { ReactComponent as Icon } from '@Assets/images/button-icon.svg';
 import { RouterPaths } from '@Types/routerPaths';
 import { useNavigate } from 'react-router-dom';

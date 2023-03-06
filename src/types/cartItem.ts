@@ -5,8 +5,6 @@ export type cartProductType = {
   size?: string;
   brand: string;
   color: string;
-  collection: string;
-  category: string;
   images: string[];
 };
 
