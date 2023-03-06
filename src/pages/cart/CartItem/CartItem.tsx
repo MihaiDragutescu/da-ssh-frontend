@@ -2,6 +2,14 @@ import { cartItemType } from '@Types/cartItem';
 import ColorPill from '@Components/ui/ColorPill';
 import { ReactComponent as Remove } from '@Assets/images/menu-xmark.svg';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  AppDispatch,
+  RootState,
+  removeFromCart,
+  updateCartItemQuantity,
+} from '@Store/index';
+import ProductQuantity from '@Components/ui/ProductQuantity';
 import './CartItem.scss';
 
 interface cartItemInterface {
@@ -9,7 +17,32 @@ interface cartItemInterface {
 }
 
 const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const cart = useSelector((state: RootState) => state.cart);
   const totalPrice = props.cartItem.product.price * props.cartItem.quantity;
+
+  const handleRemoveProduct = () => {
+    dispatch(removeFromCart({ product: props.cartItem.product }));
+  };
+
+  const handleUpdateQuantity = (amount: number) => {
+    dispatch(
+      updateCartItemQuantity({
+        product: props.cartItem.product,
+        quantity:
+          props.cartItem.quantity + amount > 0
+            ? props.cartItem.quantity + amount
+            : 1,
+      })
+    );
+  };
+
+  useEffect(() => {
+    const localStorageCart = {
+      ...cart.cartItems,
+    };
+    localStorage.setItem('cart', JSON.stringify(localStorageCart));
+  }, [cart]);
 
   useEffect(() => {
     const colorPills = document.querySelectorAll(
@@ -48,13 +81,17 @@ const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
         </div>
       </div>
       <div className='cart-item__price'>{props.cartItem.product.price} €</div>
-      <div className='cart-item__quantity'>{props.cartItem.quantity}</div>
-      <div className='cart-item__total'>
-        {totalPrice} €
-        <button className='cart-item__remove'>
-          <Remove />
-        </button>
+      <div className='cart-item__quantity'>
+        <ProductQuantity
+          quantity={props.cartItem.quantity}
+          handleSubtractQuantity={() => handleUpdateQuantity(-1)}
+          handleAddQuantity={() => handleUpdateQuantity(1)}
+        />
       </div>
+      <div className='cart-item__total'>{totalPrice} €</div>
+      <button className='cart-item__remove' onClick={handleRemoveProduct}>
+        <Remove />
+      </button>
     </div>
   );
 };

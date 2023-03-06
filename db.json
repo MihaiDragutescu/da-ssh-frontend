@@ -327,7 +327,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ante augue, bibendum vitae euismod sit amet, porta sit amet ante. Integer feugiat condimentum risus et tempor. Duis ante mi, vestibulum at leo quis, vestibulum faucibus enim.",
       "size": ["XS", "S", "M", "L", "XL", "XXL"],
       "brand": "Dior",
-      "color": ["323232", "756153", "00b8f7", "f9d900", "ff8900"],
+      "color": ["00b8f7", "323232", "756153", "f9d900", "ff8900"],
       "collection": "Office trend",
       "category": "Coats",
       "images": [

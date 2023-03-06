@@ -2,6 +2,7 @@
 
 .cart-item {
   display: flex;
+  position: relative;
   height: 185px;
   width: 100%;
   padding: 20px 0;
@@ -75,6 +76,19 @@
   &__quantity {
     display: flex;
     justify-content: center;
+
+    .product-info__quantity {
+      margin-right: -16px;
+    }
+
+    .product-info__quantity .product-quantity {
+      color: $color-brown-dark;
+    }
+
+    .product-info__quantity .product-quantity {
+      font-size: 28px;
+      font-weight: 400;
+    }
   }
 
   &__total {
@@ -83,7 +97,9 @@
   }
 
   &__remove {
-    margin-left: 16px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
     padding: 4px;
     cursor: pointer;
 

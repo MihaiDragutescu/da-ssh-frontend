@@ -14,6 +14,7 @@ import { timeout } from '@Utils/timeout';
 import { AppDispatch, addToCart, RootState } from '@Store/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartProductType } from '@Types/cartItem';
+import ProductQuantity from '@Components/ui/ProductQuantity';
 import './ProductInfo.scss';
 
 interface ProductInfoProps {
@@ -174,23 +175,11 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               <Accordion accordionList={props.product.information ?? []} />
             </div>
             <div className='product-info__footer'>
-              <div className='product-info__quantity'>
-                <div className='product-info__quantity-box'>
-                  <button
-                    className='quantity-button quantity-button--subtract'
-                    onClick={handleSubtractQuantity}
-                  >
-                    -
-                  </button>
-                  <span className='product-quantity'>{quantity}</span>
-                  <button
-                    className='quantity-button quantity-button--add'
-                    onClick={handleAddQuantity}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+              <ProductQuantity
+                quantity={quantity}
+                handleSubtractQuantity={handleSubtractQuantity}
+                handleAddQuantity={handleAddQuantity}
+              />
               <div className='product-info__button'>
                 <Button onClick={handleButtonClick}>
                   {isAddingToCart ? (

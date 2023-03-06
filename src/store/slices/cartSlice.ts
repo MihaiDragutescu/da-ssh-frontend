@@ -12,6 +12,13 @@ const initialState: { cartItems: cartItemType[] } = {
   }),
 };
 
+const itemInCartFn = (
+  state: { cartItems: cartItemType[] },
+  product: cartProductType
+) => {
+  return state.cartItems.find((item) => _.isEqual(item.product, product));
+};
+
 export const cartSlice = createSlice({
   name: 'cart',
   initialState,
@@ -20,9 +27,7 @@ export const cartSlice = createSlice({
       state,
       action: PayloadAction<{ product: cartProductType; quantity: number }>
     ) => {
-      const itemInCart = state.cartItems.find((item) =>
-        _.isEqual(item.product, action.payload.product)
-      );
+      const itemInCart = itemInCartFn(state, action.payload.product);
 
       if (itemInCart) {
         itemInCart.quantity += action.payload.quantity;
@@ -33,17 +38,20 @@ export const cartSlice = createSlice({
         });
       }
     },
-    removeFromCart: (state, action: PayloadAction<{ productId: string }>) => {
+    removeFromCart: (
+      state,
+      action: PayloadAction<{ product: cartProductType }>
+    ) => {
       state.cartItems = [...state.cartItems].filter(
-        (item) => item.product.id !== action.payload.productId
+        (item) => !_.isEqual(item.product, action.payload.product)
       );
     },
     updateCartItemQuantity: (
       state,
-      action: PayloadAction<{ productId: string; quantity: number }>
+      action: PayloadAction<{ product: cartProductType; quantity: number }>
     ) => {
-      const cartItem = state.cartItems.find(
-        (item) => item.product.id === action.payload.productId
+      const cartItem = state.cartItems.find((item) =>
+        _.isEqual(item.product, action.payload.product)
       );
 
       if (cartItem) {

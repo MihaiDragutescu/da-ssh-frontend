@@ -1,9 +1,41 @@
 @use '@Styles/' as *;
 
 .cart-list {
+  display: flex;
+  min-height: calc(100vh - 390px);
+
+  @include for-size(tablet-portrait) {
+    min-height: calc(100vh - 562px);
+  }
+
+  @include for-size(mobile) {
+    min-height: calc(100vh - 700px);
+  }
+
   &__container {
     padding: calc($vertical-padding-desktop / 4) 30px
-      calc($vertical-padding-desktop / 2) 30px;
+      calc($vertical-padding-tablet) 30px;
+  }
+
+  &__row {
+    height: 100%;
+  }
+
+  &__empty {
+    margin-top: -50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include for-size(tablet-portrait) {
+      margin-top: -30px;
+    }
+
+    @include for-size(mobile) {
+      margin-top: -50px;
+    }
   }
 
   &__table {
