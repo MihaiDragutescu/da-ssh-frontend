@@ -9,9 +9,15 @@ const useGetCartInfo = () => {
     0
   );
 
+  const cartTotalPrice = cart.cartItems.reduce(
+    (acc, item) => acc + item.product.price * item.quantity,
+    0
+  );
+
   return {
     products: cart.cartItems,
     count: productsNumber,
+    total: cartTotalPrice,
   };
 };
 

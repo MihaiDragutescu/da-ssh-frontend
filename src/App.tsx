@@ -7,6 +7,7 @@ import ProductPage from '@Pages/product/ProductPage';
 import ContactPage from '@Pages/contact/ContactPage';
 import AboutPage from '@Pages/about/AboutPage';
 import CartPage from '@Pages/cart/CartPage';
+import CheckoutPage from '@Pages/checkout/CheckoutPage';
 import ProfilePage from '@Pages/profile/ProfilePage';
 import Footer from '@Components/layout/footer/Footer';
 import Header from '@Components/layout/header/Header';
@@ -43,7 +44,10 @@ const App = () => {
               <Route path=':id' element={<ProductPage />} />
             </Route>
             <Route path={RouterPaths.CONTACT} element={<ContactPage />} />
-            <Route path={RouterPaths.CART} element={<CartPage />} />
+            <Route path={RouterPaths.CART}>
+              <Route index element={<CartPage />} />
+              <Route path={RouterPaths.CHECKOUT} element={<CheckoutPage />} />
+            </Route>
             <Route path={RouterPaths.PROFILE} element={<ProfilePage />} />
             <Route
               path={RouterPaths.PRIVACY_POLICY}

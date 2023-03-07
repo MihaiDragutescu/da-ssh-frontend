@@ -3,6 +3,7 @@ export enum RouterPaths {
   SHOP = '/products',
   CONTACT = '/contact',
   CART = '/cart',
+  CHECKOUT = 'checkout',
   PROFILE = '/profile',
   PRIVACY_POLICY = '/privacy-policy',
   TERMS_AND_CONDITIONS = '/terms-and-conditions',

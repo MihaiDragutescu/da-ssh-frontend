@@ -8,9 +8,17 @@
   padding: 20px 0;
   border-bottom: $border-solid-menu;
 
+  @include for-size(mobile) {
+    height: 250px;
+  }
+
   div {
     max-height: 185px;
     color: $color-brown-dark;
+
+    @include for-size(mobile) {
+      max-height: 250px;
+    }
   }
 
   span {
@@ -27,15 +35,54 @@
     align-items: center;
     font-size: 28px;
     font-weight: 400;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    @include for-size(tablet-portrait) {
+      display: none;
+    }
+  }
+
+  &__quantity {
+    @include for-size(tablet-portrait) {
+      width: 20%;
+    }
+
+    @include for-size(mobile) {
+      width: 30%;
+    }
   }
 
   &__info {
     display: flex;
     width: 55%;
+    padding-right: 8px;
+
+    @include for-size(tablet-portrait) {
+      width: 65%;
+    }
+
+    @include for-size(mobile) {
+      flex-direction: column;
+      width: 45%;
+    }
 
     &-image {
+      @include for-size(mobile) {
+        height: calc(100% - 105px);
+      }
+
       img {
         height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -45,11 +92,42 @@
       padding-left: 20px;
       font-size: 24px;
       font-weight: 400;
+
+      @include for-size(mobile) {
+        padding-left: 0;
+        font-size: 20px;
+        line-height: 1;
+        white-space: nowrap;
+      }
     }
 
     &-name {
       font-weight: 400;
       font-size: 28px;
+      display: flex;
+      align-items: center;
+
+      @include for-size(mobile) {
+        font-size: 24px;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &-price {
+      display: none;
+      margin-left: 8px;
+      color: $color-brown-dark !important;
+      font-size: 20px;
+
+      @include for-size(tablet-portrait) {
+        display: block;
+      }
+
+      @include for-size(mobile) {
+        display: none;
+      }
     }
 
     &-color {
@@ -71,6 +149,12 @@
         }
       }
     }
+
+    &-size {
+      @include for-size(mobile) {
+        margin-top: 4px;
+      }
+    }
   }
 
   &__quantity {
@@ -79,21 +163,45 @@
 
     .product-info__quantity {
       margin-right: -16px;
+
+      button {
+        width: 25px;
+
+        @include for-size(mobile) {
+          font-size: 50px;
+        }
+
+        @include for-size(mobile-small) {
+          width: 16px;
+          font-size: 45px;
+        }
+      }
     }
 
     .product-info__quantity .product-quantity {
       color: $color-brown-dark;
-    }
-
-    .product-info__quantity .product-quantity {
       font-size: 28px;
       font-weight: 400;
+      margin: 0;
+      padding: 0 10px;
+
+      @include for-size(mobile) {
+        font-size: 24px;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 20px;
+      }
     }
   }
 
   &__total {
     display: flex;
     justify-content: flex-end;
+
+    @include for-size(mobile) {
+      width: 25%;
+    }
   }
 
   &__remove {
@@ -105,6 +213,10 @@
 
     svg {
       width: 20px;
+
+      @include for-size(mobile) {
+        width: 16px;
+      }
     }
   }
 }

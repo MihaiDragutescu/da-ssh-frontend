@@ -63,9 +63,12 @@ const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
         <div className='cart-item__info-details'>
           <div className='cart-item__info-name'>
             {props.cartItem.product.name}
+            <span className='cart-item__info-price'>
+              - {props.cartItem.product.price} €
+            </span>
           </div>
           <div className='cart-item__info-color'>
-            <span>Color:</span>
+            <span>Colour:</span>
             <ColorPill color={props.cartItem.product.color} />
           </div>
           <div className='cart-item__info-brand'>
