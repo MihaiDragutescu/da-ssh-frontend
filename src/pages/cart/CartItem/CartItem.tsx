@@ -10,6 +10,8 @@ import {
   updateCartItemQuantity,
 } from '@Store/index';
 import ProductQuantity from '@Components/ui/ProductQuantity';
+import { quantityLimits } from '@Utils/constants';
+import _ from 'lodash';
 import './CartItem.scss';
 
 interface cartItemInterface {
@@ -22,26 +24,39 @@ const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
   const totalPrice = props.cartItem.product.price * props.cartItem.quantity;
 
   const handleRemoveProduct = () => {
+    if (
+      cart.cartItems.length === 1 &&
+      _.isEqual(cart.cartItems[0].product, props.cartItem.product)
+    ) {
+      localStorage.clear();
+    }
+
     dispatch(removeFromCart({ product: props.cartItem.product }));
   };
 
   const handleUpdateQuantity = (amount: number) => {
+    let updatedQuantity;
+    if (props.cartItem.quantity + amount > quantityLimits.superiorLimit) {
+      updatedQuantity = quantityLimits.superiorLimit;
+    } else if (
+      props.cartItem.quantity + amount <
+      quantityLimits.inferiorLimit
+    ) {
+      updatedQuantity = quantityLimits.inferiorLimit;
+    } else {
+      updatedQuantity = props.cartItem.quantity + amount;
+    }
+
     dispatch(
       updateCartItemQuantity({
         product: props.cartItem.product,
-        quantity:
-          props.cartItem.quantity + amount > 0
-            ? props.cartItem.quantity + amount
-            : 1,
+        quantity: updatedQuantity,
       })
     );
   };
 
   useEffect(() => {
-    const localStorageCart = {
-      ...cart.cartItems,
-    };
-    localStorage.setItem('cart', JSON.stringify(localStorageCart));
+    localStorage.setItem('cart', JSON.stringify(cart.cartItems));
   }, [cart]);
 
   useEffect(() => {
@@ -81,11 +96,22 @@ const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
               {props.cartItem.product.size}
             </div>
           )}
+
+          <div className='cart-item__info-mobile-price'>
+            {props.cartItem.product.price} €
+          </div>
         </div>
       </div>
       <div className='cart-item__price'>{props.cartItem.product.price} €</div>
       <div className='cart-item__quantity'>
         <ProductQuantity
+          className={
+            props.cartItem.quantity === quantityLimits.inferiorLimit
+              ? 'disable-subtract-quantity'
+              : props.cartItem.quantity === quantityLimits.superiorLimit
+              ? 'disable-add-quantity'
+              : ''
+          }
           quantity={props.cartItem.quantity}
           handleSubtractQuantity={() => handleUpdateQuantity(-1)}
           handleAddQuantity={() => handleUpdateQuantity(1)}

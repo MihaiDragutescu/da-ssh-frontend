@@ -123,10 +123,10 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
   }, [props.product.id]);
 
   useEffect(() => {
-    const localStorageCart = {
-      ...JSON.parse(localStorage.getItem('cart') ?? '{}'),
+    const localStorageCart = [
+      ...JSON.parse(localStorage.getItem('cart') ?? '[]'),
       ...cart.cartItems,
-    };
+    ];
     localStorage.setItem('cart', JSON.stringify(localStorageCart));
   }, [cart]);
 

@@ -2,14 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { cartItemType, cartProductType } from '@Types/cartItem';
 import _ from 'lodash';
 
-const localStorageCart = {
-  ...JSON.parse(localStorage.getItem('cart') ?? '{}'),
-};
+const localStorageCart = [...JSON.parse(localStorage.getItem('cart') ?? '[]')];
 
 const initialState: { cartItems: cartItemType[] } = {
-  cartItems: Object.keys(localStorageCart).map((key) => {
-    return localStorageCart[key];
-  }),
+  cartItems: localStorageCart,
 };
 
 const itemInCartFn = (

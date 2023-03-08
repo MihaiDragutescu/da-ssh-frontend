@@ -62,7 +62,7 @@
       }
 
       @include for-size(mobile) {
-        width: 30%;
+        display: none;
       }
     }
 
@@ -70,7 +70,7 @@
       text-align: end;
 
       @include for-size(mobile) {
-        width: 25%;
+        display: none;
       }
     }
   }

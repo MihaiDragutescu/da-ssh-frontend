@@ -12,7 +12,7 @@ import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './ProductCard.scss';
 
 interface ProductCardProps {
-  classname?: string;
+  className?: string;
   image: string;
   id: string;
   name?: string;
@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
   };
 
   return (
-    <div className={`product-card ${props.classname ?? ''}`}>
+    <div className={`product-card ${props.className ?? ''}`}>
       <div
         className={`product-card__layout-${
           props.layout ?? CardLayouts.VERTICAL

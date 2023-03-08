@@ -21,7 +21,7 @@ const CartPage: React.FC = () => {
         <div className='ssh-container empty-cart-container'>
           <div className='ssh-row'>
             <div className='cart-list__empty'>
-              <ResponseMessage classes='sm:pt-0 md:pt-0'>
+              <ResponseMessage className='sm:pt-0 md:pt-0'>
                 There are no products in your cart.
               </ResponseMessage>
               <Button className='mx-auto' onClick={handleClick}>

@@ -4,13 +4,14 @@ interface ProductQuantityProps {
   quantity: number;
   handleSubtractQuantity: () => void;
   handleAddQuantity: () => void;
+  className?: string;
 }
 
 const ProductQuantity: React.FC<ProductQuantityProps> = (
   props: ProductQuantityProps
 ) => {
   return (
-    <div className='product-info__quantity'>
+    <div className={`product-info__quantity ${props.className ?? ''}`}>
       <div className='product-info__quantity-box'>
         <button
           className='quantity-button quantity-button--subtract'

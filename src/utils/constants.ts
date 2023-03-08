@@ -20,3 +20,8 @@ export const initialFiltersState: FiltersListType = {
 };
 
 export const taxPercentage = 0.1;
+
+export const quantityLimits = {
+  inferiorLimit: 1,
+  superiorLimit: 99,
+};

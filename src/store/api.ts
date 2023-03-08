@@ -85,11 +85,7 @@ export const sshApi = createApi({
           return `/products${queryParams}`;
         },
         transformResponse: (apiResponse: ProductType[], meta, arg) => {
-          if (!arg.productIds.length) {
-            return [];
-          }
-
-          return apiResponse;
+          return !arg.productIds.length ? [] : apiResponse;
         },
       }),
       getProduct: builder.query<ProductType, string>({

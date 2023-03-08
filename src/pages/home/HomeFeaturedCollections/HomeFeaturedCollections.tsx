@@ -62,7 +62,7 @@ const HomeFeaturedCollections: React.FC = () => {
             return (
               <ProductCard
                 id={collection.id}
-                classname={collection.className}
+                className={collection.className}
                 key={collection.categoryId}
                 image={collection.image}
                 collection={collection.name}

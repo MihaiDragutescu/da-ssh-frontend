@@ -45,3 +45,9 @@
     line-height: 100%;
   }
 }
+
+.disable-subtract-quantity .quantity-button--subtract,
+.disable-add-quantity .quantity-button--add {
+  opacity: 0.5;
+  cursor: initial;
+}
