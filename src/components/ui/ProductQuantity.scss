@@ -1,0 +1,53 @@
+@use '@Styles/mixins' as *;
+@use '@Styles/colors' as *;
+
+.product-info__quantity {
+  align-items: center;
+  margin-right: 32px;
+
+  @include for-size(mobile) {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-box {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    max-height: 62px;
+    margin-left: -16px;
+  }
+
+  .product-quantity,
+  .quantity-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-brown;
+  }
+
+  .product-quantity {
+    padding: 0 14px;
+    font-size: 36px;
+
+    @include for-size(mobile) {
+      font-size: 32px;
+      padding: 0 12px;
+    }
+  }
+
+  .quantity-button {
+    width: 45px;
+    font-size: 60px;
+    padding-top: 2px;
+    line-height: 100%;
+  }
+}
+
+.disable-subtract-quantity .quantity-button--subtract,
+.disable-add-quantity .quantity-button--add {
+  opacity: 0.5;
+  cursor: initial;
+}

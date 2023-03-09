@@ -18,3 +18,10 @@ export const initialFiltersState: FiltersListType = {
   category: [],
   sort: sortTypes.NEWEST,
 };
+
+export const taxPercentage = 0.1;
+
+export const quantityLimits = {
+  inferiorLimit: 1,
+  superiorLimit: 99,
+};

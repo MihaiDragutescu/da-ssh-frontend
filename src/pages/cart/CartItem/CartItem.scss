@@ -1,0 +1,266 @@
+@use '@Styles/' as *;
+
+.cart-item {
+  display: flex;
+  position: relative;
+  height: 185px;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: $border-solid-menu;
+
+  @include for-size(mobile) {
+    height: 225px;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+
+  @include for-size(mobile-small) {
+    height: 250px;
+  }
+
+  div {
+    max-height: 185px;
+    color: $color-brown-dark;
+
+    @include for-size(mobile) {
+      max-height: 225px;
+    }
+
+    @include for-size(mobile-small) {
+      max-height: 250px;
+    }
+  }
+
+  span {
+    color: $color-brown;
+    margin-right: 8px;
+    font-weight: 300;
+  }
+
+  &__price,
+  &__quantity,
+  &__total {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 400;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 20px;
+    }
+  }
+
+  &__price {
+    @include for-size(tablet-portrait) {
+      display: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    width: 55%;
+    padding-right: 8px;
+
+    @include for-size(tablet-portrait) {
+      width: 65%;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+      height: 75%;
+    }
+
+    &-image {
+      @include for-size(mobile) {
+        width: 40%;
+        max-width: 160px;
+      }
+
+      @include for-size(mobile-small) {
+        width: 50%;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      font-size: 24px;
+      font-weight: 400;
+      white-space: nowrap;
+
+      @include for-size(mobile) {
+        font-size: 20px;
+        line-height: 1;
+        white-space: initial;
+        flex: 1;
+      }
+    }
+
+    &-name {
+      font-weight: 400;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+
+      @include for-size(mobile) {
+        font-size: 24px;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &-price {
+      display: none;
+      margin-left: 8px;
+      color: $color-brown-dark !important;
+      font-size: 20px;
+
+      @include for-size(tablet-portrait) {
+        display: block;
+      }
+
+      @include for-size(mobile) {
+        display: none;
+      }
+    }
+
+    &-mobile-price {
+      display: none;
+
+      @include for-size(mobile) {
+        display: initial;
+        padding-top: 4px;
+      }
+    }
+
+    &-color {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 4px;
+      }
+
+      .ssh-color-pill {
+        display: flex;
+        width: 28px !important;
+        height: 28px !important;
+        margin: 0 0 3px 0 !important;
+
+        button {
+          cursor: initial;
+        }
+      }
+    }
+
+    &-size {
+      @include for-size(mobile) {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: center;
+
+    @include for-size(tablet-portrait) {
+      width: 20%;
+    }
+
+    @include for-size(mobile) {
+      height: 25%;
+      width: 40%;
+      max-width: 160px;
+    }
+
+    @include for-size(mobile-small) {
+      width: 50%;
+    }
+
+    .product-info__quantity {
+      margin-right: -16px;
+
+      button {
+        width: 25px;
+
+        @include for-size(mobile) {
+          font-size: 50px;
+        }
+
+        @include for-size(mobile-small) {
+          width: 16px;
+          font-size: 45px;
+        }
+      }
+    }
+
+    .product-info__quantity .product-quantity {
+      color: $color-brown-dark;
+      font-size: 28px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0 10px;
+
+      @include for-size(mobile) {
+        font-size: 24px;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+
+    @include for-size(mobile) {
+      flex: 1;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    padding: 4px;
+    cursor: pointer;
+
+    @include for-size(mobile-small) {
+      right: -10px;
+      top: 0px;
+    }
+
+    svg {
+      width: 20px;
+
+      @include for-size(mobile) {
+        width: 16px;
+      }
+
+      @include for-size(mobile-small) {
+        width: 14px;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { RouterPaths } from '@Types/routerPaths';
 import { ReactComponent as Cart } from '@Assets/images/basket-icon.svg';
 import { ReactComponent as Profile } from '@Assets/images/user-icon.svg';
 import Search from '@Assets/images/search-icon.svg';
+import useGetCartInfo from '@Hooks/useGetCartInfo';
 import './HeaderIconLinks.scss';
 
 interface HeaderIconLinksProps {
@@ -19,6 +20,8 @@ interface HeaderIconLinksProps {
 const HeaderIconLinks: React.FC<HeaderIconLinksProps> = (
   props: HeaderIconLinksProps
 ) => {
+  const cartInfo = useGetCartInfo();
+
   return (
     <ul className='ssh-header__col ssh-header__icons'>
       <li className='ssh-header__icons-form'>
@@ -43,7 +46,9 @@ const HeaderIconLinks: React.FC<HeaderIconLinksProps> = (
           content={
             <>
               <Cart />
-              <span>9+</span>
+              {cartInfo.count ? (
+                <span>{cartInfo.count < 10 ? cartInfo.count : '9+'}</span>
+              ) : null}
             </>
           }
           classes='ssh-header__link ssh-header__icons--cart'

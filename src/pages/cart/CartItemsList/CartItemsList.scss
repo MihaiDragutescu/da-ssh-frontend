@@ -1,0 +1,90 @@
+@use '@Styles/' as *;
+
+.cart-list {
+  &__container {
+    padding: calc($vertical-padding-desktop / 4) 30px 0 30px;
+  }
+
+  &__table {
+    width: 100%;
+    position: relative;
+
+    &-head {
+      display: flex;
+      border-bottom: $border-solid-menu;
+
+      div:first-child {
+        width: 55%;
+
+        @include for-size(tablet-portrait) {
+          width: 65%;
+        }
+
+        @include for-size(mobile) {
+          width: 45%;
+        }
+      }
+    }
+
+    &-title {
+      width: 15%;
+      padding-bottom: 20px;
+
+      span {
+        font-family: $font-secondary;
+        color: $color-brown-dark;
+        line-height: 1;
+        font-size: 28px;
+
+        @include for-size(tablet-portrait) {
+          font-size: 24px;
+        }
+
+        @include for-size(mobile-small) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .table-title-price {
+      text-align: start;
+
+      @include for-size(tablet-portrait) {
+        display: none;
+      }
+    }
+
+    .table-title-quantity {
+      text-align: center;
+
+      @include for-size(tablet-portrait) {
+        width: 20%;
+      }
+
+      @include for-size(mobile) {
+        display: none;
+      }
+    }
+
+    .table-title-total {
+      text-align: end;
+
+      @include for-size(mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__reset {
+    position: absolute;
+    right: 0;
+    top: -80px;
+    font-size: 20px;
+    padding: 8px 16px;
+
+    @include for-size(mobile) {
+      width: initial;
+      top: -87px;
+    }
+  }
+}

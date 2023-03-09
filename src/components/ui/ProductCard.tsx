@@ -1,6 +1,6 @@
 import Button from '@Components/ui/Button';
 import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import {
   updateActiveFilters,
@@ -12,7 +12,7 @@ import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import './ProductCard.scss';
 
 interface ProductCardProps {
-  classname?: string;
+  className?: string;
   image: string;
   id: string;
   name?: string;
@@ -27,6 +27,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const { resetCache } = useResetCachedProducts();
   const route =
     props.category || props.collection
@@ -50,11 +51,11 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
   };
 
   const handleButtonClick = () => {
-    console.log('Product added to basket');
+    navigate(route);
   };
 
   return (
-    <div className={`product-card ${props.classname ?? ''}`}>
+    <div className={`product-card ${props.className ?? ''}`}>
       <div
         className={`product-card__layout-${
           props.layout ?? CardLayouts.VERTICAL

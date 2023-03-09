@@ -8,6 +8,13 @@ import ColorsList from '@Components/ui/ColorsList';
 import FilterItemsList from '@Components/ui/FilterItemsList';
 import ProductImages from '../ProductImages/ProductImages';
 import { useState, useEffect } from 'react';
+import Spinner from '@Components/ui/Spinner';
+import { ReactComponent as Check } from '@Assets/images/check-icon.svg';
+import { timeout } from '@Utils/timeout';
+import { AppDispatch, addToCart, RootState } from '@Store/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartProductType } from '@Types/cartItem';
+import ProductQuantity from '@Components/ui/ProductQuantity';
 import './ProductInfo.scss';
 
 interface ProductInfoProps {
@@ -22,9 +29,13 @@ interface ProductState {
 }
 
 const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   const [productInfo, setProductInfo] = useState<ProductState>({});
   const [productInWishlist, setProductInWishlist] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const cart = useSelector((state: RootState) => state.cart);
 
   const toggleWishlist = () => {
     setProductInWishlist(!productInWishlist);
@@ -56,8 +67,30 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
     />
   );
 
-  const handleButtonClick = () => {
-    console.log('Added to Cart');
+  const handleButtonClick = async () => {
+    setIsAddingToCart(true);
+
+    const product: cartProductType = {
+      id: props.product.id,
+      name: props.product.name,
+      price: props.product.price,
+      size: productInfo.size,
+      color: productInfo.color ?? '',
+      brand: props.product.brand ?? '',
+      images: props.product.images,
+    };
+
+    dispatch(
+      addToCart({
+        product: product,
+        quantity: productInfo.quantity ?? 1,
+      })
+    );
+    await timeout(500);
+    setIsAddingToCart(false);
+    setAddedToCart(true);
+    await timeout(1000);
+    setAddedToCart(false);
   };
 
   const handleAddQuantity = () => {
@@ -88,6 +121,18 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
       image: props.product.images[0],
     });
   }, [props.product.id]);
+
+  useEffect(() => {
+    try {
+      const localStorageCart = [
+        ...JSON.parse(localStorage.getItem('cart') ?? '[]'),
+        ...cart.cartItems,
+      ];
+      localStorage.setItem('cart', JSON.stringify(localStorageCart));
+    } catch (err) {
+      localStorage.setItem('cart', JSON.stringify(cart.cartItems));
+    }
+  }, [cart]);
 
   return (
     <section className='product-info'>
@@ -134,25 +179,21 @@ const ProductInfo: React.FC<ProductInfoProps> = (props: ProductInfoProps) => {
               <Accordion accordionList={props.product.information ?? []} />
             </div>
             <div className='product-info__footer'>
-              <div className='product-info__quantity'>
-                <div className='product-info__quantity-box'>
-                  <button
-                    className='quantity-button quantity-button--subtract'
-                    onClick={handleSubtractQuantity}
-                  >
-                    -
-                  </button>
-                  <span className='product-quantity'>{quantity}</span>
-                  <button
-                    className='quantity-button quantity-button--add'
-                    onClick={handleAddQuantity}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
+              <ProductQuantity
+                quantity={quantity}
+                handleSubtractQuantity={handleSubtractQuantity}
+                handleAddQuantity={handleAddQuantity}
+              />
               <div className='product-info__button'>
-                <Button onClick={handleButtonClick}>Add to Cart</Button>
+                <Button onClick={handleButtonClick}>
+                  {isAddingToCart ? (
+                    <Spinner />
+                  ) : addedToCart ? (
+                    <Check />
+                  ) : (
+                    'Add to cart'
+                  )}
+                </Button>
               </div>
             </div>
           </div>
