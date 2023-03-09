@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       state,
       action: PayloadAction<{ product: cartProductType }>
     ) => {
-      state.cartItems = [...state.cartItems].filter(
+      state.cartItems = state.cartItems.filter(
         (item) => !_.isEqual(item.product, action.payload.product)
       );
     },
