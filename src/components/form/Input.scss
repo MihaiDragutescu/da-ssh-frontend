@@ -21,6 +21,10 @@
     background-color: $color-transparent;
 
     @include for-size(mobile) {
+      font-size: $input-size-medium;
+    }
+
+    @include for-size(mobile-small) {
       font-size: $input-size-small;
     }
 
@@ -31,6 +35,10 @@
       @include for-size(mobile) {
         font-size: $input-size-small;
       }
+
+      @include for-size(mobile-small) {
+        font-size: $input-size-small;
+      }
     }
 
     &:focus-visible {
@@ -38,18 +46,14 @@
     }
   }
 
-  &--with-icon {
-    padding-right: 55px;
+  &__content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
   }
 
-  &__validation-text {
-    position: absolute;
-    bottom: -27px;
-    left: 6px;
-    font-size: $validation-message-size;
-    color: $color-error;
-    padding: 3px 6px;
-    border-radius: 0 0 3px 3px;
+  &--with-icon {
+    padding-right: 55px;
   }
 
   &__icon {

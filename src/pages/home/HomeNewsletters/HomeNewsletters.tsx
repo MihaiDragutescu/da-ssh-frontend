@@ -1,22 +1,23 @@
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
+import { z } from 'zod';
+import Form from '@Components/form/Form';
+import { useForm } from '@Hooks/useForm';
+import { newslettersFormDataType } from '@Types/formDataTypes';
 import './HomeNewsletters.scss';
-import { useState } from 'react';
+
+const newslettersFormSchema = z.object({
+  email: z.string().email('Please enter a valid email address.'),
+});
 
 const HomeNewsletters: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
+  const form = useForm({
+    schema: newslettersFormSchema,
+  });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (inputValue) {
-      console.log(`Form submitted with value ${inputValue}`);
-      setInputValue('');
-    }
+  const onSubmit = (data: newslettersFormDataType) => {
+    form.reset();
+    console.log(data);
   };
 
   return (
@@ -27,19 +28,21 @@ const HomeNewsletters: React.FC = () => {
           <h3 className='home-newsletters__subtitle'>
             Subscribe to our newsletter
           </h3>
-          <form className='home-newsletters__form' onSubmit={handleSubmit}>
+          <Form
+            className='home-newsletters__form'
+            form={form}
+            onSubmit={(values) => onSubmit(values)}
+          >
             <Input
               className='home-newsletters__input'
               placeholder='Email...'
               type='email'
-              required
-              value={inputValue}
-              onChange={handleChange}
+              {...form.register('email')}
             />
             <Button type='submit' className='home-newsletters__button'>
               SUBSCRIBE
             </Button>
-          </form>
+          </Form>
         </div>
       </div>
     </section>

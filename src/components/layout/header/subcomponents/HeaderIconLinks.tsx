@@ -12,8 +12,6 @@ interface HeaderIconLinksProps {
   handleSubmit: (
     event: React.MouseEvent<HTMLImageElement> | React.FormEvent<HTMLFormElement>
   ) => void;
-  inputValue: string;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleIconClick: () => void;
 }
 
@@ -32,8 +30,6 @@ const HeaderIconLinks: React.FC<HeaderIconLinksProps> = (
             }`}
             placeholder='Search...'
             type='text'
-            value={props.inputValue}
-            onChange={props.handleChange}
             icon={Search}
             iconClick={props.handleSubmit}
           />

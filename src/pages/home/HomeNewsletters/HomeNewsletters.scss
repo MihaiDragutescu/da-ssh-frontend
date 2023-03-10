@@ -8,28 +8,37 @@
   }
 
   &__title {
-    font-size: $title-size;
+    font-size: var(--font-h1-desktop);
     margin-bottom: 20px;
+
+    @include for-size(tablet-portrait) {
+      font-size: var(--font-h1-tablet);
+    }
 
     @include for-size(mobile) {
       font-size: $title-size-small;
     }
 
     @include for-size(mobile-small) {
-      font-size: $title-size-extrasmall;
+      font-size: var(--font-h1-mobile-small);
     }
   }
 
   &__subtitle {
     margin-bottom: 35px;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+
+    @include for-size(mobile) {
+      font-size: var(--font-h3-mobile);
+    }
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 725px;
     width: 100%;
+    max-width: 725px;
   }
 
   &__input {
@@ -39,12 +48,10 @@
 
   &__button {
     font-size: 28px;
-
-    @include for-size(desktop) {
-      width: 315px;
-    }
+    width: 315px;
 
     @include for-size(mobile) {
+      width: 100%;
       font-size: 26px;
     }
 
