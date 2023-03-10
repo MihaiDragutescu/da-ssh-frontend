@@ -13,7 +13,11 @@ const FieldError: React.FC<fieldErrorProps> = (props: fieldErrorProps) => {
 
   const error = errors[props.name];
 
-  return !error ? null : <span>{error.message?.toString()}</span>;
+  return !error ? null : (
+    <span className='text-lg sm:text-xl text-red-500 pt-1 pl-1 font-normal'>
+      {error.message?.toString()}
+    </span>
+  );
 };
 
 export default FieldError;

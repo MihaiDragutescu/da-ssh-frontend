@@ -4,6 +4,10 @@ import { z } from 'zod';
 import Form from '@Components/form/Form';
 import { useForm } from '@Hooks/useForm';
 import { newslettersFormDataType } from '@Types/formDataTypes';
+import { useState } from 'react';
+import { timeout } from '@Utils/timeout';
+import Spinner from '@Components/ui/Spinner';
+import Swal from 'sweetalert2';
 import './HomeNewsletters.scss';
 
 const newslettersFormSchema = z.object({
@@ -11,13 +15,23 @@ const newslettersFormSchema = z.object({
 });
 
 const HomeNewsletters: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm({
     schema: newslettersFormSchema,
   });
 
-  const onSubmit = (data: newslettersFormDataType) => {
+  const onSubmit = async (data: newslettersFormDataType) => {
+    setIsSubmitting(true);
+    await timeout(500);
+    setIsSubmitting(false);
+    Swal.fire({
+      position: 'top',
+      title: 'Thank you for subscribing!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     form.reset();
-    console.log(data);
   };
 
   return (
@@ -40,7 +54,7 @@ const HomeNewsletters: React.FC = () => {
               {...form.register('email')}
             />
             <Button type='submit' className='home-newsletters__button'>
-              SUBSCRIBE
+              {isSubmitting ? <Spinner /> : 'SUBSCRIBE'}
             </Button>
           </Form>
         </div>

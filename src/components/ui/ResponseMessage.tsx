@@ -10,7 +10,7 @@ const ResponseMessage: React.FC<ResponseMessageProps> = (props) => {
         props.className ?? ''
       }`}
     >
-      <span className='text-center text-red-800 text-2xl text-brown sm:text-3xl md:text-4xl'>
+      <span className='text-center text-2xl text-brown sm:text-3xl md:text-4xl'>
         {props.children}
       </span>
     </div>

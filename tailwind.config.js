@@ -7,8 +7,10 @@ module.exports = {
       md: '991px',
       lg: '1250px',
     },
-    colors: {
-      brown: '#895f5f',
+    extend: {
+      colors: {
+        brown: '#895f5f',
+      },
     },
   },
   plugins: [],

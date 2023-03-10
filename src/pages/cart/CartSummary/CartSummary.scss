@@ -60,11 +60,16 @@
       font-size: 32px;
 
       @include for-size(tablet-portrait) {
-        font-size: 26px;
-        padding: 12px;
+        font-size: 28px;
       }
 
-      @include for-size(tablet-portrait) {
+      @include for-size(mobile) {
+        padding: 12px 28px;
+        font-size: 26px;
+      }
+
+      @include for-size(mobile-small) {
+        padding: 10px 28px;
         font-size: 24px;
       }
     }

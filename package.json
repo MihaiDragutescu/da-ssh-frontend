@@ -29,6 +29,7 @@
     "react-slick": "^0.29.0",
     "sass": "^1.57.1",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.7.3",
     "use-breakpoint": "^3.0.7",
     "use-query-params": "^2.2.0",
     "use-react-router-breadcrumbs": "^4.0.1",

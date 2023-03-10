@@ -1,5 +1,4 @@
-@use '@Styles/mixins' as *;
-@use '@Styles/variables' as *;
+@use '@Styles/' as *;
 
 .home-newsletters {
   &__row {
@@ -57,6 +56,48 @@
 
     @include for-size(mobile-small) {
       font-size: 24px;
+    }
+
+    .ssh-spinner {
+      padding: 0 !important;
+      height: 28px !important;
+
+      @include for-size(mobile) {
+        height: 26px !important;
+      }
+
+      @include for-size(mobile-small) {
+        height: 24px !important;
+      }
+
+      svg {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.swal2-container.swal2-top {
+  background: $color-transparent;
+
+  .swal2-popup.swal2-modal.swal2-show {
+    color: $color-brown;
+    border-top: $border-solid-success;
+    background: $color-success;
+    box-shadow: $box-shadow-primary;
+
+    @include for-size(mobile) {
+      width: 100%;
+    }
+
+    .swal2-title {
+      @include for-size(mobile) {
+        font-size: 26px;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 24px;
+      }
     }
   }
 }
