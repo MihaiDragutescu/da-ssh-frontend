@@ -2,10 +2,12 @@
 
 .checkout-address {
   width: 55%;
-  padding-right: 20px;
+  padding-right: 4%;
 
   @include for-size(tablet-portrait) {
     width: 100%;
+    padding: 0;
+    order: 2;
   }
 
   &__title {
@@ -29,6 +31,14 @@
   &__form {
     padding-top: 30px;
 
+    @include for-size(tablet-portrait) {
+      padding-top: 16px;
+    }
+
+    // @include for-size(mobile) {
+    //   padding-top: 20px;
+    // }
+
     &-col {
       display: flex;
       width: 100%;
@@ -41,7 +51,7 @@
         padding-right: 16px;
 
         @include for-size(mobile) {
-          padding: 16px 0 0 0;
+          padding: 8px 0 0 0;
         }
       }
 
@@ -49,7 +59,7 @@
         padding-left: 16px;
 
         @include for-size(mobile) {
-          padding: 16px 0 0 0;
+          padding: 8px 0 0 0;
         }
       }
     }
@@ -58,11 +68,19 @@
   &__input {
     width: 100%;
     padding-top: 16px;
+
+    @include for-size(mobile) {
+      padding-top: 8px;
+    }
   }
 
   &__button {
     margin-top: 50px;
     min-width: 140px;
+
+    @include for-size(mobile) {
+      margin-top: 40px;
+    }
 
     .ssh-spinner {
       height: 36px !important;
