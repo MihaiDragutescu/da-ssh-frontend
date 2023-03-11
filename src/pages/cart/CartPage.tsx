@@ -16,7 +16,7 @@ const CartPage: React.FC = () => {
   };
 
   return (
-    <>
+    <main id='main'>
       {cart.count === 0 ? (
         <div className='ssh-container empty-cart-container'>
           <div className='ssh-row'>
@@ -36,7 +36,7 @@ const CartPage: React.FC = () => {
           <CartSummary />
         </>
       )}
-    </>
+    </main>
   );
 };
 
