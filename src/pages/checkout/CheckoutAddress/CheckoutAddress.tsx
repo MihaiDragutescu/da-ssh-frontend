@@ -13,11 +13,11 @@ import './CheckoutAddress.scss';
 const addressFormSchema = z.object({
   firstName: z
     .string()
-    .min(6, 'First Name must be atleast 6 characters long!')
+    .min(3, 'First Name must be atleast 3 characters long!')
     .max(50, 'Consider using shorter First Name.'),
   lastName: z
     .string()
-    .min(6, 'Last Name must be atleast 6 characters long!')
+    .min(3, 'Last Name must be atleast 3 characters long!')
     .max(50, 'Consider using shorter Last Name.'),
   streetAddress: z
     .string()
@@ -30,15 +30,15 @@ const addressFormSchema = z.object({
     .optional(),
   city: z
     .string()
-    .min(6, 'City must be atleast 6 characters long!')
+    .min(3, 'City must be atleast 3 characters long!')
     .max(50, 'Consider using shorter City.'),
   state: z
     .string()
-    .min(6, 'State must be atleast 6 characters long!')
+    .min(3, 'State must be atleast 3 characters long!')
     .max(50, 'Consider using shorter State.'),
   zipCode: z
     .string()
-    .min(1, 'Zip Code must be atleast 1 characters long!')
+    .min(3, 'Zip Code must be atleast 3 characters long!')
     .max(50, 'Consider using shorter Zip Code.'),
   phone: z
     .string()

@@ -62,5 +62,18 @@
 
   &__button {
     margin-top: 50px;
+    min-width: 140px;
+
+    .ssh-spinner {
+      height: 36px !important;
+
+      @include for-size(mobile) {
+        height: 26px !important;
+      }
+
+      @include for-size(mobile-small) {
+        height: 24px !important;
+      }
+    }
   }
 }

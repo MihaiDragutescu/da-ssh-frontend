@@ -18,4 +18,12 @@
     padding: 10px;
     font-size: 24px;
   }
+
+  .ssh-spinner {
+    padding: 0 !important;
+
+    svg {
+      height: 100%;
+    }
+  }
 }

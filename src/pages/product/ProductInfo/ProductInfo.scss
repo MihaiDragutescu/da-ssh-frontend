@@ -230,7 +230,6 @@
       }
 
       .ssh-spinner {
-        padding: 0 !important;
         height: $card-text-size !important;
 
         @include for-size(mobile) {
@@ -239,10 +238,6 @@
 
         @include for-size(mobile-small) {
           height: calc($card-text-size - 12px) !important;
-        }
-
-        svg {
-          height: 100%;
         }
       }
     }

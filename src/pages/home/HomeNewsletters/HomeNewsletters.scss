@@ -59,7 +59,6 @@
     }
 
     .ssh-spinner {
-      padding: 0 !important;
       height: 28px !important;
 
       @include for-size(mobile) {
@@ -68,10 +67,6 @@
 
       @include for-size(mobile-small) {
         height: 24px !important;
-      }
-
-      svg {
-        height: 100%;
       }
     }
   }
