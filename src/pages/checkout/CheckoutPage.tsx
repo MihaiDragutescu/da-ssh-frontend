@@ -13,7 +13,7 @@ const CheckoutPage: React.FC = () => {
   }
 
   return (
-    <div className='ssh-container empty-cart-container'>
+    <div className='ssh-container px-[30px] pt-8 pb-20'>
       <div className='ssh-row'>
         <CheckoutAddress />
         <CheckoutSummary />
