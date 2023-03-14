@@ -1,5 +1,5 @@
 import Button from '@Components/ui/Button';
-import { CardLayouts, CardLayoutDirections } from '@Types/layouts';
+import { CardLayouts, LayoutDirections } from '@Types/layouts';
 import { Link, useNavigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 import {
@@ -21,7 +21,7 @@ interface ProductCardProps {
   collection?: string;
   category?: string;
   layout?: CardLayouts;
-  direction?: CardLayoutDirections;
+  direction?: LayoutDirections;
   add_to_basket?: boolean;
 }
 
@@ -60,7 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
         className={`product-card__layout-${
           props.layout ?? CardLayouts.VERTICAL
         } product-card__direction-${
-          props.direction ?? CardLayoutDirections.LEFT_TO_RIGHT
+          props.direction ?? LayoutDirections.LEFT_TO_RIGHT
         }`}
       >
         <Link
@@ -68,7 +68,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
           to={route}
           onClick={handleLinkClick}
         >
-          <img src={props.image} alt='product' />
+          <img src={props.image} alt='Product' />
         </Link>
         <div className='product-card__content'>
           {props.name && (

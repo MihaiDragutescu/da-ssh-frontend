@@ -48,7 +48,7 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = (
         onMouseLeave={() => {
           setShowMagnifier(false);
         }}
-        alt='selected-product'
+        alt='Selected product'
       />
 
       <div

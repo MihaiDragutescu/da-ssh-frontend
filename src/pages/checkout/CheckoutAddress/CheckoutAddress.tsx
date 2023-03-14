@@ -71,7 +71,7 @@ const CheckoutAddress: React.FC = () => {
   };
 
   return (
-    <div className='checkout-address'>
+    <section className='checkout-address'>
       <div className='checkout-address__title'>
         <h1>Shipping Address</h1>
       </div>
@@ -132,7 +132,7 @@ const CheckoutAddress: React.FC = () => {
           </Button>
         </Form>
       </div>
-    </div>
+    </section>
   );
 };
 

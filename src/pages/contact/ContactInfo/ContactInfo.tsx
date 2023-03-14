@@ -3,7 +3,7 @@ import './ContactInfo.scss';
 
 const ContactInfo: React.FC = () => {
   return (
-    <div className='contact-info'>
+    <section className='contact-info'>
       <div className='contact-info__col location-col'>
         <div className='contact-info__title'>
           <h1>Location</h1>
@@ -26,7 +26,7 @@ const ContactInfo: React.FC = () => {
           <span>© 2022 Privacy policy</span>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

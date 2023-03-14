@@ -73,7 +73,7 @@ const CartItem: React.FC<cartItemInterface> = (props: cartItemInterface) => {
     <div className='cart-item'>
       <div className='cart-item__info'>
         <div className='cart-item__info-image'>
-          <img src={props.cartItem.product.images[0]} alt='product' />
+          <img src={props.cartItem.product.images[0]} alt='Product' />
         </div>
         <div className='cart-item__info-details'>
           <div className='cart-item__info-name'>

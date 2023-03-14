@@ -37,7 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           className='ssh-input__icon'
           onClick={iconClick}
           src={icon}
-          alt='input-icon'
+          alt='Input icon'
         />
       )}
     </div>

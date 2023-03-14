@@ -41,7 +41,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className='contact-form'>
+    <section className='contact-form'>
       <div className='contact-form__form'>
         <Form form={form} onSubmit={(values) => onSubmit(values)}>
           <Input
@@ -66,7 +66,7 @@ const ContactForm: React.FC = () => {
           </Button>
         </Form>
       </div>
-    </div>
+    </section>
   );
 };
 

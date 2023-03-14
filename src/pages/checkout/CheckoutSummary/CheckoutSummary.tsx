@@ -29,7 +29,7 @@ const CheckoutSummary: React.FC = () => {
   });
 
   return (
-    <div className='checkout-summary'>
+    <section className='checkout-summary'>
       <div className='checkout-summary__title'>
         <h2>Order Summary</h2>
       </div>
@@ -46,7 +46,7 @@ const CheckoutSummary: React.FC = () => {
         <span>Total:</span>
         <span>{totalPrice} €</span>
       </div>
-    </div>
+    </section>
   );
 };
 
