@@ -1,4 +1,121 @@
+@use '@Styles/' as *;
+
 .contact-info {
-  width: 45%;
+  width: 40%;
   padding-right: 4%;
+
+  @include for-size(tablet-landscape) {
+    padding-right: 3%;
+  }
+
+  @include for-size(tablet-portrait) {
+    width: 100%;
+    padding: 0;
+    display: flex;
+  }
+
+  @include for-size(mobile) {
+    flex-direction: column;
+  }
+
+  &__title {
+    h1 {
+      color: $color-brown;
+      line-height: 1;
+      font-size: 32px;
+      text-align: start;
+
+      @include for-size(mobile) {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__location {
+    padding-top: 20px;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $color-brown;
+
+    @include for-size(mobile) {
+      font-size: 20px;
+    }
+  }
+
+  .location-col {
+    margin-bottom: 60px;
+
+    @include for-size(tablet-portrait) {
+      margin: 0;
+      padding-right: 8%;
+      flex: 1;
+    }
+
+    @include for-size(mobile) {
+      padding: 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  .socials-col {
+    @include for-size(tablet-portrait) {
+      width: 170px;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+
+    .ssh-footer__socials {
+      margin: 10px 0 0 -10px;
+
+      @include for-size(mobile) {
+        padding: 0;
+      }
+
+      li {
+        @include for-size(tablet-portrait) {
+          margin: 0 10px;
+        }
+      }
+
+      svg {
+        @include for-size(tablet-portrait) {
+          width: 35px;
+        }
+      }
+
+      @include for-size(tablet-portrait) {
+        justify-content: flex-start;
+        margin-left: -10px;
+      }
+
+      @include for-size(mobile) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__policy {
+    font-size: 24px;
+    line-height: 1;
+    color: $color-brown-dark;
+    padding-top: 16px;
+
+    @include for-size(tablet-portrait) {
+      margin-left: -5px;
+    }
+
+    @include for-size(mobile) {
+      font-size: 20px;
+    }
+  }
 }

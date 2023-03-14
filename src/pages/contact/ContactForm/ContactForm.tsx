@@ -42,9 +42,6 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className='contact-form'>
-      <div className='contact-form__title'>
-        <h1>Contact Form</h1>
-      </div>
       <div className='contact-form__form'>
         <Form form={form} onSubmit={(values) => onSubmit(values)}>
           <Input

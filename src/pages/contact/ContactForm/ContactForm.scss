@@ -1,38 +1,23 @@
 @use '@Styles/' as *;
 
 .contact-form {
-  width: 55%;
+  width: 60%;
   padding-left: 4%;
+
+  @include for-size(tablet-landscape) {
+    padding-left: 3%;
+  }
 
   @include for-size(tablet-portrait) {
     width: 100%;
     padding: 0;
-    order: 2;
-  }
-
-  &__title {
-    h1 {
-      color: $color-brown;
-      line-height: 1;
-      font-size: 32px;
-      text-align: start;
-
-      @include for-size(mobile) {
-        font-size: 28px;
-        text-align: center;
-      }
-
-      @include for-size(mobile-small) {
-        font-size: 24px;
-      }
-    }
   }
 
   &__form {
-    padding-top: 30px;
+    margin-top: -16px;
 
     @include for-size(tablet-portrait) {
-      padding-top: 16px;
+      margin-top: 20px;
     }
   }
 

@@ -23,9 +23,12 @@ const App = () => {
 
   return (
     <>
-      <a className='skip-to-content-link' href='#main'>
-        Skip to content
-      </a>
+      {location.pathname !== RouterPaths.SHOP && (
+        <a className='skip-to-content-link' href='#main'>
+          Skip to content
+        </a>
+      )}
+
       <Header />
       <div id='search-overlay-container'>
         {location.pathname !== RouterPaths.HOME &&
