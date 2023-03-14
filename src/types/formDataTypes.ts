@@ -7,8 +7,8 @@ export type addressFormDataType = {
   lastName: string;
   streetAddress: string;
   apartment?: string;
+  country: string;
   city: string;
-  state: string;
   zipCode: string;
   phone: string;
 };

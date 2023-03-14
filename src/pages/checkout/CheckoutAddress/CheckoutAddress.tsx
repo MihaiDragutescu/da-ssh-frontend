@@ -25,17 +25,19 @@ const addressFormSchema = z.object({
     .max(256, 'Consider using shorter Address.'),
   apartment: z
     .string()
-    .min(6, 'Apartment/Suite must be atleast 6 characters long!')
-    .max(256, 'Consider using shorter Apartment/Suite.')
-    .optional(),
+    .optional()
+    .refine(
+      (value) => !value || value.length >= 6,
+      'Apartment/Suite must be atleast 6 characters long!'
+    ),
+  country: z
+    .string()
+    .min(3, 'Country must be atleast 3 characters long!')
+    .max(50, 'Consider using shorter Country.'),
   city: z
     .string()
     .min(3, 'City must be atleast 3 characters long!')
     .max(50, 'Consider using shorter City.'),
-  state: z
-    .string()
-    .min(3, 'State must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter State.'),
   zipCode: z
     .string()
     .min(3, 'Zip Code must be atleast 3 characters long!')
@@ -103,15 +105,15 @@ const CheckoutAddress: React.FC = () => {
           />
           <Input
             className='checkout-address__input'
-            placeholder='City'
+            placeholder='Country'
             type='text'
-            {...form.register('city')}
+            {...form.register('country')}
           />
           <Input
             className='checkout-address__input'
-            placeholder='State'
+            placeholder='City'
             type='text'
-            {...form.register('state')}
+            {...form.register('city')}
           />
           <Input
             className='checkout-address__input'
