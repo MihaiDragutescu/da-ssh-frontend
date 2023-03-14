@@ -1,8 +1,8 @@
 @use '@Styles/' as *;
 
-.checkout-address {
+.contact-form {
   width: 55%;
-  padding-right: 4%;
+  padding-left: 4%;
 
   @include for-size(tablet-portrait) {
     width: 100%;
@@ -34,40 +34,20 @@
     @include for-size(tablet-portrait) {
       padding-top: 16px;
     }
-
-    &-col {
-      display: flex;
-      width: 100%;
-
-      @include for-size(mobile) {
-        flex-direction: column;
-      }
-
-      & > div:first-child {
-        padding-right: 16px;
-
-        @include for-size(mobile) {
-          padding: 8px 0 0 0;
-        }
-      }
-
-      & > div:last-child {
-        padding-left: 16px;
-
-        @include for-size(mobile) {
-          padding: 8px 0 0 0;
-        }
-      }
-    }
   }
 
-  &__input {
+  &__input,
+  &__textarea {
     width: 100%;
     padding-top: 16px;
 
     @include for-size(mobile) {
       padding-top: 8px;
     }
+  }
+
+  &__textarea {
+    padding: 0;
   }
 
   &__button {

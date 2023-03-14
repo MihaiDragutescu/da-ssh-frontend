@@ -12,3 +12,9 @@ export type addressFormDataType = {
   zipCode: string;
   phone: string;
 };
+
+export type contactFormDataType = {
+  fullName: string;
+  email: string;
+  message: string;
+};
