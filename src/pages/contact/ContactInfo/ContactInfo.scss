@@ -16,6 +16,8 @@
 
   @include for-size(mobile) {
     flex-direction: column;
+    order: 2;
+    margin-top: 50px;
   }
 
   &__title {

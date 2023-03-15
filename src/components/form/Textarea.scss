@@ -6,12 +6,10 @@
   label {
     display: flex;
     flex: 1;
-    border-left: $border-solid-brown;
     border-bottom: $border-solid-brown;
   }
 
   textarea {
-    min-height: 145px;
     font-size: $input-size;
     line-height: 1;
     color: $color-brown;

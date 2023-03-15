@@ -17,7 +17,7 @@ const contactFormSchema = z.object({
     .min(5, 'Name must be atleast 5 characters long!')
     .max(50, 'Consider using shorter Name.'),
   email: z.string().email('Please enter a valid email address.'),
-  message: z.string().min(10, 'Message must be atleast 10 characters long!'),
+  message: z.string().min(5, 'Message must be atleast 5 characters long!'),
 });
 
 const ContactForm: React.FC = () => {
