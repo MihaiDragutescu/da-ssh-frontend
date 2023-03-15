@@ -1,11 +1,11 @@
-import ComingSoon from '@Components/ui/ComingSoon';
+import NoContent from '@Components/ui/NoContent';
 
 const ProfilePage: React.FC = () => {
   return (
     <main id='main'>
       <div className='ssh-container full-height-container'>
         <div className='ssh-row full-height'>
-          <ComingSoon />
+          <NoContent>Coming soon!</NoContent>
         </div>
       </div>
     </main>

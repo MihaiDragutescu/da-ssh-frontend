@@ -2,7 +2,11 @@ import Button from './Button';
 import { useNavigate } from 'react-router-dom';
 import { RouterPaths } from '@Types/routerPaths';
 
-const ComingSoon: React.FC = () => {
+interface noContentProps {
+  children: React.ReactNode;
+}
+
+const NoContent: React.FC<noContentProps> = (props: noContentProps) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -13,7 +17,7 @@ const ComingSoon: React.FC = () => {
     <div className='flex flex-col justify-center w-full'>
       <div className='full-height-content'>
         <span className='block text-center text-4xl text-brown sm:text-5xl md:text-6xl font-[DancingScript] py-8 sm:pb-12 sm:pt-0'>
-          Coming soon!
+          {props.children}
         </span>
         <Button className='mx-auto' onClick={handleClick}>
           Go Back Home
@@ -23,4 +27,4 @@ const ComingSoon: React.FC = () => {
   );
 };
 
-export default ComingSoon;
+export default NoContent;
