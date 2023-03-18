@@ -37,6 +37,7 @@
 
     &-col {
       display: flex;
+      align-items: flex-start;
       width: 100%;
 
       @include for-size(mobile) {

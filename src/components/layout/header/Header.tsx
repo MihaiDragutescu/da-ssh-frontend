@@ -8,8 +8,7 @@ import HeaderMobileSearch from './subcomponents/HeaderMobileSearch';
 import { useState, useEffect } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
 import useBreakpoint from 'use-breakpoint';
-
-const BREAKPOINTS = { mobile: 0, tablet: 991, desktop: 1250 };
+import { BREAKPOINTS } from '@Utils/constants';
 
 const Header: React.FC = () => {
   const { breakpoint } = useBreakpoint(BREAKPOINTS, 'desktop');

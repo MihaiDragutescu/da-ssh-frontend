@@ -9,9 +9,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { productsSliderSettings } from '@Utils/slidersConfig';
 import './FeaturedProducts.scss';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import useSetQueryParams from '@App/hooks/useSetQueryParams';
+import { useResizeDetector } from 'react-resize-detector';
 
 interface FeaturedProductsProps {
   products: ProductType[];
@@ -22,8 +23,10 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
   props: FeaturedProductsProps
 ) => {
   const navigate = useNavigate();
+  const { width, ref } = useResizeDetector();
   const { route } = useSetQueryParams(RouterPaths.SHOP);
   const sliderRef = useRef<Slider>(null);
+  const [showNavigation, setShowNavigation] = useState(true);
 
   const goToNext = () => {
     sliderRef.current?.slickNext();
@@ -47,25 +50,41 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = (
     });
   }, []);
 
+  useEffect(() => {
+    const hiddenSlides = document.querySelectorAll(
+      '.featured-products .slick-cloned'
+    ) as NodeListOf<HTMLElement>;
+
+    [...hiddenSlides].length === 0
+      ? setShowNavigation(false)
+      : setShowNavigation(true);
+  }, [width]);
+
   return (
-    <section className='featured-products'>
+    <section className='featured-products' ref={ref}>
       <div className='featured-products__container ssh-container'>
         <div className='featured-products__title-container ssh-container'>
           <h2 className='featured-products__title section-title'>
             Discover your style
           </h2>
-          <div className='featured-products__navigation'>
-            <button
-              type='button'
-              onClick={goToPrev}
-              title='Go To Previous Slides'
-            >
-              <Prev className='featured-products__navigation--prev' />
-            </button>
-            <button type='button' onClick={goToNext} title='Go To Next Slides'>
-              <Next className='featured-products__navigation--next' />
-            </button>
-          </div>
+          {showNavigation && (
+            <div className='featured-products__navigation'>
+              <button
+                type='button'
+                onClick={goToPrev}
+                title='Go To Previous Slides'
+              >
+                <Prev className='featured-products__navigation--prev' />
+              </button>
+              <button
+                type='button'
+                onClick={goToNext}
+                title='Go To Next Slides'
+              >
+                <Next className='featured-products__navigation--next' />
+              </button>
+            </div>
+          )}
         </div>
         <Slider {...productsSliderSettings} ref={sliderRef}>
           {props.products.map((product) => {

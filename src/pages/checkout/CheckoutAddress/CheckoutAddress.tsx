@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import Form from '@Components/form/Form';
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
@@ -7,57 +6,23 @@ import { useState } from 'react';
 import { timeout } from '@Utils/timeout';
 import Spinner from '@Components/ui/Spinner';
 import Swal from 'sweetalert2';
-import { addressFormDataType } from '@Types/formDataTypes';
+import { addressFormSchema, AddressFormType } from '@Types/formDataTypes';
+import { useNavigate } from 'react-router-dom';
+import { RouterPaths } from '@Types/routerPaths';
+import { useDispatch } from 'react-redux';
+import { AppDispatch, clearCart } from '@Store/index';
 import './CheckoutAddress.scss';
 
-const addressFormSchema = z.object({
-  firstName: z
-    .string()
-    .min(3, 'First Name must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter First Name.'),
-  lastName: z
-    .string()
-    .min(3, 'Last Name must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter Last Name.'),
-  streetAddress: z
-    .string()
-    .min(6, 'Address must be atleast 6 characters long!')
-    .max(256, 'Consider using shorter Address.'),
-  apartment: z
-    .string()
-    .optional()
-    .refine(
-      (value) => !value || value.length >= 6,
-      'Apartment/Suite must be atleast 6 characters long!'
-    ),
-  country: z
-    .string()
-    .min(3, 'Country must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter Country.'),
-  city: z
-    .string()
-    .min(3, 'City must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter City.'),
-  zipCode: z
-    .string()
-    .min(3, 'Zip Code must be atleast 3 characters long!')
-    .max(50, 'Consider using shorter Zip Code.'),
-  phone: z
-    .string()
-    .refine(
-      (value) => /^[\s()+-]*([0-9][\s()+-]*){6,20}/.test(value),
-      'Please enter a valid phone number.'
-    ),
-});
-
 const CheckoutAddress: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm({
     schema: addressFormSchema,
   });
 
-  const onSubmit = async (data: addressFormDataType) => {
+  const onSubmit = async (data: AddressFormType) => {
     setIsSubmitting(true);
     await timeout(500);
     setIsSubmitting(false);
@@ -66,6 +31,13 @@ const CheckoutAddress: React.FC = () => {
       title: 'Thank you for your order!',
       showConfirmButton: false,
       timer: 1500,
+      willClose: () => {
+        dispatch(clearCart());
+        localStorage.clear();
+      },
+      didClose: () => {
+        navigate(RouterPaths.HOME);
+      },
     });
     form.reset();
   };

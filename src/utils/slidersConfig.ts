@@ -5,6 +5,7 @@ export const productsSliderSettings = {
   slidesToShow: 5,
   slidesToScroll: 1,
   arrows: false,
+  touchMove: false,
   responsive: [
     {
       breakpoint: 1500,
@@ -13,15 +14,24 @@ export const productsSliderSettings = {
       },
     },
     {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 4,
+        touchMove: true,
+      },
+    },
+    {
       breakpoint: 991,
       settings: {
         slidesToShow: 3,
+        touchMove: true,
       },
     },
     {
       breakpoint: 500,
       settings: {
         slidesToShow: 2,
+        touchMove: true,
       },
     },
   ],
@@ -29,16 +39,22 @@ export const productsSliderSettings = {
 
 export const productImagesSettings = {
   infinite: false,
-  autoplay: false,
   slidesToShow: 4,
   slidesToScroll: 1,
   swipeToSlide: true,
-  arrows: true,
+  touchMove: false,
   responsive: [
     {
       breakpoint: 1300,
       settings: {
         slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 3,
+        touchMove: true,
       },
     },
     {
@@ -50,6 +66,7 @@ export const productImagesSettings = {
         focusOnSelect: false,
         rows: 2,
         slidesToShow: 3,
+        touchMove: true,
       },
     },
     {
@@ -60,6 +77,7 @@ export const productImagesSettings = {
         verticalSwiping: false,
         rows: 1,
         slidesToShow: 4,
+        touchMove: true,
       },
     },
   ],

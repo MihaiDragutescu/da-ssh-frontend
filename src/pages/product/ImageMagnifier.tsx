@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import useBreakpoint from 'use-breakpoint';
+import { BREAKPOINTS } from '@Utils/constants';
 
 interface ImageMagnifierProps {
   src: string;
@@ -12,6 +14,7 @@ interface ImageMagnifierProps {
 const ImageMagnifier: React.FC<ImageMagnifierProps> = (
   props: ImageMagnifierProps
 ) => {
+  const { breakpoint } = useBreakpoint(BREAKPOINTS, 'desktop');
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
   const [showMagnifier, setShowMagnifier] = useState(false);
@@ -51,26 +54,28 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = (
         alt='Selected product'
       />
 
-      <div
-        className='absolute pointer-events-none opacity-100 bg-white bg-no-repeat border border-solid border-[#d3d3d3]'
-        style={{
-          display: showMagnifier ? '' : 'none',
-          height: `${props.magnifierHeight}px`,
-          width: `${props.magnifieWidth}px`,
-          top: `${y - props.magnifierHeight / 2}px`,
-          left: `${x - props.magnifieWidth / 2}px`,
-          backgroundImage: `url('${props.src}')`,
-          backgroundSize: `${imgWidth * props.zoomLevel}px ${
-            imgHeight * props.zoomLevel
-          }px`,
-          backgroundPositionX: `${
-            -x * props.zoomLevel + props.magnifieWidth / 2
-          }px`,
-          backgroundPositionY: `${
-            -y * props.zoomLevel + props.magnifierHeight / 2
-          }px`,
-        }}
-      ></div>
+      {breakpoint === 'desktop' && (
+        <div
+          className='absolute pointer-events-none opacity-100 bg-white bg-no-repeat border border-solid border-[#d3d3d3]'
+          style={{
+            display: showMagnifier ? '' : 'none',
+            height: `${props.magnifierHeight}px`,
+            width: `${props.magnifieWidth}px`,
+            top: `${y - props.magnifierHeight / 2}px`,
+            left: `${x - props.magnifieWidth / 2}px`,
+            backgroundImage: `url('${props.src}')`,
+            backgroundSize: `${imgWidth * props.zoomLevel}px ${
+              imgHeight * props.zoomLevel
+            }px`,
+            backgroundPositionX: `${
+              -x * props.zoomLevel + props.magnifieWidth / 2
+            }px`,
+            backgroundPositionY: `${
+              -y * props.zoomLevel + props.magnifierHeight / 2
+            }px`,
+          }}
+        ></div>
+      )}
     </div>
   );
 };

@@ -1,18 +1,16 @@
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
-import { z } from 'zod';
 import Form from '@Components/form/Form';
 import { useForm } from '@Hooks/useForm';
-import { newslettersFormDataType } from '@Types/formDataTypes';
 import { useState } from 'react';
 import { timeout } from '@Utils/timeout';
 import Spinner from '@Components/ui/Spinner';
 import Swal from 'sweetalert2';
+import {
+  newslettersFormSchema,
+  NewslettersFormType,
+} from '@Types/formDataTypes';
 import './HomeNewsletters.scss';
-
-const newslettersFormSchema = z.object({
-  email: z.string().email('Please enter a valid email address.'),
-});
 
 const HomeNewsletters: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,7 +19,7 @@ const HomeNewsletters: React.FC = () => {
     schema: newslettersFormSchema,
   });
 
-  const onSubmit = async (data: newslettersFormDataType) => {
+  const onSubmit = async (data: NewslettersFormType) => {
     setIsSubmitting(true);
     await timeout(500);
     setIsSubmitting(false);

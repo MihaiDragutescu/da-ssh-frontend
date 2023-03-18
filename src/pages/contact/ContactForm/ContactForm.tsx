@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import Form from '@Components/form/Form';
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
@@ -7,18 +6,9 @@ import { useState } from 'react';
 import { timeout } from '@Utils/timeout';
 import Spinner from '@Components/ui/Spinner';
 import Swal from 'sweetalert2';
-import { contactFormDataType } from '@Types/formDataTypes';
 import Textarea from '@Components/form/Textarea';
+import { contactFormSchema, ContactFormType } from '@Types/formDataTypes';
 import './ContactForm.scss';
-
-const contactFormSchema = z.object({
-  fullName: z
-    .string()
-    .min(5, 'Name must be atleast 5 characters long!')
-    .max(50, 'Consider using shorter Name.'),
-  email: z.string().email('Please enter a valid email address.'),
-  message: z.string().min(5, 'Message must be atleast 5 characters long!'),
-});
 
 const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +17,7 @@ const ContactForm: React.FC = () => {
     schema: contactFormSchema,
   });
 
-  const onSubmit = async (data: contactFormDataType) => {
+  const onSubmit = async (data: ContactFormType) => {
     setIsSubmitting(true);
     await timeout(500);
     setIsSubmitting(false);
