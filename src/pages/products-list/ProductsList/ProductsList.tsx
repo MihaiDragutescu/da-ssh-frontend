@@ -52,7 +52,7 @@ const ProductsList: React.FC = () => {
   }, [isFetching, currentPage]);
 
   return (
-    <div className='products-list'>
+    <section className='products-list'>
       <div className='products-list__container ssh-container'>
         <div className='products-list__row ssh-row'>
           <div className='products-list__results'>
@@ -80,7 +80,7 @@ const ProductsList: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

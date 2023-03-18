@@ -25,3 +25,5 @@ export const quantityLimits = {
   inferiorLimit: 1,
   superiorLimit: 99,
 };
+
+export const BREAKPOINTS = { mobile: 0, tablet: 991, desktop: 1250 };

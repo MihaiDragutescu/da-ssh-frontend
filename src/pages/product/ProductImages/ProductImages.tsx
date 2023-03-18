@@ -28,7 +28,7 @@ const ProductImages: React.FC<ProductImagesProps> = (
             props.handleImageClick('image', image);
           }}
         >
-          <img src={image} alt='product' />
+          <img src={image} alt='Product' />
         </button>
       </div>
     );

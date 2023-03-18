@@ -30,18 +30,26 @@
       width: 15%;
       padding-bottom: 20px;
 
+      @include for-size(tablet-portrait) {
+        padding-bottom: 16px;
+      }
+
+      @include for-size(mobile) {
+        padding-bottom: 10px;
+      }
+
       span {
         font-family: $font-secondary;
         color: $color-brown-dark;
         line-height: 1;
-        font-size: 28px;
+        font-size: 32px;
+
+        @include for-size(tablet-landscape) {
+          font-size: 28px;
+        }
 
         @include for-size(tablet-portrait) {
           font-size: 24px;
-        }
-
-        @include for-size(mobile-small) {
-          font-size: 20px;
         }
       }
     }

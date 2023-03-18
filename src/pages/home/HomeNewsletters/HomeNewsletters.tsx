@@ -1,22 +1,35 @@
 import Input from '@Components/form/Input';
 import Button from '@Components/ui/Button';
-import './HomeNewsletters.scss';
+import Form from '@Components/form/Form';
+import { useForm } from '@Hooks/useForm';
 import { useState } from 'react';
+import { timeout } from '@Utils/timeout';
+import Spinner from '@Components/ui/Spinner';
+import Swal from 'sweetalert2';
+import {
+  newslettersFormSchema,
+  NewslettersFormType,
+} from '@Types/formDataTypes';
+import './HomeNewsletters.scss';
 
 const HomeNewsletters: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+  const form = useForm({
+    schema: newslettersFormSchema,
+  });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (inputValue) {
-      console.log(`Form submitted with value ${inputValue}`);
-      setInputValue('');
-    }
+  const onSubmit = async (data: NewslettersFormType) => {
+    setIsSubmitting(true);
+    await timeout(500);
+    setIsSubmitting(false);
+    Swal.fire({
+      position: 'top',
+      title: 'Thank you for subscribing!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    form.reset();
   };
 
   return (
@@ -27,19 +40,21 @@ const HomeNewsletters: React.FC = () => {
           <h3 className='home-newsletters__subtitle'>
             Subscribe to our newsletter
           </h3>
-          <form className='home-newsletters__form' onSubmit={handleSubmit}>
+          <Form
+            className='home-newsletters__form'
+            form={form}
+            onSubmit={(values) => onSubmit(values)}
+          >
             <Input
               className='home-newsletters__input'
               placeholder='Email...'
               type='email'
-              required
-              value={inputValue}
-              onChange={handleChange}
+              {...form.register('email')}
             />
             <Button type='submit' className='home-newsletters__button'>
-              SUBSCRIBE
+              {isSubmitting ? <Spinner /> : 'SUBSCRIBE'}
             </Button>
-          </form>
+          </Form>
         </div>
       </div>
     </section>

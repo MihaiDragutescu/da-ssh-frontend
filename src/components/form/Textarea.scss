@@ -1,18 +1,15 @@
 @use '@Styles/' as *;
 
-.ssh-input {
-  width: 725px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
+.ssh-textarea {
+  margin-top: 16px;
 
   label {
+    display: flex;
     flex: 1;
     border-bottom: $border-solid-brown;
   }
 
-  &--simple {
+  textarea {
     font-size: $input-size;
     line-height: 1;
     color: $color-brown;
@@ -46,19 +43,11 @@
     }
   }
 
-  &__content {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
+  span {
+    padding-top: 6px;
   }
 
-  &--with-icon {
-    padding-right: 55px;
-  }
-
-  &__icon {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
+  ::-webkit-scrollbar {
+    width: 5px;
   }
 }

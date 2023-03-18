@@ -4,11 +4,9 @@ import './HeaderMobileSearch.scss';
 
 interface HeaderSearchProps {
   menuScrolled: boolean;
-  inputValue: string;
   handleSubmit: (
     event: React.MouseEvent<HTMLImageElement> | React.FormEvent<HTMLFormElement>
   ) => void;
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   hideOverlay: () => void;
   handleFocus: () => void;
 }
@@ -27,8 +25,6 @@ const HeaderMobileSearch: React.FC<HeaderSearchProps> = (
           className='ssh-header__input'
           placeholder='Search...'
           type='text'
-          value={props.inputValue}
-          onChange={props.handleChange}
           onBlur={props.hideOverlay}
           onFocus={props.handleFocus}
           icon={Search}

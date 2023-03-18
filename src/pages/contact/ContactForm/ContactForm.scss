@@ -1,0 +1,66 @@
+@use '@Styles/' as *;
+
+.contact-form {
+  width: 60%;
+  padding-left: 4%;
+
+  @include for-size(tablet-landscape) {
+    padding-left: 3%;
+  }
+
+  @include for-size(tablet-portrait) {
+    width: 100%;
+    padding: 0;
+  }
+
+  @include for-size(mobile) {
+    order: 1;
+  }
+
+  &__form {
+    margin-top: -16px;
+
+    @include for-size(tablet-portrait) {
+      margin-top: 20px;
+    }
+
+    @include for-size(mobile) {
+      margin-top: -20px;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding-top: 16px;
+
+    @include for-size(mobile) {
+      padding-top: 8px;
+    }
+  }
+
+  &__textarea {
+    padding: 0;
+  }
+
+  &__button {
+    margin-top: 50px;
+    min-width: 140px;
+
+    @include for-size(mobile) {
+      margin-top: 40px;
+    }
+
+    .ssh-spinner {
+      height: 36px !important;
+
+      @include for-size(mobile) {
+        height: 26px !important;
+      }
+
+      @include for-size(mobile-small) {
+        height: 24px !important;
+      }
+    }
+  }
+}

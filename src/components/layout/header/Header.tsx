@@ -7,26 +7,30 @@ import HeaderIconLinks from './subcomponents/HeaderIconLinks';
 import HeaderMobileSearch from './subcomponents/HeaderMobileSearch';
 import { useState, useEffect } from 'react';
 import { RouterPaths } from '@Types/routerPaths';
+import useBreakpoint from 'use-breakpoint';
+import { BREAKPOINTS } from '@Utils/constants';
 
 const Header: React.FC = () => {
-  const [inputValue, setInputValue] = useState('');
+  const { breakpoint } = useBreakpoint(BREAKPOINTS, 'desktop');
   const [inputExpanded, setInputExpanded] = useState(false);
   const [mobileMenuExpanded, setMobileMenuExpanded] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
   const [menuScrolled, setMenuScrolled] = useState(false);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
-
   const handleSubmit = (
     event: React.MouseEvent<HTMLImageElement> | React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
+    const selector =
+      breakpoint === 'mobile'
+        ? '.ssh-header__search-mobile .ssh-input--simple'
+        : '.ssh-header__icons-form .ssh-input--simple';
 
-    if (inputValue) {
-      console.log(`Searching ${inputValue} ...`);
-      setInputValue('');
+    const searchInput = document.querySelector(selector) as HTMLInputElement;
+
+    if (searchInput.value) {
+      console.log(`Searching ${searchInput.value} ...`);
+      searchInput.value = '';
     } else {
       setInputExpanded(!inputExpanded);
     }
@@ -98,16 +102,12 @@ const Header: React.FC = () => {
           />
           <HeaderIconLinks
             inputExpanded={inputExpanded}
-            inputValue={inputValue}
-            handleChange={handleChange}
             handleSubmit={handleSubmit}
             handleIconClick={closeMobileMenu}
           />
           <HeaderMobileSearch
             menuScrolled={menuScrolled}
-            inputValue={inputValue}
             handleSubmit={handleSubmit}
-            handleChange={handleChange}
             handleFocus={handleFocus}
             hideOverlay={hideOverlay}
           />

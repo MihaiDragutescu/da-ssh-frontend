@@ -11,11 +11,19 @@
 
   @include for-size(mobile) {
     font-size: 26px;
-    padding: 12px;
     width: 100%;
   }
 
   @include for-size(mobile-small) {
+    padding: 10px;
     font-size: 24px;
+  }
+
+  .ssh-spinner {
+    padding: 0 !important;
+
+    svg {
+      height: 100%;
+    }
   }
 }
