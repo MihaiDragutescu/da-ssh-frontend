@@ -1,0 +1,53 @@
+@use '@Styles/' as *;
+
+.ssh-textarea {
+  margin-top: 16px;
+
+  label {
+    display: flex;
+    flex: 1;
+    border-bottom: $border-solid-brown;
+  }
+
+  textarea {
+    font-size: $input-size;
+    line-height: 1;
+    color: $color-brown;
+    padding: 12px;
+    width: 100%;
+    background-color: $color-transparent;
+
+    @include for-size(mobile) {
+      font-size: $input-size-medium;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: $input-size-small;
+    }
+
+    &::placeholder {
+      color: $color-brown;
+      font-size: $input-size;
+
+      @include for-size(mobile) {
+        font-size: $input-size-small;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: $input-size-small;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  span {
+    padding-top: 6px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+}

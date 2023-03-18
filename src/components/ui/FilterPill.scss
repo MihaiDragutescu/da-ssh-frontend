@@ -1,0 +1,62 @@
+@use '@Styles/' as *;
+
+.ssh-filter-pill {
+  margin: 5px;
+  min-width: 67px;
+  border: $border-solid-brown;
+  border-radius: 24px;
+  background-color: $color-transparent;
+  width: max-content;
+
+  button {
+    padding: 4px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  span {
+    font-family: $font-tertiary;
+    font-size: 20px;
+    line-height: 1.2;
+    color: $color-brown;
+    font-weight: 700;
+  }
+}
+
+.ssh-sort-pill {
+  border-radius: 8px;
+  width: 500px;
+  max-width: 100%;
+
+  @include for-size(mobile) {
+    width: 100%;
+  }
+
+  button {
+    padding: 6px 5px 5px 5px;
+  }
+
+  span {
+    font-family: $font-primary;
+    font-size: 28px;
+    line-height: 1;
+    color: $color-brown;
+    font-weight: $font-weight-texts;
+    text-transform: uppercase;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+  }
+}
+
+.active-filter {
+  background-color: $color-brown;
+
+  span {
+    color: $color-white;
+  }
+}

@@ -1,0 +1,245 @@
+@use '@Styles/' as *;
+
+.product-info {
+  &__container {
+    padding: calc($vertical-padding-desktop / 2) 30px
+      calc($vertical-padding-desktop / 2) 30px;
+
+    @include for-size(tablet-portrait) {
+      padding: calc($vertical-padding-tablet / 2) 30px
+        calc($vertical-padding-tablet / 2) 30px;
+    }
+
+    @include for-size(tablet-portrait) {
+      padding: 30px;
+    }
+  }
+
+  &__row {
+    @include for-size(tablet-portrait) {
+      flex-direction: column;
+    }
+  }
+
+  &__col--left {
+    width: 50%;
+    padding-right: 40px;
+    max-height: calc(100vh - 110px);
+
+    @include for-size(tablet-landscape) {
+      padding-right: 20px;
+    }
+
+    @include for-size(tablet-portrait) {
+      display: flex;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    @include for-size(mobile) {
+      flex-direction: column;
+      width: 100vw;
+      margin-left: -30px;
+      overflow: hidden;
+    }
+  }
+
+  &__col--right {
+    width: 50%;
+    padding-left: 40px;
+
+    @include for-size(tablet-landscape) {
+      padding-left: 20px;
+    }
+
+    @include for-size(tablet-portrait) {
+      width: 100%;
+    }
+  }
+
+  &__col {
+    @include for-size(tablet-portrait) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-size(mobile) {
+      align-items: flex-start;
+    }
+
+    h1 {
+      font-family: $font-primary;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color-brown-dark;
+      font-size: 45px;
+      text-align: start;
+
+      @include for-size(mobile) {
+        font-size: 40px;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 36px;
+      }
+    }
+
+    svg {
+      width: 50px;
+
+      @include for-size(mobile) {
+        width: 45px;
+      }
+
+      @include for-size(mobile) {
+        width: 40px;
+      }
+    }
+  }
+
+  &__wishlist {
+    margin-left: 15px;
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    line-height: 1;
+    color: $color-brown-dark;
+    margin-bottom: 14px;
+  }
+
+  &__price {
+    font-size: 50px;
+    line-height: 1;
+    color: $color-brown-dark;
+
+    @include for-size(mobile) {
+      font-size: 45px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 200;
+    color: $color-brown-dark;
+    margin: 30px 0;
+
+    @include for-size(mobile) {
+      font-size: 28px;
+    }
+  }
+
+  &__color {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &-list {
+      display: flex;
+      margin: 0 -8px;
+      flex-wrap: wrap;
+
+      .ssh-color-pill {
+        width: 64px !important;
+        height: 64px !important;
+        padding: 8px !important;
+        margin: 0 8px !important;
+
+        @include for-size(mobile) {
+          width: 50px !important;
+          height: 50px !important;
+          margin: 0 4px !important;
+        }
+      }
+    }
+  }
+
+  &__size {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      .ssh-filter-pill {
+        min-width: 100px;
+        min-height: 45px;
+
+        @include for-size(mobile) {
+          min-width: 80px;
+          min-height: 35px;
+        }
+      }
+    }
+  }
+
+  &__accordion {
+    margin-bottom: 30px;
+
+    @include for-size(mobile) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+
+    @include for-size(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__button {
+    @include for-size(tablet-portrait) {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+    }
+
+    button {
+      min-width: 200px;
+
+      svg {
+        height: $card-text-size;
+        margin: 0 auto;
+
+        @include for-size(mobile) {
+          height: calc($card-text-size - 10px);
+        }
+
+        @include for-size(mobile-small) {
+          height: calc($card-text-size - 12px);
+        }
+      }
+
+      .ssh-spinner {
+        height: $card-text-size !important;
+
+        @include for-size(mobile) {
+          height: calc($card-text-size - 10px) !important;
+        }
+
+        @include for-size(mobile-small) {
+          height: calc($card-text-size - 12px) !important;
+        }
+      }
+    }
+  }
+}

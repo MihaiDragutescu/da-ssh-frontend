@@ -1,0 +1,85 @@
+@use '@Styles/' as *;
+
+.ssh-footer {
+  background-color: $secondary-color;
+  opacity: 0.5;
+
+  &__container {
+    padding: calc($vertical-padding-desktop / 2.5) 30px;
+  }
+
+  &__row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    @include for-size(tablet-portrait) {
+      width: 50%;
+    }
+
+    @include for-size(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    @include for-size(tablet-portrait) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 40px;
+
+      a {
+        width: 150px;
+      }
+    }
+
+    @include for-size(mobile) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__copyright {
+    font-size: 28px;
+    line-height: 1;
+    color: $color-brown-dark;
+    font-weight: $font-weight-footer;
+    display: inline-block;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    li {
+      @include for-size(mobile) {
+        text-align: center;
+      }
+
+      a.ssh-footer__link {
+        font-size: 32px;
+        font-weight: $font-weight-footer;
+        color: $color-brown-dark;
+      }
+
+      a.active-menu-link {
+        text-decoration: underline;
+      }
+    }
+
+    &--right {
+      align-items: flex-end;
+    }
+
+    &--left,
+    &--right {
+      @include for-size(tablet-portrait) {
+        align-items: center;
+      }
+    }
+  }
+}

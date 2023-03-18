@@ -1,0 +1,69 @@
+@use '@Styles/' as *;
+
+.products-actions {
+  &__container {
+    position: relative;
+    padding: calc($vertical-padding-desktop / 3) 30px 30px 30px;
+
+    @include for-size(tablet-portrait) {
+      padding: calc($vertical-padding-tablet / 4) 30px 30px 30px;
+    }
+
+    @include for-size(mobile) {
+      padding: calc($vertical-padding-mobile / 4) 30px 15px 30px;
+    }
+  }
+
+  &__row {
+    justify-content: space-between;
+  }
+
+  &__filters,
+  &__sort {
+    display: flex;
+    align-items: center;
+
+    span {
+      font-family: $font-secondary;
+      font-size: 28px;
+      line-height: 1.33;
+      margin-right: 20px;
+      color: $color-brown;
+
+      @include for-size(mobile) {
+        font-size: 24px;
+        margin-right: 16px;
+      }
+    }
+
+    svg {
+      @include for-size(mobile) {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__filters-label {
+    display: flex;
+    position: relative;
+
+    .active-filters {
+      margin: 0;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: -4px;
+      right: -16px;
+      background-color: $color-brown;
+      border-radius: 50%;
+
+      @include for-size(mobile) {
+        width: 10px;
+        height: 10px;
+        top: -3px;
+        right: -13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@use '@Styles/mixins' as *;
+
+.ssh-header {
+  &__search-mobile {
+    display: none;
+    width: 100%;
+    order: 4;
+
+    @include for-size(tablet-portrait) {
+      display: block;
+    }
+
+    .ssh-input__content {
+      max-width: initial;
+      opacity: 1;
+
+      input {
+        padding: 20px 55px 12px 4px;
+
+        @include for-size(mobile) {
+          padding-bottom: 6px;
+        }
+      }
+    }
+
+    .ssh-input__icon {
+      right: 4px;
+    }
+  }
+}

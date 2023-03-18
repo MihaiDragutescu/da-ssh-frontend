@@ -1,0 +1,163 @@
+@use '@Styles/' as *;
+
+.product-card {
+  padding: 0 20px;
+  max-width: 1400px;
+
+  @include for-size(tablet-landscape) {
+    padding: 0 15px;
+  }
+
+  @include for-size(tablet-portrait) {
+    padding: 0 10px;
+  }
+
+  @include for-size(mobile) {
+    padding: 0 5px;
+  }
+
+  &__layout-horizontal {
+    display: flex;
+
+    @include for-size(mobile-small) {
+      display: initial;
+    }
+
+    .product-card {
+      &__image {
+        width: 66.66%;
+
+        @include for-size(mobile-small) {
+          width: 100%;
+        }
+
+        img {
+          max-height: 500px;
+          object-fit: cover;
+          margin: 0;
+
+          @include for-size(mobile-small) {
+            max-height: 300px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      &__content {
+        width: 33.33%;
+        padding: 0 5%;
+        justify-content: center;
+
+        @include for-size(mobile-small) {
+          width: 100%;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  &__direction-right_to_left {
+    flex-direction: row-reverse;
+  }
+
+  &__image img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  &__name,
+  &__price,
+  &__brand {
+    line-height: 1;
+    color: $color-brown-dark;
+  }
+
+  &__name {
+    font-size: $card-text-size;
+    text-transform: uppercase;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size - 4px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 12px);
+    }
+  }
+
+  &__brand {
+    font-size: calc($card-text-size - 8px);
+    margin-bottom: 8px;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size - 12px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 16px);
+      margin-bottom: 6px;
+    }
+  }
+
+  &__price {
+    font-size: calc($card-text-size + 4px);
+
+    @include for-size(tablet-portrait) {
+      font-size: $card-text-size;
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 8px);
+    }
+  }
+
+  &__collection {
+    font-size: $card-text-size;
+    line-height: 1.2;
+    font-family: $font-tertiary;
+    color: $color-brown;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size - 4px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 8px);
+    }
+  }
+
+  &__category {
+    font-size: calc($card-text-size + 8px);
+    line-height: 1.33;
+    font-family: $font-secondary;
+    color: $color-brown-dark;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size + 4px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 6px);
+    }
+  }
+
+  &__button {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 12px;
+
+    @include for-size(tablet-portrait) {
+      font-size: calc($card-text-size - 4px);
+    }
+
+    @include for-size(mobile) {
+      font-size: calc($card-text-size - 12px);
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@use '@Styles/' as *;
+
+.checkout-address {
+  width: 55%;
+  padding-right: 4%;
+
+  @include for-size(tablet-portrait) {
+    width: 100%;
+    padding: 0;
+    order: 2;
+  }
+
+  &__title {
+    h1 {
+      color: $color-brown;
+      line-height: 1;
+      font-size: 32px;
+      text-align: start;
+
+      @include for-size(mobile) {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      @include for-size(mobile-small) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__form {
+    padding-top: 30px;
+
+    @include for-size(tablet-portrait) {
+      padding-top: 16px;
+    }
+
+    &-col {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+
+      @include for-size(mobile) {
+        flex-direction: column;
+      }
+
+      & > div:first-child {
+        padding-right: 16px;
+
+        @include for-size(mobile) {
+          padding: 8px 0 0 0;
+        }
+      }
+
+      & > div:last-child {
+        padding-left: 16px;
+
+        @include for-size(mobile) {
+          padding: 8px 0 0 0;
+        }
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-top: 16px;
+
+    @include for-size(mobile) {
+      padding-top: 8px;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+    min-width: 140px;
+
+    @include for-size(mobile) {
+      margin-top: 40px;
+    }
+
+    .ssh-spinner {
+      height: 36px !important;
+
+      @include for-size(mobile) {
+        height: 26px !important;
+      }
+
+      @include for-size(mobile-small) {
+        height: 24px !important;
+      }
+    }
+  }
+}

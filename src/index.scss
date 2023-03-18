@@ -1,0 +1,178 @@
+@use '@Styles/' as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: $font-primary;
+  font-weight: $font-weight-texts;
+  box-sizing: border-box;
+  padding: 0 !important;
+}
+
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+  overflow: initial !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-titles;
+  line-height: 1.33;
+  color: $color-brown;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--font-h1-desktop);
+
+  @include for-size(tablet-portrait) {
+    font-size: var(--font-h1-tablet);
+  }
+
+  @include for-size(mobile) {
+    font-size: var(--font-h1-mobile);
+  }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h1-mobile-small);
+  }
+}
+
+h2 {
+  font-size: var(--font-h2-desktop);
+
+  @include for-size(tablet-portrait) {
+    font-size: var(--font-h2-tablet);
+  }
+
+  @include for-size(mobile) {
+    font-size: var(--font-h2-mobile);
+  }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h2-mobile-small);
+  }
+}
+
+h3 {
+  font-size: var(--font-h3-desktop);
+
+  @include for-size(mobile) {
+    font-size: var(--font-h3-mobile);
+  }
+
+  @include for-size(mobile-small) {
+    font-size: var(--font-h3-mobile-small);
+  }
+}
+
+li {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.ssh-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: $vertical-padding-desktop 30px;
+  width: 100%;
+
+  @include for-size(tablet-landscape) {
+    padding: $vertical-padding-tablet 30px;
+  }
+
+  @include for-size(mobile) {
+    padding: $vertical-padding-mobile 30px;
+  }
+}
+
+.ssh-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1.75px;
+  text-align: start;
+
+  @include for-size(mobile) {
+    text-align: center;
+  }
+}
+
+#search-overlay-container {
+  padding-top: 114px;
+
+  @include for-size(tablet-portrait) {
+    padding-top: 161px;
+  }
+
+  @include for-size(mobile) {
+    padding-top: 151px;
+  }
+}
+
+.full-height-container {
+  padding: calc($vertical-padding-desktop / 4) 30px
+    calc($vertical-padding-tablet) 30px;
+}
+
+.full-height {
+  min-height: calc(100vh - 500px);
+
+  @include for-size(tablet-portrait) {
+    min-height: calc(100vh - 674px);
+  }
+
+  @include for-size(mobile) {
+    min-height: calc(100vh - 810px);
+  }
+}
+
+.full-height-content {
+  margin-top: -50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include for-size(tablet-portrait) {
+    margin-top: -30px;
+  }
+
+  @include for-size(mobile) {
+    margin-top: -50px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: lighten($color: $color-brown, $amount: 30%);
+  border-radius: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-scrollbar;
+  border-radius: 24px;
+}
+
+:root {
+  @each $key, $value in $font-sizes {
+    --font-#{$key}: #{$value};
+  }
+}

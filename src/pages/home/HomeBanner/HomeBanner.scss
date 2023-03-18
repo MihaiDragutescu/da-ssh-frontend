@@ -1,0 +1,77 @@
+@use '@Styles/' as *;
+
+.home-banner {
+  display: flex;
+  background-color: $primary-color;
+
+  &__container {
+    @include for-size(desktop) {
+      padding: 0 30px;
+    }
+
+    @include for-size(tablet-landscape) {
+      padding-top: calc($vertical-padding-desktop / 3);
+    }
+
+    @include for-size(mobile) {
+      padding-top: calc($vertical-padding-desktop / 4);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 35px;
+  }
+
+  &__button {
+    @include for-size(desktop) {
+      width: 500px;
+    }
+
+    @include for-size(mobile-small) {
+      padding: 10px 8px;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        margin-left: 20px;
+
+        @include for-size(mobile-small) {
+          max-height: 30px;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  &__col {
+    &--left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 60%;
+
+      @include for-size(tablet-landscape) {
+        width: 100%;
+        align-items: center;
+      }
+    }
+
+    &--right {
+      width: 40%;
+      padding-top: 25px;
+
+      @include for-size(tablet-landscape) {
+        display: none;
+      }
+    }
+  }
+}

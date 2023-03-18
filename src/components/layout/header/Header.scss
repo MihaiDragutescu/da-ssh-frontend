@@ -1,0 +1,50 @@
+@use '@Styles/' as *;
+
+.ssh-header {
+  background-color: $primary-color;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
+  &__container {
+    padding: calc($vertical-padding-desktop / 4) 30px;
+
+    @include for-size(tablet-portrait) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__row {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__col {
+    width: 33.33%;
+  }
+
+  &__logo {
+    @include for-size(tablet-portrait) {
+      display: flex;
+      order: 2;
+      justify-content: center;
+    }
+
+    a {
+      display: inline-block;
+      width: 150px;
+
+      @include for-size(tablet-portrait) {
+        width: 130px;
+      }
+
+      @include for-size(mobile) {
+        width: 110px;
+      }
+    }
+  }
+}
+
+.ssh-header--scrolled {
+  box-shadow: $box-shadow-primary;
+}

@@ -1,0 +1,73 @@
+@use '@Styles/' as *;
+
+.home-newsletters {
+  &__row {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: var(--font-h1-desktop);
+    margin-bottom: 20px;
+
+    @include for-size(tablet-portrait) {
+      font-size: var(--font-h1-tablet);
+    }
+
+    @include for-size(mobile) {
+      font-size: $title-size-small;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: var(--font-h1-mobile-small);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 35px;
+
+    @include for-size(mobile) {
+      font-size: 24px;
+    }
+
+    @include for-size(mobile) {
+      font-size: var(--font-h3-mobile);
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 725px;
+  }
+
+  &__input {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  &__button {
+    font-size: 28px;
+    width: 315px;
+
+    @include for-size(mobile) {
+      width: 100%;
+      font-size: 26px;
+    }
+
+    @include for-size(mobile-small) {
+      font-size: 24px;
+    }
+
+    .ssh-spinner {
+      height: 28px !important;
+
+      @include for-size(mobile) {
+        height: 26px !important;
+      }
+
+      @include for-size(mobile-small) {
+        height: 24px !important;
+      }
+    }
+  }
+}
