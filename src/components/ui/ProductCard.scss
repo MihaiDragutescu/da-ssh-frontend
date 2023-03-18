@@ -148,8 +148,7 @@
   }
 
   &__button {
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding: 7px 10px;
     margin-top: 12px;
 
     @include for-size(tablet-portrait) {

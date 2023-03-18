@@ -34,10 +34,6 @@
           border-bottom: $border-solid-menu;
         }
 
-        &:last-child {
-          border-bottom: none;
-        }
-
         a.ssh-header__link {
           display: inline-block;
           width: 100%;
