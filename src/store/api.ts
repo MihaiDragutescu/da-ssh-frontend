@@ -8,7 +8,7 @@ import { isStringArray } from '@Utils/isTypeGuards';
 
 export const sshApi = createApi({
   reducerPath: 'sshApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://da-ssh-app.herokuapp.com' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://da-ssh-server.herokuapp.com' }),
   endpoints: (builder) => {
     return {
       getAllProducts: builder.query<ProductType[], void>({
