@@ -15,11 +15,13 @@ import useResetCachedProducts from '@Hooks/useResetCachedProducts';
 import { parseFiltersObject } from '@Utils/parseFiltersObject';
 import { useQueryParams } from 'use-query-params';
 import { initialFiltersState } from '@Utils/constants';
+import { sortTypes } from '@Types/sortTypes';
+import { ReactComponent as Close } from '@Assets/images/menu-xmark.svg';
 import './ProductsSort.scss';
-import { sortTypes } from '@App/types/sortTypes';
 
 interface ProductsSortProps {
   visible: boolean;
+  closeSort: (value: boolean) => void;
 }
 
 const ProductsSort: React.FC<ProductsSortProps> = (
@@ -100,7 +102,15 @@ const ProductsSort: React.FC<ProductsSortProps> = (
 
   return (
     <div className={`products-sort ${!props.visible ? 'hidden' : ''}`}>
-      <ul>{sortList}</ul>
+      <div
+        className='products-sort__close'
+        onClick={() => props.closeSort(false)}
+      >
+        <Close />
+      </div>
+      <div className='products-sort__content'>
+        <ul>{sortList}</ul>
+      </div>
     </div>
   );
 };

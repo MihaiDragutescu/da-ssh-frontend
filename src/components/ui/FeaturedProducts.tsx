@@ -11,7 +11,7 @@ import { productsSliderSettings } from '@Utils/slidersConfig';
 import './FeaturedProducts.scss';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import useSetQueryParams from '@App/hooks/useSetQueryParams';
+import useSetQueryParams from '@Hooks/useSetQueryParams';
 import { useResizeDetector } from 'react-resize-detector';
 
 interface FeaturedProductsProps {

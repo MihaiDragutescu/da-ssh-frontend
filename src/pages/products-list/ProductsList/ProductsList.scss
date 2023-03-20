@@ -4,6 +4,10 @@
 .products-list {
   position: relative;
 
+  @include for-size(mobile) {
+    position: initial;
+  }
+
   &__container {
     padding: 0 30px $vertical-padding-desktop 30px;
 
@@ -80,7 +84,8 @@
     top: -25px !important;
 
     @include for-size(mobile) {
-      top: -12px !important;
+      top: 0;
+      z-index: 100;
     }
   }
 }
