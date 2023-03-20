@@ -32,8 +32,8 @@
     top: 30px;
     left: 30px;
     max-height: initial;
-    height: calc(100vh - 60px);
-    width: calc(100vw - 60px);
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
     padding: 0;
     overflow: hidden;
   }
@@ -41,8 +41,8 @@
   @include for-size(mobile-small) {
     top: 15px;
     left: 15px;
-    height: calc(100vh - 30px);
-    width: calc(100vw - 30px);
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
   }
 
   &__close {
@@ -142,24 +142,16 @@
       @include for-size(mobile) {
         margin-bottom: -10px;
         display: block;
-        grid-area: 5 / 1 / 5 / 3;
       }
 
-      @include for-size(mobile-small) {
-        grid-area: auto;
+      button {
+        background-color: $color-brown;
+        color: $primary-color;
       }
     }
 
     &--reset {
       grid-area: 4 / 1 / 4 / 2;
-
-      @include for-size(mobile) {
-        grid-area: 6 / 1 / 6 / 3;
-      }
-
-      @include for-size(mobile-small) {
-        grid-area: auto;
-      }
     }
   }
 }
