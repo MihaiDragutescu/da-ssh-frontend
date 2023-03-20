@@ -23,7 +23,7 @@ const ContactInfo: React.FC = () => {
           <FooterSocials />
         </div>
         <div className='contact-info__policy'>
-          <span>© 2022 Privacy policy</span>
+          <span>© 2023 Privacy policy</span>
         </div>
       </div>
     </section>

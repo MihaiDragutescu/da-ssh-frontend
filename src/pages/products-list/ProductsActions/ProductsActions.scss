@@ -10,6 +10,7 @@
     }
 
     @include for-size(mobile) {
+      position: initial;
       padding: calc($vertical-padding-mobile / 4) 30px 15px 30px;
     }
   }

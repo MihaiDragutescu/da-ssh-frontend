@@ -50,8 +50,9 @@ const ProductsActions: React.FC = () => {
         <ProductsFilter
           handleNoFilters={handleNoFilters}
           visible={showFilters}
+          closeFilters={handleActionClick}
         />
-        <ProductsSort visible={showSort} />
+        <ProductsSort visible={showSort} closeSort={handleActionClick} />
         <div className='products-actions__row ssh-row'>
           <button
             type='button'

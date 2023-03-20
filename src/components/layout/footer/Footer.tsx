@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               content={<img src={logo} alt='DaSSH' />}
             />
             <span className='ssh-footer__copyright'>
-              © 2022 All rights reserved
+              © 2023 All rights reserved
             </span>
           </div>
           <FooterSocials />

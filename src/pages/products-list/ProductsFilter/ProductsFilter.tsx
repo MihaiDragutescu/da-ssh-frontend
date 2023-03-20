@@ -23,12 +23,14 @@ import { useQueryParams } from 'use-query-params';
 import { priceRange } from '@Types/priceRange';
 import { parseFiltersObject } from '@Utils/parseFiltersObject';
 import useResetCachedProducts from '@Hooks/useResetCachedProducts';
-import './ProductsFilter.scss';
 import { RouterPaths } from '@Types/routerPaths';
+import { ReactComponent as Close } from '@Assets/images/menu-xmark.svg';
+import './ProductsFilter.scss';
 
 interface ProductsFilterProps {
   visible: boolean;
   handleNoFilters: (value: boolean) => void;
+  closeFilters: (value: boolean) => void;
 }
 
 const ProductsFilter: React.FC<ProductsFilterProps> = (
@@ -190,38 +192,51 @@ const ProductsFilter: React.FC<ProductsFilterProps> = (
 
   return (
     <div className={`products-filters ${!props.visible ? 'hidden' : ''}`}>
-      <div className='products-filters__size products-filters__col'>
-        <div className='products-filters__title'>Size</div>
-        <ul className='products-filters__list'>{sizesList}</ul>
+      <div
+        className='products-filters__close'
+        onClick={() => props.closeFilters(true)}
+      >
+        <Close />
       </div>
-      <div className='products-filters__col'>
-        <div className='products-filters__title'>Brand</div>
-        <ul className='products-filters__brand products-filters__list'>
-          {brandsList}
-        </ul>
-      </div>
-      <div className='products-filters__col products-filters__color'>
-        <div className='products-filters__title'>COLOUR</div>
-        <ul className='products-filters__list'>{colorsList}</ul>
-      </div>
-      <div className='products-filters__col products-filters__price'>
-        <div className='products-filters__title'>Price</div>
-        <PriceSlider
-          minPrice={activeFilters.minPrice ?? priceRangeValues.minPrice}
-          maxPrice={activeFilters.maxPrice ?? priceRangeValues.maxPrice}
-          handlePriceChange={debouncePriceChange}
-        />
-      </div>
-      <div className='products-filters__col products-filters__collection'>
-        <div className='products-filters__title'>Collection</div>
-        <ul className='products-filters__list'>{collectionsList}</ul>
-      </div>
-      <div className='products-filters__col products-filters__category'>
-        <div className='products-filters__title'>Category</div>
-        <ul className='products-filters__list'>{categoriesList}</ul>
-      </div>
-      <div className='products-filters__col products-filters__reset'>
-        <Button onClick={resetFilters}>Reset filters</Button>
+      <div className='products-filters__content'>
+        <div className='products-filters__size products-filters__col'>
+          <div className='products-filters__title'>Size</div>
+          <ul className='products-filters__list'>{sizesList}</ul>
+        </div>
+        <div className='products-filters__col'>
+          <div className='products-filters__title'>Brand</div>
+          <ul className='products-filters__brand products-filters__list'>
+            {brandsList}
+          </ul>
+        </div>
+        <div className='products-filters__col products-filters__color'>
+          <div className='products-filters__title'>COLOUR</div>
+          <ul className='products-filters__list'>{colorsList}</ul>
+        </div>
+        <div className='products-filters__col products-filters__price'>
+          <div className='products-filters__title'>Price</div>
+          <PriceSlider
+            minPrice={activeFilters.minPrice ?? priceRangeValues.minPrice}
+            maxPrice={activeFilters.maxPrice ?? priceRangeValues.maxPrice}
+            handlePriceChange={debouncePriceChange}
+          />
+        </div>
+        <div className='products-filters__col products-filters__collection'>
+          <div className='products-filters__title'>Collection</div>
+          <ul className='products-filters__list'>{collectionsList}</ul>
+        </div>
+        <div className='products-filters__col products-filters__category'>
+          <div className='products-filters__title'>Category</div>
+          <ul className='products-filters__list'>{categoriesList}</ul>
+        </div>
+        <div className='products-filters__col products-filters__button products-filters__button--apply'>
+          <Button onClick={() => props.closeFilters(true)}>
+            Apply filters
+          </Button>
+        </div>
+        <div className='products-filters__col products-filters__button products-filters__button--reset'>
+          <Button onClick={resetFilters}>Reset filters</Button>
+        </div>
       </div>
     </div>
   );
