@@ -8,7 +8,9 @@ import { isStringArray } from '@Utils/isTypeGuards';
 
 export const sshApi = createApi({
   reducerPath: 'sshApi',
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.REACT_APP_BASE_URL || 'http://localhost:3001',
+  }),
   endpoints: (builder) => {
     return {
       getAllProducts: builder.query<ProductType[], void>({
